@@ -1,0 +1,334 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>markdown语法 - mallow</title>
+  <meta charset="utf-8">
+  <meta name="description" content="mallow's blog.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="markdown语法 — mallow">
+  <meta property="og:description" content="mallow's blog.">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120215204-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-120215204-1');
+  </script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="icon" href="/images/logo.png" type="image/png">
+  <!-- main page styles -->
+  <link rel="stylesheet" href="/css/page.css">
+  <!-- import vue from there so that you can use vue in markdown -->
+  <script src="/js/vue.min.js"></script>
+  <script>window.PAGE_TYPE = "software"</script>
+</head>
+<body class="docs">
+  <div id="mobile-bar" >
+    <a class="menu-button"></a>
+    <a class="logo" href="/"></a>
+  </div>
+  <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logo.png">
+    <span>Mallow</span>
+  </a>
+  <ul id="nav">
+    <li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">软件工程化</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/software/engineering.html" class="nav-link">概念&实践</a></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">算法</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/arithmetic/1_lintcode.html" class="nav-link">概念&实践</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">前端</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/frontend/skeleton/1_skeleton.html" class="nav-link">skeleton</a></li>
+    <li><a href="/frontend/html/1_define.html" class="nav-link">html</a></li>
+    <li><a href="/frontend/css/1_define.html" class="nav-link">css</a></li>
+    <li><a href="/frontend/js/1_enter&going.html" class="nav-link">javascript</a></li>
+    <li><a href="/frontend/framework/1_vue.html" class="nav-link">framework</a></li>
+    <li><a href="/frontend/browser/1_safe.html" class="nav-link">browser</a></li>
+    <li><a href="/frontend/important/1_conclude.html" class="nav-link">conclude</a></li>
+  </ul>
+</li>
+  
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">后端</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/backend/node/note.html" class="nav-link">node</a></li>
+    <li><a href="/backend/http/1_http.html" class="nav-link">http</a></li>
+    <li><a href="/backend/java/core.html" class="nav-link">java</a></li>
+    <li><a href="/backend/database/1_mysql.html" class="nav-link">database</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">读书</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/books/memory/1_利玛窦的记忆宫殿.html" class="nav-link">记忆学</a></li>
+    <li><a href="/books/computer/1_构建高性能web网站.html" class="nav-link">计算机</a></li>
+    <li><a href="/books/history/资治通鉴/1_周记一.html" class="nav-link">历史</a></li>
+    <li><a href="/books/economics/1_国富论.html" class="nav-link">经济</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">关于我</a>
+  <span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/person/introduction.html " class="nav-link">介绍</a></li>
+    <li><a href="/person/ideas/ideas.html " class="nav-link">灵感</a></li>
+    <li><a href="/person/up.html " class="nav-link">提升</a></li>
+    <li><a href="/person/todolist.html " class="nav-link">任务列表</a></li>
+    <li><a href="/person/manage.html " class="nav-link">团队管理</a></li>
+  </ul>
+</li>
+  </ul>
+</div>
+  
+    <div id="main" class="fix-sidebar">
+        <div class="guide-links">
+  
+  
+    <span style="float: right;"><a style="color: green;" href="/software/ps.html">photoshop相关</a> →</span>
+  
+  
+  
+    <span style="float: right; margin-right: 30px;">← <a style="color: goldenrod;" href="/software/mac.html">mac相关</a></span>
+  
+</div>
+
+  <div class="sidebar">
+  <div class="sidebar-inner">
+    <h3>当前位置：software</h3>
+    <div class="list">
+      <ul class="menu-root">
+  
+    
+      <li>
+        <a href="/software/engineering.html" class="sidebar-link">
+          导论
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/software/bestpractice.html" class="sidebar-link">
+          最佳实践
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/software/patterns.html" class="sidebar-link">
+          设计模式
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/software/git.html" class="sidebar-link">
+          git相关
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/software/mac.html" class="sidebar-link">
+          mac相关
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/software/markdown.html" class="sidebar-link current">
+          markdown语法
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/software/ps.html" class="sidebar-link">
+          photoshop相关
+        </a>
+      </li>
+      
+</ul>
+    </div>
+    <h3>浏览其它</h3>
+    <ul class="main-menu">
+      <li>
+  <form id="search-form">
+    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">软件工程化</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/software/engineering.html" class="nav-link">概念&实践</a></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">算法</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/arithmetic/1_lintcode.html" class="nav-link">概念&实践</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">前端</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/frontend/skeleton/1_skeleton.html" class="nav-link">skeleton</a></li>
+    <li><a href="/frontend/html/1_define.html" class="nav-link">html</a></li>
+    <li><a href="/frontend/css/1_define.html" class="nav-link">css</a></li>
+    <li><a href="/frontend/js/1_enter&going.html" class="nav-link">javascript</a></li>
+    <li><a href="/frontend/framework/1_vue.html" class="nav-link">framework</a></li>
+    <li><a href="/frontend/browser/1_safe.html" class="nav-link">browser</a></li>
+    <li><a href="/frontend/important/1_conclude.html" class="nav-link">conclude</a></li>
+  </ul>
+</li>
+  
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">后端</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/backend/node/note.html" class="nav-link">node</a></li>
+    <li><a href="/backend/http/1_http.html" class="nav-link">http</a></li>
+    <li><a href="/backend/java/core.html" class="nav-link">java</a></li>
+    <li><a href="/backend/database/1_mysql.html" class="nav-link">database</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">读书</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/books/memory/1_利玛窦的记忆宫殿.html" class="nav-link">记忆学</a></li>
+    <li><a href="/books/computer/1_构建高性能web网站.html" class="nav-link">计算机</a></li>
+    <li><a href="/books/history/资治通鉴/1_周记一.html" class="nav-link">历史</a></li>
+    <li><a href="/books/economics/1_国富论.html" class="nav-link">经济</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">关于我</a>
+  <span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/person/introduction.html " class="nav-link">介绍</a></li>
+    <li><a href="/person/ideas/ideas.html " class="nav-link">灵感</a></li>
+    <li><a href="/person/up.html " class="nav-link">提升</a></li>
+    <li><a href="/person/todolist.html " class="nav-link">任务列表</a></li>
+    <li><a href="/person/manage.html " class="nav-link">团队管理</a></li>
+  </ul>
+</li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="content software with-sidebar ">
+  <ul class="menu-root">
+  
+</ul>
+  
+    <h1>markdown语法</h1>
+  
+  <h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># - h1 tag</span><br><span class="line">## - h2 tag</span><br><span class="line">###### - h6 tag</span><br></pre></td></tr></table></figure>
+<h3 id="加重"><a href="#加重" class="headerlink" title="加重"></a>加重</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">*斜体*</span><br><span class="line">_斜体_</span><br><span class="line"></span><br><span class="line">**粗体**</span><br><span class="line">__粗体__</span><br><span class="line"></span><br><span class="line">_斜体**斜粗体**斜体_</span><br></pre></td></tr></table></figure>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">* 无序列表</span><br><span class="line">* 无序列表</span><br><span class="line">  * 无序列表</span><br><span class="line">  * 无序列表</span><br><span class="line"></span><br><span class="line">1. 有序列表</span><br><span class="line">1. 有序列表</span><br><span class="line">  1.有序列表</span><br><span class="line">  1.有序列表</span><br></pre></td></tr></table></figure>
+<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![test](https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/qrcode/zbios_x2_9d645d9.png)</span><br></pre></td></tr></table></figure>
+<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http://github.com - test</span><br><span class="line">[github](http://github.com)</span><br></pre></td></tr></table></figure>
+<h3 id="引用文字"><a href="#引用文字" class="headerlink" title="引用文字"></a>引用文字</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; blockquotes</span><br><span class="line">&gt; text</span><br></pre></td></tr></table></figure>
+<h3 id="行内代码"><a href="#行内代码" class="headerlink" title="行内代码"></a>行内代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">test`*addr*`test</span><br><span class="line">test`&lt;p&gt;`test</span><br></pre></td></tr></table></figure>
+<h3 id="语法高亮"><a href="#语法高亮" class="headerlink" title="语法高亮"></a>语法高亮</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.create(&#123;<span class="attr">test</span>: <span class="string">'prototype'</span>&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- [x] task1</span><br><span class="line">- [x] task2</span><br><span class="line">- [x] task3</span><br><span class="line">- [ ] task4</span><br></pre></td></tr></table></figure>
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">header one | header two | header three</span><br><span class="line">---------- | ---------- | ------------</span><br><span class="line">content one | content two | content five</span><br><span class="line">content three | content four | content six</span><br></pre></td></tr></table></figure>
+<h3 id="SHA-references"><a href="#SHA-references" class="headerlink" title="SHA references"></a>SHA references</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Any reference to a commit’s SHA-1 hash will be automatically converted into a link to that commit on GitHub.for example:</span><br><span class="line"></span><br><span class="line">16c999e8c71134401a78d4d46435517b2271d6ac</span><br><span class="line">mojombo@16c999e8c71134401a78d4d46435517b2271d6ac</span><br><span class="line">mojombo/github-flavored-markdown@16c999e8c71134401a78d4d46435517b2271d6ac</span><br></pre></td></tr></table></figure>
+<h3 id="Issue-references-within-a-repository"><a href="#Issue-references-within-a-repository" class="headerlink" title="Issue references within a repository"></a>Issue references within a repository</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Any number that refers to an Issue or Pull Request will be automatically converted into a link.for example:****</span><br><span class="line"></span><br><span class="line">#1</span><br><span class="line">mojombo#1</span><br><span class="line">mojombo/github-flavored-markdown#1</span><br></pre></td></tr></table></figure>
+<h3 id="Username-mentions"><a href="#Username-mentions" class="headerlink" title="Username @mentions"></a>Username @mentions</h3><p>Typing an @ symbol, followed by a username, will notify that person to come and view the comment. This is called an “@mention”, because you’re mentioning the individual. You can also @mention teams within an organization.</p>
+<h3 id="Automatic-linking-for-URLs"><a href="#Automatic-linking-for-URLs" class="headerlink" title="Automatic linking for URLs"></a>Automatic linking for URLs</h3><p>Any URL (like <a href="http://www.github.com/" target="_blank" rel="noopener">http://www.github.com/</a>) will be automatically converted into a clickable link.</p>
+<h3 id="Strikethrough"><a href="#Strikethrough" class="headerlink" title="Strikethrough"></a>Strikethrough</h3><p>Any word wrapped with two tildes (like <del>this</del>) will appear crossed out.</p>
+<h3 id="Emoji"><a href="#Emoji" class="headerlink" title="Emoji"></a>Emoji</h3><p>GitHub supports emoji! :sparkles: :camel: :boom:</p>
+<p>To see a list of every image we support, check out the <a href="https://www.webpagefx.com/tools/emoji-cheat-sheet/" target="_blank" rel="noopener">Emoji Cheat Sheet</a>.</p>
+
+  <div class="guide-links">
+    
+    
+      <span>← <a href="/software/mac.html">mac相关</a></span>
+    
+    
+    
+      <span style="float: right;"><a href="/software/ps.html">photoshop相关</a> →</span>
+    
+  </div>
+  <div class="footer">
+    发现错误？想参与编辑？
+    <a href="https://github.com/mallow-fight/blog/tree/master/source/software/markdown.md" target="_blank">
+      在 GitHub 上编辑此页！
+    </a>
+    
+    <span>更新于：2018-09-13 14:09:23</span>
+  </div>
+</div>
+
+
+<div id="disqus_thread"></div>
+<script>
+  // it seems slowly page, so i annotation it.
+  // disqus评论系统
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  var disqus_config = function () {
+    this.page.url = 'https://mallow-fight.github.io/';  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = 'https://mallow-fight.github.io/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://mallow-blog.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    <script src="/js/smooth-scroll.min.js"></script>
+  
+  <!-- main custom script for sidebars, version selects etc. -->
+  <script src="/js/css.escape.js"></script>
+  <script src="/js/common.js"></script>
+  <!-- search -->
+  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/search.css">
+  <script src="/js/docsearch.js"></script>
+  <script>
+  [
+    '#search-query-nav',
+    '#search-query-sidebar',
+    '#search-query-menu'
+  ].forEach(function (selector) {
+    if (!document.querySelector(selector)) return
+    docsearch({
+      appId: 'FKZQZEMOI4',
+      apiKey: '82fdcfac2e888595cb2807aa60aaad58',
+      indexName: 'prod_blog',
+      inputSelector: selector
+    })
+  })
+  </script>
+  <!-- fastclick -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+</body>
+</html>

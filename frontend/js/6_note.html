@@ -1,0 +1,375 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>笔记 - mallow</title>
+  <meta charset="utf-8">
+  <meta name="description" content="mallow's blog.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="笔记 — mallow">
+  <meta property="og:description" content="mallow's blog.">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120215204-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-120215204-1');
+  </script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="icon" href="/images/logo.png" type="image/png">
+  <!-- main page styles -->
+  <link rel="stylesheet" href="/css/page.css">
+  <!-- import vue from there so that you can use vue in markdown -->
+  <script src="/js/vue.min.js"></script>
+  <script>window.PAGE_TYPE = "js"</script>
+</head>
+<body class="docs">
+  <div id="mobile-bar" >
+    <a class="menu-button"></a>
+    <a class="logo" href="/"></a>
+  </div>
+  <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logo.png">
+    <span>Mallow</span>
+  </a>
+  <ul id="nav">
+    <li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">软件工程化</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/software/engineering.html" class="nav-link">概念&实践</a></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">算法</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/arithmetic/1_lintcode.html" class="nav-link">概念&实践</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">前端</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/frontend/skeleton/1_skeleton.html" class="nav-link">skeleton</a></li>
+    <li><a href="/frontend/html/1_define.html" class="nav-link">html</a></li>
+    <li><a href="/frontend/css/1_define.html" class="nav-link">css</a></li>
+    <li><a href="/frontend/js/1_enter&going.html" class="nav-link">javascript</a></li>
+    <li><a href="/frontend/framework/1_vue.html" class="nav-link">framework</a></li>
+    <li><a href="/frontend/browser/1_safe.html" class="nav-link">browser</a></li>
+    <li><a href="/frontend/important/1_conclude.html" class="nav-link">conclude</a></li>
+  </ul>
+</li>
+  
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">后端</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/backend/node/note.html" class="nav-link">node</a></li>
+    <li><a href="/backend/http/1_http.html" class="nav-link">http</a></li>
+    <li><a href="/backend/java/core.html" class="nav-link">java</a></li>
+    <li><a href="/backend/database/1_mysql.html" class="nav-link">database</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">读书</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/books/memory/1_利玛窦的记忆宫殿.html" class="nav-link">记忆学</a></li>
+    <li><a href="/books/computer/1_构建高性能web网站.html" class="nav-link">计算机</a></li>
+    <li><a href="/books/history/资治通鉴/1_周记一.html" class="nav-link">历史</a></li>
+    <li><a href="/books/economics/1_国富论.html" class="nav-link">经济</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">关于我</a>
+  <span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/person/introduction.html " class="nav-link">介绍</a></li>
+    <li><a href="/person/ideas/ideas.html " class="nav-link">灵感</a></li>
+    <li><a href="/person/up.html " class="nav-link">提升</a></li>
+    <li><a href="/person/todolist.html " class="nav-link">任务列表</a></li>
+    <li><a href="/person/manage.html " class="nav-link">团队管理</a></li>
+  </ul>
+</li>
+  </ul>
+</div>
+  
+    <div id="main" class="fix-sidebar">
+        <div class="guide-links">
+  
+  
+    <span style="float: right;"><a style="color: green;" href="/frontend/js/7_questions.html">问题</a> →</span>
+  
+  
+  
+    <span style="float: right; margin-right: 30px;">← <a style="color: goldenrod;" href="/frontend/js/5_async&performance.html">异步和性能</a></span>
+  
+</div>
+
+  <div class="sidebar">
+  <div class="sidebar-inner">
+    <h3>当前位置：js</h3>
+    <div class="list">
+      <ul class="menu-root">
+  
+    
+      <li>
+        <a href="/frontend/js/1_enter&going.html" class="sidebar-link">
+          入门与进阶
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/frontend/js/2_types&grammar.html" class="sidebar-link">
+          类型和语法
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/frontend/js/3_scope&closures.html" class="sidebar-link">
+          作用域与闭包
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/frontend/js/4_this&prototype.html" class="sidebar-link">
+          上下文和对象原型
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/frontend/js/5_async&performance.html" class="sidebar-link">
+          异步和性能
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/frontend/js/6_note.html" class="sidebar-link current">
+          笔记
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/frontend/js/7_questions.html" class="sidebar-link">
+          问题
+        </a>
+      </li>
+      
+</ul>
+    </div>
+    <h3>浏览其它</h3>
+    <ul class="main-menu">
+      <li>
+  <form id="search-form">
+    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">软件工程化</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/software/engineering.html" class="nav-link">概念&实践</a></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">算法</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/arithmetic/1_lintcode.html" class="nav-link">概念&实践</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">前端</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/frontend/skeleton/1_skeleton.html" class="nav-link">skeleton</a></li>
+    <li><a href="/frontend/html/1_define.html" class="nav-link">html</a></li>
+    <li><a href="/frontend/css/1_define.html" class="nav-link">css</a></li>
+    <li><a href="/frontend/js/1_enter&going.html" class="nav-link">javascript</a></li>
+    <li><a href="/frontend/framework/1_vue.html" class="nav-link">framework</a></li>
+    <li><a href="/frontend/browser/1_safe.html" class="nav-link">browser</a></li>
+    <li><a href="/frontend/important/1_conclude.html" class="nav-link">conclude</a></li>
+  </ul>
+</li>
+  
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">后端</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/backend/node/note.html" class="nav-link">node</a></li>
+    <li><a href="/backend/http/1_http.html" class="nav-link">http</a></li>
+    <li><a href="/backend/java/core.html" class="nav-link">java</a></li>
+    <li><a href="/backend/database/1_mysql.html" class="nav-link">database</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">读书</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/books/memory/1_利玛窦的记忆宫殿.html" class="nav-link">记忆学</a></li>
+    <li><a href="/books/computer/1_构建高性能web网站.html" class="nav-link">计算机</a></li>
+    <li><a href="/books/history/资治通鉴/1_周记一.html" class="nav-link">历史</a></li>
+    <li><a href="/books/economics/1_国富论.html" class="nav-link">经济</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">关于我</a>
+  <span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/person/introduction.html " class="nav-link">介绍</a></li>
+    <li><a href="/person/ideas/ideas.html " class="nav-link">灵感</a></li>
+    <li><a href="/person/up.html " class="nav-link">提升</a></li>
+    <li><a href="/person/todolist.html " class="nav-link">任务列表</a></li>
+    <li><a href="/person/manage.html " class="nav-link">团队管理</a></li>
+  </ul>
+</li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="content js with-sidebar ">
+  <ul class="menu-root">
+  
+</ul>
+  
+    <h1>笔记</h1>
+  
+  <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<p><a href="https://github.com/getify/You-Dont-Know-JS/blob/1ed-zh-CN/up%20%26%20going/ch3.md" target="_blank" rel="noopener">you-don’t-konw-js</a><br><a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">es6-阮一峰</a><br><a href="https://addyosmani.com/resources/essentialjsdesignpatterns/book/" target="_blank" rel="noopener">Learning JavaScript Design Patterns</a><br><a href="http://jsdesignpatterns.com/" target="_blank" rel="noopener">Pro JavaScript Design Patterns</a><br><a href="https://github.com/airbnb/javascript" target="_blank" rel="noopener">书写规范</a></p>
+</blockquote>
+<h2 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h2><h3 id="web监听滚动"><a href="#web监听滚动" class="headerlink" title="web监听滚动"></a>web监听滚动</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// overflow: scroll</span></span><br><span class="line"><span class="comment">// -webkit-overflow-scrolling: touch</span></span><br><span class="line"><span class="comment">// 如不设置，会导致监听事件失效</span></span><br><span class="line">listenScroll() &#123;</span><br><span class="line">  <span class="keyword">const</span> iframe = <span class="built_in">window</span>.document.querySelector(<span class="string">'.iframe'</span>)</span><br><span class="line">  <span class="built_in">window</span>.document.querySelector(<span class="string">'.xxx'</span>).addEventListener(<span class="string">'scroll'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(e.srcElement.scrollTop &gt; <span class="number">0</span>) &#123;</span><br><span class="line">      iframe.setAttribute(<span class="string">'scrolling'</span>, <span class="string">'no'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(e.srcElement.scrollTop === <span class="number">0</span>) &#123;</span><br><span class="line">      iframe.setAttribute(<span class="string">'scrolling'</span>, <span class="string">'yes'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">this</span>.hasGetHeight = <span class="literal">true</span></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="动态设置高度，存在跨域问题，ios生效"><a href="#动态设置高度，存在跨域问题，ios生效" class="headerlink" title="动态设置高度，存在跨域问题，ios生效"></a>动态设置高度，存在跨域问题，ios生效</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">calcPageHeight(doc) &#123;</span><br><span class="line">  <span class="keyword">const</span> cHeight = <span class="built_in">Math</span>.max(doc.body.clientHeight, doc.documentElement.clientHeight)</span><br><span class="line">  <span class="keyword">const</span> sHeight = <span class="built_in">Math</span>.max(doc.body.scrollHeight, doc.documentElement.scrollHeight)</span><br><span class="line">  <span class="keyword">const</span> height = <span class="built_in">Math</span>.max(cHeight, sHeight)</span><br><span class="line">  <span class="keyword">return</span> height</span><br><span class="line">&#125;,</span><br><span class="line">adaptIframeHeight() &#123;</span><br><span class="line">  <span class="keyword">const</span> ifr = <span class="built_in">window</span>.document.querySelector(<span class="string">'.iframe'</span>)</span><br><span class="line">  ifr.onload = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> iDoc = ifr.contentDocument || ifr.document</span><br><span class="line">    <span class="keyword">const</span> height = <span class="keyword">this</span>.calcPageHeight(iDoc)</span><br><span class="line">    ifr.style.height = height + <span class="string">'px'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<h3 id="三元表达式"><a href="#三元表达式" class="headerlink" title="三元表达式"></a>三元表达式</h3><p><strong>「表达式」 <code>expression</code> 与「语句」 <code>statement</code> 的区别。条件运算符 <code>a ? b : c</code> 的后两部分必须是可用来赋值的表达式，而 <code>break</code> 是语句</strong></p>
+<h3 id="函数相关"><a href="#函数相关" class="headerlink" title="函数相关"></a>函数相关</h3><h4 id="prototype"><a href="#prototype" class="headerlink" title="prototype"></a>prototype</h4><ul>
+<li>所有对象（<code>null</code>不是对象）都有<code>__proto__</code>属性（即为原型链），普通对象的原型链为<code>{}</code>，<code>function</code>的原型链为<code>Function.prototype</code>(即为普通对象)，<code>new xxx()</code> 产生的实例的原型链为<code>xxx.prototype -&gt; {} -&gt; null</code>。</li>
+<li>只有<code>function</code>函数有<code>prototype</code>属性, 这个<code>prototype</code>属性用于给函数实例继承在<code>__proto__</code>上，<code>function</code>也有<code>__proto__</code>, 值是<code>Funtion</code>对象, <code>this</code>值取决于<code>this</code>绑定的四种规则。</li>
+<li>箭头函数木有，<code>this</code>指向函数外层<code>this</code>。</li>
+<li>只有函数可以定义<code>prototype</code>属性，定义后可以使用<code>__proto__</code>访问原型链。</li>
+<li><code>new Ctor(argus)</code> 出来的对象继承<code>Ctor</code>的<code>prototype</code>原型链，其它属性都不支持，可以传入参数给<code>Ctor</code>，然后使用<code>this</code>绑定值给<code>new</code>出来的新对象, 可以用<code>this</code>访问实例的原型链，一般在<code>Ctor</code>函数里面通过给<code>this</code>赋属性的方式初始化实例对象的常量或者方法，通过<code>Ctor.prototype = xxx</code>，初始化实例对象<code>__proto__</code>上的方法或者常量。</li>
+<li><code>Object.create(obj)</code>返回将<code>obj</code>作为<code>prototype</code>的新的对象。</li>
+<li><code>function</code> 相当于 <code>new Function</code> ，如果在<code>Function</code>的<code>prototype</code>上定义属性和方法，那么所有<code>function</code>函数也可以访问这些属性和方法，其实<code>Function</code>相当于一个原始的构造函数，所有<code>function</code>实例的<code>prototype</code>都是<code>Function</code>的<code>prototype</code>。</li>
+<li><code>function</code> 的 <code>constructor</code>是<code>Function</code>, <code>Function</code>的<code>prototype</code>是一个对象实例，对象实例的<code>__proto__</code>是<code>{}</code>, <code>{}</code>的<code>__proto__</code>是<code>null</code>，<code>null</code>是最上层。</li>
+<li>对象可以通过<code>__proto__</code>访问原型链，函数可以通过<code>prototype</code>访问原型链。</li>
+<li><code>new xxx(name)</code>出来的是一个对象，<code>__proto__</code>继承<code>xxx的prototype</code>，如果<code>xxx</code>中有t<code>his.name=name</code>，<code>name</code>属性会直接作为实例的健值对，而不是继承在<code>__proto__</code>上。</li>
+</ul>
+<h3 id="call"><a href="#call" class="headerlink" title="call"></a>call</h3><ul>
+<li>箭头函数不能使用call</li>
+<li>只有传统的function函数才能使用call或者apply</li>
+<li>箭头函数表达式的语法比函数表达式更短，并且不绑定自己的this，arguments，super或 new.target。这些函数表达式最适合用于非方法函数，并且它们不能用作构造函数。</li>
+</ul>
+<h3 id="自运行函数"><a href="#自运行函数" class="headerlink" title="自运行函数"></a>自运行函数</h3><p><strong>前面最好加上分号，不然的话有可能出现编译错误。</strong></p>
+<h3 id="慎用Object-assign"><a href="#慎用Object-assign" class="headerlink" title="慎用Object.assign"></a>慎用Object.assign</h3><p><strong>这玩意会改变原始对象</strong></p>
+<h3 id="循环中使用return"><a href="#循环中使用return" class="headerlink" title="循环中使用return"></a>循环中使用<code>return</code></h3><p>会中断循环，相当于<code>break</code>的有：</p>
+<ul>
+<li><code>for in</code></li>
+<li>普通的<code>for</code>循环</li>
+<li><code>some</code></li>
+<li><code>every</code></li>
+</ul>
+<p>不会中断循环的有：</p>
+<ul>
+<li><code>forEach</code>： 结束循环后，返回undefined</li>
+<li><code>map</code>：结束循环后，返回相同大小长度的数组，如果回调函数没有返回值，返回的数组值是undefined</li>
+</ul>
+<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p>模块<br>在<code>JavaScript</code>中闭包最常见的用法就是模块模式。模块让你定义对外面世界不可见的私有实现细节（变量，函数），和对外面可访问的公有API。</p>
+<h3 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h3><ol>
+<li>for 循环： 可使用break跳出整个循环，continue跳出本次循环</li>
+<li>forEach：没有办法中止或者跳出 forEach 循环，除了抛出一个异常。如果你需要这样，使用forEach()方法是错误的，你可以用一个简单的循环作为替代。如果您正在测试一个数组里的元素是否符合某条件，且需要返回一个布尔值，那么可使用 Array.every 或 Array.some。如果可用，新方法 find() 或者findIndex() 也可被用于真值测试的提早终止。该方法一直返回undefined，不管回调函数有没有返回值。</li>
+<li>for in： 会遍历出原型属性，不会中断循环</li>
+<li>for of：不会遍历出原型属性，不会中断循环</li>
+<li>map：返回新的数组，以回调函数的返回值作为每一项，没有就是undefined</li>
+<li>every - 检测所有数组元素是否符合条件</li>
+<li>some - 检测某些数组元素是否符合条件</li>
+<li>filter - 筛选某些数组元素</li>
+</ol>
+<h3 id="Math-max使用方法"><a href="#Math-max使用方法" class="headerlink" title="Math.max使用方法"></a>Math.max使用方法</h3><p>必须将所有数组项解构成一个个参数<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="built_in">Math</span>.max.apply(<span class="literal">null</span>, arr)</span><br><span class="line"><span class="comment">// or</span></span><br><span class="line"><span class="built_in">Math</span>.max(...arr)</span><br></pre></td></tr></table></figure></p>
+<h3 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果参数o是一个对象或者数组，那么在函数体里面的修改会导致函数外面o的修改，这里的o是对象的应用，共享同一个o对象</span></span><br><span class="line"><span class="comment">// o对象里面的对象作为参数传入同样会使得o对象发生改变</span></span><br><span class="line"><span class="comment">// 如果对这个参数对象进行重新赋值，那么会新创建一个o类型的值，这个值的改变不会影响外面的o</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">o</span>) </span>&#123;</span><br><span class="line">  o.a = <span class="number">1</span> <span class="comment">// o: &#123; a: 1 &#125;</span></span><br><span class="line">  o = <span class="number">1</span></span><br><span class="line">  <span class="built_in">console</span>.log(o) <span class="comment">// 1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> o = &#123;&#125; <span class="comment">// []</span></span><br><span class="line">foo(o)</span><br></pre></td></tr></table></figure>
+<h3 id="Debounce"><a href="#Debounce" class="headerlink" title="Debounce"></a>Debounce</h3><p>如何用js实现防抖<br><a href="https://github.com/lishengzxc/bblog/issues/7" target="_blank" rel="noopener">参考资料</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * @param fn &#123;Function&#125;   实际要执行的函数</span></span><br><span class="line"><span class="comment"> * @param delay &#123;Number&#125;  延迟时间，单位是毫秒（ms）</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * @return &#123;Function&#125;     返回一个“防反跳”了的函数</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">fn, delay</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 定时器，用来 setTimeout</span></span><br><span class="line">  <span class="keyword">var</span> timer</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 返回一个函数，这个函数会在一个时间区间结束后的 delay 毫秒时执行 fn 函数</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 保存函数调用时的上下文和参数，传递给 fn</span></span><br><span class="line">    <span class="keyword">var</span> context = <span class="keyword">this</span></span><br><span class="line">    <span class="keyword">var</span> args = <span class="built_in">arguments</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 每次这个返回的函数被调用，就清除定时器，以保证不执行 fn</span></span><br><span class="line">    clearTimeout(timer)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 当返回的函数被最后一次调用后（也就是用户停止了某个连续的操作），</span></span><br><span class="line">    <span class="comment">// 再过 delay 毫秒就执行 fn</span></span><br><span class="line">    timer = setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      fn.apply(context, args)</span><br><span class="line">    &#125;, delay)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="不正确的数组下标问题"><a href="#不正确的数组下标问题" class="headerlink" title="不正确的数组下标问题"></a>不正确的数组下标问题</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这里的i会在外层作用域声明</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i) <span class="comment">// 9</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(i) <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
+<p>同：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 原因，触发点击事件的时候，i已经是循环之后的i了，导致重复的i值</span></span><br><span class="line"><span class="keyword">var</span> pAry = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>);   </span><br><span class="line"><span class="keyword">for</span>( <span class="keyword">var</span> i = <span class="number">0</span>; i &lt; pAry.length; i++ ) &#123;   </span><br><span class="line">    pAry[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;   </span><br><span class="line">        <span class="built_in">console</span>.log(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="如何更好的mock前端数据"><a href="#如何更好的mock前端数据" class="headerlink" title="如何更好的mock前端数据"></a>如何更好的mock前端数据</h3><p>构建一套<code>mock-server</code>，供前端使用，只需要简单返回拼接的数据</p>
+<h3 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a) </span><br><span class="line">  <span class="built_in">console</span>.log(a())</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">2</span></span><br><span class="line">  <span class="built_in">console</span>.log(a)</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'a1'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'a2'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">foo()</span><br></pre></td></tr></table></figure>
+<p>函数里面的变量和自有函数也是会提升的<br>上面等价于：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span> <span class="comment">// 其实这一行并没有触发</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123; <span class="comment">// 函数优先提升</span></span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'a1'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'a2'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> a <span class="comment">// 这里的a是undefined</span></span><br><span class="line">  <span class="built_in">console</span>.log(a) <span class="comment">// Function a：如果a只是声明了，但是没有赋值，那么取最后声明的函数值</span></span><br><span class="line">  <span class="built_in">console</span>.log(a()) <span class="comment">// a2</span></span><br><span class="line">  a = <span class="number">2</span></span><br><span class="line">  <span class="built_in">console</span>.log(a) <span class="comment">// 2</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="var-a-a-b这样写有什么问题"><a href="#var-a-a-b这样写有什么问题" class="headerlink" title="var a = a || b这样写有什么问题"></a><code>var a = a || b</code>这样写有什么问题</h3><p>如果a是false类型的值，则会丢失该类型的值，取b值</p>
+
+  <div class="guide-links">
+    
+    
+      <span>← <a href="/frontend/js/5_async&performance.html">异步和性能</a></span>
+    
+    
+    
+      <span style="float: right;"><a href="/frontend/js/7_questions.html">问题</a> →</span>
+    
+  </div>
+  <div class="footer">
+    发现错误？想参与编辑？
+    <a href="https://github.com/mallow-fight/blog/tree/master/source/frontend/js/6_note.md" target="_blank">
+      在 GitHub 上编辑此页！
+    </a>
+    
+    <span>更新于：2018-09-13 14:09:22</span>
+  </div>
+</div>
+
+
+<div id="disqus_thread"></div>
+<script>
+  // it seems slowly page, so i annotation it.
+  // disqus评论系统
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  var disqus_config = function () {
+    this.page.url = 'https://mallow-fight.github.io/';  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = 'https://mallow-fight.github.io/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://mallow-blog.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    <script src="/js/smooth-scroll.min.js"></script>
+  
+  <!-- main custom script for sidebars, version selects etc. -->
+  <script src="/js/css.escape.js"></script>
+  <script src="/js/common.js"></script>
+  <!-- search -->
+  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/search.css">
+  <script src="/js/docsearch.js"></script>
+  <script>
+  [
+    '#search-query-nav',
+    '#search-query-sidebar',
+    '#search-query-menu'
+  ].forEach(function (selector) {
+    if (!document.querySelector(selector)) return
+    docsearch({
+      appId: 'FKZQZEMOI4',
+      apiKey: '82fdcfac2e888595cb2807aa60aaad58',
+      indexName: 'prod_blog',
+      inputSelector: selector
+    })
+  })
+  </script>
+  <!-- fastclick -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+</body>
+</html>

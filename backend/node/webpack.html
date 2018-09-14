@@ -1,0 +1,334 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>webpack - mallow</title>
+  <meta charset="utf-8">
+  <meta name="description" content="mallow's blog.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="webpack — mallow">
+  <meta property="og:description" content="mallow's blog.">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120215204-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-120215204-1');
+  </script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="icon" href="/images/logo.png" type="image/png">
+  <!-- main page styles -->
+  <link rel="stylesheet" href="/css/page.css">
+  <!-- import vue from there so that you can use vue in markdown -->
+  <script src="/js/vue.min.js"></script>
+  <script>window.PAGE_TYPE = "node"</script>
+</head>
+<body class="docs">
+  <div id="mobile-bar" >
+    <a class="menu-button"></a>
+    <a class="logo" href="/"></a>
+  </div>
+  <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logo.png">
+    <span>Mallow</span>
+  </a>
+  <ul id="nav">
+    <li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">软件工程化</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/software/engineering.html" class="nav-link">概念&实践</a></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">算法</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/arithmetic/1_lintcode.html" class="nav-link">概念&实践</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">前端</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/frontend/skeleton/1_skeleton.html" class="nav-link">skeleton</a></li>
+    <li><a href="/frontend/html/1_define.html" class="nav-link">html</a></li>
+    <li><a href="/frontend/css/1_define.html" class="nav-link">css</a></li>
+    <li><a href="/frontend/js/1_enter&going.html" class="nav-link">javascript</a></li>
+    <li><a href="/frontend/framework/1_vue.html" class="nav-link">framework</a></li>
+    <li><a href="/frontend/browser/1_safe.html" class="nav-link">browser</a></li>
+    <li><a href="/frontend/important/1_conclude.html" class="nav-link">conclude</a></li>
+  </ul>
+</li>
+  
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">后端</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/backend/node/note.html" class="nav-link">node</a></li>
+    <li><a href="/backend/http/1_http.html" class="nav-link">http</a></li>
+    <li><a href="/backend/java/core.html" class="nav-link">java</a></li>
+    <li><a href="/backend/database/1_mysql.html" class="nav-link">database</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">读书</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/books/memory/1_利玛窦的记忆宫殿.html" class="nav-link">记忆学</a></li>
+    <li><a href="/books/computer/1_构建高性能web网站.html" class="nav-link">计算机</a></li>
+    <li><a href="/books/history/资治通鉴/1_周记一.html" class="nav-link">历史</a></li>
+    <li><a href="/books/economics/1_国富论.html" class="nav-link">经济</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">关于我</a>
+  <span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/person/introduction.html " class="nav-link">介绍</a></li>
+    <li><a href="/person/ideas/ideas.html " class="nav-link">灵感</a></li>
+    <li><a href="/person/up.html " class="nav-link">提升</a></li>
+    <li><a href="/person/todolist.html " class="nav-link">任务列表</a></li>
+    <li><a href="/person/manage.html " class="nav-link">团队管理</a></li>
+  </ul>
+</li>
+  </ul>
+</div>
+  
+    <div id="main" class="fix-sidebar">
+        <div class="guide-links">
+  
+  
+    <span style="float: right;"><a style="color: green;" href="/backend/node/hexo.html">hexo</a> →</span>
+  
+  
+  
+    <span style="float: right; margin-right: 30px;">← <a style="color: goldenrod;" href="/backend/node/sails.html">sails</a></span>
+  
+</div>
+
+  <div class="sidebar">
+  <div class="sidebar-inner">
+    <h3>当前位置：node</h3>
+    <div class="list">
+      <ul class="menu-root">
+  
+    
+      <li>
+        <a href="/backend/node/note.html" class="sidebar-link">
+          笔记
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/backend/node/express.html" class="sidebar-link">
+          express
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/backend/node/sails.html" class="sidebar-link">
+          sails
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/backend/node/webpack.html" class="sidebar-link current">
+          webpack
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/backend/node/hexo.html" class="sidebar-link">
+          hexo
+        </a>
+      </li>
+      
+</ul>
+    </div>
+    <h3>浏览其它</h3>
+    <ul class="main-menu">
+      <li>
+  <form id="search-form">
+    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">软件工程化</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/software/engineering.html" class="nav-link">概念&实践</a></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">算法</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/arithmetic/1_lintcode.html" class="nav-link">概念&实践</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">前端</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/frontend/skeleton/1_skeleton.html" class="nav-link">skeleton</a></li>
+    <li><a href="/frontend/html/1_define.html" class="nav-link">html</a></li>
+    <li><a href="/frontend/css/1_define.html" class="nav-link">css</a></li>
+    <li><a href="/frontend/js/1_enter&going.html" class="nav-link">javascript</a></li>
+    <li><a href="/frontend/framework/1_vue.html" class="nav-link">framework</a></li>
+    <li><a href="/frontend/browser/1_safe.html" class="nav-link">browser</a></li>
+    <li><a href="/frontend/important/1_conclude.html" class="nav-link">conclude</a></li>
+  </ul>
+</li>
+  
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">后端</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/backend/node/note.html" class="nav-link">node</a></li>
+    <li><a href="/backend/http/1_http.html" class="nav-link">http</a></li>
+    <li><a href="/backend/java/core.html" class="nav-link">java</a></li>
+    <li><a href="/backend/database/1_mysql.html" class="nav-link">database</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">读书</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/books/memory/1_利玛窦的记忆宫殿.html" class="nav-link">记忆学</a></li>
+    <li><a href="/books/computer/1_构建高性能web网站.html" class="nav-link">计算机</a></li>
+    <li><a href="/books/history/资治通鉴/1_周记一.html" class="nav-link">历史</a></li>
+    <li><a href="/books/economics/1_国富论.html" class="nav-link">经济</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">关于我</a>
+  <span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/person/introduction.html " class="nav-link">介绍</a></li>
+    <li><a href="/person/ideas/ideas.html " class="nav-link">灵感</a></li>
+    <li><a href="/person/up.html " class="nav-link">提升</a></li>
+    <li><a href="/person/todolist.html " class="nav-link">任务列表</a></li>
+    <li><a href="/person/manage.html " class="nav-link">团队管理</a></li>
+  </ul>
+</li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="content node with-sidebar ">
+  <ul class="menu-root">
+  
+</ul>
+  
+    <h1>webpack</h1>
+  
+  <h2 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h2><ul>
+<li>entry 一个可执行模块或库的入口文件。</li>
+<li>chunk 多个文件组成的一个代码块，例如把一个可执行模块和它所有依赖的模块组合成一个 chunk 这体现了webpack的打包机制。</li>
+<li>loader 文件转换器，例如把es6转换为es5，scss转换为css。</li>
+<li>plugin 插件，用于扩展webpack的功能，在webpack构建生命周期的节点上加入扩展hook为webpack加入功能。</li>
+</ul>
+<h2 id="构建流程"><a href="#构建流程" class="headerlink" title="构建流程"></a>构建流程</h2><p>从启动webpack构建到输出结果经历了一系列过程，它们是：</p>
+<ul>
+<li>解析webpack配置参数，合并从shell传入和webpack.config.js文件里配置的参数，生产最后的配置结果。</li>
+<li>注册所有配置的插件，好让插件监听webpack构建生命周期的事件节点，以做出对应的反应。</li>
+<li>从配置的entry入口文件开始解析文件构建AST语法树，找出每个文件所依赖的文件，递归下去。</li>
+<li>在解析文件递归的过程中根据文件类型和loader配置找出合适的loader用来对文件进行转换。</li>
+<li>递归完后得到每个文件的最终结果，根据entry配置生成代码块chunk。</li>
+<li>输出所有chunk到文件系统。</li>
+</ul>
+<blockquote>
+<p>需要注意的是，在构建生命周期中有一系列插件在合适的时机做了合适的事情，比如UglifyJsPlugin会在loader转换递归完后对结果再使用UglifyJs压缩覆盖之前的结果。</p>
+</blockquote>
+<h2 id="如何生成不同格式的文件"><a href="#如何生成不同格式的文件" class="headerlink" title="如何生成不同格式的文件"></a>如何生成不同格式的文件</h2><p>使用node的writeFile模块来生成不同格式的文件。</p>
+<h2 id="import-error"><a href="#import-error" class="headerlink" title="import error"></a>import error</h2><p>Unknown custom element: <code>&lt;search-form&gt;</code> - did you register the component correctly? For recursive components, make sure to provide the “name” option:<br><code>import xx from &#39;xx&#39;</code> 而不是 <code>import {xx} from &#39;xx&#39;</code></p>
+<h2 id="loader"><a href="#loader" class="headerlink" title="loader"></a>loader</h2><p>在webpack中使用各种<code>loader</code>对文件进行预处理，达到适配各种中断的需求。</p>
+<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><p>可以使用<code>postcss</code>对编译过后的sass、less等进行样式补全，即一行代码适应多个浏览器</p>
+<h2 id="webpack对页面性能的优化"><a href="#webpack对页面性能的优化" class="headerlink" title="webpack对页面性能的优化"></a>webpack对页面性能的优化</h2><blockquote>
+<p><a href="https://segmentfault.com/a/1190000004577578" target="_blank" rel="noopener">segmentfault1</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://segmentfault.com/a/1190000007891318" target="_blank" rel="noopener">segmentfault2</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://github.com/hawx1993/tech-blog/issues/3" target="_blank" rel="noopener">github</a></p>
+</blockquote>
+
+  <div class="guide-links">
+    
+    
+      <span>← <a href="/backend/node/sails.html">sails</a></span>
+    
+    
+    
+      <span style="float: right;"><a href="/backend/node/hexo.html">hexo</a> →</span>
+    
+  </div>
+  <div class="footer">
+    发现错误？想参与编辑？
+    <a href="https://github.com/mallow-fight/blog/tree/master/source/backend/node/webpack.md" target="_blank">
+      在 GitHub 上编辑此页！
+    </a>
+    
+    <span>更新于：2018-09-13 14:09:20</span>
+  </div>
+</div>
+
+
+<div id="disqus_thread"></div>
+<script>
+  // it seems slowly page, so i annotation it.
+  // disqus评论系统
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  var disqus_config = function () {
+    this.page.url = 'https://mallow-fight.github.io/';  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = 'https://mallow-fight.github.io/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://mallow-blog.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    <script src="/js/smooth-scroll.min.js"></script>
+  
+  <!-- main custom script for sidebars, version selects etc. -->
+  <script src="/js/css.escape.js"></script>
+  <script src="/js/common.js"></script>
+  <!-- search -->
+  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/search.css">
+  <script src="/js/docsearch.js"></script>
+  <script>
+  [
+    '#search-query-nav',
+    '#search-query-sidebar',
+    '#search-query-menu'
+  ].forEach(function (selector) {
+    if (!document.querySelector(selector)) return
+    docsearch({
+      appId: 'FKZQZEMOI4',
+      apiKey: '82fdcfac2e888595cb2807aa60aaad58',
+      indexName: 'prod_blog',
+      inputSelector: selector
+    })
+  })
+  </script>
+  <!-- fastclick -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,466 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>html与html5 - mallow</title>
+  <meta charset="utf-8">
+  <meta name="description" content="mallow's blog.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="html与html5 — mallow">
+  <meta property="og:description" content="mallow's blog.">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120215204-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-120215204-1');
+  </script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="icon" href="/images/logo.png" type="image/png">
+  <!-- main page styles -->
+  <link rel="stylesheet" href="/css/page.css">
+  <!-- import vue from there so that you can use vue in markdown -->
+  <script src="/js/vue.min.js"></script>
+  <script>window.PAGE_TYPE = "html"</script>
+</head>
+<body class="docs">
+  <div id="mobile-bar" >
+    <a class="menu-button"></a>
+    <a class="logo" href="/"></a>
+  </div>
+  <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logo.png">
+    <span>Mallow</span>
+  </a>
+  <ul id="nav">
+    <li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">软件工程化</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/software/engineering.html" class="nav-link">概念&实践</a></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">算法</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/arithmetic/1_lintcode.html" class="nav-link">概念&实践</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">前端</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/frontend/skeleton/1_skeleton.html" class="nav-link">skeleton</a></li>
+    <li><a href="/frontend/html/1_define.html" class="nav-link">html</a></li>
+    <li><a href="/frontend/css/1_define.html" class="nav-link">css</a></li>
+    <li><a href="/frontend/js/1_enter&going.html" class="nav-link">javascript</a></li>
+    <li><a href="/frontend/framework/1_vue.html" class="nav-link">framework</a></li>
+    <li><a href="/frontend/browser/1_safe.html" class="nav-link">browser</a></li>
+    <li><a href="/frontend/important/1_conclude.html" class="nav-link">conclude</a></li>
+  </ul>
+</li>
+  
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">后端</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/backend/node/note.html" class="nav-link">node</a></li>
+    <li><a href="/backend/http/1_http.html" class="nav-link">http</a></li>
+    <li><a href="/backend/java/core.html" class="nav-link">java</a></li>
+    <li><a href="/backend/database/1_mysql.html" class="nav-link">database</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">读书</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/books/memory/1_利玛窦的记忆宫殿.html" class="nav-link">记忆学</a></li>
+    <li><a href="/books/computer/1_构建高性能web网站.html" class="nav-link">计算机</a></li>
+    <li><a href="/books/history/资治通鉴/1_周记一.html" class="nav-link">历史</a></li>
+    <li><a href="/books/economics/1_国富论.html" class="nav-link">经济</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">关于我</a>
+  <span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/person/introduction.html " class="nav-link">介绍</a></li>
+    <li><a href="/person/ideas/ideas.html " class="nav-link">灵感</a></li>
+    <li><a href="/person/up.html " class="nav-link">提升</a></li>
+    <li><a href="/person/todolist.html " class="nav-link">任务列表</a></li>
+    <li><a href="/person/manage.html " class="nav-link">团队管理</a></li>
+  </ul>
+</li>
+  </ul>
+</div>
+  
+    <div id="main" class="fix-sidebar">
+        <div class="guide-links">
+  
+  
+    <span style="float: right;"><a style="color: green;" href="/frontend/html/2_tag.html">标签</a> →</span>
+  
+  
+  
+</div>
+
+  <div class="sidebar">
+  <div class="sidebar-inner">
+    <h3>当前位置：html</h3>
+    <div class="list">
+      <ul class="menu-root">
+  
+    
+      <li>
+        <a href="/frontend/html/1_define.html" class="sidebar-link current">
+          html与html5
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/frontend/html/2_tag.html" class="sidebar-link">
+          标签
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/frontend/html/3_element&attribute.html" class="sidebar-link">
+          元素与属性
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/frontend/html/4_link.html" class="sidebar-link">
+          Url&Path
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/frontend/html/5_media.html" class="sidebar-link">
+          多媒体
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/frontend/html/6_test.html" class="sidebar-link">
+          测试工具和方法
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/frontend/html/7_questions.html" class="sidebar-link">
+          问题
+        </a>
+      </li>
+      
+</ul>
+    </div>
+    <h3>浏览其它</h3>
+    <ul class="main-menu">
+      <li>
+  <form id="search-form">
+    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">软件工程化</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/software/engineering.html" class="nav-link">概念&实践</a></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">算法</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/arithmetic/1_lintcode.html" class="nav-link">概念&实践</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">前端</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/frontend/skeleton/1_skeleton.html" class="nav-link">skeleton</a></li>
+    <li><a href="/frontend/html/1_define.html" class="nav-link">html</a></li>
+    <li><a href="/frontend/css/1_define.html" class="nav-link">css</a></li>
+    <li><a href="/frontend/js/1_enter&going.html" class="nav-link">javascript</a></li>
+    <li><a href="/frontend/framework/1_vue.html" class="nav-link">framework</a></li>
+    <li><a href="/frontend/browser/1_safe.html" class="nav-link">browser</a></li>
+    <li><a href="/frontend/important/1_conclude.html" class="nav-link">conclude</a></li>
+  </ul>
+</li>
+  
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">后端</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/backend/node/note.html" class="nav-link">node</a></li>
+    <li><a href="/backend/http/1_http.html" class="nav-link">http</a></li>
+    <li><a href="/backend/java/core.html" class="nav-link">java</a></li>
+    <li><a href="/backend/database/1_mysql.html" class="nav-link">database</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">读书</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/books/memory/1_利玛窦的记忆宫殿.html" class="nav-link">记忆学</a></li>
+    <li><a href="/books/computer/1_构建高性能web网站.html" class="nav-link">计算机</a></li>
+    <li><a href="/books/history/资治通鉴/1_周记一.html" class="nav-link">历史</a></li>
+    <li><a href="/books/economics/1_国富论.html" class="nav-link">经济</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">关于我</a>
+  <span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/person/introduction.html " class="nav-link">介绍</a></li>
+    <li><a href="/person/ideas/ideas.html " class="nav-link">灵感</a></li>
+    <li><a href="/person/up.html " class="nav-link">提升</a></li>
+    <li><a href="/person/todolist.html " class="nav-link">任务列表</a></li>
+    <li><a href="/person/manage.html " class="nav-link">团队管理</a></li>
+  </ul>
+</li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="content html with-sidebar ">
+  <ul class="menu-root">
+  
+</ul>
+  
+    <h1>html与html5</h1>
+  
+  <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p><strong>HTML 是用超文本标记语言（一套标记标签）来描述网页的一种语言，它不是一种编程语言。</strong></p>
+<h2 id="HTML5新增内容"><a href="#HTML5新增内容" class="headerlink" title="HTML5新增内容"></a>HTML5新增内容</h2><blockquote>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/HTML5" target="_blank" rel="noopener">参考资料</a></p>
+</blockquote>
+<p><strong>通常，html5、css3和js在一起统称为HTML5</strong></p>
+<h3 id="语义"><a href="#语义" class="headerlink" title="语义"></a>语义</h3><p><strong>能够让你更恰当地描述你的内容是什么</strong></p>
+<ul>
+<li><p>字段和提纲</p>
+<ul>
+<li><code>&lt;section&gt;</code></li>
+<li><code>&lt;article&gt;</code></li>
+<li><code>&lt;nav&gt;</code></li>
+<li><code>&lt;header&gt;</code></li>
+<li><code>&lt;footer&gt;</code></li>
+<li><code>&lt;aside&gt;</code></li>
+<li><code>&lt;hgroup&gt;</code></li>
+</ul>
+</li>
+<li><p>音频和视频</p>
+<ul>
+<li><code>&lt;audio&gt;</code></li>
+<li><code>&lt;video&gt;</code></li>
+</ul>
+</li>
+<li><p>表单</p>
+<ul>
+<li><code>required</code>：强制验证</li>
+<li><code>&lt;input&gt;</code>：属性<code>type</code>的一些新值</li>
+<li><code>&lt;output&gt;</code>：新的元素</li>
+</ul>
+</li>
+<li><p>语义元素</p>
+<ul>
+<li><code>&lt;mark&gt;</code></li>
+<li><code>&lt;figure&gt;</code></li>
+<li><code>&lt;figcaption&gt;</code></li>
+<li><code>&lt;data&gt;</code></li>
+<li><code>&lt;time&gt;</code></li>
+<li><code>&lt;output&gt;</code></li>
+<li><code>&lt;progress&gt;</code></li>
+<li><code>&lt;meter&gt;</code></li>
+<li><code>&lt;main&gt;</code></li>
+</ul>
+</li>
+<li><p><code>&lt;iframe&gt;</code></p>
+<ul>
+<li><code>sandbox</code></li>
+<li><code>seamless</code></li>
+<li><code>srcdoc</code></li>
+<li>通过这些属性，可以精确的控制安全级别以及期望的渲染</li>
+</ul>
+</li>
+<li><p>允许直接嵌入数学公式</p>
+<ul>
+<li>MathML</li>
+</ul>
+</li>
+</ul>
+<h3 id="连通性"><a href="#连通性" class="headerlink" title="连通性"></a>连通性</h3><p><strong>能够让你和服务器之间通过创新的新技术方法进行通信</strong></p>
+<ul>
+<li><p>web sockets：允许在页面和服务器之间建立持久连接并通过这种方法来交换非HTML数据</p>
+</li>
+<li><p>server-sent events：允许服务器向客户端推送事件，而不是仅在响应客户端请求时服务器才能发送数据的传统范式</p>
+</li>
+<li><p>webRTC：RTC代表即时通信，允许连接到其他人，直接在浏览器中控制视频会议，而不需要一个插件或是外部的应用程序</p>
+</li>
+</ul>
+<h3 id="离线-amp-存储"><a href="#离线-amp-存储" class="headerlink" title="离线 &amp; 存储"></a>离线 &amp; 存储</h3><p><strong>能够让网页在客户端本地存储数据以及更高效地离线运行</strong></p>
+<ul>
+<li><p>离线资源（应用程序缓存）：火狐全面支持HTML5离线资源规范，其他大多数针对离线资源仅提供了某种程度上的支持</p>
+</li>
+<li><p>在线和离线事件：Firefox 3支持WHATWG在线和离线事件，这可以让应用程序和扩展检测是否存在可用的网络连接，以及在连接建立和断开时能感知到</p>
+</li>
+<li><p>DOM存储：客户端会话和持久化存储让web应用程序能够在客户端存储结构化数据</p>
+</li>
+<li><p>IndexedDB：为了能够在浏览器中存储大量结构化数据，并且能够在这些数据上使用索引进行高性能检索的Web标准</p>
+</li>
+<li><p>选择使用本地文件：对新的 <code>HTML5</code> 文件 <code>API</code> 的支持已经被添加到 <code>Gecko</code> 中，从而使 <code>Web</code> 应用程序可以访问由用户选择的本地文件。这包括使用 <code>type = file</code> 的 <code>&lt;input&gt;</code> 元素的新的 <code>multiple</code> 属性针对多文件选择的支持。 还有 <code>FileReader</code>。</p>
+</li>
+</ul>
+<h3 id="多媒体"><a href="#多媒体" class="headerlink" title="多媒体"></a>多媒体</h3><p><strong>使video和audio成为了在所有web中的一等公民</strong></p>
+<ul>
+<li><p>使用HTML5音视频：<code>&lt;audio&gt;</code>和<code>&lt;video&gt;</code>元素嵌入并支持新的多媒体操作内容的操作</p>
+</li>
+<li><p>WebRTC：允许连接到其他人，在浏览器中直接控制视频会议，而不需要一个插件或是外部的应用程序</p>
+</li>
+<li><p>Camera：允许使用，操作计算机摄像头，并从中存储图像</p>
+</li>
+<li><p>Track &amp; WebVTT：<code>&lt;track&gt;</code>元素支持字幕和章节，<code>WebVTT</code>是一个文本轨道格式</p>
+</li>
+</ul>
+<h3 id="2D-3D-绘图-amp-效果"><a href="#2D-3D-绘图-amp-效果" class="headerlink" title="2D/3D 绘图 &amp; 效果"></a>2D/3D 绘图 &amp; 效果</h3><p><strong>提供了一个更加分化范围的呈现选择</strong></p>
+<ul>
+<li><p>canvas</p>
+</li>
+<li><p>WebGL：非常符合OpenGL ES2.0并且可以用在HTML5<code>&lt;canvas&gt;</code>元素中的API给web带来了3D图像功能</p>
+</li>
+<li><p>SVG：基于XML可以直接嵌入到HTML中的矢量图像格式</p>
+</li>
+</ul>
+<h3 id="性能-amp-集成"><a href="#性能-amp-集成" class="headerlink" title="性能 &amp; 集成"></a>性能 &amp; 集成</h3><p><strong>提供了非常显著的性能优化和更有效的计算机硬件使用</strong></p>
+<ul>
+<li><p>web workers：能够把js计算委托给后台线程，通过允许这些活动以防止使交互型事件变得缓慢</p>
+</li>
+<li><p>XMLHttpRequest Level 2：允许异步读取页面的某些部分，允许其显示动态内容，根据时间和用户行为而有所不同。这是在Ajax背后的技术</p>
+</li>
+<li><p>即时编译的js引擎：新一代的js引擎功能更强大，性能更杰出</p>
+</li>
+<li><p>History：允许对浏览器历史记录进行操作，这对于那些交互地加载新信息的页面尤其有用</p>
+</li>
+<li><p>contentEditable属性：把你的网站变成wiki</p>
+</li>
+<li><p>拖放：支持在网站内部和网站之间拖放项目，同时也提供了一个更简单的供扩展和基于Mozilla的应用程序使用的API</p>
+</li>
+<li><p>焦点管理：支持<code>activeElement</code>和<code>hasFocus</code>属性</p>
+</li>
+<li><p>基于Web的协议处理程序：你现在可以使用<code>navigator.registerProtocolHandler()</code>方法把web应用程序注册成一个协议处理程序</p>
+</li>
+<li><p>requestAnimationFrame：允许控制动画渲染以获得更优性能</p>
+</li>
+<li><p>全屏：为一个网页或者应用程序控制使用整个屏幕，而不显示浏览器界面</p>
+</li>
+<li><p>指针锁定：允许锁定到内容的指针，这样游戏或者类似的应用程序在指针到达窗口限制时也不会失去焦点</p>
+</li>
+<li><p>在线和离线事件：为了构建一个良好的具有离线功能的web应用程序，你需要知道什么时候你的应用程序确实离线了，顺便提一句，在你的应用程序又再回到在线状态时你也需要知道</p>
+</li>
+</ul>
+<h3 id="设备访问-Device-Access"><a href="#设备访问-Device-Access" class="headerlink" title="设备访问 Device Access"></a>设备访问 Device Access</h3><p><strong>能够处理各种输入和输出设备</strong></p>
+<ul>
+<li><p>camera：允许使用和操作计算机的摄像头，并从中存取照片。</p>
+</li>
+<li><p>触控事件：对用户按下触控屏的事件做出反应的处理程序。</p>
+</li>
+<li><p>使用地理位置定位：让浏览器使用地理位置服务定位用户的位置。</p>
+</li>
+<li><p>检测设备方向：让用户在运行浏览器的设备变更方向时能够得到信息，这可以被用作一种输入设备或者使页面的布局跟屏幕的方向相适应</p>
+</li>
+<li><p>指针锁定：允许锁定到内容的指针，这样游戏或者类似的应用程序在指针到达窗口限制时也不会失去焦点</p>
+</li>
+</ul>
+<h2 id="样式设计：创作更加复杂的主题"><a href="#样式设计：创作更加复杂的主题" class="headerlink" title="样式设计：创作更加复杂的主题"></a>样式设计：创作更加复杂的主题</h2><p><strong>CSS已经扩展到能够以一个更加复杂的方法给元素设置样式，这通常被称为CSS3，尽管CSS已经不再是很难触动的规范，并且不同的模块并不全部位于level3：其中一些位于level1而另一些位于level4，覆盖了所有中间的层次</strong></p>
+<ul>
+<li><p>新的背景样式特性：现在可以使用<code>box-shadow</code>给逻辑框设置一个阴影，而且可以设置多背景</p>
+</li>
+<li><p>更精美的边框：现在不仅可以使用图像来格式化边框，使用<code>border-image</code>和它关联的普通属性，而且可以通过<code>border-radius</code>属性来支持圆角边框</p>
+</li>
+<li><p>为你的样式设置动画：使用CSS Transitions以在不同的状态间设置动画，或者使用CSS Animations在页面的某些部分设置动画而不需要一个触发事件，你现在可以在页面中控制移动元素了</p>
+</li>
+<li><p>排版方面的改进：不但可以控制<code>text-overflow</code>和<code>hyphenation</code>，还可以给它设置一个阴影或者更精细地控制它的<code>decorations</code>。感谢新的<code>@font-face</code>规则，现在我们可以下载并应用自定义的字体了</p>
+</li>
+<li><p>新的展示性布局：为了提高设计的灵活性，已经有两种新的布局被添加了进来：CSS多栏布局(cloumn)，以及CSS灵活方框布局(flex)</p>
+</li>
+</ul>
+
+  <div class="guide-links">
+    
+    
+    
+    
+      <span style="float: right;"><a href="/frontend/html/2_tag.html">标签</a> →</span>
+    
+  </div>
+  <div class="footer">
+    发现错误？想参与编辑？
+    <a href="https://github.com/mallow-fight/blog/tree/master/source/frontend/html/1_define.md" target="_blank">
+      在 GitHub 上编辑此页！
+    </a>
+    
+    <span>更新于：2018-09-13 14:09:21</span>
+  </div>
+</div>
+
+
+<div id="disqus_thread"></div>
+<script>
+  // it seems slowly page, so i annotation it.
+  // disqus评论系统
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  var disqus_config = function () {
+    this.page.url = 'https://mallow-fight.github.io/';  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = 'https://mallow-fight.github.io/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://mallow-blog.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    <script src="/js/smooth-scroll.min.js"></script>
+  
+  <!-- main custom script for sidebars, version selects etc. -->
+  <script src="/js/css.escape.js"></script>
+  <script src="/js/common.js"></script>
+  <!-- search -->
+  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/search.css">
+  <script src="/js/docsearch.js"></script>
+  <script>
+  [
+    '#search-query-nav',
+    '#search-query-sidebar',
+    '#search-query-menu'
+  ].forEach(function (selector) {
+    if (!document.querySelector(selector)) return
+    docsearch({
+      appId: 'FKZQZEMOI4',
+      apiKey: '82fdcfac2e888595cb2807aa60aaad58',
+      indexName: 'prod_blog',
+      inputSelector: selector
+    })
+  })
+  </script>
+  <!-- fastclick -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,482 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>hexo - mallow</title>
+  <meta charset="utf-8">
+  <meta name="description" content="mallow's blog.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="hexo — mallow">
+  <meta property="og:description" content="mallow's blog.">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120215204-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-120215204-1');
+  </script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="icon" href="/images/logo.png" type="image/png">
+  <!-- main page styles -->
+  <link rel="stylesheet" href="/css/page.css">
+  <!-- import vue from there so that you can use vue in markdown -->
+  <script src="/js/vue.min.js"></script>
+  <script>window.PAGE_TYPE = "node"</script>
+</head>
+<body class="docs">
+  <div id="mobile-bar" >
+    <a class="menu-button"></a>
+    <a class="logo" href="/"></a>
+  </div>
+  <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logo.png">
+    <span>Mallow</span>
+  </a>
+  <ul id="nav">
+    <li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">软件工程化</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/software/engineering.html" class="nav-link">概念&实践</a></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">算法</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/arithmetic/1_lintcode.html" class="nav-link">概念&实践</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">前端</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/frontend/skeleton/1_skeleton.html" class="nav-link">skeleton</a></li>
+    <li><a href="/frontend/html/1_define.html" class="nav-link">html</a></li>
+    <li><a href="/frontend/css/1_define.html" class="nav-link">css</a></li>
+    <li><a href="/frontend/js/1_enter&going.html" class="nav-link">javascript</a></li>
+    <li><a href="/frontend/framework/1_vue.html" class="nav-link">framework</a></li>
+    <li><a href="/frontend/browser/1_safe.html" class="nav-link">browser</a></li>
+    <li><a href="/frontend/important/1_conclude.html" class="nav-link">conclude</a></li>
+  </ul>
+</li>
+  
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">后端</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/backend/node/note.html" class="nav-link">node</a></li>
+    <li><a href="/backend/http/1_http.html" class="nav-link">http</a></li>
+    <li><a href="/backend/java/core.html" class="nav-link">java</a></li>
+    <li><a href="/backend/database/1_mysql.html" class="nav-link">database</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">读书</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/books/memory/1_利玛窦的记忆宫殿.html" class="nav-link">记忆学</a></li>
+    <li><a href="/books/computer/1_构建高性能web网站.html" class="nav-link">计算机</a></li>
+    <li><a href="/books/history/资治通鉴/1_周记一.html" class="nav-link">历史</a></li>
+    <li><a href="/books/economics/1_国富论.html" class="nav-link">经济</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">关于我</a>
+  <span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/person/introduction.html " class="nav-link">介绍</a></li>
+    <li><a href="/person/ideas/ideas.html " class="nav-link">灵感</a></li>
+    <li><a href="/person/up.html " class="nav-link">提升</a></li>
+    <li><a href="/person/todolist.html " class="nav-link">任务列表</a></li>
+    <li><a href="/person/manage.html " class="nav-link">团队管理</a></li>
+  </ul>
+</li>
+  </ul>
+</div>
+  
+    <div id="main" class="fix-sidebar">
+        <div class="guide-links">
+  
+  
+  
+  
+    <span style="float: right; margin-right: 30px;">← <a style="color: goldenrod;" href="/backend/node/webpack.html">webpack</a></span>
+  
+</div>
+
+  <div class="sidebar">
+  <div class="sidebar-inner">
+    <h3>当前位置：node</h3>
+    <div class="list">
+      <ul class="menu-root">
+  
+    
+      <li>
+        <a href="/backend/node/note.html" class="sidebar-link">
+          笔记
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/backend/node/express.html" class="sidebar-link">
+          express
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/backend/node/sails.html" class="sidebar-link">
+          sails
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/backend/node/webpack.html" class="sidebar-link">
+          webpack
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/backend/node/hexo.html" class="sidebar-link current">
+          hexo
+        </a>
+      </li>
+      
+</ul>
+    </div>
+    <h3>浏览其它</h3>
+    <ul class="main-menu">
+      <li>
+  <form id="search-form">
+    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">软件工程化</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/software/engineering.html" class="nav-link">概念&实践</a></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">算法</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/arithmetic/1_lintcode.html" class="nav-link">概念&实践</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">前端</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/frontend/skeleton/1_skeleton.html" class="nav-link">skeleton</a></li>
+    <li><a href="/frontend/html/1_define.html" class="nav-link">html</a></li>
+    <li><a href="/frontend/css/1_define.html" class="nav-link">css</a></li>
+    <li><a href="/frontend/js/1_enter&going.html" class="nav-link">javascript</a></li>
+    <li><a href="/frontend/framework/1_vue.html" class="nav-link">framework</a></li>
+    <li><a href="/frontend/browser/1_safe.html" class="nav-link">browser</a></li>
+    <li><a href="/frontend/important/1_conclude.html" class="nav-link">conclude</a></li>
+  </ul>
+</li>
+  
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">后端</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/backend/node/note.html" class="nav-link">node</a></li>
+    <li><a href="/backend/http/1_http.html" class="nav-link">http</a></li>
+    <li><a href="/backend/java/core.html" class="nav-link">java</a></li>
+    <li><a href="/backend/database/1_mysql.html" class="nav-link">database</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">读书</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/books/memory/1_利玛窦的记忆宫殿.html" class="nav-link">记忆学</a></li>
+    <li><a href="/books/computer/1_构建高性能web网站.html" class="nav-link">计算机</a></li>
+    <li><a href="/books/history/资治通鉴/1_周记一.html" class="nav-link">历史</a></li>
+    <li><a href="/books/economics/1_国富论.html" class="nav-link">经济</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">关于我</a>
+  <span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/person/introduction.html " class="nav-link">介绍</a></li>
+    <li><a href="/person/ideas/ideas.html " class="nav-link">灵感</a></li>
+    <li><a href="/person/up.html " class="nav-link">提升</a></li>
+    <li><a href="/person/todolist.html " class="nav-link">任务列表</a></li>
+    <li><a href="/person/manage.html " class="nav-link">团队管理</a></li>
+  </ul>
+</li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="content node with-sidebar ">
+  <ul class="menu-root">
+  
+</ul>
+  
+    <h1>hexo</h1>
+  
+  <blockquote>
+<p><a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener">Hexo官网</a></p>
+</blockquote>
+<p class="tip">本篇文章通篇在<code>mac-os</code>环境下运行。</p>
+
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><code>Hexo</code>是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<h2 id="hexo初始化"><a href="#hexo初始化" class="headerlink" title="hexo初始化"></a>hexo初始化</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init [folder]</span><br></pre></td></tr></table></figure>
+<p class="tip">如果没有设置 folder ，Hexo 默认在目前的文件夹建立网站。<br>如果设置了folder，则folder必须为空文件夹。<br>可通过<code>$ mkdir [folder-name]</code>来创建空文件夹。</p>
+
+<h2 id="配置package-json"><a href="#配置package-json" class="headerlink" title="配置package.json"></a>配置package.json</h2><ul>
+<li><p><strong>给<code>package.json</code>设置以下<code>script</code>：</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  <span class="string">"start"</span>: <span class="string">"hexo server"</span>,</span><br><span class="line">  <span class="string">"build"</span>: <span class="string">"hexo clean &amp;&amp; hexo generate"</span>,</span><br><span class="line">  <span class="string">"deploy"</span>: <span class="string">"npm run build &amp;&amp; hexo deploy"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>npm run start</code> - 开启服务，默认端口4000，开启后可在本地4000端口查看静态文件，刷新可更新本地资源的更新。</p>
+</li>
+<li><p><code>npm run build</code> - 删除<code>public</code>文件夹并且重新生成<code>public</code>静态资源文件夹。</p>
+</li>
+<li><code>npm run deploy</code> - 重新生成静态文件夹<code>public</code>并且将它以指定方式发布（这个项目使用的是<code>git</code>方式，后面会讲）。</li>
+</ul>
+<h2 id="配置-config-yml"><a href="#配置-config-yml" class="headerlink" title="配置_config.yml"></a>配置<code>_config.yml</code></h2><ul>
+<li><strong>可参考<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="noopener">官网</a></strong>进行配置，这一部分官网还是很详细的。</li>
+</ul>
+<h2 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h2><p>如何将生成的静态文件部署到服务器上是一件很重要的事。下面以部署到<code>git-pages</code>为例：</p>
+<h3 id="修改-config-yml"><a href="#修改-config-yml" class="headerlink" title="修改_config.yml"></a>修改<code>_config.yml</code></h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repository:</span> <span class="string">git@github.com:mallow-fight/mallow-fight.github.io.git</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>type</code>：发布类型</li>
+<li><code>repository</code>是<code>git-pages</code>的仓库地址</li>
+<li>这里使用的是本人的github地址，需要修改成你自己的</li>
+<li><a href="https://pages.github.com/" target="_blank" rel="noopener">如何建立git-pages</a></li>
+<li><code>branch</code>发布分支</li>
+</ul>
+<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><ul>
+<li><p><code>hexo</code>拥有丰富的主题，可前往<a href="https://hexo.io/themes/" target="_blank" rel="noopener">官网</a>查看。</p>
+</li>
+<li><p>我在写这个项目之前，发现<code>Vue</code>的官网也是使用<code>hexo</code>的，而且是开源的，<a href="https://github.com/vuejs/cn.vuejs.org" target="_blank" rel="noopener">Vue的<code>hexo</code>项目地址</a></p>
+</li>
+<li><p><code>Vue</code>的官网主题在我看来是非常适合技术博客的，而且很美观，所以下面以接入<code>Vue</code>官网的主题为例：</p>
+</li>
+</ul>
+<h3 id="修改-config-yml-1"><a href="#修改-config-yml-1" class="headerlink" title="修改_config.yml"></a>修改<code>_config.yml</code></h3><ul>
+<li><strong>将<code>theme</code>修改为<code>Vue</code></strong></li>
+</ul>
+<h3 id="建立Vue主题"><a href="#建立Vue主题" class="headerlink" title="建立Vue主题"></a>建立Vue主题</h3><ul>
+<li><p>在<code>theme</code>文件夹下新建一个主题文件夹，我这里用的是<code>mallow</code></p>
+</li>
+<li><p>在<code>mallow</code>文件夹下新建<code>layout</code>文件夹，这里面放的是布局文件，<a href="/layout.html">详情见</a></p>
+</li>
+<li><p>在<code>mallow</code>文件夹下新建<code>source</code>文件夹，这里面存放的是js和css以及字体和图片等，可直接从<code>Vue</code>仓库拷贝一份</p>
+</li>
+<li><p>在<code>mallow</code>文件夹下新建<code>_config.yml</code>文件，这个文件用来存放一些可供layout中的页面访问的常量或者对象，访问方式<code>&lt;%- url_for(theme.name) %&gt;</code></p>
+</li>
+</ul>
+<p class="tip"><code>&lt;%- %&gt;</code>书写方式参考<a href="https://ejs.bootcss.com/" target="_blank" rel="noopener">ejs</a></p>
+
+<h3 id="yml定义常量或者变量"><a href="#yml定义常量或者变量" class="headerlink" title="yml定义常量或者变量"></a><code>yml</code>定义常量或者变量</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 常量</span></span><br><span class="line"><span class="attr">name:</span> <span class="string">mallow</span></span><br><span class="line"><span class="comment"># 对象</span></span><br><span class="line"><span class="attr">people:</span></span><br><span class="line"><span class="attr">- name:</span> <span class="string">mallow</span></span><br><span class="line"><span class="attr">  age:</span> <span class="number">100</span></span><br></pre></td></tr></table></figure>
+<h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><p class="tip">前置知识：<a href="https://ejs.bootcss.com/" target="_blank" rel="noopener">ejs</a></p>
+
+<p>下面以<code>Vue</code>的主题效果为例，介绍一下<code>theme/layout</code>文件夹下的内容：</p>
+<h3 id="layout-ejs"><a href="#layout-ejs" class="headerlink" title="layout.ejs"></a>layout.ejs</h3><ul>
+<li>页面整体的布局，这里按照<code>html5</code>的标准，你可以在这里：<ul>
+<li>引入公共<code>js</code></li>
+<li>引入公共<code>css</code></li>
+<li>设置<code>meta</code></li>
+<li>设置页面<code>title</code>和<code>icon</code></li>
+<li>…</li>
+</ul>
+</li>
+</ul>
+<h3 id="index-ejs"><a href="#index-ejs" class="headerlink" title="index.ejs"></a>index.ejs</h3><ul>
+<li><p>网站主页，用户进入网站首先看到的页面，一般来说这里有一个导航让用户进入副页。</p>
+</li>
+<li><p>在<code>layout.ejs</code>中引入<code>&lt;%- body %&gt;</code>可将主页引入整体布局，可以利用<code>ejs</code>加上一些逻辑决定什么时候显示主页</p>
+</li>
+</ul>
+<h3 id="page-ejs"><a href="#page-ejs" class="headerlink" title="page.ejs"></a>page.ejs</h3><ul>
+<li><p>网站副页，用户通过导航进入的页面</p>
+</li>
+<li><p>原理就是通过设置在首页导航上的链接来跳转到page</p>
+</li>
+<li><p>左右角标只有同一类型的<code>md</code>文件出现才会出现</p>
+</li>
+</ul>
+<h3 id="post-ejs"><a href="#post-ejs" class="headerlink" title="post.ejs"></a>post.ejs</h3><ul>
+<li>根据这个文件布局<code>resource/_posts</code>中的<code>markdown</code></li>
+</ul>
+<h3 id="partials文件夹"><a href="#partials文件夹" class="headerlink" title="partials文件夹"></a>partials文件夹</h3><ul>
+<li><p>类似于公共组件，其它页面可以通过<code>partial(&#39;partials/xxx&#39;)</code>来引用对应的公共组件</p>
+</li>
+<li><p>组件中可以以<code>&lt;a href=&quot;&lt;%- url_for(&quot;/others/hexo/&quot;) %&gt;跳转到hexo首页&lt;/a&gt;</code>跳转到<code>markdown</code>编译过后的<code>html</code>文件</p>
+</li>
+</ul>
+<h3 id="icons文件夹"><a href="#icons文件夹" class="headerlink" title="icons文件夹"></a>icons文件夹</h3><ul>
+<li><p>类似于图标公共组件</p>
+</li>
+<li><p>一些<code>svg</code>图标</p>
+</li>
+<li><p>通过<code>&lt;%- partial(&#39;icons/play&#39;) %&gt;</code>引用</p>
+</li>
+</ul>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><ul>
+<li><p>至此一个基于<code>hexo</code>的博客就完成</p>
+</li>
+<li><p>修改<code>/partials/main_menu.ejs</code>来新增导航栏目，然后就可以在对应文件夹下开心的写<code>markdown</code>了</p>
+</li>
+<li><p><code>markdown</code>书写规则参考本项目，可以在<code>markdown</code>中使用<code>Vue</code>哦！</p>
+</li>
+</ul>
+<h2 id="第三方插件"><a href="#第三方插件" class="headerlink" title="第三方插件"></a>第三方插件</h2><h3 id="algolia"><a href="#algolia" class="headerlink" title="algolia"></a>algolia</h3><p>静态网站搜索引擎，可以免费使用</p>
+<h3 id="NexT"><a href="#NexT" class="headerlink" title="NexT"></a>NexT</h3><p>基于<code>hexo</code>的主题，<a href="https://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">官网</a><br>这上面可以找到一些三方服务，比如搜索、评论等。</p>
+<h3 id="hexo-algolia"><a href="#hexo-algolia" class="headerlink" title="hexo-algolia"></a>hexo-algolia</h3><ul>
+<li><p>如果使用了docsearch，应该就不需要使用这个插件了，这个插件需要多做：</p>
+<ul>
+<li>搜索框</li>
+<li>更新db.json</li>
+</ul>
+</li>
+<li><p>所以还是最好不要使用这个东西，直接使用docsearch</p>
+</li>
+</ul>
+<h3 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save hexo-algolia</span><br></pre></td></tr></table></figure>
+<h3 id="update-config-yml"><a href="#update-config-yml" class="headerlink" title="update _config.yml"></a>update <code>_config.yml</code></h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">algolia:</span></span><br><span class="line"><span class="attr">  applicationID:</span> <span class="string">'applicationID'</span></span><br><span class="line"><span class="attr">  apiKey:</span> <span class="string">'apiKey'</span></span><br><span class="line"><span class="attr">  indexName:</span> <span class="string">'...'</span></span><br></pre></td></tr></table></figure>
+<h3 id="create-and-push-local-db-json"><a href="#create-and-push-local-db-json" class="headerlink" title="create and push local db.json"></a>create and push local db.json</h3><ul>
+<li><p>这个生成的db和docsearch的前端不兼容</p>
+</li>
+<li><p>如果要使用这个db，需要自己画前端，并且在上传代码时更新本地db</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">export</span> HEXO_ALGOLIA_INDEXING_KEY=82fdcfac2e888595cb2807aa60aaad58</span><br><span class="line">$ hexo algolia</span><br></pre></td></tr></table></figure>
+<p class="tip">before is my search key, you should replace with your search key.</p>
+
+<h3 id="docsearch"><a href="#docsearch" class="headerlink" title="docsearch"></a>docsearch</h3><blockquote>
+<p><a href="https://community.algolia.com/docsearch/" target="_blank" rel="noopener">官网</a></p>
+</blockquote>
+<p>这玩意可以每隔24小时自动抓取网站内容，可以是algolia生成docsearch使用的数据格式，并且可以定制搜索样式，需要先填写邮箱验证，需要等一段时间。</p>
+<ul>
+<li><p>限制：网站必须建立完全，初期不健全的网站竟然被拒绝了，待我完成第一版博客后，在去提交资料。</p>
+</li>
+<li><p>这个审核有点严格，赶明修改一下docsearch.js，自己生成格式对应的json文件</p>
+</li>
+<li><p>照理说，docsearch分为三个部分，应该只需要使用它爬下网站内容并上传到algoria就可以了，关键是怎么使用它在本地爬网站内容并上传。</p>
+</li>
+<li><p><a href="https://github.com/algolia/docsearch-scraper" target="_blank" rel="noopener">参考</a>，使用它应该可以生成对应的db</p>
+</li>
+</ul>
+<h3 id="用户数据分析"><a href="#用户数据分析" class="headerlink" title="用户数据分析"></a>用户数据分析</h3><p>比较流行的<br>使用谷歌的数据分析<br>注册之后就可以使用啦<br>拿到网站的id，在<code>&lt;head&gt;</code>里面放置一段脚本就ok了</p>
+<blockquote>
+<p><a href="https://analytics.google.com/" target="_blank" rel="noopener">官网</a></p>
+</blockquote>
+<h3 id="修改docsearch-js"><a href="#修改docsearch-js" class="headerlink" title="修改docsearch.js"></a>修改docsearch.js</h3><p>由于审核不通过，只能自己想办法解决搜索问题</p>
+<ul>
+<li><p>已有条件</p>
+<ul>
+<li><code>docsearch</code>可以调的通接口，拿到搜索数据</li>
+<li>通过<code>hexo-algolia</code>爬下本地文章db上传到<code>algolia</code></li>
+</ul>
+</li>
+<li><p>解决办法</p>
+<ul>
+<li>在<code>docsearch</code>格式化请求回来的数据之前，使用自定义函数将接口返回的数据格式化为<code>Vue</code>或者其它已经接入<code>docsearch</code>网站的数据格式</li>
+</ul>
+</li>
+</ul>
+<p>自定义函数如下<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mallowFormatHits</span>(<span class="params">hits</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> time = (<span class="keyword">new</span> <span class="built_in">Date</span>()).getTime()</span><br><span class="line">  <span class="keyword">return</span> hits.map(<span class="function"><span class="params">hit</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> _highlightResult = hit._highlightResult</span><br><span class="line">    <span class="keyword">const</span> &#123;title&#125; = hit</span><br><span class="line">    <span class="keyword">const</span> hierarchy = &#123;</span><br><span class="line">      lvl0: hit.title,</span><br><span class="line">      lvl1: <span class="literal">null</span>,</span><br><span class="line">      lvl2: <span class="literal">null</span>,</span><br><span class="line">      lvl3: <span class="literal">null</span>,</span><br><span class="line">      lvl4: <span class="literal">null</span>,</span><br><span class="line">      lvl5: <span class="literal">null</span>,</span><br><span class="line">      lvl6: <span class="literal">null</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> lvl0 = &#123;</span><br><span class="line">      <span class="string">"value"</span>: _highlightResult.title.value,</span><br><span class="line">      <span class="string">"matchLevel"</span>: _highlightResult.title.matchLevel,</span><br><span class="line">      <span class="string">"matchedWords"</span>: _highlightResult.title.matchedWords</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="string">"hierarchy"</span>: hierarchy,</span><br><span class="line">      <span class="string">"url"</span>: hit.permalink,</span><br><span class="line">      <span class="string">"content"</span>: <span class="literal">null</span>,</span><br><span class="line">      <span class="string">"anchor"</span>: hit.title,</span><br><span class="line">      <span class="string">"objectID"</span>: time++,</span><br><span class="line">      <span class="string">"_highlightResult"</span>: &#123;</span><br><span class="line">        <span class="string">"hierarchy"</span>: &#123;</span><br><span class="line">          lvl0</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">"hierarchy_camel"</span>: [&#123;</span><br><span class="line">          lvl0</span><br><span class="line">        &#125;]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="内容分享服务"><a href="#内容分享服务" class="headerlink" title="内容分享服务"></a>内容分享服务</h3><p>接的百度分享</p>
+<blockquote>
+<p><a href="http://share.baidu.com/code/advance#toid" target="_blank" rel="noopener">参考</a></p>
+</blockquote>
+<p>悬浮的分享按钮影响美观，隐藏了，可通过首页<code>footer</code>分享<br>可选中分享按钮，定制样式<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> getShareButtonTime = setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">var</span> shareButton = <span class="built_in">window</span>.document.querySelector(<span class="string">".bdshare-slide-button"</span>)</span><br><span class="line">  <span class="keyword">if</span> (shareButton) &#123;</span><br><span class="line">    clearInterval(getShareButtonTime)</span><br><span class="line">    <span class="comment">// 影响美观，暂时移除</span></span><br><span class="line">    shareButton.style.opacity = <span class="number">0</span></span><br><span class="line">    shareButton.style.color = <span class="string">'white'</span></span><br><span class="line">    shareButton.style.background = <span class="string">'#42b983'</span></span><br><span class="line">    shareButton.style.fontSize = <span class="string">'20rem'</span></span><br><span class="line">    shareButton.innerText = <span class="string">'Share'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;, <span class="number">100</span>)</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>这个东西里面有很多http链接，导致页面出现不安全链接的提示</p>
+</blockquote>
+<blockquote>
+<p>暂时禁止分享，以后可以考虑做个二维码，扫一扫手机访问，一般来讲，微信访问的话应该可以直接右上角分享，也可以接微信的sdk分享，不过没必要</p>
+</blockquote>
+<blockquote>
+<p>可以考虑做个订阅号，把博客放进去</p>
+</blockquote>
+<h3 id="评论系统"><a href="#评论系统" class="headerlink" title="评论系统"></a>评论系统</h3><ul>
+<li><p>接的<code>DISQUS</code>改了下布局，详情看<code>page.ejs</code></p>
+</li>
+<li><p>这玩意没翻墙的情况下影响页面加载速度，已注释</p>
+</li>
+</ul>
+
+  <div class="guide-links">
+    
+    
+      <span>← <a href="/backend/node/webpack.html">webpack</a></span>
+    
+    
+    
+  </div>
+  <div class="footer">
+    发现错误？想参与编辑？
+    <a href="https://github.com/mallow-fight/blog/tree/master/source/backend/node/hexo.md" target="_blank">
+      在 GitHub 上编辑此页！
+    </a>
+    
+    <span>更新于：2018-09-13 14:09:20</span>
+  </div>
+</div>
+
+
+<div id="disqus_thread"></div>
+<script>
+  // it seems slowly page, so i annotation it.
+  // disqus评论系统
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  var disqus_config = function () {
+    this.page.url = 'https://mallow-fight.github.io/';  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = 'https://mallow-fight.github.io/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://mallow-blog.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    <script src="/js/smooth-scroll.min.js"></script>
+  
+  <!-- main custom script for sidebars, version selects etc. -->
+  <script src="/js/css.escape.js"></script>
+  <script src="/js/common.js"></script>
+  <!-- search -->
+  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/search.css">
+  <script src="/js/docsearch.js"></script>
+  <script>
+  [
+    '#search-query-nav',
+    '#search-query-sidebar',
+    '#search-query-menu'
+  ].forEach(function (selector) {
+    if (!document.querySelector(selector)) return
+    docsearch({
+      appId: 'FKZQZEMOI4',
+      apiKey: '82fdcfac2e888595cb2807aa60aaad58',
+      indexName: 'prod_blog',
+      inputSelector: selector
+    })
+  })
+  </script>
+  <!-- fastclick -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,780 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>导论 - mallow</title>
+  <meta charset="utf-8">
+  <meta name="description" content="mallow's blog.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="导论 — mallow">
+  <meta property="og:description" content="mallow's blog.">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120215204-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-120215204-1');
+  </script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="icon" href="/images/logo.png" type="image/png">
+  <!-- main page styles -->
+  <link rel="stylesheet" href="/css/page.css">
+  <!-- import vue from there so that you can use vue in markdown -->
+  <script src="/js/vue.min.js"></script>
+  <script>window.PAGE_TYPE = "software"</script>
+</head>
+<body class="docs">
+  <div id="mobile-bar" >
+    <a class="menu-button"></a>
+    <a class="logo" href="/"></a>
+  </div>
+  <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logo.png">
+    <span>Mallow</span>
+  </a>
+  <ul id="nav">
+    <li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">软件工程化</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/software/engineering.html" class="nav-link">概念&实践</a></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">算法</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/arithmetic/1_lintcode.html" class="nav-link">概念&实践</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">前端</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/frontend/skeleton/1_skeleton.html" class="nav-link">skeleton</a></li>
+    <li><a href="/frontend/html/1_define.html" class="nav-link">html</a></li>
+    <li><a href="/frontend/css/1_define.html" class="nav-link">css</a></li>
+    <li><a href="/frontend/js/1_enter&going.html" class="nav-link">javascript</a></li>
+    <li><a href="/frontend/framework/1_vue.html" class="nav-link">framework</a></li>
+    <li><a href="/frontend/browser/1_safe.html" class="nav-link">browser</a></li>
+    <li><a href="/frontend/important/1_conclude.html" class="nav-link">conclude</a></li>
+  </ul>
+</li>
+  
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">后端</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/backend/node/note.html" class="nav-link">node</a></li>
+    <li><a href="/backend/http/1_http.html" class="nav-link">http</a></li>
+    <li><a href="/backend/java/core.html" class="nav-link">java</a></li>
+    <li><a href="/backend/database/1_mysql.html" class="nav-link">database</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">读书</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/books/memory/1_利玛窦的记忆宫殿.html" class="nav-link">记忆学</a></li>
+    <li><a href="/books/computer/1_构建高性能web网站.html" class="nav-link">计算机</a></li>
+    <li><a href="/books/history/资治通鉴/1_周记一.html" class="nav-link">历史</a></li>
+    <li><a href="/books/economics/1_国富论.html" class="nav-link">经济</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">关于我</a>
+  <span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/person/introduction.html " class="nav-link">介绍</a></li>
+    <li><a href="/person/ideas/ideas.html " class="nav-link">灵感</a></li>
+    <li><a href="/person/up.html " class="nav-link">提升</a></li>
+    <li><a href="/person/todolist.html " class="nav-link">任务列表</a></li>
+    <li><a href="/person/manage.html " class="nav-link">团队管理</a></li>
+  </ul>
+</li>
+  </ul>
+</div>
+  
+    <div id="main" class="fix-sidebar">
+        <div class="guide-links">
+  
+  
+    <span style="float: right;"><a style="color: green;" href="/software/bestpractice.html">最佳实践</a> →</span>
+  
+  
+  
+</div>
+
+  <div class="sidebar">
+  <div class="sidebar-inner">
+    <h3>当前位置：software</h3>
+    <div class="list">
+      <ul class="menu-root">
+  
+    
+      <li>
+        <a href="/software/engineering.html" class="sidebar-link current">
+          导论
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/software/bestpractice.html" class="sidebar-link">
+          最佳实践
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/software/patterns.html" class="sidebar-link">
+          设计模式
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/software/git.html" class="sidebar-link">
+          git相关
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/software/mac.html" class="sidebar-link">
+          mac相关
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/software/markdown.html" class="sidebar-link">
+          markdown语法
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/software/ps.html" class="sidebar-link">
+          photoshop相关
+        </a>
+      </li>
+      
+</ul>
+    </div>
+    <h3>浏览其它</h3>
+    <ul class="main-menu">
+      <li>
+  <form id="search-form">
+    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">软件工程化</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/software/engineering.html" class="nav-link">概念&实践</a></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">算法</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/arithmetic/1_lintcode.html" class="nav-link">概念&实践</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">前端</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/frontend/skeleton/1_skeleton.html" class="nav-link">skeleton</a></li>
+    <li><a href="/frontend/html/1_define.html" class="nav-link">html</a></li>
+    <li><a href="/frontend/css/1_define.html" class="nav-link">css</a></li>
+    <li><a href="/frontend/js/1_enter&going.html" class="nav-link">javascript</a></li>
+    <li><a href="/frontend/framework/1_vue.html" class="nav-link">framework</a></li>
+    <li><a href="/frontend/browser/1_safe.html" class="nav-link">browser</a></li>
+    <li><a href="/frontend/important/1_conclude.html" class="nav-link">conclude</a></li>
+  </ul>
+</li>
+  
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">后端</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/backend/node/note.html" class="nav-link">node</a></li>
+    <li><a href="/backend/http/1_http.html" class="nav-link">http</a></li>
+    <li><a href="/backend/java/core.html" class="nav-link">java</a></li>
+    <li><a href="/backend/database/1_mysql.html" class="nav-link">database</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">读书</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/books/memory/1_利玛窦的记忆宫殿.html" class="nav-link">记忆学</a></li>
+    <li><a href="/books/computer/1_构建高性能web网站.html" class="nav-link">计算机</a></li>
+    <li><a href="/books/history/资治通鉴/1_周记一.html" class="nav-link">历史</a></li>
+    <li><a href="/books/economics/1_国富论.html" class="nav-link">经济</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">关于我</a>
+  <span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/person/introduction.html " class="nav-link">介绍</a></li>
+    <li><a href="/person/ideas/ideas.html " class="nav-link">灵感</a></li>
+    <li><a href="/person/up.html " class="nav-link">提升</a></li>
+    <li><a href="/person/todolist.html " class="nav-link">任务列表</a></li>
+    <li><a href="/person/manage.html " class="nav-link">团队管理</a></li>
+  </ul>
+</li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="content software with-sidebar ">
+  <ul class="menu-root">
+  
+</ul>
+  
+    <h1>导论</h1>
+  
+  <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p><strong>软件工程就是多人有计划完成一项任务的活动，它强调：目的、计划、步骤，它用来解决软件危机。</strong></p>
+<h3 id="和建筑工程的对比"><a href="#和建筑工程的对比" class="headerlink" title="和建筑工程的对比"></a>和建筑工程的对比</h3><ul>
+<li>兴建一座高楼：预算、画设计图、施工、质检、销售、入住使用</li>
+<li>创造一部软件产品：可行性分析、需求分析、详细设计、概要设计、编码、测试、销售、安装使用</li>
+</ul>
+<h3 id="策略"><a href="#策略" class="headerlink" title="策略"></a>策略</h3><ul>
+<li>分而治之</li>
+<li>复用</li>
+<li>折衷优化</li>
+<li>检验并保证质量</li>
+</ul>
+<h3 id="发展与变化"><a href="#发展与变化" class="headerlink" title="发展与变化"></a>发展与变化</h3><ul>
+<li>用户要求：规模扩大，质量要求提高</li>
+<li>技术：新的理念、方法、工具</li>
+<li>队伍：单人、小组到大规模，稳定、相对稳定到全员流动</li>
+</ul>
+<h3 id="应对变化"><a href="#应对变化" class="headerlink" title="应对变化"></a>应对变化</h3><ul>
+<li>市场化：由个人爱好行为转变为企业行为，需要大量的投资、大量的人力，并且要按照市场规律来运作</li>
+<li>知本化：要求技术的积累、模块的积累和成果的积累</li>
+<li>开发过程的规范化：应对需求多变，人员流动</li>
+<li>标准化：能力成熟度，质量控制</li>
+</ul>
+<h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><ul>
+<li>提高软件的质量和生产率，最终实现合格的软件</li>
+<li>质量是软件需求方最关心的问题</li>
+<li>生产率是软件供应方最关心的问题</li>
+</ul>
+<h3 id="四项基本原则"><a href="#四项基本原则" class="headerlink" title="四项基本原则"></a>四项基本原则</h3><ul>
+<li>选取适宜开发范型</li>
+<li>采用合适的设计方法</li>
+<li>提供高质量的工程支持</li>
+<li>重视开发过程的管理</li>
+</ul>
+<h3 id="七条基本准则"><a href="#七条基本准则" class="headerlink" title="七条基本准则"></a>七条基本准则</h3><ul>
+<li>生命周期计划</li>
+<li>阶段评审</li>
+<li>变更控制</li>
+<li>改进程序设计技术</li>
+<li>控制人员规模</li>
+<li>定义评审</li>
+<li>不断改进软件工程</li>
+</ul>
+<h2 id="要素"><a href="#要素" class="headerlink" title="要素"></a>要素</h2><ul>
+<li>方法：软件工程方法为软件开发提供了“如何做”的技术，是完成软件工程项目的技术手段</li>
+<li>工具：软件工具是在开发软件的活动中智力和体力的扩展和延伸，为软件工程方法提供了自动的或半自动的软件支撑环境</li>
+<li>过程：软件工程的过程则是将软件工程的方法和工具综合起来以达到合理、及时地进行计算机软件开发的目的</li>
+</ul>
+<h3 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h3><ul>
+<li>人员管理</li>
+<li>项目管理</li>
+<li>过程管理</li>
+</ul>
+<h2 id="瀑布模型"><a href="#瀑布模型" class="headerlink" title="瀑布模型"></a>瀑布模型</h2><ul>
+<li>将软件生命周期的各项活动顺序进行，形如瀑布流水，最终得到软件产品</li>
+<li>它是最早的软件工程模型，是其他所有现代模型的基础，从上到下分为：<ul>
+<li>可行性分析 -&gt; 可行性研究报告</li>
+<li>需求分析 -&gt; 需求说明书</li>
+<li>概要设计 -&gt; 设计文档</li>
+<li>详细设计 -&gt; 设计文档</li>
+<li>编码 -&gt; 程序</li>
+<li>测试 -&gt; 测试报告</li>
+<li>部署 -&gt; 部署文档</li>
+<li>维护 -&gt; 新功能，修复点记录</li>
+</ul>
+</li>
+</ul>
+<h3 id="阶段任务、结果及人员"><a href="#阶段任务、结果及人员" class="headerlink" title="阶段任务、结果及人员"></a>阶段任务、结果及人员</h3><table>
+<thead>
+<tr>
+<th></th>
+<th>阶段</th>
+<th>基本任务</th>
+<th>工作结果</th>
+<th>参加者</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>计划期</td>
+<td>可行性研究与计划</td>
+<td>研究开发该项目的可行性</td>
+<td>可行性研究报告</td>
+<td>用户、高级程序员</td>
+</tr>
+<tr>
+<td>开发期</td>
+<td>需求分析</td>
+<td>理解和表达用户的要求</td>
+<td>要求说明书</td>
+<td>用户、高级程序员</td>
+</tr>
+<tr>
+<td></td>
+<td>设计</td>
+<td>建立系统的结构</td>
+<td>模块、数据说明书</td>
+<td>用户、高级程序员</td>
+</tr>
+<tr>
+<td></td>
+<td>编程</td>
+<td>编写程序</td>
+<td>程序</td>
+<td>高级程序员、初级程序员</td>
+</tr>
+<tr>
+<td></td>
+<td>测试</td>
+<td>发现错误和排除错误</td>
+<td>测试报告</td>
+<td>另一独立的部门</td>
+</tr>
+<tr>
+<td>运行期</td>
+<td>运行和维护</td>
+<td>维护</td>
+<td>改进的系统</td>
+<td>用户、高级程序员</td>
+</tr>
+</tbody>
+</table>
+<h3 id="特征"><a href="#特征" class="headerlink" title="特征"></a>特征</h3><ul>
+<li>从上一项活动接受该项活动的工作对象，作为输入</li>
+<li>利用这一输入实施该项活动应完成的内容</li>
+<li>给出该项活动的工作结果，作为输出传给下一项活动</li>
+<li>对该项活动实施的工作进行评审，若其工作得到确认，则继续下一项活动，否则返回前项，甚至更前项的活动进行返工</li>
+</ul>
+<h3 id="各个阶段的概述"><a href="#各个阶段的概述" class="headerlink" title="各个阶段的概述"></a>各个阶段的概述</h3><ul>
+<li>可行性分析：做还是不做</li>
+<li>需求分析：都有什么功能</li>
+<li>概要设计：共有多少子功能</li>
+<li>详细设计：子功能怎么实现</li>
+<li>编码：子功能实现了吗</li>
+<li>测试：功能完备吗</li>
+<li>部署：需要多少设备和软件的支持</li>
+<li>维护：软件运行的正常吗</li>
+</ul>
+<h3 id="可行性分析"><a href="#可行性分析" class="headerlink" title="可行性分析"></a>可行性分析</h3><ul>
+<li>经济</li>
+<li>技术</li>
+<li>人才</li>
+<li>社会环境</li>
+</ul>
+<h3 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h3><ul>
+<li><p>需求开发</p>
+<ul>
+<li><p>问题获取</p>
+<ul>
+<li>业务需求</li>
+<li>用户需求</li>
+<li>功能需求</li>
+</ul>
+</li>
+<li><p>分析</p>
+<ul>
+<li>编写规格说明</li>
+<li>验证</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>需求管理</p>
+<ul>
+<li>变更控制</li>
+<li>版本控制</li>
+<li>需求跟踪</li>
+<li>需求状态跟踪</li>
+</ul>
+</li>
+</ul>
+<h3 id="概要设计"><a href="#概要设计" class="headerlink" title="概要设计"></a>概要设计</h3><ul>
+<li>提供了多少子功能</li>
+<li>面向对象分析（OOA）</li>
+</ul>
+<h3 id="详细设计"><a href="#详细设计" class="headerlink" title="详细设计"></a>详细设计</h3><ul>
+<li>子功能如何实现</li>
+<li>面向对象设计（OOD）</li>
+</ul>
+<h3 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h3><ul>
+<li>子功能是否实现</li>
+<li>程序员严格按照规范编码</li>
+</ul>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><ul>
+<li>单元测试</li>
+<li>系统测试</li>
+<li>用户测试</li>
+</ul>
+<h3 id="部署要求"><a href="#部署要求" class="headerlink" title="部署要求"></a>部署要求</h3><ul>
+<li>增强自动化程度，用ant等工具</li>
+<li>培训最终用户</li>
+<li>要有详细的计划</li>
+<li>记录详细的过程数据</li>
+<li>及时反馈软件兼容性缺陷</li>
+</ul>
+<h3 id="维护"><a href="#维护" class="headerlink" title="维护"></a>维护</h3><ul>
+<li>纠错性维护<ul>
+<li>改正软件漏洞、发布补丁程序</li>
+</ul>
+</li>
+<li>适应性维护<ul>
+<li>使得软件在新的硬件、操作系统、编译器和解释器下运行</li>
+</ul>
+</li>
+<li>完善性维护<ul>
+<li>增加新功能、更改原有的设计等</li>
+</ul>
+</li>
+</ul>
+<h3 id="影响维护成本的因素"><a href="#影响维护成本的因素" class="headerlink" title="影响维护成本的因素"></a>影响维护成本的因素</h3><ul>
+<li>非技术因素<ul>
+<li>需求的复杂性</li>
+<li>开发人员的岗位稳定性</li>
+<li>软件的生命周期</li>
+<li>外部环境的变化，例如财政政策影响财务软件</li>
+</ul>
+</li>
+<li>技术因素<ul>
+<li>软件运行环境</li>
+<li>编程语言</li>
+<li>编程风格</li>
+<li>测试工作的有效性</li>
+<li>文档的质量</li>
+</ul>
+</li>
+</ul>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ul>
+<li>缺乏灵活性，不能适应用户需求的改变</li>
+<li>开始阶段的小错误被逐级放大，可能导致软件产品报废</li>
+<li>返回上一级的开发需要十分高昂的代价</li>
+<li>随着软件规模和复杂性的增加，软件产品成功的机率大幅下降</li>
+</ul>
+<h2 id="演化模型"><a href="#演化模型" class="headerlink" title="演化模型"></a>演化模型</h2><ul>
+<li>随着时间的推延，团队分为几个阶段的瀑布开发</li>
+</ul>
+<h2 id="迭代模型"><a href="#迭代模型" class="headerlink" title="迭代模型"></a>迭代模型</h2><ul>
+<li>迭代包括产生产品发布(稳定、可执行的产品版本)的全部开发活动和要使用该发布必需的所有其他外围元素。</li>
+<li>生命周期是基于对一个系统进行连续的扩充和精化，需要经历若干个开发周期，每个周期都需要经历分析、设计、实现和测试阶段。每个开发周期只针对比较小的一部分需求</li>
+<li>在某种程度上，开发迭代是一次完整地经过所有工作流程的过程：(至少包括)需求工作流程、分析设计工作流程、实施工 作流程和测试工作流程;</li>
+<li>类似小型的瀑布式项目。RUP认为，所有的阶段(需求及其它) 都可以细分为迭代。每一次的迭代都会产生一个可以发布的产品，这个产品是最终产品的一个子集。</li>
+</ul>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ul>
+<li>降低了在一个增量上的开支风险。如果开发人员重复某个迭代，那么损失只 是这一个开发有误的迭代的花费。</li>
+<li>降低了产品无法按照既定进度进入市场的风险。通过在开发早期就确定风险，可以尽早来解决而不至于在开发后期匆匆忙忙。</li>
+<li>加快了整个开发工作的进度。因为开发人员清楚问题的焦点所在，他们的工作会更有效率。</li>
+<li>由于用户的需求并不能在一开始就作出完全的界定，它们通常是在后续阶段中不断细化的。因此，迭代过程这种模式使适应需求的变化会更容易些。</li>
+</ul>
+<h2 id="迭代模型和瀑布模型的差别"><a href="#迭代模型和瀑布模型的差别" class="headerlink" title="迭代模型和瀑布模型的差别"></a>迭代模型和瀑布模型的差别</h2><ul>
+<li>最大的差别在于风险的暴露时间上</li>
+<li>任何项目都会涉及到一定的风险，如果能在生命周期中尽早确保避免了风险，那么计划自然会更趋精确</li>
+<li>有许多风险直到已准备集成系统时才被发现。不管开发团队经验如何，都绝不可能预知所有的风险</li>
+</ul>
+<h2 id="统一软件过程RUP模型"><a href="#统一软件过程RUP模型" class="headerlink" title="统一软件过程RUP模型"></a>统一软件过程RUP模型</h2><h3 id="软件生命周期"><a href="#软件生命周期" class="headerlink" title="软件生命周期"></a>软件生命周期</h3><ul>
+<li>初始阶段：目标是为系统建立商业案例并确定项目的边界</li>
+<li>细化阶段：目标是分析问题领域，建立健全的体系结构基础，编制项目计划，淘汰项目中最高风险的元素</li>
+<li>构造阶段：所有剩余的构件和应用程序功能被开发并集成为产品，所有的功能被详细测试</li>
+<li>交付阶段：重点是确保软件对最终用户是可用的</li>
+</ul>
+<blockquote>
+<p>每个阶段结束于一个主要的里程碑：每个阶段本质上是两个里程碑之间的时间跨度。在每个阶段的结尾执行一次评估以确定这个阶段的目标是否已经满足。如果评估结果令人满意的话，可以允许项目进入下个阶段</p>
+</blockquote>
+<h3 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h3><ul>
+<li>优点<ul>
+<li>提高了团队生产力，在迭代的开发过程、需求管理、基于组件的体系结构、可视化软件建模、验证软件质量及控制软件变更等方面，针对所有关键的开发活动为每个开发成员提供了必要的准则、模版和工具指导，并确保全体成员共享相同的知识基础</li>
+<li>建立了简洁和清晰的过程结构，为开发过程提供了较大的通用性</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>RUP只是一个开发过程，并没有涵盖软件过程的全部内容，例如它缺少关于软件运行和支持等方面的内容</li>
+<li>没有支持多项目的开发结构，这在一定程度上降低了在开发组织内大范围实现重用的可能性</li>
+</ul>
+</li>
+</ul>
+<h2 id="软件项目管理"><a href="#软件项目管理" class="headerlink" title="软件项目管理"></a>软件项目管理</h2><ul>
+<li>阶段：制定项目计划、管理和跟踪项目、结束项目</li>
+<li>三角形：时间、费用、范围</li>
+<li>轮廓定义：目标、前提、限制、范围</li>
+<li>计划要素：任务、任务相关性、工期、成本、资源</li>
+<li>任务相关性<ul>
+<li>两个链接任务之间的关系，通过完成日期和开始日期之间的相关性进行链接，有四种任务相关性类型：“完成-开始”（FS）、“开始-开始”（SS）、“完成-完成”（FF）、“开始-完成”（SF）</li>
+<li>当关键任务完成或另一系列中的任务发生延迟时，关键路径就会更改</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>任务相关性</th>
+<th>描述</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FS</td>
+<td>只有在任务A完成后任务B才能开始</td>
+<td>地基要先建好才能盖房子</td>
+</tr>
+<tr>
+<td>SS</td>
+<td>只有在任务A开始后任务B才能开始</td>
+<td>所有的人员都到齐后会议才能开始</td>
+</tr>
+<tr>
+<td>FF</td>
+<td>只有在任务A完成后任务B才能完成</td>
+<td>所有的资料全部准备齐全后才能结案</td>
+</tr>
+<tr>
+<td>SF</td>
+<td>只有在任务A开始后任务B才能完成</td>
+<td>站岗时，下一个站岗的人来了，原本站岗的人才能回去</td>
+</tr>
+</tbody>
+</table>
+<h3 id="关键路径"><a href="#关键路径" class="headerlink" title="关键路径"></a>关键路径</h3><ul>
+<li>贯穿整个项目的一条路径，表明在限定的时间成功完成项目涉及的各任务间的依赖关系</li>
+<li>调整关键路径上任务的时间进度将会影响整个项目的交付时间</li>
+<li>关键路径方法图是一种网络图，用于项目的进度控制和协调项目的活动和事件</li>
+</ul>
+<h3 id="最早-晚完成日期"><a href="#最早-晚完成日期" class="headerlink" title="最早/晚完成日期"></a>最早/晚完成日期</h3><ul>
+<li>最早完成日期：根据前置任务和后续任务的最早完成日期、其他限制以及任何调配延迟，任务可能完成的最早日期<ul>
+<li>即任务在开始日期和预计工期的基础上能够最早完成的日期</li>
+</ul>
+</li>
+<li>最晚完成日期：在不延迟项目完成时间的情况下，任务可以完成的最晚日期。该日期基于任务最晚开始日期、前置任务和后续任务的最晚开始和完成日期及其他限制<ul>
+<li>即任务在不延迟项目完成时间的情况下能够完成的日期</li>
+</ul>
+</li>
+</ul>
+<h3 id="关键任务-时差"><a href="#关键任务-时差" class="headerlink" title="关键任务/时差"></a>关键任务/时差</h3><ul>
+<li>关键任务是指一旦延迟就会影响项目完成日期的任务</li>
+<li>时差：在不影响其他任务或项目完成日期的情况下，任务可以落后的时间量<ul>
+<li>可用时差是在不延迟其他任务的情况下，任务可以落后的时间量</li>
+<li>总时差是在不延迟项目的情况下，任务可以落后的总时差</li>
+</ul>
+</li>
+<li>在典型的项目中，很多任务都有时差，因此即使延迟一小段时间也不会影响其他任务或项目完成日期</li>
+<li>满足成为关键任务的条件<ul>
+<li>该任务没有时差</li>
+<li>该任务有“必须开始于”（MSO）或“必须完成于”（MFO）的日期限制，也可以是非弹性的（指定了特定日期）</li>
+<li>在一个从开始日期排定的项目中，该任务有“越晚越好”（ALAP）的限制</li>
+<li>在一个从完成日期排定的项目中，该任务有“越早越好”（ASAP）的限制</li>
+<li>该任务的完成日期等同于或超出期限日期</li>
+<li>当一项任务标记为已完成时，就不再是关键任务，因为它不再影响后续任务的完成或项目完成日期</li>
+</ul>
+</li>
+</ul>
+<h3 id="如何缩短关键路径"><a href="#如何缩短关键路径" class="headerlink" title="如何缩短关键路径"></a>如何缩短关键路径</h3><ul>
+<li>冲击：在不更改任务关系的情况下缩短项目的总体工期，对项目进行冲击通常需要为任务分配额外的资源</li>
+<li>缩短关键路径上任务的工期或工时</li>
+<li>更改任务限制，以增加日程排定的灵活性</li>
+<li>将关键任务分解为多个由不同资源同时进行的小任务</li>
+<li>更改任务相关性，以增加日程排定的灵活性</li>
+<li>在适用的相关任务间设置前置重叠时间</li>
+<li>排定加班工时</li>
+<li>为关键路径上的任务分配额外资源</li>
+</ul>
+<h2 id="MSF"><a href="#MSF" class="headerlink" title="MSF"></a>MSF</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p><strong>指微软解决方案框架，描述了微软公司从众多大小软件产品研发实践中总结的管理软件开发过程的经验</strong></p>
+<h3 id="核心"><a href="#核心" class="headerlink" title="核心"></a>核心</h3><ul>
+<li>组队模型：资源配置</li>
+<li>过程管理模型：过程模型</li>
+<li>应用程序模型：应用程序模型</li>
+</ul>
+<h3 id="组队原则"><a href="#组队原则" class="headerlink" title="组队原则"></a>组队原则</h3><ul>
+<li>清晰的责任，共同的职责</li>
+<li>赋予小组成员权力</li>
+<li>聚焦业务价值</li>
+<li>共同的项目设想</li>
+<li>保持灵活，预测变化</li>
+<li>推动开放式沟通</li>
+</ul>
+<h3 id="关键概念"><a href="#关键概念" class="headerlink" title="关键概念"></a>关键概念</h3><ul>
+<li>同级小组</li>
+<li>以客户为中心</li>
+<li>产品理念体系</li>
+<li>零缺陷</li>
+<li>乐意学习</li>
+<li>有动力的小组有效率</li>
+</ul>
+<h3 id="成功的做法"><a href="#成功的做法" class="headerlink" title="成功的做法"></a>成功的做法</h3><ul>
+<li>小型的多学科小组</li>
+<li>一起工作</li>
+<li>全员参与设计</li>
+</ul>
+<h3 id="角色和目标"><a href="#角色和目标" class="headerlink" title="角色和目标"></a>角色和目标</h3><table>
+<thead>
+<tr>
+<th>目标</th>
+<th>组队角色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>满足客户</td>
+<td>产品经理</td>
+</tr>
+<tr>
+<td>提高用户效率</td>
+<td>用户体验</td>
+</tr>
+<tr>
+<td>根据规格说明创建解决方案</td>
+<td>开发</td>
+</tr>
+<tr>
+<td>确保产品质量事宜被是被并处理</td>
+<td>测试</td>
+</tr>
+<tr>
+<td>交付满足项目约束的解决方案</td>
+<td>程序管理</td>
+</tr>
+<tr>
+<td>进行平滑的部署及日常运行</td>
+<td>发布经理</td>
+</tr>
+</tbody>
+</table>
+<p><strong>这些角色可合并</strong></p>
+<h3 id="构想阶段"><a href="#构想阶段" class="headerlink" title="构想阶段"></a>构想阶段</h3><ul>
+<li>定义初步的商业需求（持续性工作）</li>
+<li>风险管理</li>
+<li>定义项目结构</li>
+<li>研究和收集设想<ul>
+<li>进行初步的用户访问</li>
+<li>定义使用场合</li>
+<li>确立设计目标</li>
+<li>制定初步的解决方案概念</li>
+</ul>
+</li>
+<li>制定初步的项目范围<ul>
+<li>定义关键的成功因素</li>
+<li>定义衡量成功的标准</li>
+<li>定义主要的可交付结果（初步）</li>
+<li>确定构想/范围</li>
+</ul>
+</li>
+</ul>
+<h3 id="设计阶段"><a href="#设计阶段" class="headerlink" title="设计阶段"></a>设计阶段</h3><ul>
+<li>创建功能描述</li>
+<li>开发计划</li>
+<li>测试计划</li>
+<li>用户培训计划</li>
+<li>后勤计划</li>
+<li>产品管理计划</li>
+<li>程序管理计划</li>
+<li>合并项目计划</li>
+</ul>
+<h3 id="开发阶段"><a href="#开发阶段" class="headerlink" title="开发阶段"></a>开发阶段</h3><ul>
+<li>迭代开发一到多次的内部发布版<ul>
+<li>开发目标组件</li>
+<li>测试单个组件</li>
+<li>测试组装为整体的应用程序</li>
+</ul>
+</li>
+<li>功能说明冻结</li>
+<li>最后的特性开发</li>
+<li>最后的后勤开发</li>
+<li>最后的性能支持开发</li>
+</ul>
+<h3 id="稳定阶段"><a href="#稳定阶段" class="headerlink" title="稳定阶段"></a>稳定阶段</h3><ul>
+<li>发布一到多个测试版，包括阿尔法测试版和贝塔测试版</li>
+<li>收集错误</li>
+<li>改正高优先级的错误，发布无错误版</li>
+<li>进行最后的错误分类</li>
+<li>黄金发布版</li>
+</ul>
+
+  <div class="guide-links">
+    
+    
+    
+    
+      <span style="float: right;"><a href="/software/bestpractice.html">最佳实践</a> →</span>
+    
+  </div>
+  <div class="footer">
+    发现错误？想参与编辑？
+    <a href="https://github.com/mallow-fight/blog/tree/master/source/software/engineering.md" target="_blank">
+      在 GitHub 上编辑此页！
+    </a>
+    
+    <span>更新于：2018-09-13 14:09:23</span>
+  </div>
+</div>
+
+
+<div id="disqus_thread"></div>
+<script>
+  // it seems slowly page, so i annotation it.
+  // disqus评论系统
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  var disqus_config = function () {
+    this.page.url = 'https://mallow-fight.github.io/';  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = 'https://mallow-fight.github.io/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://mallow-blog.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    <script src="/js/smooth-scroll.min.js"></script>
+  
+  <!-- main custom script for sidebars, version selects etc. -->
+  <script src="/js/css.escape.js"></script>
+  <script src="/js/common.js"></script>
+  <!-- search -->
+  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/search.css">
+  <script src="/js/docsearch.js"></script>
+  <script>
+  [
+    '#search-query-nav',
+    '#search-query-sidebar',
+    '#search-query-menu'
+  ].forEach(function (selector) {
+    if (!document.querySelector(selector)) return
+    docsearch({
+      appId: 'FKZQZEMOI4',
+      apiKey: '82fdcfac2e888595cb2807aa60aaad58',
+      indexName: 'prod_blog',
+      inputSelector: selector
+    })
+  })
+  </script>
+  <!-- fastclick -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+</body>
+</html>
