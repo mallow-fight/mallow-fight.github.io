@@ -332,6 +332,11 @@
 </ul>
 </li>
 </ul>
+<h2 id="exports的用法"><a href="#exports的用法" class="headerlink" title="exports的用法"></a>exports的用法</h2><h3 id="当成一个对象使用"><a href="#当成一个对象使用" class="headerlink" title="当成一个对象使用"></a>当成一个对象使用</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// test.js</span></span><br><span class="line">exports.test1 = <span class="string">'i am test1'</span></span><br><span class="line">exports.test2 = <span class="function"><span class="params">()</span> =&gt;</span> exports.test3 = <span class="string">'i am test3'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> test = <span class="built_in">require</span>(<span class="string">'test.js'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(test) <span class="comment">// &#123;test1: 'i am test1', test2: [function]&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(test.test2()) <span class="comment">// i am test3</span></span><br><span class="line"><span class="built_in">console</span>.log(test) <span class="comment">// &#123;test1: 'i am test1', test2: [function], test3: 'i am test3'&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="如何使用node注册终端指令"><a href="#如何使用node注册终端指令" class="headerlink" title="如何使用node注册终端指令"></a>如何使用node注册终端指令</h2><ul>
+<li><a href="https://www.npmjs.com/package/v8-compile-cache" target="_blank" rel="noopener">阮一峰</a></li>
+</ul>
 
   <div class="guide-links">
     
@@ -347,7 +352,7 @@
       在 GitHub 上编辑此页！
     </a>
     
-    <span>更新于：2018-09-13 14:09:20</span>
+    <span>更新于：2018-09-19 11:09:47</span>
   </div>
 </div>
 

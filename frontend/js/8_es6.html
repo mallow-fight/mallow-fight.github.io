@@ -1,0 +1,466 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>es6 - mallow</title>
+  <meta charset="utf-8">
+  <meta name="description" content="mallow's blog.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="es6 — mallow">
+  <meta property="og:description" content="mallow's blog.">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120215204-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-120215204-1');
+  </script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="icon" href="/images/logo.png" type="image/png">
+  <!-- main page styles -->
+  <link rel="stylesheet" href="/css/page.css">
+  <!-- import vue from there so that you can use vue in markdown -->
+  <script src="/js/vue.min.js"></script>
+  <script>window.PAGE_TYPE = "js"</script>
+</head>
+<body class="docs">
+  <div id="mobile-bar" >
+    <a class="menu-button"></a>
+    <a class="logo" href="/"></a>
+  </div>
+  <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logo.png">
+    <span>Mallow</span>
+  </a>
+  <ul id="nav">
+    <li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">软件工程化</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/software/engineering.html" class="nav-link">概念&实践</a></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">算法</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/arithmetic/1_lintcode.html" class="nav-link">概念&实践</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">前端</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/frontend/skeleton/1_skeleton.html" class="nav-link">skeleton</a></li>
+    <li><a href="/frontend/html/1_define.html" class="nav-link">html</a></li>
+    <li><a href="/frontend/css/1_define.html" class="nav-link">css</a></li>
+    <li><a href="/frontend/js/1_enter&going.html" class="nav-link">javascript</a></li>
+    <li><a href="/frontend/framework/1_vue.html" class="nav-link">framework</a></li>
+    <li><a href="/frontend/browser/1_safe.html" class="nav-link">browser</a></li>
+    <li><a href="/frontend/important/1_conclude.html" class="nav-link">conclude</a></li>
+  </ul>
+</li>
+  
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">后端</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/backend/node/note.html" class="nav-link">node</a></li>
+    <li><a href="/backend/http/1_http.html" class="nav-link">http</a></li>
+    <li><a href="/backend/java/core.html" class="nav-link">java</a></li>
+    <li><a href="/backend/database/1_mysql.html" class="nav-link">database</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">读书</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/books/memory/1_利玛窦的记忆宫殿.html" class="nav-link">记忆学</a></li>
+    <li><a href="/books/computer/1_构建高性能web网站.html" class="nav-link">计算机</a></li>
+    <li><a href="/books/history/资治通鉴/1_周记一.html" class="nav-link">历史</a></li>
+    <li><a href="/books/economics/1_国富论.html" class="nav-link">经济</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">关于我</a>
+  <span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/person/introduction.html " class="nav-link">介绍</a></li>
+    <li><a href="/person/ideas/ideas.html " class="nav-link">灵感</a></li>
+    <li><a href="/person/up.html " class="nav-link">提升</a></li>
+    <li><a href="/person/todolist.html " class="nav-link">任务列表</a></li>
+    <li><a href="/person/manage.html " class="nav-link">团队管理</a></li>
+  </ul>
+</li>
+  </ul>
+</div>
+  
+    <div id="main" class="fix-sidebar">
+        <div class="guide-links">
+  
+  
+  
+  
+    <span style="float: right; margin-right: 30px;">← <a style="color: goldenrod;" href="/frontend/js/7_questions.html">问题</a></span>
+  
+</div>
+
+  <div class="sidebar">
+  <div class="sidebar-inner">
+    <h3>当前位置：js</h3>
+    <div class="list">
+      <ul class="menu-root">
+  
+    
+      <li>
+        <a href="/frontend/js/1_enter&going.html" class="sidebar-link">
+          入门与进阶
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/frontend/js/2_types&grammar.html" class="sidebar-link">
+          类型和语法
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/frontend/js/3_scope&closures.html" class="sidebar-link">
+          作用域与闭包
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/frontend/js/4_this&prototype.html" class="sidebar-link">
+          上下文和对象原型
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/frontend/js/5_async&performance.html" class="sidebar-link">
+          异步和性能
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/frontend/js/6_note.html" class="sidebar-link">
+          笔记
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/frontend/js/7_questions.html" class="sidebar-link">
+          问题
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/frontend/js/8_es6.html" class="sidebar-link current">
+          es6
+        </a>
+      </li>
+      
+</ul>
+    </div>
+    <h3>浏览其它</h3>
+    <ul class="main-menu">
+      <li>
+  <form id="search-form">
+    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">软件工程化</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/software/engineering.html" class="nav-link">概念&实践</a></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">算法</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/arithmetic/1_lintcode.html" class="nav-link">概念&实践</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">前端</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/frontend/skeleton/1_skeleton.html" class="nav-link">skeleton</a></li>
+    <li><a href="/frontend/html/1_define.html" class="nav-link">html</a></li>
+    <li><a href="/frontend/css/1_define.html" class="nav-link">css</a></li>
+    <li><a href="/frontend/js/1_enter&going.html" class="nav-link">javascript</a></li>
+    <li><a href="/frontend/framework/1_vue.html" class="nav-link">framework</a></li>
+    <li><a href="/frontend/browser/1_safe.html" class="nav-link">browser</a></li>
+    <li><a href="/frontend/important/1_conclude.html" class="nav-link">conclude</a></li>
+  </ul>
+</li>
+  
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">后端</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/backend/node/note.html" class="nav-link">node</a></li>
+    <li><a href="/backend/http/1_http.html" class="nav-link">http</a></li>
+    <li><a href="/backend/java/core.html" class="nav-link">java</a></li>
+    <li><a href="/backend/database/1_mysql.html" class="nav-link">database</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">读书</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/books/memory/1_利玛窦的记忆宫殿.html" class="nav-link">记忆学</a></li>
+    <li><a href="/books/computer/1_构建高性能web网站.html" class="nav-link">计算机</a></li>
+    <li><a href="/books/history/资治通鉴/1_周记一.html" class="nav-link">历史</a></li>
+    <li><a href="/books/economics/1_国富论.html" class="nav-link">经济</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">关于我</a>
+  <span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/person/introduction.html " class="nav-link">介绍</a></li>
+    <li><a href="/person/ideas/ideas.html " class="nav-link">灵感</a></li>
+    <li><a href="/person/up.html " class="nav-link">提升</a></li>
+    <li><a href="/person/todolist.html " class="nav-link">任务列表</a></li>
+    <li><a href="/person/manage.html " class="nav-link">团队管理</a></li>
+  </ul>
+</li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="content js with-sidebar ">
+  <ul class="menu-root">
+  
+</ul>
+  
+    <h1>es6</h1>
+  
+  <h2 id="let和const"><a href="#let和const" class="headerlink" title="let和const"></a>let和const</h2><h3 id="let"><a href="#let" class="headerlink" title="let"></a>let</h3><ul>
+<li><p>let所声明的变量，只在let命令所在的代码块内有效</p>
+</li>
+<li><p>for循环</p>
+<ul>
+<li><p>如果使用var声明i，由于全局只有一个变量i，会导致每次循环引用的变量i都是同一个，这个仅限于循环内部有函数引用或者有延时操作，正常函数内部打印i还是ok的，例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = []</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">  a[i] = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(i) <span class="comment">// 0 ~ 9</span></span><br><span class="line">&#125;</span><br><span class="line">a[<span class="number">9</span>]() <span class="comment">// 10</span></span><br><span class="line">i <span class="comment">// 10：因为要做 i &lt; 10 的判断，所以i肯定是10</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果使用let，声明的变量仅在块级作用域内有效，每一次循环都是一个新的变量。js引擎内部会记住上一轮循环的值，初始化本轮变量i时，就是在上一轮循环的基础上进行计算</p>
+</li>
+<li>特殊之处：设置循环变量的部分是一个父作用域，而循环体内部是一个单独的子作用域<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  <span class="comment">// console.log(i) i is not defined</span></span><br><span class="line">  <span class="keyword">let</span> i = <span class="string">'mallow'</span></span><br><span class="line">  <span class="built_in">console</span>.log(i) <span class="comment">// mallow</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>不存在变量提升：使用var会发生变量提升的现象，值为undefined，let改变了语法行为，它所声明的对象一定要在声明后使用</p>
+</li>
+<li><p>暂时性死区：只要块级作用域内存在let或const命令，它所声明的变量就绑定了这个区域，不再受外部的影响，同上面的for循环特殊之处</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> tmp = <span class="number">123</span></span><br><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">  tmp = <span class="string">'abc'</span> <span class="comment">// ReferenceError: tmp is not defined</span></span><br><span class="line">  <span class="keyword">let</span> tmp</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>不允许重复声明</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params">arg</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> arg <span class="comment">// SyntaxError: Identifier 'arg' has already been declared</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params">arg</span>) </span>&#123;</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">let</span> arg</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h3><ul>
+<li><p>es5只有全局作用域和函数作用域，没有块级作用域，带来的不合理场景：</p>
+<ul>
+<li><p>内层变量可能会覆盖外层变量：变量提升导致的</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> tmp = <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(tmp)</span><br><span class="line">  <span class="keyword">if</span>(<span class="literal">false</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> tmp = <span class="string">'hello world'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">f()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用来计数的循环变量泄漏为全局变量</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">'hello'</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; s.length; i++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(s[i])</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(i)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>es6的块级作用域</p>
+<ul>
+<li>let实际上为js新增了块级作用域</li>
+<li>允许块级作用域的任意嵌套</li>
+<li>内层作用域可以定义外层作用域的同名变量</li>
+<li>块级作用域的出现，实际上使得广泛应用的立即执行函数表达式（IIFE）不再必要了<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// IIFE 写法</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> tmp = <span class="string">'xxx'</span></span><br><span class="line">&#125;())</span><br><span class="line"></span><br><span class="line"><span class="comment">// 块级作用域写法</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">let</span> tmp = <span class="string">'xxx'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="块级作用域和函数声明"><a href="#块级作用域和函数声明" class="headerlink" title="块级作用域和函数声明"></a>块级作用域和函数声明</h3><ul>
+<li>考虑到环境导致的行为差异太大，应该避免在块级作用域内声明函数。如果确实需要，也应该写成函数表达式，而不是函数声明语句</li>
+</ul>
+<h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3><ul>
+<li><p>声明一个只读的常量，一旦声明，值就不能改变</p>
+</li>
+<li><p>作用域和let相同：只在声明所在的块级作用域内有效</p>
+</li>
+<li><p>声明的常量也不提升，同样存在暂时性死区</p>
+</li>
+<li><p>不可重复声明</p>
+</li>
+</ul>
+<h4 id="本质"><a href="#本质" class="headerlink" title="本质"></a>本质</h4><ul>
+<li><p>const 实际上保证的，并不是变量的值不得改动，而是变量指向的那个内存地址所保存的数据不得改动。</p>
+</li>
+<li><p>对于简单类型的数据（数值、字符串、布尔值），值就保存在变量指向的那个内存地址，因此等同于常量</p>
+</li>
+<li><p>对于复合类型的数据（数组、对象），变量指向的是内存地址，保存的只是一个指向实际数据的指针，const 只能保证这个指针是固定的，至于它指向的数据结构是不是可变的，就完全不能控制了</p>
+<ul>
+<li><p>如果真想将对象冻结，应该使用Object.freeze方法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> foo = <span class="built_in">Object</span>.freeze(&#123;&#125;)</span><br><span class="line"><span class="comment">// 常规模式时，下面一行不起作用</span></span><br><span class="line"><span class="comment">// 严格模式时，该行会报错</span></span><br><span class="line">foo.prop = <span class="number">123</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>除了将对象本身冻结，对象的属性也应该被冻结，如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">freeze</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">Object</span>.freeze(obj)</span><br><span class="line">  <span class="built_in">Object</span>.keys(obj).forEach(<span class="function"><span class="params">key</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> obj[key] === <span class="string">'object'</span>) &#123;</span><br><span class="line">      freeze(obj[key])</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="声明对象的六种方法"><a href="#声明对象的六种方法" class="headerlink" title="声明对象的六种方法"></a>声明对象的六种方法</h3><ul>
+<li>es5声明变量的方法：var、function</li>
+<li>es6：let、const、import、class</li>
+</ul>
+<h3 id="顶层对象的属性"><a href="#顶层对象的属性" class="headerlink" title="顶层对象的属性"></a>顶层对象的属性</h3><ul>
+<li><p>在浏览器环境指的是window对象，在Node指的是global对象。ES5之中，顶层对象的属性和全局变量是等价的</p>
+</li>
+<li><p>ES6为了改变这一点，一方面规定，为了保持兼容性，var命令和function命令声明的全局变量，依旧是顶层对象的属性；另一方面规定：let、const、class命令声明的全局对象，不属于顶层对象的属性。全局变量将逐步和顶层对象的属性脱钩</p>
+</li>
+</ul>
+<h3 id="global对象"><a href="#global对象" class="headerlink" title="global对象"></a>global对象</h3><ul>
+<li>不同环境的global对象不一样，垫片库 system.global 模拟了这个提案，可以在所有环境拿到global</li>
+</ul>
+<h2 id="变量的解构赋值"><a href="#变量的解构赋值" class="headerlink" title="变量的解构赋值"></a>变量的解构赋值</h2><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// before</span></span><br><span class="line"><span class="keyword">let</span> a = <span class="number">1</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">2</span></span><br><span class="line"><span class="keyword">let</span> c = <span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// now</span></span><br><span class="line"><span class="keyword">let</span> [a, b, c] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br></pre></td></tr></table></figure>
+<h4 id="模式匹配"><a href="#模式匹配" class="headerlink" title="模式匹配"></a>模式匹配</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [a, [b, c]] = [<span class="number">1</span>, [<span class="number">2</span>, <span class="number">3</span>]]</span><br><span class="line"><span class="keyword">let</span> [ , , e] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="keyword">let</span> [f, , g] = [<span class="number">1</span>, , <span class="number">3</span>]</span><br><span class="line"><span class="keyword">let</span> [h, ...j] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>] <span class="comment">// j: [2, 3, 4]</span></span><br><span class="line"><span class="keyword">let</span> [x, y, ...z] = [<span class="number">1</span>] <span class="comment">// x: 1; y: undefined; z: []</span></span><br></pre></td></tr></table></figure>
+<h4 id="不完全解构"><a href="#不完全解构" class="headerlink" title="不完全解构"></a>不完全解构</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [x, y] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">x <span class="comment">// 1</span></span><br><span class="line">y <span class="comment">// 2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> [a, [b], d] = [<span class="number">1</span>, [<span class="number">2</span>, <span class="number">3</span>], <span class="number">4</span>]</span><br><span class="line">a <span class="comment">// 1</span></span><br><span class="line">b <span class="comment">// 2</span></span><br><span class="line">d <span class="comment">// 4</span></span><br></pre></td></tr></table></figure>
+<h4 id="不可遍历结构"><a href="#不可遍历结构" class="headerlink" title="不可遍历结构"></a>不可遍历结构</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 报错</span></span><br><span class="line"><span class="keyword">let</span> [foo] = <span class="number">1</span></span><br><span class="line"><span class="keyword">let</span> [foo] = <span class="literal">false</span></span><br><span class="line"><span class="keyword">let</span> [foo] = <span class="literal">NaN</span></span><br><span class="line"><span class="keyword">let</span> [foo] = <span class="literal">undefined</span></span><br><span class="line"><span class="keyword">let</span> [foo] = <span class="literal">null</span></span><br><span class="line"><span class="keyword">let</span> [foo] = &#123;&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Set结构"><a href="#Set结构" class="headerlink" title="Set结构"></a>Set结构</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [x, y, z] = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>])</span><br><span class="line">x <span class="comment">// 'a'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 只要某种数据结构具有Iterator接口，都可以采用数组形式的解构赋值</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">fibs</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> a = <span class="number">0</span></span><br><span class="line">  <span class="keyword">let</span> b = <span class="number">1</span></span><br><span class="line">  <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">yield</span> a; <span class="comment">// 这个地方必须要有分号</span></span><br><span class="line">    [a, b] = [b, a + b];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> [one, two, three, four, five, six] = fibs()</span><br><span class="line">six <span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
+<h4 id="默认值"><a href="#默认值" class="headerlink" title="默认值"></a>默认值</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [foo = <span class="literal">true</span>] = []</span><br><span class="line">foo <span class="comment">// true</span></span><br><span class="line"><span class="keyword">let</span> [x, y = <span class="string">'b'</span>] = [<span class="string">'a'</span>] <span class="comment">// x: a; y: b</span></span><br><span class="line"><span class="keyword">let</span> [x, y = <span class="string">'b'</span>] = [<span class="string">'a'</span>, <span class="literal">undefined</span>] <span class="comment">// x: a; y: b</span></span><br><span class="line"><span class="comment">// 只有undefined，默认值才生效</span></span><br><span class="line"><span class="keyword">let</span> [x = <span class="number">1</span>] = [<span class="literal">null</span>] <span class="comment">// x: null</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 默认值是表达式</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'aaa'</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> [x = f()] = [<span class="number">1</span>] <span class="comment">// 因为x能取到值，所以表达式是惰性求值的，即只有在用到的时候才会求值</span></span><br></pre></td></tr></table></figure>
+<h4 id="引用其他变量"><a href="#引用其他变量" class="headerlink" title="引用其他变量"></a>引用其他变量</h4><blockquote>
+<p>变量必须提前声明</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [x = <span class="number">1</span>, y = x] = [] <span class="comment">// x: 1; y: 1</span></span><br><span class="line"><span class="keyword">let</span> [x = <span class="number">1</span>, y = x] = [<span class="number">2</span>] <span class="comment">// x: 2; y: 2</span></span><br><span class="line"><span class="keyword">let</span> [x = <span class="number">1</span>, y = x] = [<span class="number">1</span>, <span class="number">2</span>] <span class="comment">// x: 1; y: 2</span></span><br><span class="line"><span class="keyword">let</span> [x = y, y = <span class="number">1</span>] = [] <span class="comment">// ReferenceError: y is not defined</span></span><br></pre></td></tr></table></figure>
+<h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><ul>
+<li>数组元素是按次序排列的，变量取值由它的位置决定的；而对象的属性没有次序，变量必须和属性同名，才能取到正确的值<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> &#123;bar, foo, baz&#125; = &#123; <span class="attr">foo</span>: <span class="string">'aaa'</span>, <span class="attr">bar</span>: <span class="string">'bbb'</span> &#125;</span><br><span class="line">foo <span class="comment">// aaa</span></span><br><span class="line">bar <span class="comment">// bbb</span></span><br><span class="line">baz <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="变量名和属性名不一致"><a href="#变量名和属性名不一致" class="headerlink" title="变量名和属性名不一致"></a>变量名和属性名不一致</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> &#123; <span class="attr">foo</span>: baz &#125; = &#123; <span class="attr">foo</span>: <span class="string">'aaa'</span>, <span class="attr">bar</span>: <span class="string">'bbb'</span> &#125;</span><br><span class="line">baz <span class="comment">// 'aaa'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj = &#123; <span class="attr">first</span>: <span class="string">'hello'</span>, <span class="attr">last</span>: <span class="string">'world'</span> &#125;</span><br><span class="line"><span class="keyword">let</span> &#123; <span class="attr">first</span>: f, <span class="attr">last</span>: l &#125; = obj</span><br><span class="line">f <span class="comment">// 'hello'</span></span><br><span class="line">l <span class="comment">// 'world'</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>实际上，对象的解构赋值是下面形式的简写</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> &#123; <span class="attr">foo</span>: foo, <span class="attr">bar</span>: bar &#125; = &#123; <span class="attr">foo</span>: <span class="string">'aaa'</span>, <span class="attr">bar</span>: <span class="string">'bbb'</span> &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>也就是说，是先找到同名属性，然后再赋值给对应的变量。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> &#123; <span class="attr">foo</span>: baz &#125; = &#123; <span class="attr">foo</span>: <span class="string">'aaa'</span>, <span class="attr">bar</span>: <span class="string">'bbb'</span> &#125;</span><br><span class="line">baz <span class="comment">// aaa</span></span><br><span class="line">foo <span class="comment">// error: foo is not defined</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="嵌套结构的对象"><a href="#嵌套结构的对象" class="headerlink" title="嵌套结构的对象"></a>嵌套结构的对象</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">  p: [</span><br><span class="line">    <span class="string">'hello'</span>,</span><br><span class="line">    &#123; <span class="attr">y</span>: <span class="string">'World'</span> &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> &#123; <span class="attr">p</span>: [x, &#123; y &#125;] &#125; = obj</span><br><span class="line">x <span class="comment">// 'Hello'</span></span><br><span class="line">y <span class="comment">// 'World'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 将p作为变量赋值</span></span><br><span class="line"><span class="keyword">let</span> &#123; p, <span class="attr">p</span>: [x, &#123; y &#125;] &#125; = obj</span><br><span class="line">x <span class="comment">// Hello</span></span><br><span class="line">y <span class="comment">// World</span></span><br><span class="line">p <span class="comment">// [Hello, &#123;y: World&#125;]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 解构到对象或数组</span></span><br><span class="line"><span class="keyword">let</span> obj = &#123;&#125;</span><br><span class="line"><span class="keyword">let</span> arr = []</span><br><span class="line"><span class="comment">// 这个地方必要要有()，避免js将其解释为代码块</span></span><br><span class="line">(&#123; <span class="attr">foo</span>: obj.prop, <span class="attr">bar</span>: arr[<span class="number">0</span>] &#125; = &#123; <span class="attr">foo</span>: <span class="number">123</span>, <span class="attr">bar</span>: <span class="literal">true</span> &#125;)</span><br><span class="line">obj <span class="comment">// &#123;prop: 123&#125;</span></span><br><span class="line">arr <span class="comment">// [true]</span></span><br></pre></td></tr></table></figure>
+<h4 id="默认值-1"><a href="#默认值-1" class="headerlink" title="默认值"></a>默认值</h4><ul>
+<li>同样：默认值生效的条件是，对象的属性值严格等于undefined</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> &#123;x = <span class="number">3</span>&#125; = &#123;&#125;</span><br><span class="line"><span class="keyword">let</span> &#123;<span class="attr">x</span>: y = <span class="number">4</span>&#125; = &#123;<span class="attr">x</span>: <span class="number">5</span>&#125; <span class="comment">// y: 5</span></span><br></pre></td></tr></table></figure>
+<h4 id="对数组进行对象属性的解构"><a href="#对数组进行对象属性的解构" class="headerlink" title="对数组进行对象属性的解构"></a>对数组进行对象属性的解构</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="keyword">let</span> &#123;<span class="number">0</span>: first, [arr.length - <span class="number">1</span>] : last&#125; = arr</span><br><span class="line">first <span class="comment">// 1</span></span><br><span class="line">last <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [a, b, c, d, e] = <span class="string">'hello'</span></span><br><span class="line">a <span class="comment">// h</span></span><br><span class="line">b <span class="comment">// e</span></span><br><span class="line">c <span class="comment">// l</span></span><br><span class="line">d <span class="comment">// l</span></span><br><span class="line">e <span class="comment">// o</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> &#123;<span class="attr">length</span>: len&#125; = <span class="string">'hello'</span></span><br><span class="line">len <span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
+<h3 id="数值和布尔值"><a href="#数值和布尔值" class="headerlink" title="数值和布尔值"></a>数值和布尔值</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> &#123;<span class="attr">toString</span>: s&#125; = <span class="number">123</span></span><br><span class="line">s === <span class="built_in">Number</span>.prototype.toString <span class="comment">// true</span></span><br><span class="line"><span class="keyword">let</span> &#123;<span class="attr">toString</span>: s&#125; = <span class="literal">true</span></span><br><span class="line">s === <span class="built_in">Boolean</span>.prototype.toString <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> &#123; <span class="attr">prop</span>: x &#125; = <span class="literal">undefined</span> <span class="comment">// TypeError</span></span><br><span class="line"><span class="keyword">let</span> &#123; <span class="attr">prop</span>: y &#125; = <span class="literal">null</span> <span class="comment">// TypeError</span></span><br></pre></td></tr></table></figure>
+<h3 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">[x, y]</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x + y</span><br><span class="line">&#125;</span><br><span class="line">add([<span class="number">1</span>, <span class="number">2</span>]) <span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">move</span>(<span class="params">&#123;x = <span class="number">0</span>, y = <span class="number">0</span>&#125; = &#123;&#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> [x, y]</span><br><span class="line">&#125;</span><br><span class="line">move(&#123;<span class="attr">x</span>: <span class="number">3</span>, <span class="attr">y</span>: <span class="number">8</span>&#125;) <span class="comment">// [3, 8]</span></span><br><span class="line">move(&#123;<span class="attr">x</span>: <span class="number">3</span>&#125;) <span class="comment">// [3, 0]</span></span><br><span class="line">move(&#123;&#125;) <span class="comment">// [0, 0]</span></span><br><span class="line">move() <span class="comment">// [0, 0]</span></span><br></pre></td></tr></table></figure>
+<h3 id="圆括号"><a href="#圆括号" class="headerlink" title="圆括号"></a>圆括号</h3><ul>
+<li><p>尽量不要使用圆括号</p>
+</li>
+<li><p>可以使用圆括号的情况只有一种：赋值语句的非模式部分</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[(b)] = [<span class="number">3</span>]</span><br><span class="line">(&#123; <span class="attr">p</span>: (d) &#125; = &#123;&#125;)</span><br><span class="line">[(<span class="built_in">parseInt</span>.prop)] = [<span class="number">3</span>]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h3><ul>
+<li><p>交换变量的值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="number">1</span></span><br><span class="line"><span class="keyword">let</span> y = <span class="number">2</span></span><br><span class="line">[x, y] = [y, x]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>从函数返回多个值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">example</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> [a, b, c] = example()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">exmaple</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    foo: <span class="number">1</span>,</span><br><span class="line">    bar: <span class="number">2</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> &#123; foo, bar &#125; = exmaple()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>函数参数的定义</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 参数是一组有次序的值</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">[x, y, z]</span>) </span>&#123;&#125;</span><br><span class="line">f([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">// 参数是一组无次序的值</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">&#123;x, y, z&#125;</span>) </span>&#123;&#125;</span><br><span class="line">f(&#123;<span class="attr">z</span>: <span class="number">3</span>, <span class="attr">y</span>: <span class="number">2</span>, <span class="attr">x</span>: <span class="number">1</span>&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>提取JSON数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> json = &#123;</span><br><span class="line">  id: <span class="number">42</span>,</span><br><span class="line">  status: <span class="string">'ok'</span>,</span><br><span class="line">  data: [<span class="number">111</span>, <span class="number">222</span>]</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> &#123; id, status, <span class="attr">data</span>: numbers &#125; = json</span><br><span class="line"><span class="built_in">console</span>.log(id, status, numbers)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>函数参数的默认值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a = <span class="number">1</span>, b = <span class="number">2</span>, c = false</span>) </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>遍历Map解构：任何部署了Iterator接口的对象，都可以用for…of循环遍历。Map解构原生支持Iterator接口，配合变量的解构赋值，获取键名和键值就非常方便</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>()</span><br><span class="line">map.set(<span class="string">'first'</span>, <span class="string">'hello'</span>)</span><br><span class="line">map.set(<span class="string">'second'</span>, <span class="string">'world'</span>)</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> [key, value] <span class="keyword">of</span> map) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(key + <span class="string">' is '</span> + value)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> [key] <span class="keyword">of</span> map) &#123;&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> [, value] <span class="keyword">of</span> map) &#123;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="输入模块的制定方法"><a href="#输入模块的制定方法" class="headerlink" title="输入模块的制定方法"></a>输入模块的制定方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; a, b &#125; = <span class="built_in">require</span>(<span class="string">'ModuleName'</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="字符串的扩展：http-es6-ruanyifeng-com-docs-string"><a href="#字符串的扩展：http-es6-ruanyifeng-com-docs-string" class="headerlink" title="字符串的扩展：http://es6.ruanyifeng.com/#docs/string"></a>字符串的扩展：<a href="http://es6.ruanyifeng.com/#docs/string" target="_blank" rel="noopener">http://es6.ruanyifeng.com/#docs/string</a></h2>
+  <div class="guide-links">
+    
+    
+      <span>← <a href="/frontend/js/7_questions.html">问题</a></span>
+    
+    
+    
+  </div>
+  <div class="footer">
+    发现错误？想参与编辑？
+    <a href="https://github.com/mallow-fight/blog/tree/master/source/frontend/js/8_es6.md" target="_blank">
+      在 GitHub 上编辑此页！
+    </a>
+    
+    <span>更新于：2018-09-20 16:09:32</span>
+  </div>
+</div>
+
+
+<div id="disqus_thread"></div>
+<script>
+  // it seems slowly page, so i annotation it.
+  // disqus评论系统
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  var disqus_config = function () {
+    this.page.url = 'https://mallow-fight.github.io/';  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = 'https://mallow-fight.github.io/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://mallow-blog.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    <script src="/js/smooth-scroll.min.js"></script>
+  
+  <!-- main custom script for sidebars, version selects etc. -->
+  <script src="/js/css.escape.js"></script>
+  <script src="/js/common.js"></script>
+  <!-- search -->
+  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/search.css">
+  <script src="/js/docsearch.js"></script>
+  <script>
+  [
+    '#search-query-nav',
+    '#search-query-sidebar',
+    '#search-query-menu'
+  ].forEach(function (selector) {
+    if (!document.querySelector(selector)) return
+    docsearch({
+      appId: 'FKZQZEMOI4',
+      apiKey: '82fdcfac2e888595cb2807aa60aaad58',
+      indexName: 'prod_blog',
+      inputSelector: selector
+    })
+  })
+  </script>
+  <!-- fastclick -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+</body>
+</html>
