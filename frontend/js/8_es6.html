@@ -923,6 +923,23 @@
 <li><p>设置拦截多个操作</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> handler = &#123;</span><br><span class="line">  get: <span class="function"><span class="keyword">function</span>(<span class="params">target, name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (name === <span class="string">'prototype'</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">Object</span>.prototype;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'Hello, '</span> + name;</span><br><span class="line">  &#125;,</span><br><span class="line">  apply: <span class="function"><span class="keyword">function</span>(<span class="params">target, thisBinding, args</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> args[<span class="number">0</span>];</span><br><span class="line">  &#125;,</span><br><span class="line">  construct: <span class="function"><span class="keyword">function</span>(<span class="params">target, args</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="attr">value</span>: arge[<span class="number">1</span>]&#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> fproxy = <span class="keyword">new</span> <span class="built_in">Proxy</span>(<span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;, handler);</span><br><span class="line"></span><br><span class="line">fproxy(<span class="number">1</span>, <span class="number">2</span>) <span class="comment">// 1</span></span><br><span class="line"><span class="keyword">new</span> fproxy(<span class="number">1</span>, <span class="number">2</span>) <span class="comment">// &#123;value: 2&#125;</span></span><br><span class="line">fproxy.prototype === <span class="built_in">Object</span>.prototype <span class="comment">// true</span></span><br><span class="line">fproxy.foo === <span class="string">'Hello, foo'</span> <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 </li>
+<li><p>Proxy支持的拦截操作一览：</p>
+<ul>
+<li>get(target, propKey, receiver)：拦截对象属性的读取，比如proxy.foo和proxy[‘foo’]</li>
+<li>set(target, propKey, value, receiver)：拦截对象属性的设置，比如proxy.foo=v或proxy[‘foo’]=v，返回一个布尔值</li>
+<li>has(target, propKey)：拦截propKey in proxy的操作，返回一个布尔值</li>
+<li>deleteProperty(target, propKey)：拦截delete proxy[propKey]的操作，返回一个布尔值</li>
+<li>ownKeys(target)：拦截Object.getOwnPropertyNames(proxy)、Object.getOwnPropertySymbols(proxy)、Object.keys(proxy)、for…in循环，返回一个数组。该方法返回目标对象所有自身属性的属性名，而Object.keys()的返回结果仅包括目标对象自身的可遍历属性</li>
+<li>getOwnPropertyDescriptor(target, propKey)：拦截Object.getOwnPropertyDescriptor(proxy, propKey)，返回属性的描述对象</li>
+<li>defineProperty(target, propKey, propDesc)：拦截Object.defineProperty(proxy, propKey, propDesc)、Object.defineProperties(proxy, propDescs)，返回一个布尔值</li>
+<li>preventExtensions(target)：拦截Object.preventExtensions(proxy)，返回一个布尔值</li>
+<li>getPrototypeOf(target)：拦截Object.getPrototypeOf(proxy)，返回一个对象</li>
+<li>isExtensible(target)：拦截Object.isExtensible(proxy)，返回一个布尔值</li>
+<li>setPrototypeOf(target, proto)：拦截Object.setPrototypeOf(proxy, proto)，返回一个布尔值。如果目标对象是函数，那么还有两种额外的操作可以拦截</li>
+<li>apply(target, object, args)：拦截Proxy实例作为函数调用的操作，比如proxy(…args)、proxy.call(object, …args)、proxy.apply(…)</li>
+<li>construct(target, args)：拦截Proxy实例作为构造函数调用的操作，比如new proxy(…args)</li>
+</ul>
+</li>
 </ul>
 
   <div class="guide-links">
@@ -939,7 +956,7 @@
       在 GitHub 上编辑此页！
     </a>
     
-    <span>更新于：2018-09-27 10:09:25</span>
+    <span>更新于：2018-09-27 12:09:06</span>
   </div>
 </div>
 
