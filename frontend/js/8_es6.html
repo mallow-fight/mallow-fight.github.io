@@ -1387,7 +1387,105 @@
 <li><p>静态方法可以从super对象上调用的</p>
 </li>
 </ul>
-<h2 id="Class的继承"><a href="#Class的继承" class="headerlink" title="Class的继承"></a>Class的继承</h2>
+<h2 id="Class的继承"><a href="#Class的继承" class="headerlink" title="Class的继承"></a>Class的继承</h2><ul>
+<li>Class 可以通过extends关键字实现继承，这比ES5的通过修改原型链实现继承</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ColorPoint</span> <span class="keyword">extends</span> <span class="title">Point</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ColorPoint</span> <span class="keyword">extends</span> <span class="title">Point</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(x, y, color) &#123;</span><br><span class="line">    <span class="keyword">super</span>(x, y);</span><br><span class="line">    <span class="keyword">this</span>.color = color;</span><br><span class="line">  &#125;</span><br><span class="line">  toString() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.color + <span class="string">' '</span> + <span class="keyword">super</span>.toString()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="super"><a href="#super" class="headerlink" title="super"></a>super</h3><ul>
+<li><p><a href="https://www.jb51.net/article/126399.htm" target="_blank" rel="noopener">参考资料</a></p>
+</li>
+<li><p>super只能在有继承的class的constructor中使用</p>
+</li>
+<li><p>作用：</p>
+<ul>
+<li>参数的入口，用来初始化父类的this</li>
+<li>将父类的方法和this继承过来</li>
+<li>可以当作函数使用来初始化父类，进行参数的传递，也可以当作对象使用，通过它来调用父组件的方法</li>
+</ul>
+</li>
+<li><p>子类必须在constructor方法中调用super方法，否则新建实例时会报错。这是因为子类自己的this对象，必须先通过父类的构造函数完成塑造，得到与父类同样的实例属性和方法，然后再对其进行加工，加上子类自己的实例属性和方法。如果不调用super方法，子类就得不到this对象。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ColorPoint</span> <span class="keyword">extends</span> <span class="title">Point</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> cp = <span class="keyword">new</span> ColorPoint(); <span class="comment">// ReferenceError</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果子类不写constructor方法，默认会调用super方法</p>
+</li>
+<li><p>可以使用<code>...args</code>来解构参数给super</p>
+</li>
+<li><p>在子类的构造函数中，只有调用super之后，才可以使用this关键字，否则会报错。这是因为子类实例的构建，基于父类实例，只有super方法才能调用父类实例</p>
+</li>
+<li><p>父类的静态方法，也会被子类继承</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> hello() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'hello world'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">B.hello() <span class="comment">// hello world</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>判断一个类是否继承了另一个类</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.getPrototypeOf(ColorPoint) === Point;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="类的prototype属性和proto属性"><a href="#类的prototype属性和proto属性" class="headerlink" title="类的prototype属性和proto属性"></a>类的prototype属性和<strong>proto</strong>属性</h3><ul>
+<li><p><code>__proto__</code>属性是可以间接访问到，<code>prototype</code>属性是构造函数需要继承的</p>
+</li>
+<li><p>子类的<strong>proto</strong>属性，表示构造函数的继承，总是指向父类</p>
+</li>
+<li><p>子类的prototye属性的<strong>proto</strong>属性，表示方法的继承，总是指向父类的prototype属性</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">B.__proto__ === A <span class="comment">// true</span></span><br><span class="line">B.prototype.__proto__ === A.prototype <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>类的继承是按照下面的模式实现的</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// B的实例继承A的实例</span></span><br><span class="line"><span class="built_in">Object</span>.setPrototypeof(B.prototype, A.prototype);</span><br><span class="line"></span><br><span class="line"><span class="comment">// B继承A的静态属性</span></span><br><span class="line"><span class="built_in">Object</span>.setPrototypeOf(B, A);</span><br><span class="line"><span class="keyword">const</span> b = <span class="keyword">new</span> B();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>Object.setPrototypeOf</code>方法的实现</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.setPrototypeOf = <span class="function"><span class="keyword">function</span> (<span class="params">obj, proto</span>) </span>&#123;</span><br><span class="line">  obj.__proto__ = proto;</span><br><span class="line">  <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="修饰器"><a href="#修饰器" class="headerlink" title="修饰器"></a>修饰器</h2><ul>
+<li><p>基本形式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@test</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">target</span>) </span>&#123;</span><br><span class="line">  target.name = <span class="string">'test'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(MyTest.name);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>多个参数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@test(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">num1, num2</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">target</span>) </span>&#123;</span><br><span class="line">    target.num1 = num1;</span><br><span class="line">    target.num2 = num2;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修饰器对类的行为的改变，是代码编译时发生的，而不是在运行时。意味着，修饰器能在编译阶段运行代码。本质就是编译时执行的函数</p>
+</li>
+<li><p>除了添加静态属性，还可以为添加实例属性</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">testable</span>(<span class="params">target</span>) </span>&#123;</span><br><span class="line">  target.prototype.isTestable = <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line">@testable</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyTestableClass</span> </span>&#123;&#125;</span><br><span class="line"><span class="keyword">const</span> obj = <span class="keyword">new</span> MyTestableClass();</span><br><span class="line">obj.isTestable; <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方法的修饰</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">readonly</span>(<span class="params">target, name, descriptor</span>) </span>&#123;</span><br><span class="line">  descriptor.writable = <span class="literal">false</span>;</span><br><span class="line">  <span class="keyword">return</span> descriptor;</span><br><span class="line">&#125;</span><br><span class="line">readonly(Person.prototype, <span class="string">'name'</span>, descriptor);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 类似于</span></span><br><span class="line"><span class="comment">// Object.defineProperty(Person.ptototype, 'name', descriptor);</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">  @readonly</span><br><span class="line">  name() &#123; <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;<span class="keyword">this</span>.first&#125;</span> <span class="subst">$&#123;<span class="keyword">this</span>.last&#125;</span>`</span>&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果同一个方法有多个修饰器，会像剥洋葱一样，先从外到内进入，然后由内向外执行</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">dec</span>(<span class="params">id</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'evaluated'</span>, id);</span><br><span class="line">  <span class="keyword">return</span> <span class="function">(<span class="params">target, property, descriptor</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'executed'</span>, id);</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span> </span>&#123;</span><br><span class="line">  @dec(<span class="number">1</span>)</span><br><span class="line">  @dec(<span class="number">2</span>)</span><br><span class="line">  method()&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// evaluated 1</span></span><br><span class="line"><span class="comment">// evaluated 2</span></span><br><span class="line"><span class="comment">// executed 2</span></span><br><span class="line"><span class="comment">// executed 1</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修饰器只能用于类和类的方法，不能用于函数，因为存在函数提升，类是不会提升的，所以就没有这方面的问题</p>
+</li>
+</ul>
+<h2 id="Module语法"><a href="#Module语法" class="headerlink" title="Module语法"></a>Module语法</h2><ul>
+<li><p>CommonJS用于服务器，AMD用于浏览器</p>
+</li>
+<li><p><code>export default</code>导出文件的默认值，只能有一个</p>
+</li>
+<li><p><code>export default</code>后面不能变量声明语句</p>
+</li>
+<li><p><code>export default</code>命令的本质是将后面的值，赋给<code>default</code>变量</p>
+</li>
+</ul>
+<h2 id="Module的加载实现"><a href="#Module的加载实现" class="headerlink" title="Module的加载实现"></a>Module的加载实现</h2><ul>
+<li><p>如果脚本体积很大，下载和执行的时间就会很长，因此造成浏览器堵塞，用户会感觉到浏览器卡死了，没有任何响应。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"path/to/myModule.js"</span> <span class="attr">defer</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"path/to/myModule.js"</span> <span class="attr">async</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>&lt;script&gt;</code>标签打开<code>defer</code>或<code>async</code>属性，脚本就会异步加载。渲染引擎遇到这一行命令，就会开始下载外部脚本，但不会等它下载和执行，而是直接执行后面的命令</p>
+</li>
+<li><p><code>defer</code>和<code>async</code>的区别是：<code>defer</code>要等到整个页面在内存中正常渲染结束（DOM结构完全生成，以及其他脚本执行完成），才会执行；<code>async</code>一旦下载完，渲染引擎就会中断渲染，执行这个脚本以后，再继续渲染。</p>
+</li>
+<li><p><code>defer</code>是渲染完再执行，<code>async</code>是下载完就执行，如果有多个<code>defer</code>脚本，会按照它们在页面出现的顺序加载，而多个<code>async</code>脚本是不能保证加载顺序的</p>
+</li>
+</ul>
+<h3 id="ES6模块和CommonJS模块的差异"><a href="#ES6模块和CommonJS模块的差异" class="headerlink" title="ES6模块和CommonJS模块的差异"></a>ES6模块和CommonJS模块的差异</h3><ul>
+<li><p>CommonJS模块输出的是一个值的拷贝，ES6模块输出的是值的引用</p>
+</li>
+<li><p>CommonJS模块是运行时加载，ES6模块是编译时输出接口</p>
+</li>
+<li><p>CommonJS加载的是一个对象（module.exports属性），该对象只有在脚本运行完才会生成。而ES6模块不是对象，它的对外接口只是一种静态定义，在代码静态解析阶段就会生成</p>
+</li>
+</ul>
+
   <div class="guide-links">
     
     
@@ -1402,7 +1500,7 @@
       在 GitHub 上编辑此页！
     </a>
     
-    <span>更新于：2018-10-18 00:10:56</span>
+    <span>更新于：2018-10-20 19:10:26</span>
   </div>
 </div>
 
