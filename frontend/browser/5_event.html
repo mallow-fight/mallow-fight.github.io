@@ -84,7 +84,7 @@
   <ul class="nav-dropdown">
     <li><a href="/books/memory/1_利玛窦的记忆宫殿.html" class="nav-link">记忆学</a></li>
     <li><a href="/books/computer/1_构建高性能web网站.html" class="nav-link">计算机</a></li>
-    <li><a href="/books/history/资治通鉴/1_周记一.html" class="nav-link">历史</a></li>
+    <li><a href="/books/history/资治通鉴/1_周纪一.html" class="nav-link">历史</a></li>
     <li><a href="/books/economics/1_国富论.html" class="nav-link">经济</a></li>
   </ul>
 </li>
@@ -218,7 +218,7 @@
   <ul class="nav-dropdown">
     <li><a href="/books/memory/1_利玛窦的记忆宫殿.html" class="nav-link">记忆学</a></li>
     <li><a href="/books/computer/1_构建高性能web网站.html" class="nav-link">计算机</a></li>
-    <li><a href="/books/history/资治通鉴/1_周记一.html" class="nav-link">历史</a></li>
+    <li><a href="/books/history/资治通鉴/1_周纪一.html" class="nav-link">历史</a></li>
     <li><a href="/books/economics/1_国富论.html" class="nav-link">经济</a></li>
   </ul>
 </li>
@@ -245,7 +245,10 @@
   
     <h1>事件</h1>
   
-  <h2 id="事件捕获和冒泡"><a href="#事件捕获和冒泡" class="headerlink" title="事件捕获和冒泡"></a>事件捕获和冒泡</h2><ul>
+  <h2 id="浏览器事件解读"><a href="#浏览器事件解读" class="headerlink" title="浏览器事件解读"></a>浏览器事件解读</h2><blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/23059366" target="_blank" rel="noopener">知乎</a></p>
+</blockquote>
+<h2 id="事件捕获和冒泡"><a href="#事件捕获和冒泡" class="headerlink" title="事件捕获和冒泡"></a>事件捕获和冒泡</h2><ul>
 <li><p>先捕获再冒泡</p>
 </li>
 <li><p><code>addEventListener</code>第三个参数是<code>false</code>（默认）时，事件处理采取事件冒泡的原则，当第三个参数是<code>true</code>时，则采取事件捕获的原则</p>
@@ -256,6 +259,10 @@
 </blockquote>
 <h3 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h3><ul>
 <li>通过事件冒泡，将子元素的点击事件冒泡到父元素上，通过区分<code>e.target.nodeName</code>来区分点击的是哪一个元素，以实现事件代理的效果</li>
+</ul>
+<h2 id="addEventListener"><a href="#addEventListener" class="headerlink" title="addEventListener"></a>addEventListener</h2><ul>
+<li>挂载在window对象上的keypress事件会重复触发，我们只需要判断e中的元素是不是我们需要处理的元素来触发响应的回调函数就可以了<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;input /&gt;</span><br><span class="line">&lt;input /&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="built_in">window</span>.addEventListener(<span class="string">'keypress'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(e)</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="built_in">window</span>.addEventListener(<span class="string">'keypress'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(e)</span><br><span class="line">  &#125;)</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 
   <div class="guide-links">
@@ -274,12 +281,12 @@
       在 GitHub 上编辑此页！
     </a>
     
-    <span>更新于：2018-09-13 14:09:20</span>
+    <span>更新于：2018-11-07 18:11:83</span>
   </div>
 </div>
 
 
-<div id="disqus_thread"></div>
+<!-- <div id="disqus_thread"></div>
 <script>
   // it seems slowly page, so i annotation it.
   // disqus评论系统
@@ -297,7 +304,7 @@
   (d.head || d.body).appendChild(s);
   })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
     </div>
     <script src="/js/smooth-scroll.min.js"></script>
   
