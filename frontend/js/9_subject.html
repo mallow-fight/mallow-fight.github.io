@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>入门与进阶 - mallow</title>
+  <title>专题 - mallow</title>
   <meta charset="utf-8">
   <meta name="description" content="mallow's blog.">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
   <meta property="og:type" content="article">
-  <meta property="og:title" content="入门与进阶 — mallow">
+  <meta property="og:title" content="专题 — mallow">
   <meta property="og:description" content="mallow's blog.">
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120215204-1"></script>
@@ -106,9 +106,9 @@
         <div class="guide-links">
   
   
-    <span style="float: right;"><a style="color: green;" href="/frontend/js/2_types&grammar.html">类型和语法</a> →</span>
   
   
+    <span style="float: right; margin-right: 30px;">← <a style="color: goldenrod;" href="/frontend/js/8_es6.html">es6</a></span>
   
 </div>
 
@@ -120,7 +120,7 @@
   
     
       <li>
-        <a href="/frontend/js/1_enter&going.html" class="sidebar-link current">
+        <a href="/frontend/js/1_enter&going.html" class="sidebar-link">
           入门与进阶
         </a>
       </li>
@@ -176,7 +176,7 @@
       
     
       <li>
-        <a href="/frontend/js/9_subject.html" class="sidebar-link">
+        <a href="/frontend/js/9_subject.html" class="sidebar-link current">
           专题
         </a>
       </li>
@@ -255,54 +255,34 @@
   
 </ul>
   
-    <h1>入门与进阶</h1>
+    <h1>专题</h1>
   
-  <h2 id="进入编程"><a href="#进入编程" class="headerlink" title="进入编程"></a>进入编程</h2><h3 id="编程构建块"><a href="#编程构建块" class="headerlink" title="编程构建块"></a>编程构建块</h3><ul>
-<li><p>你需要 <code>操作符</code> 来在值上实施动作。</p>
-</li>
-<li><p>你需要 <code>值</code> 和 <code>类型</code> 来试试不同种类的动作，比如在 <code>number</code> 上做数学，或者使用 <code>string</code> 输出。</p>
-</li>
-<li><p>你需要 <code>变量</code> 在你程序执行的过程中存储数据（也就是 <code>状态</code> ）。</p>
-</li>
-<li><p>你需要 <code>条件</code>，比如<code>if</code>语句来做决定。</p>
-</li>
-<li><p>你需要 <code>循环</code> 来重复任务，直到一个条件不再成立。</p>
-</li>
-<li><p>你需要 <code>函数</code> 来将你的代码组织为有逻辑的和可复用的块儿。</p>
-</li>
+  <h2 id="理解prototype、proto和constructor等关系"><a href="#理解prototype、proto和constructor等关系" class="headerlink" title="理解prototype、proto和constructor等关系"></a>理解prototype、proto和constructor等关系</h2><ul>
+<li><a href="https://alexzhong22c.github.io/2017/08/08/js-proto/" target="_blank" rel="noopener">参考博客</a></li>
 </ul>
-<blockquote>
-<p>代码注释是一种编写更好可读性代码的有效方法，它是你的代码更容易理解和维护。</p>
-</blockquote>
-<h2 id="核心机制"><a href="#核心机制" class="headerlink" title="核心机制"></a>核心机制</h2><ul>
-<li><p>值</p>
-</li>
-<li><p>类型</p>
-</li>
-<li><p>闭包</p>
-</li>
-<li><p>this</p>
-</li>
-<li><p>原型</p>
-</li>
+<h2 id="new创建对象的过程发生了什么"><a href="#new创建对象的过程发生了什么" class="headerlink" title="new创建对象的过程发生了什么"></a>new创建对象的过程发生了什么</h2><h3 id="通用观点"><a href="#通用观点" class="headerlink" title="通用观点"></a>通用观点</h3><ul>
+<li>用来实例化一个类，从而在内存中分配一个实例对象</li>
 </ul>
-<h2 id="前景"><a href="#前景" class="headerlink" title="前景"></a>前景</h2><p><strong>js的未来是光明的，例：es6、node等等，用途广泛，功能强大。</strong></p>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line">Person.hairColor = <span class="string">'black'</span>;</span><br><span class="line">Person.prototype.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'my name is '</span> + <span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> john = <span class="keyword">new</span> Person(<span class="string">'john'</span>);</span><br><span class="line">john.name <span class="comment">// John</span></span><br><span class="line">john.hairColor <span class="comment">// undefined</span></span><br><span class="line">john.height <span class="comment">// undefined</span></span><br><span class="line">john.say() <span class="comment">// my name is john</span></span><br><span class="line">Person.name <span class="comment">// Person</span></span><br><span class="line">Person.hairColor <span class="comment">// black</span></span><br><span class="line">Person.say() <span class="comment">// Person.say is not a function</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>JS引擎在执行这段代码：<code>var john = new Person(&#39;john&#39;)</code>时，在内部做了很多工作，用伪代码模拟就是：<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line">obj.__proto__ = Person.prototype; <span class="comment">// 此时建立了obj对象的原型链</span></span><br><span class="line"><span class="comment">// obj -&gt; Person.prototype -&gt; Object.prototype -&gt; null</span></span><br><span class="line"><span class="keyword">var</span> result = Person.call(obj, <span class="string">'John'</span>); <span class="comment">// 相当于obj.Person('John')</span></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">typeof</span> result === <span class="string">'object'</span> ? result : obj; <span class="comment">// 如果无返回值或者返回一个非对象值，则将obj返回作为新对象</span></span><br></pre></td></tr></table></figure></li>
+</ul>
 
   <div class="guide-links">
     
     
+      <span>← <a href="/frontend/js/8_es6.html">es6</a></span>
     
     
-      <span style="float: right;"><a href="/frontend/js/2_types&grammar.html">类型和语法</a> →</span>
     
   </div>
   <div class="footer">
     发现错误？想参与编辑？
-    <a href="https://github.com/mallow-fight/blog/tree/master/source/frontend/js/1_enter&going.md" target="_blank">
+    <a href="https://github.com/mallow-fight/blog/tree/master/source/frontend/js/9_subject.md" target="_blank">
       在 GitHub 上编辑此页！
     </a>
     
-    <span>更新于：2018-09-13 14:09:22</span>
+    <span>更新于：2018-11-08 14:11:12</span>
   </div>
 </div>
 
