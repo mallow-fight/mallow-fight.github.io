@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>提升 - mallow</title>
+  <title>异步 - mallow</title>
   <meta charset="utf-8">
   <meta name="description" content="mallow's blog.">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
   <meta property="og:type" content="article">
-  <meta property="og:title" content="提升 — mallow">
+  <meta property="og:title" content="异步 — mallow">
   <meta property="og:description" content="mallow's blog.">
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120215204-1"></script>
@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="/css/page.css">
   <!-- import vue from there so that you can use vue in markdown -->
   <script src="/js/vue.min.js"></script>
-  <script>window.PAGE_TYPE = "person"</script>
+  <script>window.PAGE_TYPE = "special"</script>
 </head>
 <body class="docs">
   <div id="mobile-bar" >
@@ -112,41 +112,34 @@
   
   
   
-    <span style="float: right; margin-right: 30px;">← <a style="color: goldenrod;" href="/person/todolist.html">todolist</a></span>
+    <span style="float: right; margin-right: 30px;">← <a style="color: goldenrod;" href="/special/2_webpack.html">webpack</a></span>
   
 </div>
 
   <div class="sidebar">
   <div class="sidebar-inner">
-    <h3>当前位置：person</h3>
+    <h3>当前位置：special</h3>
     <div class="list">
       <ul class="menu-root">
   
     
       <li>
-        <a href="/person/introduction.html" class="sidebar-link">
-          个人介绍
+        <a href="/special/1_原型.html" class="sidebar-link">
+          原型
         </a>
       </li>
       
     
       <li>
-        <a href="/person/manage.html" class="sidebar-link">
-          team-manage
+        <a href="/special/2_webpack.html" class="sidebar-link">
+          webpack
         </a>
       </li>
       
     
       <li>
-        <a href="/person/todolist.html" class="sidebar-link">
-          todolist
-        </a>
-      </li>
-      
-    
-      <li>
-        <a href="/person/up.html" class="sidebar-link current">
-          提升
+        <a href="/special/3_异步.html" class="sidebar-link current">
+          异步
         </a>
       </li>
       
@@ -223,104 +216,40 @@
 </div>
 
 
-<div class="content person with-sidebar ">
+<div class="content special with-sidebar ">
   <ul class="menu-root">
   
 </ul>
   
-    <h1>提升</h1>
+    <h1>异步</h1>
   
-  <h2 id="阶段性目标"><a href="#阶段性目标" class="headerlink" title="阶段性目标"></a>阶段性目标</h2><p><strong>注意拆分目标、将目标划分成一个一个阶段，分别实现，达成目的</strong></p>
-<ul>
-<li><p>[ ] 提升（做完这一步，大概就是资深了，p6～p7）：计划时间，1～2年</p>
-<ul>
-<li style="list-style: none"><input type="checkbox"> 自律，不要太贪玩 ～on</li>
-<li style="list-style: none"><input type="checkbox"> 各种异步机制的实现原理和区别</li>
-<li style="list-style: none"><input type="checkbox"> api的polyfill（如fetch、promise、generator等）</li>
-<li style="list-style: none"><input type="checkbox"> 详细的前端骨架</li>
-<li style="list-style: none"><input type="checkbox"> vue&amp;react底层原理，手动实现，深入了解</li>
-<li style="list-style: none"><input type="checkbox"> vuex、redux之类的底层原理</li>
-<li style="list-style: none"><input type="checkbox"> webview的底层原理以及实现方式</li>
-<li style="list-style: none"><input type="checkbox"> 由vue衍生出来的mpVue、weex之类的原理</li>
-<li style="list-style: none"><input type="checkbox"> 网页的适配和兼容问题</li>
-<li style="list-style: none"><input type="checkbox"> http架构</li>
-<li style="list-style: none"><input type="checkbox"> 常规算法的学习、练习以及实践</li>
-<li style="list-style: none"><input type="checkbox"> 新技术的关注：pwa、deno、ts、jsx、web assembly、dva等，不用深入了解，没那个时间和必要</li>
-<li style="list-style: none"><input type="checkbox"> 后端知识的深入学习（主要是java和db）</li>
-<li style="list-style: none"><input type="checkbox" checked> 熟练掌握数组和对象的原生方法（在业务中熟练使用即可）</li>
-<li style="list-style: none"><input type="checkbox" checked> webpack底层原理，手动实现</li>
-<li style="list-style: none"><input type="checkbox" checked> 制作开源库并推广</li>
-<li style="list-style: none"><input type="checkbox" checked> 基于ant.design的业务组件库</li>
-<li style="list-style: none"><input type="checkbox" checked> 深入学习es6</li>
-</ul>
+  <blockquote>
+<p><a href="https://github.com/getify/You-Dont-Know-JS/blob/master/preface.md" target="_blank" rel="noopener">参考</a></p>
+</blockquote>
+<h2 id="事件轮询"><a href="#事件轮询" class="headerlink" title="事件轮询"></a>事件轮询</h2><ul>
+<li><p>js并没有异步的概念，所看到的异步只不过是代码块的一段段执行，随着时间推移，也就有了所谓的异步</p>
 </li>
-<li><p>[ ] 继续提升（到这一步，大概是主管，至少p7）：计划时间，1～2年</p>
-<ul>
-<li style="list-style: none"><input type="checkbox"> 团队管理</li>
-<li style="list-style: none"><input type="checkbox"> 技术调研</li>
-<li style="list-style: none"><input type="checkbox"> 技术选型</li>
-<li style="list-style: none"><input type="checkbox"> 项目架构</li>
-</ul>
+<li><p>js是单线程的，轮询队列中的事件会一个个被执行，setTimeout不会一开始就把回调放入轮询队列中，而是到了指定的时间之后会将回调放入轮询队列中，如果此时轮询队列中有了多个事件，它会排在这些事件之后执行，这也会导致定时器没那么准时</p>
 </li>
-<li><p>[ ] 继续向前（p8～p9或者CTO）：计划时间，1～3年</p>
-<ul>
-<li style="list-style: none"><input type="checkbox"> 把握技术方向</li>
-<li style="list-style: none"><input type="checkbox"> 前端领域大牛</li>
-<li style="list-style: none"><input type="checkbox"> 管理多个团队</li>
-<li style="list-style: none"><input type="checkbox"> 业务沟通</li>
-<li style="list-style: none"><input type="checkbox"> 资源分配</li>
-</ul>
-</li>
-<li><p>[ ] end：财务自由，人生赢家：计划时间，尽量，最好五年以内，不过这是一个梦想，有可能成真，ps：没有股权以及投资之类的加持基本上不可能，注意一下加强这方面的学习和实践，最好通过工作和投资实现，创业风险太大</p>
-</li>
-</ul>
-<h2 id="个人成长"><a href="#个人成长" class="headerlink" title="个人成长"></a>个人成长</h2><ul>
-<li><p>公式：时间管理 <em> 投入度 </em> 方法 <em> 实践 </em> 分享 <em> （总结）</em> （复习）</p>
-</li>
-<li><p>时间管理：合理分配时间，计划时间分阶段实现目标</p>
-</li>
-<li>投入度：决定能力的不是工作时间长度，而是工作投入的时间</li>
-<li>方法：学习知识需要方法，工作也需要方法</li>
-<li>实践：学习到的知识需要实践，而不是只是学</li>
-<li><p>分享：掌握的知识和方法需要分享给别人，加深自己对知识和方法的理解，不管分享讲的好不好都是一种成长</p>
-</li>
-<li><p>总结：自己加的，定期对自己掌握的和未掌握的做总结</p>
-</li>
-<li><p>复习：人都会遗忘，定期复习自己掌握的知识</p>
-</li>
-<li><p>严格意义来讲：总结和复习归纳在方法里面</p>
-</li>
-<li><p>大多数程序员都是骄傲的，但是很多时候骄傲并不是好事，可能会导致一种满足感，这种感觉是致命的，应该放下你的面子，想问就问，不懂得就问，为了面子保存自己的疑问是不利于成长的</p>
-</li>
-</ul>
-<h2 id="随笔"><a href="#随笔" class="headerlink" title="随笔"></a>随笔</h2><ul>
-<li><p>做事情需要拆分成一个个小目标实现，不然的话遇到困难的事情无从下手，也会在迷茫中消耗时间，无所收获。</p>
-</li>
-<li><p>不要畏惧困难的事情，困难就是价值所在。</p>
-</li>
-<li><p>多陪陪家人，人生苦短，须尽欢。</p>
-</li>
-<li><p>专注可以事半功倍。</p>
-</li>
-<li><p>自律，该玩玩，该学学，这点目前需要改正。</p>
+<li><p>直到最近，这种情况才发生了改变，es6现在明确指出了事件轮询应当如何工作，而不是取决于宿主环境</p>
 </li>
 </ul>
 
   <div class="guide-links">
     
     
-      <span>← <a href="/person/todolist.html">todolist</a></span>
+      <span>← <a href="/special/2_webpack.html">webpack</a></span>
     
     
     
   </div>
   <div class="footer">
     发现错误？想参与编辑？
-    <a href="https://github.com/mallow-fight/blog/tree/master/source/person/up.md" target="_blank">
+    <a href="https://github.com/mallow-fight/blog/tree/master/source/special/3_异步.md" target="_blank">
       在 GitHub 上编辑此页！
     </a>
     
-    <span>更新于：2018-11-30 16:11:14</span>
+    <span>更新于：2018-11-30 19:11:70</span>
   </div>
 </div>
 
