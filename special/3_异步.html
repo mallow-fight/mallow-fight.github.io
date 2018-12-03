@@ -234,6 +234,20 @@
 <li><p>直到最近，这种情况才发生了改变，es6现在明确指出了事件轮询应当如何工作，而不是取决于宿主环境</p>
 </li>
 </ul>
+<h2 id="Jobs"><a href="#Jobs" class="headerlink" title="Jobs"></a>Jobs</h2><ul>
+<li><p>稍后，但尽快</p>
+</li>
+<li><p>模拟代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'A'</span>);</span><br><span class="line">setTimeout( <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'B'</span>);</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"><span class="comment">// 理论上的 'Job Api'</span></span><br><span class="line">schedule( <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'C'</span>);</span><br><span class="line">  schedule(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'D'</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>expected：ABCD</p>
+</li>
+<li><p>actual：ACDB</p>
+</li>
+<li><p>因为Job发生在当前的事件轮询tick的末尾，而定时器会在下一个事件轮询tick触发</p>
+</li>
+<li>Promises的异步行为基于Job的，所以搞明白它与事件轮询行为的联系是很重要的</li>
+</ul>
 
   <div class="guide-links">
     
@@ -249,7 +263,7 @@
       在 GitHub 上编辑此页！
     </a>
     
-    <span>更新于：2018-11-30 19:11:70</span>
+    <span>更新于：2018-12-03 11:12:47</span>
   </div>
 </div>
 
