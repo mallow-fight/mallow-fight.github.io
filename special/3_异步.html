@@ -272,7 +272,53 @@
 <li><p>我们需要一个所有这些信任问题的一般化解决方案。一个可以被所有我们制造的回调复用，而且没有多余的模版代码负担的方案。</p>
 </li>
 </ul>
-<h2 id="Promises"><a href="#Promises" class="headerlink" title="Promises"></a>Promises</h2>
+<h2 id="ajax"><a href="#ajax" class="headerlink" title="ajax"></a>ajax</h2><blockquote>
+<p><a href="https://blog.csdn.net/lfsf802/article/details/7233640" target="_blank" rel="noopener">参考</a></p>
+</blockquote>
+<h3 id="同步和异步"><a href="#同步和异步" class="headerlink" title="同步和异步"></a>同步和异步</h3><ul>
+<li><p>异步传输是面向字符的传输，它的单位是字符</p>
+</li>
+<li><p>同步传输是面向比特的传输，它的单位是桢，它传输的时候要求接收方和发送方的时钟是保持一致的</p>
+</li>
+</ul>
+<h2 id="fetch"><a href="#fetch" class="headerlink" title="fetch"></a>fetch</h2><blockquote>
+<p><a href="https://blog.csdn.net/mapbar_front/article/details/79775185" target="_blank" rel="noopener">参考</a></p>
+</blockquote>
+<ul>
+<li><p>fetch是基于原生的XMLHttpRequest对象来实现数据请求的</p>
+</li>
+<li><p>fetch也是基于Promise实现链式调用的</p>
+</li>
+<li><p>简单封装</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ajax</span>(<span class="params">url, suc, fail</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">  xhr.open(<span class="string">'GET'</span>, url, <span class="literal">true</span>);</span><br><span class="line">  xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (xhr.readyState === <span class="number">4</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (xhr.status === <span class="number">200</span>) &#123;</span><br><span class="line">        suc(xhr.responseText);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        fail(xhr.responseText);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  xhr.send(<span class="literal">null</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Promises"><a href="#Promises" class="headerlink" title="Promises"></a>Promises</h2><ul>
+<li><p>Promise很牛，解决了肆掠在回调代码中的控制倒转问题</p>
+</li>
+<li><p>没有摆脱回调，而是重新定向了这些回调的组织安排方式，使它成为一种坐落于我们和其他工具之间的可靠的中间机制</p>
+</li>
+<li><p>Promise链还开始以顺序的风格定义了一种更好的表达异步流程的方式，它帮我们的大脑更好的规划和维护异步JS代码</p>
+</li>
+<li><p>polyfill:</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Promise</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.resolveFn = <span class="literal">null</span>;</span><br><span class="line">  <span class="keyword">this</span>.rejectFn =  <span class="literal">null</span>;</span><br><span class="line">  <span class="keyword">const</span> _this = <span class="keyword">this</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">resolve</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> f = _this.resolveFn;</span><br><span class="line">    f(data);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">reject</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> f = <span class="keyword">this</span>.rejectFn;</span><br><span class="line">    f(err);</span><br><span class="line">  &#125;</span><br><span class="line">  fn(resolve, reject);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Promise</span>.prototype.then = <span class="function"><span class="keyword">function</span> (<span class="params">f</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.resolveFn = f;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Promise</span>.prototype.then = <span class="function"><span class="keyword">function</span> (<span class="params">f</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.rejectFn = f;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Generator"><a href="#Generator" class="headerlink" title="Generator"></a>Generator</h2><ul>
+<li><p>一种es6的新函数类型，它不像普通函数那样运行至完成。相反，它可以暂停在一种中间完成状态（完整地保留它的状态），而且它可以从暂停的地方重新开始</p>
+</li>
+<li><p>这种暂停/继续的互换是一种协作而非抢占，这意味着generator拥有的唯一能力是使用yield关键字暂停它自己，而且控制这个generator的迭代器拥有的唯一能力是继续这个generator（通过next（））</p>
+</li>
+<li><p>yield/next的对偶不仅是一种控制机制，它实际上是一种双向消息传递机制。一个yield表达式实质上为了等待一个值而暂停，而下一个next调用将把值传递回这个暂停的yield表达式</p>
+</li>
+<li><p>与异步流程控制关联的generator的主要好处是：子啊一个generator内部的代码以一种自然的同步/顺序风格表达一个任务的各个步骤的序列。这其中的技巧是我们实质上将潜在的异步处理隐藏在yield关键字后面，将异步处理移动到控制generator的迭代器代码中</p>
+</li>
+<li><p>generator是异步代码保留了顺序的、同步的、阻塞的代码模式，这允许我们的大脑更自然地推理代码，解决了基于回调的异步产生的两个关键问题中的一个</p>
+</li>
+<li><p>polyfill：<a href="https://segmentfault.com/a/1190000010641417" target="_blank" rel="noopener">参考</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">gen</span>(<span class="params">arg</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> regeneratorRuntime.wrap(<span class="function"><span class="keyword">function</span> <span class="title">gen$</span>(<span class="params">_context</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>) &#123;</span><br><span class="line">      <span class="keyword">switch</span> (_context.prev = _context.next) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">          _context.next = <span class="number">2</span>;</span><br><span class="line">          <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">          _context.next = <span class="number">4</span>;</span><br><span class="line">          <span class="keyword">return</span> arg;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">        <span class="keyword">case</span> <span class="string">'end'</span>:</span><br><span class="line">          <span class="keyword">return</span> _context.stop();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, _marked[<span class="number">0</span>], <span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
   <div class="guide-links">
     
     
@@ -287,7 +333,7 @@
       在 GitHub 上编辑此页！
     </a>
     
-    <span>更新于：2018-12-04 18:12:37</span>
+    <span>更新于：2018-12-06 10:12:57</span>
   </div>
 </div>
 
