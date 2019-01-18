@@ -316,7 +316,9 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ReactTestRenderer = <span class="built_in">require</span>(<span class="string">'react-test-renderer'</span>);</span><br><span class="line"><span class="keyword">const</span> renderer = ReactTestRenderer.create(</span><br><span class="line">  &lt;Link page = <span class="string">"https://www.facebook.com/"</span>&gt;Facebook&lt;<span class="regexp">/Link&gt;</span></span><br><span class="line"><span class="regexp">)</span></span><br><span class="line"><span class="regexp">renderer.toJSON();</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ &#123;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/   type: 'a',</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/   props: &#123; href: 'https:/</span><span class="regexp">/www.facebook.com/</span><span class="string">' &#125;,</span></span><br><span class="line"><span class="string">//   children: [ '</span>Facebook<span class="string">' ]</span></span><br><span class="line"><span class="string">// &#125;</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><h3 id="class"><a href="#class" class="headerlink" title="class"></a>class</h3><ul>
+<h2 id="研究思路"><a href="#研究思路" class="headerlink" title="研究思路"></a>研究思路</h2><h3 id="渲染过程"><a href="#渲染过程" class="headerlink" title="渲染过程"></a>渲染过程</h3><p>一般的web应用在脚手架中都是通过这种方式渲染出来的：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; render &#125; <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line">render(</span><br><span class="line">  &lt;App /&gt;,</span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'app'</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
+<h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><p>对应到<code>&lt;App /&gt;</code>的产生</p>
+<h3 id="class"><a href="#class" class="headerlink" title="class"></a>class</h3><ul>
 <li><p>是构造函数的语法糖</p>
 </li>
 <li><p>constructor就是构造函数体</p>
@@ -328,7 +330,25 @@
 <li><p>class中的static就相当于构造函数直接挂载的普通属性</p>
 </li>
 </ul>
-<h3 id="依赖图"><a href="#依赖图" class="headerlink" title="依赖图"></a>依赖图</h3>
+<h3 id="依赖图"><a href="#依赖图" class="headerlink" title="依赖图"></a>依赖图</h3><p><a href="https://www.processon.com/mindmap/5c272483e4b0beb24861f67e" target="_blank" rel="noopener">processon</a></p>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>一般的class都会继承Component这个构造函数，这个函数会将props、setState等属性和方法注册到class上，然后这个class会作为react-dom的render函数的第一个参数传入，这个时候的形式是一个jsx，那么何为jsx呢？</p>
+<h2 id="jsx"><a href="#jsx" class="headerlink" title="jsx"></a>jsx</h2><ul>
+<li><a href="https://reactjs.org/docs/introducing-jsx.html" target="_blank" rel="noopener">参考</a></li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = (</span><br><span class="line">  &lt;h1 className = <span class="string">"greeting"</span>&gt;</span><br><span class="line">    hello, world!</span><br><span class="line">  &lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">)</span></span><br></pre></td></tr></table></figure>
+<p>同：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = React.createElement(</span><br><span class="line">  <span class="string">'h1'</span>,</span><br><span class="line">  &#123;<span class="attr">className</span>: <span class="string">'greeting'</span>&#125;,</span><br><span class="line">  <span class="string">'hello, world!'</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>经过React.createElement之后的简单结构：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = &#123;</span><br><span class="line">  type: <span class="string">'h1'</span>,</span><br><span class="line">  props: &#123;</span><br><span class="line">    className: <span class="string">'greeting'</span>,</span><br><span class="line">    children: <span class="string">'hello, world!'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看到，React.createElement会对树状结构的jsx进行处理来生成需要的数据结构，所以说首先需要知道React.createElement干了些啥</p>
+<h2 id="createElement"><a href="#createElement" class="headerlink" title="createElement"></a>createElement</h2><p><a href="https://reactjs.org/docs/react-api.html#createelement" target="_blank" rel="noopener">参考</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">React.createElement(</span><br><span class="line">  type,</span><br><span class="line">  [props],</span><br><span class="line">  [...children]</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h3 id="type"><a href="#type" class="headerlink" title="type"></a>type</h3><ul>
+<li>tag字符串名，如：’div’、’span’</li>
+<li>React component：class、function</li>
+<li>React fragment</li>
+</ul>
+
   <div class="guide-links">
     
     
@@ -343,7 +363,7 @@
       在 GitHub 上编辑此页！
     </a>
     
-    <span>更新于：2019-01-03 13:01:18</span>
+    <span>更新于：2019-01-18 18:01:60</span>
   </div>
 </div>
 
