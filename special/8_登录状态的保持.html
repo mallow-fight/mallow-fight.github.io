@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>构建高性能web网站 - mallow</title>
+  <title>登录状态的保持 - mallow</title>
   <meta charset="utf-8">
   <meta name="description" content="mallow's blog.">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
   <meta property="og:type" content="article">
-  <meta property="og:title" content="构建高性能web网站 — mallow">
+  <meta property="og:title" content="登录状态的保持 — mallow">
   <meta property="og:description" content="mallow's blog.">
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120215204-1"></script>
@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="/css/page.css">
   <!-- import vue from there so that you can use vue in markdown -->
   <script src="/js/vue.min.js"></script>
-  <script>window.PAGE_TYPE = "computer"</script>
+  <script>window.PAGE_TYPE = "special"</script>
 </head>
 <body class="docs">
   <div id="mobile-bar" >
@@ -110,29 +110,71 @@
         <div class="guide-links">
   
   
-    <span style="float: right;"><a style="color: green;" href="/books/computer/2_代码大全.html">代码大全</a> →</span>
   
   
+    <span style="float: right; margin-right: 30px;">← <a style="color: goldenrod;" href="/special/7_react源码.html">react源码</a></span>
   
 </div>
 
   <div class="sidebar">
   <div class="sidebar-inner">
-    <h3>当前位置：computer</h3>
+    <h3>当前位置：special</h3>
     <div class="list">
       <ul class="menu-root">
   
     
       <li>
-        <a href="/books/computer/1_构建高性能web网站.html" class="sidebar-link current">
-          构建高性能web网站
+        <a href="/special/1_原型.html" class="sidebar-link">
+          原型
         </a>
       </li>
       
     
       <li>
-        <a href="/books/computer/2_代码大全.html" class="sidebar-link">
-          代码大全
+        <a href="/special/2_webpack.html" class="sidebar-link">
+          webpack
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/special/3_异步.html" class="sidebar-link">
+          异步
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/special/4_浏览器如何解析html.html" class="sidebar-link">
+          浏览器如何解析html
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/special/5_网站性能优化.html" class="sidebar-link">
+          网站性能优化
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/special/6_http图解.html" class="sidebar-link">
+          http图解
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/special/7_react源码.html" class="sidebar-link">
+          react源码
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/special/8_登录状态的保持.html" class="sidebar-link current">
+          登录状态的保持
         </a>
       </li>
       
@@ -209,37 +251,38 @@
 </div>
 
 
-<div class="content computer with-sidebar ">
+<div class="content special with-sidebar ">
   <ul class="menu-root">
   
 </ul>
   
-    <h1>构建高性能web网站</h1>
+    <h1>登录状态的保持</h1>
   
-  <h2 id="分布式缓存"><a href="#分布式缓存" class="headerlink" title="分布式缓存"></a>分布式缓存</h2><ul>
-<li>使用 <code>memcached</code> 进行分布式缓存</li>
-<li>注意服务器资源的均衡分配，可以通过随机算法散列给各个服务器</li>
-<li><code>DNS</code>负载均衡</li>
-<li>数据库扩展</li>
-<li><code>nginx</code>反向代理</li>
-<li>后端服务器权重</li>
-</ul>
+  <blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/29101305" target="_blank" rel="noopener">参考资料</a></p>
+</blockquote>
+<h2 id="种类"><a href="#种类" class="headerlink" title="种类"></a>种类</h2><ol>
+<li>cookie</li>
+<li>session</li>
+<li>Token Based（JWT：JSON Web Token）</li>
+<li>单点登录</li>
+</ol>
 
   <div class="guide-links">
     
     
+      <span>← <a href="/special/7_react源码.html">react源码</a></span>
     
     
-      <span style="float: right;"><a href="/books/computer/2_代码大全.html">代码大全</a> →</span>
     
   </div>
   <div class="footer">
     发现错误？想参与编辑？
-    <a href="https://github.com/mallow-fight/blog/tree/master/source/books/computer/1_构建高性能web网站.md" target="_blank">
+    <a href="https://github.com/mallow-fight/blog/tree/master/source/special/8_登录状态的保持.md" target="_blank">
       在 GitHub 上编辑此页！
     </a>
     
-    <span>更新于：2018-09-13 14:09:20</span>
+    <span>更新于：2019-01-22 15:01:61</span>
   </div>
 </div>
 
