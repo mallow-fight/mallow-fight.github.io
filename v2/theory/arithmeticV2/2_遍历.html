@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>微观经济学 - mallow</title>
+  <title>遍历 - mallow</title>
   <meta charset="utf-8">
   <meta name="description" content="mallow's blog.">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
   <meta property="og:type" content="article">
-  <meta property="og:title" content="微观经济学 — mallow">
+  <meta property="og:title" content="遍历 — mallow">
   <meta property="og:description" content="mallow's blog.">
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120215204-1"></script>
@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="/css/page.css">
   <!-- import vue from there so that you can use vue in markdown -->
   <script src="/js/vue.min.js"></script>
-  <script>window.PAGE_TYPE = "economics"</script>
+  <script>window.PAGE_TYPE = "arithmeticV2"</script>
 </head>
 <body class="docs">
   <div id="mobile-bar" >
@@ -193,38 +193,29 @@
         <div class="guide-links">
   
   
-    <span style="float: right;"><a style="color: green;" href="/books/economics/3_手把手教你读财报.html">手把手教你读财报</a> →</span>
   
   
-  
-    <span style="float: right; margin-right: 30px;">← <a style="color: goldenrod;" href="/books/economics/1_国富论.html">国富论</a></span>
+    <span style="float: right; margin-right: 30px;">← <a style="color: goldenrod;" href="/v2/theory/arithmeticV2/1_intro.html">介绍</a></span>
   
 </div>
 
   <div class="sidebar">
   <div class="sidebar-inner">
-    <h3>当前位置：economics</h3>
+    <h3>当前位置：arithmeticV2</h3>
     <div class="list">
       <ul class="menu-root">
   
     
       <li>
-        <a href="/books/economics/1_国富论.html" class="sidebar-link">
-          国富论
+        <a href="/v2/theory/arithmeticV2/1_intro.html" class="sidebar-link">
+          介绍
         </a>
       </li>
       
     
       <li>
-        <a href="/books/economics/2_微观经济学.html" class="sidebar-link current">
-          微观经济学
-        </a>
-      </li>
-      
-    
-      <li>
-        <a href="/books/economics/3_手把手教你读财报.html" class="sidebar-link">
-          手把手教你读财报
+        <a href="/v2/theory/arithmeticV2/2_遍历.html" class="sidebar-link current">
+          遍历
         </a>
       </li>
       
@@ -384,68 +375,52 @@
 </div>
 
 
-<div class="content economics with-sidebar ">
+<div class="content arithmeticV2 with-sidebar ">
   <ul class="menu-root">
   
 </ul>
   
-    <h1>微观经济学</h1>
+    <h1>遍历</h1>
   
-  <h2 id="经济学的十大原理"><a href="#经济学的十大原理" class="headerlink" title="经济学的十大原理"></a>经济学的十大原理</h2><p><strong>管理社会就和管理家庭一样，社会的管理就是对资源的分配，而资源是稀缺的。</strong></p>
-<h3 id="人们如何制定决策"><a href="#人们如何制定决策" class="headerlink" title="人们如何制定决策"></a>人们如何制定决策</h3><ul>
-<li><p>人们面临权衡</p>
-<ul>
-<li>效率和平等的权衡：制定政策时，这两个目标是冲突的，讲究平等就会降低效率。</li>
+  <h2 id="深度优先遍历"><a href="#深度优先遍历" class="headerlink" title="深度优先遍历"></a>深度优先遍历</h2><ul>
+<li>不管是什么遍历，以根为开始节点</li>
 </ul>
-</li>
-<li><p>某事的成本是为了得到它而放弃的其他东西</p>
-</li>
-<li><p>理性人在边际处思考</p>
-<ul>
-<li>理性人：能有条理、有目的地尽最大努力实现自身目标的人。</li>
-<li>边际变动：某行动方案的微小增量调整。</li>
+<h3 id="先（前）序遍历"><a href="#先（前）序遍历" class="headerlink" title="先（前）序遍历"></a>先（前）序遍历</h3><ul>
+<li>先访问根，然后访问子树的遍历方式</li>
 </ul>
-</li>
-<li><p>人们对激励作出反应</p>
-</li>
+<p><img src="./images/Sorted_binary_tree_preorder.svg.png" alt="先序遍历"></p>
+<p>深度优先遍历 - 前序遍历：<br>F, B, A, D, C, E, G, I, H.</p>
+<h3 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h3><ul>
+<li>先访问左（右）子树，然后访问根，最后访问右（左）子树的遍历方式</li>
 </ul>
-<h3 id="人们如何相互作用"><a href="#人们如何相互作用" class="headerlink" title="人们如何相互作用"></a>人们如何相互作用</h3><ul>
-<li><p>贸易能使每个人的状况变好</p>
-</li>
-<li><p>市场通常是组织经济活动的好方法</p>
-</li>
-<li><p>政府有时能改善市场结果</p>
-</li>
+<p><img src="./images/Sorted_binary_tree_inorder.svg.png" alt="中序遍历"></p>
+<p>深度优先遍历 - 中序遍历：<br>A, B, C, D, E, F, G, H, I.</p>
+<h3 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h3><ul>
+<li>先访问子树，然后访问根的遍历方式</li>
 </ul>
-<h3 id="经济整体如何运行"><a href="#经济整体如何运行" class="headerlink" title="经济整体如何运行"></a>经济整体如何运行</h3><ul>
-<li><p>一个国家的生活水平取决于它生产商品和服务的能力</p>
-</li>
-<li><p>当政府发行过多货币时商品价格上升</p>
-</li>
-<li><p>社会面对通货膨胀和失业的短期权衡</p>
-</li>
+<p><img src="./images/Sorted_binary_tree_postorder.svg.png" alt="后序遍历"></p>
+<p>深度优先搜索 - 后序遍历：<br>A, C, E, D, B, H, I, G, F.</p>
+<h2 id="广度优先遍历"><a href="#广度优先遍历" class="headerlink" title="广度优先遍历"></a>广度优先遍历</h2><ul>
+<li>先访问离根节点最近的节点，又称按层次遍历，算法借助队列实现</li>
 </ul>
-<h2 id="像经济学家那样思考"><a href="#像经济学家那样思考" class="headerlink" title="像经济学家那样思考"></a>像经济学家那样思考</h2><ul>
-<li>资源：比如钱的流向是循环的，就像你在星巴克买了一杯咖啡，付的钱星巴克不会一直拥有，这个钱会流向政府、地产、员工以及老板等，最终还是会到某个人的口袋中，形成一个闭环。</li>
-</ul>
+<p><img src="./images/first_traversal.svg.png" alt="层次遍历"></p>
+<p>广度优先遍历 - 层次遍历：<br>F, B, G, A, D, I, C, E, H.</p>
 
   <div class="guide-links">
     
     
-      <span>← <a href="/books/economics/1_国富论.html">国富论</a></span>
+      <span>← <a href="/v2/theory/arithmeticV2/1_intro.html">介绍</a></span>
     
     
-    
-      <span style="float: right;"><a href="/books/economics/3_手把手教你读财报.html">手把手教你读财报</a> →</span>
     
   </div>
   <div class="footer">
     发现错误？想参与编辑？
-    <a href="https://github.com/mallow-fight/blog/tree/master/source/books/economics/2_微观经济学.md" target="_blank">
+    <a href="https://github.com/mallow-fight/blog/tree/master/source/v2/theory/arithmeticV2/2_遍历.md" target="_blank">
       在 GitHub 上编辑此页！
     </a>
     
-    <span>更新于：2018-09-13 14:09:20</span>
+    <span>更新于：2019-03-11 18:03:46</span>
   </div>
 </div>
 
