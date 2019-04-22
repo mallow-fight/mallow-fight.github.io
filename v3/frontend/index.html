@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>git相关 - mallow</title>
+  <title>介绍 - mallow</title>
   <meta charset="utf-8">
   <meta name="description" content="mallow's blog.">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
   <meta property="og:type" content="article">
-  <meta property="og:title" content="git相关 — mallow">
+  <meta property="og:title" content="介绍 — mallow">
   <meta property="og:description" content="mallow's blog.">
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120215204-1"></script>
@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="/css/page.css">
   <!-- import vue from there so that you can use vue in markdown -->
   <script src="/js/vue.min.js"></script>
-  <script>window.PAGE_TYPE = "software"</script>
+  <script>window.PAGE_TYPE = "v3/frontend"</script>
 </head>
 <body class="docs">
   <div id="mobile-bar" >
@@ -197,66 +197,29 @@
         <div class="guide-links">
   
   
-    <span style="float: right;"><a style="color: green;" href="/software/mac.html">mac相关</a> →</span>
+    <span style="float: right;"><a style="color: green;" href="/v3/frontend/js.html">js相关</a> →</span>
   
   
-  
-    <span style="float: right; margin-right: 30px;">← <a style="color: goldenrod;" href="/software/patterns.html">设计模式</a></span>
   
 </div>
 
   <div class="sidebar">
   <div class="sidebar-inner">
-    <h3>当前位置：software</h3>
+    <h3>当前位置：v3/frontend</h3>
     <div class="list">
       <ul class="menu-root">
   
     
       <li>
-        <a href="/software/engineering.html" class="sidebar-link">
-          导论
+        <a href="/v3/frontend/index.html" class="sidebar-link current">
+          介绍
         </a>
       </li>
       
     
       <li>
-        <a href="/software/bestpractice.html" class="sidebar-link">
-          最佳实践
-        </a>
-      </li>
-      
-    
-      <li>
-        <a href="/software/patterns.html" class="sidebar-link">
-          设计模式
-        </a>
-      </li>
-      
-    
-      <li>
-        <a href="/software/git.html" class="sidebar-link current">
-          git相关
-        </a>
-      </li>
-      
-    
-      <li>
-        <a href="/software/mac.html" class="sidebar-link">
-          mac相关
-        </a>
-      </li>
-      
-    
-      <li>
-        <a href="/software/markdown.html" class="sidebar-link">
-          markdown语法
-        </a>
-      </li>
-      
-    
-      <li>
-        <a href="/software/ps.html" class="sidebar-link">
-          photoshop相关
+        <a href="/v3/frontend/js.html" class="sidebar-link">
+          js相关
         </a>
       </li>
       
@@ -420,77 +383,30 @@
 </div>
 
 
-<div class="content software with-sidebar ">
+<div class="content v3/frontend with-sidebar ">
   <ul class="menu-root">
   
 </ul>
   
-    <h1>git相关</h1>
+    <h1>介绍</h1>
   
-  <h2 id="github按钮功能"><a href="#github按钮功能" class="headerlink" title="github按钮功能"></a>github按钮功能</h2><ul>
-<li>watch：谨慎点击，项目变动会发送邮件给你</li>
-<li>star：点赞或收藏，方便查找</li>
-<li>fork：补充完善这个项目的内容</li>
-</ul>
-<h2 id="提交信息标准"><a href="#提交信息标准" class="headerlink" title="提交信息标准"></a>提交信息标准</h2><h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(scope): subject</span><br><span class="line"><span class="comment"># 空一行</span></span><br><span class="line">body</span><br><span class="line"><span class="comment"># 空一行</span></span><br><span class="line">footer</span><br></pre></td></tr></table></figure>
-<ul>
-<li>每次提交包括三个部分，<code>Headers</code>、<code>Body</code>和<code>Footer</code>。</li>
-<li><code>Header</code> 是必需的，<code>Body</code> 和 <code>Footer</code> 可以省略。</li>
-<li><code>Header</code> 部分只有一行，包括三个字段： <code>type</code> （必需）、 <code>scope</code> （可选）和 <code>subject</code> （必需）。</li>
-</ul>
-<h3 id="type"><a href="#type" class="headerlink" title="type"></a>type</h3><ul>
-<li>feat：新功能（feature）</li>
-<li>fix：修补bug</li>
-<li>docs：文档（documentation）</li>
-<li>style： 格式（不影响代码运行的变动）</li>
-<li>refactor：重构（即不是新增功能，也不是修改bug的代码变动）</li>
-<li>test：增加测试</li>
-<li>chore：构建过程或辅助工具的变动</li>
-</ul>
-<h3 id="scope"><a href="#scope" class="headerlink" title="scope"></a>scope</h3><ul>
-<li>用于说明 commit 影响的范围，比如数据层、控制层、视图层等等，视项目不同而不同。</li>
-</ul>
-<h3 id="subject"><a href="#subject" class="headerlink" title="subject"></a>subject</h3><p><code>commit</code>目的的简短描述，不超过<code>50</code>个字符。</p>
-<ul>
-<li>以动词开头，使用第一人称现在时，比如<code>change</code>，而不是<code>changed</code>或<code>changes</code></li>
-<li>第一个字母小写</li>
-<li>结尾不加句号<code>（.）</code></li>
-</ul>
-<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><h3 id="husky"><a href="#husky" class="headerlink" title="husky"></a>husky</h3><p><strong>这个插件可以用来在提交或者推送代码前执行<code>npm</code>命令，所以可以用它来在推送代码时完成项目的发布。</strong></p>
-<ul>
-<li>仓库：<a href="https://github.com/typicode/husky" target="_blank" rel="noopener">husky</a></li>
-<li>安装: <code>npm install husky@next --save-dev</code></li>
-<li>用法：<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// package.json</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">"husky"</span>: &#123;</span><br><span class="line">    <span class="string">"hooks"</span>: &#123;</span><br><span class="line">      <span class="string">"pre-commit"</span>: <span class="string">"npm test"</span>,</span><br><span class="line">      <span class="string">"pre-push"</span>: <span class="string">"npm test"</span>,</span><br><span class="line">      <span class="string">"..."</span>: <span class="string">"..."</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="git通用命令"><a href="#git通用命令" class="headerlink" title="git通用命令"></a>git通用命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 常用</span></span><br><span class="line"></span><br><span class="line">git <span class="built_in">help</span> `&lt;<span class="built_in">command</span>&gt;` <span class="comment"># 显示某个指令的帮助指南</span></span><br><span class="line"></span><br><span class="line">git show <span class="variable">$id</span> <span class="comment"># 首先通过`git log`查询出某次提交的id，然后通过这个指令查出该次提交的具体信息</span></span><br><span class="line"></span><br><span class="line">git add . <span class="comment"># 将所有修改过的工作文件提交暂存区</span></span><br><span class="line"></span><br><span class="line">git reset --hard <span class="comment"># 恢复最近一次提交过的状态，即放弃上次提交后的所有本次修改</span></span><br><span class="line"></span><br><span class="line">git ci -am <span class="string">"some comments"</span> <span class="comment"># 提交代码</span></span><br><span class="line"></span><br><span class="line">git diff <span class="comment"># 查看修改的文件</span></span><br><span class="line"></span><br><span class="line">git <span class="built_in">log</span> <span class="comment"># 查看所有提交记录</span></span><br><span class="line"></span><br><span class="line">git branch -r <span class="comment"># 查看远程分支</span></span><br><span class="line"></span><br><span class="line">git checkout `&lt;exsit_branch&gt;` <span class="comment"># 切换到某个存在的分支</span></span><br><span class="line"></span><br><span class="line">git checkout -b `&lt;new_branch&gt;` <span class="comment"># 基于当前分支创建新的本地new_branch</span></span><br><span class="line"></span><br><span class="line">git checkout <span class="variable">$id</span> -b `&lt;new_branch&gt;` <span class="comment"># 把某次历史提交记录checkout出来，创建成一个分支</span></span><br><span class="line"></span><br><span class="line">git merge `&lt;branch&gt;` <span class="comment"># 将本地branch分支合并到当前本地分支</span></span><br><span class="line"></span><br><span class="line">git merge origin/branch <span class="comment"># 将远程branch分支合并到本地当前分支</span></span><br><span class="line"></span><br><span class="line">git stash <span class="comment"># 暂存</span></span><br><span class="line"></span><br><span class="line">git stash apply <span class="comment"># 恢复暂存的内容</span></span><br><span class="line"></span><br><span class="line">git stash drop <span class="comment"># 删除暂存区</span></span><br><span class="line"></span><br><span class="line">git pull <span class="comment"># 抓取远程仓库所有分支更新并合并到本地</span></span><br><span class="line"></span><br><span class="line">git push origin branch <span class="comment"># 将本地branch分支推到远程主分支</span></span><br><span class="line"></span><br><span class="line">git push -u origin master <span class="comment"># 客户端首次提交</span></span><br></pre></td></tr></table></figure>
-<h3 id="上传本地仓库"><a href="#上传本地仓库" class="headerlink" title="上传本地仓库"></a>上传本地仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># if not exist</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"# image-bed"</span> &gt;&gt; README.md</span><br><span class="line"><span class="comment"># else if exist .git</span></span><br><span class="line">rm -rf .git</span><br><span class="line"><span class="comment"># else</span></span><br><span class="line">git init</span><br><span class="line">git add . <span class="comment"># same as ga.</span></span><br><span class="line">git commit -am <span class="string">"first commit"</span> <span class="comment"># same as gcam</span></span><br><span class="line">git remote add origin https://github.com/mallow-fight/image-bed.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-<h3 id="打tag"><a href="#打tag" class="headerlink" title="打tag"></a>打tag</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git tag -a v1.4 -m <span class="string">'my version 1.4'</span> <span class="comment"># 本地添加标签名</span></span><br><span class="line">git tag <span class="comment"># 查看所有标签名</span></span><br><span class="line">git push origin [tagName] <span class="comment"># 将指定的标签名推送到远程仓库上</span></span><br></pre></td></tr></table></figure>
-<h3 id="重新使gitignore生效"><a href="#重新使gitignore生效" class="headerlink" title="重新使gitignore生效"></a>重新使gitignore生效</h3><blockquote>
-<p><a href="https://help.github.com/articles/ignoring-files/" target="_blank" rel="noopener">参考资料-如何使用.gitignore</a></p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached .</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">".gitignore is now working"</span></span><br></pre></td></tr></table></figure>
-<h3 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h3><ul>
-<li><a href="https://www.jianshu.com/p/3be4029ce854" target="_blank" rel="noopener">简书</a></li>
-</ul>
+  <p><strong>这个专栏主要有一些前端方面的、比较深入的专题研究。</strong></p>
 
   <div class="guide-links">
     
     
-      <span>← <a href="/software/patterns.html">设计模式</a></span>
     
     
-    
-      <span style="float: right;"><a href="/software/mac.html">mac相关</a> →</span>
+      <span style="float: right;"><a href="/v3/frontend/js.html">js相关</a> →</span>
     
   </div>
   <div class="footer">
     发现错误？想参与编辑？
-    <a href="https://github.com/mallow-fight/blog/tree/master/source/software/git.md" target="_blank">
+    <a href="https://github.com/mallow-fight/blog/tree/master/source/v3/frontend/index.md" target="_blank">
       在 GitHub 上编辑此页！
     </a>
     
-    <span>更新于：2019-01-08 15:01:08</span>
+    <span>更新于：2019-04-22 16:04:85</span>
   </div>
 </div>
 

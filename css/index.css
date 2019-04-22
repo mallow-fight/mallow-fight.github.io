@@ -804,6 +804,8 @@ body.docs #nav {
 }
 body {
   background-color: #727f80;
+  height: 100%;
+  width: 100%;
 }
 #logo span {
   font-size: 1.2em;
@@ -824,6 +826,7 @@ body {
 #hero {
   padding: 40px 40px 30px;
   background-color: #fff;
+  height: 100vh;
 }
 #hero .inner {
   text-align: center;
@@ -901,6 +904,7 @@ body {
   margin: 0 15px;
 }
 #highlights {
+  display: none;
   background-color: #fff;
   padding-bottom: 70px;
 }
@@ -961,6 +965,7 @@ body {
   }
   #hero {
     padding: 40px 40px 30px;
+    height: 100vh;
   }
   #hero .hero-logo {
     float: none;
