@@ -340,11 +340,12 @@
 </ul>
 <h3 id="FormBuilder"><a href="#FormBuilder" class="headerlink" title="FormBuilder"></a>FormBuilder</h3><ol>
 <li>格式化Props为Form和FormItems需要的属性。</li>
-<li>通过Control来控制显示的表单元素。</li>
+<li>将格式化之后的属性通过Provider给到Control中的Consumer。</li>
+<li>Control消费Consumer来控制显示的表单元素。</li>
 </ol>
 <ul>
 <li>优点：减少代码量</li>
-<li>缺点：联动非常难，代码混乱，难以维护和拓展，使用了不必要的React.createContext，导致数据流向不清晰，嵌套非常多。</li>
+<li>缺点：联动非常难，代码比较混乱，维护和拓展比较难，嵌套比较多。</li>
 </ul>
 <h3 id="FormItems"><a href="#FormItems" class="headerlink" title="FormItems"></a>FormItems</h3><ol>
 <li>只渲染Form.Items。</li>
@@ -368,6 +369,9 @@
 <li>更方便修改options等配置项。</li>
 <li>更多类型。</li>
 </ol>
+<h3 id="意见收集"><a href="#意见收集" class="headerlink" title="意见收集"></a>意见收集</h3><ol>
+<li>是否需要使用到Provider和Consumer</li>
+</ol>
 
   <div class="guide-links">
     
@@ -383,7 +387,7 @@
       在 GitHub 上编辑此页！
     </a>
     
-    <span>更新于：2019-04-25 14:04:55</span>
+    <span>更新于：2019-04-26 15:04:01</span>
   </div>
 </div>
 
