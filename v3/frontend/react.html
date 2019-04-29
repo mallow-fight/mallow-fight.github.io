@@ -350,13 +350,27 @@
 <li>主要会用到各种递归以及处理各种类型的DOM元素的差异性。</li>
 <li>对比新旧VDOM的算法也挺有意思的，加上一些启发性的算法可以加快对比速度。</li>
 </ol>
-<h2 id="react-router"><a href="#react-router" class="headerlink" title="react-router"></a>react-router</h2><h3 id="hash"><a href="#hash" class="headerlink" title="hash"></a>hash</h3><ol>
+<h2 id="react-router"><a href="#react-router" class="headerlink" title="react-router"></a>react-router</h2><blockquote>
+<p>这几种方式可以封装成同一个API，比如history库。这样有利于逻辑的复用，而且不容易出错。</p>
+</blockquote>
+<h3 id="hash"><a href="#hash" class="headerlink" title="hash"></a>hash</h3><ol>
 <li>监听hashchange。</li>
 <li>根据hashchange之后的newUrl匹配对应的path。</li>
 <li>渲染匹配到的path对应的component。</li>
 <li>如果是初次渲染有hash的url，直接匹配渲染。</li>
 </ol>
-<h3 id="history"><a href="#history" class="headerlink" title="history"></a>history</h3><h3 id="memory"><a href="#memory" class="headerlink" title="memory"></a>memory</h3><h2 id="redux"><a href="#redux" class="headerlink" title="redux"></a>redux</h2>
+<h3 id="history"><a href="#history" class="headerlink" title="history"></a>history</h3><ol>
+<li>主要难点在怎么监听pushState，然后更新对应的路由。</li>
+<li>得维护一个实例数组，在route组件willMount的时候注册这个实例（也就是this），unMount的时候取消注册这个实例（也就是从数组中删除）。</li>
+<li>还有注意一下浏览器本身的前进后退等行为，这个一样可以被监听到。</li>
+</ol>
+<h3 id="memory"><a href="#memory" class="headerlink" title="memory"></a>memory</h3><ol>
+<li>将router对象存在服务器内存中。</li>
+<li>当浏览器访问对应路由时，会去服务器内存中读取对应路由的配置。</li>
+<li>将配置中的组件返回给前端，完成首屏渲染。</li>
+<li>一般只是首次渲染使用ssr，后续会交给浏览器作为一个spa应用。</li>
+</ol>
+<h2 id="redux"><a href="#redux" class="headerlink" title="redux"></a>redux</h2>
   <div class="guide-links">
     
     
@@ -373,7 +387,7 @@
       在 GitHub 上编辑此页！
     </a>
     
-    <span>更新于：2019-04-28 18:04:50</span>
+    <span>更新于：2019-04-29 12:04:48</span>
   </div>
 </div>
 
