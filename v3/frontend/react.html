@@ -370,7 +370,13 @@
 <li>将配置中的组件返回给前端，完成首屏渲染。</li>
 <li>一般只是首次渲染使用ssr，后续会交给浏览器作为一个spa应用。</li>
 </ol>
-<h2 id="redux"><a href="#redux" class="headerlink" title="redux"></a>redux</h2>
+<h2 id="redux"><a href="#redux" class="headerlink" title="redux"></a>redux</h2><ol>
+<li>主要有有这些api：connect、getState、commit、dispatch。</li>
+<li>connect用于将一些store里面的值或者通用方法映射到props上，方便调用。</li>
+<li>getState，获取store里面的值。</li>
+<li>疑难点在如何dispatch之后去更新视图，可能的做法是实例将挂载阶段注册实例到一个全局数组中，在commit的时候，当更新完store里面对应的值之后，去遍历这个实例数组，如果实例的props中有对应store里面的key，就修改这个实例render的上下文，在forceUpdate，达到同步更新视图的目的。</li>
+</ol>
+
   <div class="guide-links">
     
     
@@ -387,7 +393,7 @@
       在 GitHub 上编辑此页！
     </a>
     
-    <span>更新于：2019-04-30 10:04:68</span>
+    <span>更新于：2019-05-07 12:05:64</span>
   </div>
 </div>
 
