@@ -341,7 +341,10 @@
   
     <h1>js</h1>
   
-  <h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><h3 id="prototype"><a href="#prototype" class="headerlink" title="prototype"></a>prototype</h3><h4 id="表现行为"><a href="#表现行为" class="headerlink" title="表现行为"></a>表现行为</h4><ol>
+  <blockquote>
+<p><a href="https://github.com/yygmind/blog/issues/13" target="_blank" rel="noopener">进阶</a></p>
+</blockquote>
+<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><h3 id="prototype"><a href="#prototype" class="headerlink" title="prototype"></a>prototype</h3><h4 id="表现行为"><a href="#表现行为" class="headerlink" title="表现行为"></a>表现行为</h4><ol>
 <li>每个普通函数都有一个<code>prototype</code>属性。</li>
 <li><code>es6</code>的箭头函数没有<code>prototype</code>属性。</li>
 <li><code>prototype</code>是一个对象，默认有一个<code>constructor</code>属性，这个属性值等同于函数本身，对<code>constructor</code>的操作相当于对函数本身进行操作。</li>
@@ -570,6 +573,23 @@
 <li>将es6翻译成es5</li>
 <li>解决了浏览器不认识es6或者es7的问题</li>
 </ul>
+<h2 id="检测类型"><a href="#检测类型" class="headerlink" title="检测类型"></a>检测类型</h2><ul>
+<li>只能使用<code>Object.prototype.toString.call(var)</code>，因为<code>Object.toString</code>和它不是一个函数，其他的构造函数如<code>Array</code>等继承的是它们自己定义的函数。</li>
+<li>在toString方法被调用时,会执行下面的操作步骤:</li>
+<li>es5<ol>
+<li>获取this对象的[[class]]属性的值.</li>
+<li>计算出三个字符串”[object “, 第一步的操作结果Result(1), 以及 “]”连接后的新字符串.</li>
+<li>返回第二步的操作结果Result(2).</li>
+</ol>
+</li>
+<li>es6<ol>
+<li>[[class]]内部属性没有了，取而代之的是另一个内部属性[[NativeBrand]]（该属性的值对应一个标志值，可以用来区分原生对象的类型）</li>
+</ol>
+</li>
+</ul>
+<h2 id="隐式绑定"><a href="#隐式绑定" class="headerlink" title="隐式绑定"></a>隐式绑定</h2><ul>
+<li>上下文只会取上一层，不会一直往上取。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = &#123;</span><br><span class="line"> b: &#123;</span><br><span class="line">   c() &#123;</span><br><span class="line">     <span class="built_in">console</span>.log(<span class="keyword">this</span>) <span class="comment">// &#123; c: [Function: c], d: 2 &#125;</span></span><br><span class="line">     <span class="built_in">console</span>.log(<span class="keyword">this</span>.e) <span class="comment">// undefined</span></span><br><span class="line">   &#125;,</span><br><span class="line">   d: <span class="number">2</span></span><br><span class="line"> &#125;,</span><br><span class="line"> e: <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line">a.b.c()</span><br></pre></td></tr></table></figure></li>
+</ul>
 
   <div class="guide-links">
     
@@ -587,7 +607,7 @@
       在 GitHub 上编辑此页！
     </a>
     
-    <span>更新于：2019-05-22 11:05:90</span>
+    <span>更新于：2019-05-22 17:05:25</span>
   </div>
 </div>
 
