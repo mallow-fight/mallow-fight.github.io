@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>react相关 - mallow</title>
+  <title>算法 - mallow</title>
   <meta charset="utf-8">
   <meta name="description" content="mallow's blog.">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
   <meta property="og:type" content="article">
-  <meta property="og:title" content="react相关 — mallow">
+  <meta property="og:title" content="算法 — mallow">
   <meta property="og:description" content="mallow's blog.">
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120215204-1"></script>
@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="/css/page.css">
   <!-- import vue from there so that you can use vue in markdown -->
   <script src="/js/vue.min.js"></script>
-  <script>window.PAGE_TYPE = "v3/frontend"</script>
+  <script>window.PAGE_TYPE = "v3/server"</script>
 </head>
 <body class="docs">
   <div id="mobile-bar" >
@@ -45,11 +45,15 @@
   </form>
 </li>
 <li class="nav-dropdown-container learn">
-  <a href="/v3/backend/index.html" class="nav-link">后端</a>
+  <a href="/v3/client/index.html" class="nav-link">客户端</a>
 </li>
 
 <li class="nav-dropdown-container learn">
-  <a href="/v3/frontend/index.html" class="nav-link">前端</a>
+  <a href="/v3/http/index.html" class="nav-link">HTTP</a>
+</li>
+
+<li class="nav-dropdown-container learn">
+  <a href="/v3/server/index.html" class="nav-link">服务端</a>
 </li>
 
 <li class="nav-dropdown-container learn">
@@ -150,73 +154,43 @@
         <div class="guide-links">
   
   
-    <span style="float: right;"><a style="color: green;" href="/v3/frontend/webpack.html">webpack相关</a> →</span>
   
   
-  
-    <span style="float: right; margin-right: 30px;">← <a style="color: goldenrod;" href="/v3/frontend/browser.html">浏览器</a></span>
+    <span style="float: right; margin-right: 30px;">← <a style="color: goldenrod;" href="/v3/server/1-node.html">node</a></span>
   
 </div>
 
   <div class="sidebar">
   <div class="sidebar-inner">
-    <h3>当前位置：v3/frontend</h3>
+    <h3>当前位置：v3/server</h3>
     <div class="list">
       <ul class="menu-root">
   
     
       <li>
-        <a href="/v3/frontend/index.html" class="sidebar-link">
+        <a href="/v3/server/index.html" class="sidebar-link">
           介绍
         </a>
       </li>
       
     
       <li>
-        <a href="/v3/frontend/js.html" class="sidebar-link">
-          js相关
+        <a href="/v3/server/1-node.html" class="sidebar-link">
+          node
         </a>
       </li>
       
     
       <li>
-        <a href="/v3/frontend/html.html" class="sidebar-link">
-          html相关
+        <a href="/v3/server/2-os.html" class="sidebar-link">
+          操作系统
         </a>
       </li>
       
     
       <li>
-        <a href="/v3/frontend/css.html" class="sidebar-link">
-          css相关
-        </a>
-      </li>
-      
-    
-      <li>
-        <a href="/v3/frontend/browser.html" class="sidebar-link">
-          浏览器
-        </a>
-      </li>
-      
-    
-      <li>
-        <a href="/v3/frontend/react.html" class="sidebar-link current">
-          react相关
-        </a>
-      </li>
-      
-    
-      <li>
-        <a href="/v3/frontend/webpack.html" class="sidebar-link">
-          webpack相关
-        </a>
-      </li>
-      
-    
-      <li>
-        <a href="/v3/frontend/antd.html" class="sidebar-link">
-          antd
+        <a href="/v3/server/3-arithmetic.html" class="sidebar-link current">
+          算法
         </a>
       </li>
       
@@ -230,11 +204,15 @@
   </form>
 </li>
 <li class="nav-dropdown-container learn">
-  <a href="/v3/backend/index.html" class="nav-link">后端</a>
+  <a href="/v3/client/index.html" class="nav-link">客户端</a>
 </li>
 
 <li class="nav-dropdown-container learn">
-  <a href="/v3/frontend/index.html" class="nav-link">前端</a>
+  <a href="/v3/http/index.html" class="nav-link">HTTP</a>
+</li>
+
+<li class="nav-dropdown-container learn">
+  <a href="/v3/server/index.html" class="nav-link">服务端</a>
 </li>
 
 <li class="nav-dropdown-container learn">
@@ -333,67 +311,58 @@
 </div>
 
 
-<div class="content v3/frontend with-sidebar ">
+<div class="content v3/server with-sidebar ">
   <ul class="menu-root">
   
 </ul>
   
-    <h1>react相关</h1>
+    <h1>算法</h1>
   
   <blockquote>
-<p><a href="https://github.com/mallow-fight/mini-react" target="_blank" rel="noopener">手搓react、react-router、redux</a><br>这个仓库中有react、react-router、redux的简单实现。<br>如果想深入了解源码的设计思想，一行行读源码并不是最好的选择，因为源码有很多不需要关注的代码，可以尝试先了解一些设计思想的文章，按照它们的设计思想自己去实现一个简单版本。这样实现的过程中一些疑难点就会引刃而解，对它们是怎么实现的认知也会上升一个档次。</p>
+<p><a href="https://www.zhihu.com/question/28580777/answer/530047115" target="_blank" rel="noopener">为了面试短时间搞定算法</a></p>
 </blockquote>
-<h2 id="react"><a href="#react" class="headerlink" title="react"></a>react</h2><ol>
-<li>写一个简单版的react最重要的是定义好虚拟DOM树的结构，使用这个结构来适配所有的JSX类型，这样就可以统一操作，不容易出错，处理逻辑复用程度就很高。</li>
-<li>其次应该分清各个模块的职责，每个模块之间的功能都是单一且稳定的。</li>
-<li>最后是弄清楚树状结构各个层级之间的关系。</li>
-<li>主要会用到各种递归以及处理各种类型的DOM元素的差异性。</li>
-<li>对比新旧VDOM的算法也挺有意思的，加上一些启发性的算法可以加快对比速度。</li>
-</ol>
-<h2 id="react-router"><a href="#react-router" class="headerlink" title="react-router"></a>react-router</h2><blockquote>
-<p>这几种方式可以封装成同一个API，比如history库。这样有利于逻辑的复用，而且不容易出错。</p>
+<h2 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h2><blockquote>
+<p><a href="https://zh.wikipedia.org/wiki/%E9%93%BE%E8%A1%A8" target="_blank" rel="noopener">wiki</a></p>
 </blockquote>
-<h3 id="hash"><a href="#hash" class="headerlink" title="hash"></a>hash</h3><ol>
-<li>监听hashchange。</li>
-<li>根据hashchange之后的newUrl匹配对应的path。</li>
-<li>渲染匹配到的path对应的component。</li>
-<li>如果是初次渲染有hash的url，直接匹配渲染。</li>
-</ol>
-<h3 id="history"><a href="#history" class="headerlink" title="history"></a>history</h3><ol>
-<li>主要难点在怎么监听pushState，然后更新对应的路由。</li>
-<li>得维护一个实例数组，在route组件willMount的时候注册这个实例（也就是this），unMount的时候取消注册这个实例（也就是从数组中删除）。</li>
-<li>还有注意一下浏览器本身的前进后退等行为，这个一样可以被监听到。</li>
-</ol>
-<h3 id="memory"><a href="#memory" class="headerlink" title="memory"></a>memory</h3><ol>
-<li>将router对象存在服务器内存中。</li>
-<li>当浏览器访问对应路由时，会去服务器内存中读取对应路由的配置。</li>
-<li>将配置中的组件返回给前端，完成首屏渲染。</li>
-<li>一般只是首次渲染使用ssr，后续会交给浏览器作为一个spa应用。</li>
-</ol>
-<h2 id="redux"><a href="#redux" class="headerlink" title="redux"></a>redux</h2><ol>
-<li>主要有有这些api：connect、getState、commit、dispatch。</li>
-<li>connect用于将一些store里面的值或者通用方法映射到props上，方便调用。</li>
-<li>getState，获取store里面的值。</li>
-<li>疑难点在如何dispatch之后去更新视图，可能的做法是实例将挂载阶段注册实例到一个全局数组中，在commit的时候，当更新完store里面对应的值之后，去遍历这个实例数组，如果实例的props中有对应store里面的key，就修改这个实例render的上下文，在forceUpdate，达到同步更新视图的目的。</li>
-</ol>
+<h2 id="深度优先遍历"><a href="#深度优先遍历" class="headerlink" title="深度优先遍历"></a>深度优先遍历</h2><ul>
+<li>不管是什么遍历，以根为开始节点</li>
+</ul>
+<h3 id="先（前）序遍历"><a href="#先（前）序遍历" class="headerlink" title="先（前）序遍历"></a>先（前）序遍历</h3><ul>
+<li>先访问根，然后访问子树的遍历方式</li>
+</ul>
+<p><img src="./images/Sorted_binary_tree_preorder.svg.png" alt="先序遍历"></p>
+<p>深度优先遍历 - 前序遍历：<br>F, B, A, D, C, E, G, I, H.</p>
+<h3 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h3><ul>
+<li>先访问左（右）子树，然后访问根，最后访问右（左）子树的遍历方式</li>
+</ul>
+<p><img src="./images/Sorted_binary_tree_inorder.svg.png" alt="中序遍历"></p>
+<p>深度优先遍历 - 中序遍历：<br>A, B, C, D, E, F, G, H, I.</p>
+<h3 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h3><ul>
+<li>先访问子树，然后访问根的遍历方式</li>
+</ul>
+<p><img src="./images/Sorted_binary_tree_postorder.svg.png" alt="后序遍历"></p>
+<p>深度优先搜索 - 后序遍历：<br>A, C, E, D, B, H, I, G, F.</p>
+<h2 id="广度优先遍历"><a href="#广度优先遍历" class="headerlink" title="广度优先遍历"></a>广度优先遍历</h2><ul>
+<li>先访问离根节点最近的节点，又称按层次遍历，算法借助队列实现</li>
+</ul>
+<p><img src="./images/first_traversal.svg.png" alt="层次遍历"></p>
+<p>广度优先遍历 - 层次遍历：<br>F, B, G, A, D, I, C, E, H.</p>
 
   <div class="guide-links">
     
     
-      <span>← <a href="/v3/frontend/browser.html">浏览器</a></span>
+      <span>← <a href="/v3/server/1-node.html">node</a></span>
     
     
-    
-      <span style="float: right;"><a href="/v3/frontend/webpack.html">webpack相关</a> →</span>
     
   </div>
   <div class="footer">
     发现错误？想参与编辑？
-    <a href="https://github.com/mallow-fight/blog/tree/master/source/v3/frontend/react.md" target="_blank">
+    <a href="https://github.com/mallow-fight/blog/tree/master/source/v3/server/3-arithmetic.md" target="_blank">
       在 GitHub 上编辑此页！
     </a>
     
-    <span>更新于：2019-05-07 12:05:64</span>
+    <span>更新于：2019-05-22 11:05:61</span>
   </div>
 </div>
 
