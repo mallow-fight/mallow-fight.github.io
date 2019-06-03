@@ -1,0 +1,861 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>数据库 - mallow</title>
+  <meta charset="utf-8">
+  <meta name="description" content="mallow's blog.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="数据库 — mallow">
+  <meta property="og:description" content="mallow's blog.">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120215204-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-120215204-1');
+  </script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="icon" href="/images/logo.png" type="image/png">
+  <!-- main page styles -->
+  <link rel="stylesheet" href="/css/page.css">
+  <!-- import vue from there so that you can use vue in markdown -->
+  <script src="/js/vue.min.js"></script>
+  <script>window.PAGE_TYPE = "v3/server"</script>
+</head>
+<body class="docs">
+  <div id="mobile-bar" >
+    <a class="menu-button"></a>
+    <a class="logo" href="/"></a>
+  </div>
+  <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logo.png">
+    <span>Mallow</span>
+  </a>
+  <ul id="nav">
+    <li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a href="/v3/client/index.html" class="nav-link">客户端</a>
+</li>
+
+<li class="nav-dropdown-container learn">
+  <a href="/v3/http/index.html" class="nav-link">HTTP</a>
+</li>
+
+<li class="nav-dropdown-container learn">
+  <a href="/v3/server/index.html" class="nav-link">服务端</a>
+</li>
+
+<li class="nav-dropdown-container learn">
+	<a class="nav-link">v2</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+		<li><h4>理论</h4></li>
+		<li><ul>
+			<li><a href="/v2/theory/dataStructure/1_intro.html" class="nav-link">数据结构</a></li>
+			<li><a href="/v2/theory/computerNet/1_intro.html" class="nav-link">计算机网络</a></li>
+			<li><a href="/v2/theory/computerContain/1_intro.html" class="nav-link">计算机组成原理</a></li>
+			<li><a href="/v2/theory/arithmeticV2/1_intro.html" class="nav-link">算法</a></li>
+			<li><a href="/v2/theory/compile/1_intro.html" class="nav-link">编译原理</a></li>
+		</ul></li>
+		<li><h4>基础</h4></li>
+    <li><ul>
+			<li><a href="/v2/basic/frontend/1_intro.html" class="nav-link">前端</a></li>
+			<li><a href="/v2/basic/http/1_intro.html" class="nav-link">http</a></li>
+			<li><a href="/v2/basic/backend/1_intro.html" class="nav-link">后端</a></li>
+		</ul></li>
+		<li><h4>框架&工具</h4></li>
+		<li><ul>
+			<li><a href="/v2/frame/react/1_intro.html" class="nav-link">React相关</a></li>
+			<li><a href="/v2/theory/vue/1_intro.html" class="nav-link">Vue相关</a></li>
+			<li><a href="/v2/theory/lodash/1_intro.html" class="nav-link">Lodash</a></li>
+			<li><a href="/v2/theory/axios/1_intro.html" class="nav-link">axios</a></li>
+		</ul></li>
+		<li><h4>开发环境</h4></li>
+		<li><ul>
+			<li><a href="/v2/dev/ide/1_intro.html" class="nav-link">IDE</a></li>
+			<li><a href="/v2/dev/codeManage/1_intro.html" class="nav-link">代码管理</a></li>
+			<li><a href="/v2/dev/packTools/1_intro.html" class="nav-link">打包工具</a></li>
+			<li><a href="/v2/dev/staging/1_intro.html" class="nav-link">脚手架</a></li>
+			<li><a href="/v2/dev/debug/1_intro.html" class="nav-link">debug</a></li>
+			<li><a href="/v2/dev/unitTest/1_intro.html" class="nav-link">单元测试</a></li>
+			<li><a href="/v2/dev/deploy/1_intro.html" class="nav-link">构建和部署</a></li>
+			<li><a href="/v2/dev/serverOprate/1_intro.html" class="nav-link">服务器操作</a></li>
+		</ul></li>
+		<li><h4>运行环境</h4></li>
+		<li><ul>
+			<li><a href="/v2/runtime/browser/1_intro.html" class="nav-link">浏览器</a></li>
+			<li><a href="/v2/runtime/app/1_intro.html" class="nav-link">app</a></li>
+			<li><a href="/v2/runtime/desktop/1_intro.html" class="nav-link">桌面</a></li>
+		</ul></li>
+		<li><h4>监控&分析</h4></li>
+		<li><ul>
+			<li><a href="/v2/monitor/browser/1_intro.html" class="nav-link">浏览器</a></li>
+			<li><a href="/v2/monitor/app/1_intro.html" class="nav-link">app</a></li>
+			<li><a href="/v2/monitor/desktop/1_intro.html" class="nav-link">桌面</a></li>
+		</ul></li>
+		<li class="nav-dropdown-container learn">
+			<a href="/special/1_原型.html" class="nav-link">专题</a>
+		</li>			
+  </ul>
+</li>
+
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">v1</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>软件工程化</h4></li>
+    <li><ul>
+      <li><a href="/software/engineering.html" class="nav-link">概念&实践</a></li>
+    </ul></li>
+    <li><h4>前端</h4></li>
+    <li><ul>
+      <li><a href="/frontend/skeleton/1_skeleton.html" class="nav-link">skeleton</a></li>
+      <li><a href="/frontend/html/1_define.html" class="nav-link">html</a></li>
+      <li><a href="/frontend/css/1_define.html" class="nav-link">css</a></li>
+      <li><a href="/frontend/js/1_enter&going.html" class="nav-link">javascript</a></li>
+      <li><a href="/frontend/framework/1_vue.html" class="nav-link">framework</a></li>
+      <li><a href="/frontend/browser/1_safe.html" class="nav-link">browser</a></li>
+      <li><a href="/frontend/important/1_conclude.html" class="nav-link">conclude</a></li>
+    </ul></li>
+    <li><h4>后端</h4></li>
+    <li><ul>
+      <li><a href="/backend/node/note.html" class="nav-link">node</a></li>
+      <li><a href="/backend/http/1_http.html" class="nav-link">http</a></li>
+      <li><a href="/backend/java/core.html" class="nav-link">java</a></li>
+      <li><a href="/backend/database/1_mysql.html" class="nav-link">database</a></li>
+    </ul></li>
+    <li><h4>算法</h4></li>
+    <li><ul>
+      <li><a href="/arithmetic/1_lintcode.html" class="nav-link">概念&实践</a></li>
+    </ul></li>
+    <li><h4>读书</h4></li>
+    <li><ul>
+      <li><a href="/books/memory/1_利玛窦的记忆宫殿.html" class="nav-link">记忆学</a></li>
+      <li><a href="/books/computer/1_构建高性能web网站.html" class="nav-link">计算机</a></li>
+      <li><a href="/books/history/资治通鉴/1_周纪一.html" class="nav-link">历史</a></li>
+      <li><a href="/books/economics/1_国富论.html" class="nav-link">经济</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+  </ul>
+</div>
+  
+    <div id="main" class="fix-sidebar">
+        <div class="guide-links">
+  
+  
+  
+  
+    <span style="float: right; margin-right: 30px;">← <a style="color: goldenrod;" href="/v3/server/2-arithmetic.html">算法</a></span>
+  
+</div>
+
+  <div class="sidebar">
+  <div class="sidebar-inner">
+    <h3>当前位置：v3/server</h3>
+    <div class="list">
+      <ul class="menu-root">
+  
+    
+      <li>
+        <a href="/v3/server/index.html" class="sidebar-link">
+          介绍
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/v3/server/1-node.html" class="sidebar-link">
+          node
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/v3/server/2-arithmetic.html" class="sidebar-link">
+          算法
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/v3/server/3-database.html" class="sidebar-link current">
+          数据库
+        </a>
+      </li>
+      
+</ul>
+    </div>
+    <h3>浏览其它</h3>
+    <ul class="main-menu">
+      <li>
+  <form id="search-form">
+    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
+  </form>
+</li>
+<li class="nav-dropdown-container learn">
+  <a href="/v3/client/index.html" class="nav-link">客户端</a>
+</li>
+
+<li class="nav-dropdown-container learn">
+  <a href="/v3/http/index.html" class="nav-link">HTTP</a>
+</li>
+
+<li class="nav-dropdown-container learn">
+  <a href="/v3/server/index.html" class="nav-link">服务端</a>
+</li>
+
+<li class="nav-dropdown-container learn">
+	<a class="nav-link">v2</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+		<li><h4>理论</h4></li>
+		<li><ul>
+			<li><a href="/v2/theory/dataStructure/1_intro.html" class="nav-link">数据结构</a></li>
+			<li><a href="/v2/theory/computerNet/1_intro.html" class="nav-link">计算机网络</a></li>
+			<li><a href="/v2/theory/computerContain/1_intro.html" class="nav-link">计算机组成原理</a></li>
+			<li><a href="/v2/theory/arithmeticV2/1_intro.html" class="nav-link">算法</a></li>
+			<li><a href="/v2/theory/compile/1_intro.html" class="nav-link">编译原理</a></li>
+		</ul></li>
+		<li><h4>基础</h4></li>
+    <li><ul>
+			<li><a href="/v2/basic/frontend/1_intro.html" class="nav-link">前端</a></li>
+			<li><a href="/v2/basic/http/1_intro.html" class="nav-link">http</a></li>
+			<li><a href="/v2/basic/backend/1_intro.html" class="nav-link">后端</a></li>
+		</ul></li>
+		<li><h4>框架&工具</h4></li>
+		<li><ul>
+			<li><a href="/v2/frame/react/1_intro.html" class="nav-link">React相关</a></li>
+			<li><a href="/v2/theory/vue/1_intro.html" class="nav-link">Vue相关</a></li>
+			<li><a href="/v2/theory/lodash/1_intro.html" class="nav-link">Lodash</a></li>
+			<li><a href="/v2/theory/axios/1_intro.html" class="nav-link">axios</a></li>
+		</ul></li>
+		<li><h4>开发环境</h4></li>
+		<li><ul>
+			<li><a href="/v2/dev/ide/1_intro.html" class="nav-link">IDE</a></li>
+			<li><a href="/v2/dev/codeManage/1_intro.html" class="nav-link">代码管理</a></li>
+			<li><a href="/v2/dev/packTools/1_intro.html" class="nav-link">打包工具</a></li>
+			<li><a href="/v2/dev/staging/1_intro.html" class="nav-link">脚手架</a></li>
+			<li><a href="/v2/dev/debug/1_intro.html" class="nav-link">debug</a></li>
+			<li><a href="/v2/dev/unitTest/1_intro.html" class="nav-link">单元测试</a></li>
+			<li><a href="/v2/dev/deploy/1_intro.html" class="nav-link">构建和部署</a></li>
+			<li><a href="/v2/dev/serverOprate/1_intro.html" class="nav-link">服务器操作</a></li>
+		</ul></li>
+		<li><h4>运行环境</h4></li>
+		<li><ul>
+			<li><a href="/v2/runtime/browser/1_intro.html" class="nav-link">浏览器</a></li>
+			<li><a href="/v2/runtime/app/1_intro.html" class="nav-link">app</a></li>
+			<li><a href="/v2/runtime/desktop/1_intro.html" class="nav-link">桌面</a></li>
+		</ul></li>
+		<li><h4>监控&分析</h4></li>
+		<li><ul>
+			<li><a href="/v2/monitor/browser/1_intro.html" class="nav-link">浏览器</a></li>
+			<li><a href="/v2/monitor/app/1_intro.html" class="nav-link">app</a></li>
+			<li><a href="/v2/monitor/desktop/1_intro.html" class="nav-link">桌面</a></li>
+		</ul></li>
+		<li class="nav-dropdown-container learn">
+			<a href="/special/1_原型.html" class="nav-link">专题</a>
+		</li>			
+  </ul>
+</li>
+
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">v1</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>软件工程化</h4></li>
+    <li><ul>
+      <li><a href="/software/engineering.html" class="nav-link">概念&实践</a></li>
+    </ul></li>
+    <li><h4>前端</h4></li>
+    <li><ul>
+      <li><a href="/frontend/skeleton/1_skeleton.html" class="nav-link">skeleton</a></li>
+      <li><a href="/frontend/html/1_define.html" class="nav-link">html</a></li>
+      <li><a href="/frontend/css/1_define.html" class="nav-link">css</a></li>
+      <li><a href="/frontend/js/1_enter&going.html" class="nav-link">javascript</a></li>
+      <li><a href="/frontend/framework/1_vue.html" class="nav-link">framework</a></li>
+      <li><a href="/frontend/browser/1_safe.html" class="nav-link">browser</a></li>
+      <li><a href="/frontend/important/1_conclude.html" class="nav-link">conclude</a></li>
+    </ul></li>
+    <li><h4>后端</h4></li>
+    <li><ul>
+      <li><a href="/backend/node/note.html" class="nav-link">node</a></li>
+      <li><a href="/backend/http/1_http.html" class="nav-link">http</a></li>
+      <li><a href="/backend/java/core.html" class="nav-link">java</a></li>
+      <li><a href="/backend/database/1_mysql.html" class="nav-link">database</a></li>
+    </ul></li>
+    <li><h4>算法</h4></li>
+    <li><ul>
+      <li><a href="/arithmetic/1_lintcode.html" class="nav-link">概念&实践</a></li>
+    </ul></li>
+    <li><h4>读书</h4></li>
+    <li><ul>
+      <li><a href="/books/memory/1_利玛窦的记忆宫殿.html" class="nav-link">记忆学</a></li>
+      <li><a href="/books/computer/1_构建高性能web网站.html" class="nav-link">计算机</a></li>
+      <li><a href="/books/history/资治通鉴/1_周纪一.html" class="nav-link">历史</a></li>
+      <li><a href="/books/economics/1_国富论.html" class="nav-link">经济</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+    </ul>
+  </div>
+</div>
+
+
+<div class="content v3/server with-sidebar ">
+  <ul class="menu-root">
+  
+</ul>
+  
+    <h1>数据库</h1>
+  
+  <blockquote>
+<p><a href="http://sqlzoo.net/wiki/SELECT_basics" target="_blank" rel="noopener">在线练习网站</a><br><a href="https://www.w3schools.com/sql/default.asp" target="_blank" rel="noopener">w3schools</a></p>
+</blockquote>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p><strong>最流行的关系型数据库（建立在关系模型基础上的数据库，借助于集合代数等数学概念和方法来处理数据库中的数据）管理系统，在web应用方面mysql是最好的RDBMS应用软件之一</strong></p>
+<h2 id="什么是数据库"><a href="#什么是数据库" class="headerlink" title="什么是数据库"></a>什么是数据库</h2><ul>
+<li><strong>按照数据结构来组织、存储和管理数据的仓库</strong></li>
+<li><strong>每个数据库都有一个或多个不同的API用于创建、访问、管理、搜索和复制所保存的数据</strong></li>
+<li><strong>可以将数据存储在文件中，但是在文件中读写速度比较慢</strong></li>
+<li><strong>RDBMS（Relational Database Management System）特点：</strong><ul>
+<li>数据以表格的形式从出现</li>
+<li>每行 为 各种记录名称</li>
+<li>每列为记录名称所对应的数据域</li>
+<li>许多行和列组成一张表单</li>
+<li>若干的表单组成database</li>
+</ul>
+</li>
+</ul>
+<h2 id="RDBMS术语"><a href="#RDBMS术语" class="headerlink" title="RDBMS术语"></a>RDBMS术语</h2><ul>
+<li>数据库：一些关联表的集合</li>
+<li>数据表：表是数据的矩阵</li>
+<li>列：包含了相同类型的数据</li>
+<li>行：一组相关的数据</li>
+<li>冗余：存储两倍数据，降低了性能，但提高了数据的安全性</li>
+<li>主键：唯一，一个表中只能包含一个，可以用来查询数据</li>
+<li>外健：用于关联两个表</li>
+<li>复合健：将多个列作为一个索引健，一般用于复合索引</li>
+<li>索引：可快速访问表中的特定信息，是对数据库表中一列或者多列值进行排序的一种结构，类似于书籍的目录</li>
+<li>参照完整性：要求关系中不允许引用不存在的实体，与实体完整性是关系模型必须满足的完整性约束条件，目的是保证数据的一致性</li>
+</ul>
+<h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> 数据库名;</span><br></pre></td></tr></table></figure>
+<h2 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">DATABASE</span> 数据库名;</span><br></pre></td></tr></table></figure>
+<h2 id="选择数据库"><a href="#选择数据库" class="headerlink" title="选择数据库"></a>选择数据库</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">USE</span> 数据库名;</span><br></pre></td></tr></table></figure>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p><strong>大致分为三类：数值、日期/时间和字符串</strong></p>
+<h3 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h3><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>大小</th>
+<th>范围（有符号）</th>
+<th>范围（无符号）</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TINYINT</td>
+<td>1字节</td>
+<td>(-128, 127)</td>
+<td>(0, 255)</td>
+<td>小整数值</td>
+</tr>
+<tr>
+<td>SMALLINT</td>
+<td>2字节</td>
+<td>(-32 768, 32 767)</td>
+<td>(0, 65 535)</td>
+<td>大整数值</td>
+</tr>
+<tr>
+<td>MEDIUMINT</td>
+<td>3字节</td>
+<td>(-8 388 608, 8 388 607)</td>
+<td>(0, 16 777 215)</td>
+<td>大整数值</td>
+</tr>
+<tr>
+<td>INT/INTEGER</td>
+<td>4字节</td>
+<td>(-2 147 483 648, 2 147 483 647)</td>
+<td>(0, 4 294 967 295)</td>
+<td>大整数值</td>
+</tr>
+<tr>
+<td>BIGINT</td>
+<td>8字节</td>
+<td>(-9 233 372 036 854 775 808, 9223 372 036 854 775 807)</td>
+<td>(0, 18 446 744 073 709 551 615)</td>
+<td>极大整数值</td>
+</tr>
+<tr>
+<td>FLOAT</td>
+<td>4字节</td>
+<td>(-3.402 823 466 E+38, -1.175 494 351 E-38, 3.402 823 466 E+38)</td>
+<td>0, (1.175 494 351 E-38，3.402 823 466 E+38)</td>
+<td>单精度浮点数值</td>
+</tr>
+<tr>
+<td>DOUBLE</td>
+<td>8字节</td>
+<td>(-1.797 693 134 862 315 7 E+308，-2.225 073 858 507 201 4 E-308)，0，(2.225 073 858 507 201 4 E-308，1.797 693 134 862 315 7 E+308)</td>
+<td>0，(2.225 073 858 507 201 4 E-308，1.797 693 134 862 315 7 E+308)</td>
+<td>双精度浮点数值</td>
+</tr>
+<tr>
+<td>DECIMAL</td>
+<td>对DECIMAL(M,D) ，如果M&gt;D，为M+2否则为D+2</td>
+<td>依赖于M和D的值</td>
+<td>小数值</td>
+</tr>
+</tbody>
+</table>
+<h3 id="日期和时间类型"><a href="#日期和时间类型" class="headerlink" title="日期和时间类型"></a>日期和时间类型</h3><p>表示时间值的日期和时间类型为 <code>DATETIME</code>、<code>DATE</code>、<code>TIMESTAMP</code>、<code>TIME</code> 和 <code>YEAR</code>。<br>每个时间类型有一个有效值范围和一个”零”值，当指定不合法的<code>MySQL</code>不能表示的值时使用”零”值。<br><code>TIMESTAMP</code>类型有专有的自动更新特性，将在后面描述。</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>大小（字节）</th>
+<th>范围</th>
+<th>格式</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DATE</td>
+<td>3</td>
+<td>1000-01-01/9999-12-31</td>
+<td>YYYY-MM-DD</td>
+<td>日期值</td>
+</tr>
+<tr>
+<td>TIME</td>
+<td>3</td>
+<td>‘-838:59:59’/‘838:59:59’</td>
+<td>HH:MM:SS</td>
+<td>时间值或持续时间</td>
+</tr>
+<tr>
+<td>YEAR</td>
+<td>1</td>
+<td>1901/2155</td>
+<td>YYYY</td>
+<td>年份值</td>
+</tr>
+<tr>
+<td>DATETIME</td>
+<td>8</td>
+<td>1000-01-01 00:00:00/9999-12-31 23:59:59</td>
+<td>YYYY-MM-DD HH:MM:SS</td>
+<td>混合日期和时间值</td>
+</tr>
+<tr>
+<td>TIMESTAMP</td>
+<td>4</td>
+<td>1970-01-01 00:00:00/2038 结束时间是第 2147483647 秒，北京时间 2038-1-19 11:14:07，格林尼治时间 2038年1月19日 凌晨 03:14:07</td>
+<td>YYYYMMDD HHMMSS</td>
+<td>混合日期和时间值，时间戳</td>
+</tr>
+</tbody>
+</table>
+<h3 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h3><p>字符串类型指CHAR、VARCHAR、BINARY、VARBINARY、BLOB、TEXT、ENUM和SET。</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>大小</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CHAR</td>
+<td>0-255字节</td>
+<td>定长字符串</td>
+</tr>
+<tr>
+<td>VARCHAR</td>
+<td>0-65535字节</td>
+<td>变长字符串</td>
+</tr>
+<tr>
+<td>TINYBLOB</td>
+<td>0-255字节</td>
+<td>不超过255个字符的二进制字符串</td>
+</tr>
+<tr>
+<td>TINYTEXT</td>
+<td>0-255字节</td>
+<td>短文本字符串</td>
+</tr>
+<tr>
+<td>BLOB</td>
+<td>0-65 535字节</td>
+<td>二进制形式的长文本数据</td>
+</tr>
+<tr>
+<td>TEXT</td>
+<td>0-65 535字节</td>
+<td>长文本数据</td>
+</tr>
+<tr>
+<td>MEDIUMBLOB</td>
+<td>0-16 777 215字节</td>
+<td>二进制形式的中等长度文本数据</td>
+</tr>
+<tr>
+<td>MEDIUMTEXT</td>
+<td>0-16 777 215字节</td>
+<td>中等长度文本数据</td>
+</tr>
+<tr>
+<td>LONGBLOB</td>
+<td>0-4 294 967 295字节</td>
+<td>二进制形式的极大文本数据</td>
+</tr>
+<tr>
+<td>LONGTEXT</td>
+<td>0-4 294 967 295字节</td>
+<td>极大文本数据</td>
+</tr>
+</tbody>
+</table>
+<h2 id="创建数据表"><a href="#创建数据表" class="headerlink" title="创建数据表"></a>创建数据表</h2><ul>
+<li>表名</li>
+<li>表字段名</li>
+<li>定义每个表字段</li>
+</ul>
+<p><strong>语法：</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> table_name (column_name column_type);</span><br></pre></td></tr></table></figure></p>
+<p><strong>例子：</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> <span class="string">`runoob_tbl`</span>(</span><br><span class="line">  <span class="string">`runoob_id`</span> <span class="built_in">INT</span> <span class="keyword">UNSIGNED</span> AUTO_INCREMENT,</span><br><span class="line">  <span class="string">`runoob_title`</span> <span class="built_in">VARCHAR</span>(<span class="number">100</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`runoob_author`</span> <span class="built_in">VARCHAR</span>(<span class="number">40</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`submission_date`</span> <span class="built_in">DATE</span>,</span><br><span class="line">  PRIMARY <span class="keyword">KEY</span> ( <span class="string">`runoob_id`</span> )</span><br><span class="line">)<span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8;</span><br></pre></td></tr></table></figure></p>
+<h2 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> table_name ( field1, field2, ...fieldN ) <span class="keyword">VALUES</span> ( value1, value2, ...valueN);</span><br></pre></td></tr></table></figure>
+<h2 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name, column_name <span class="keyword">FROM</span> table_name [<span class="keyword">WHERE</span> Clause] [<span class="keyword">LIMIT</span> N][<span class="keyword">OFFSET</span> M];</span><br></pre></td></tr></table></figure>
+<h2 id="WHERE子句"><a href="#WHERE子句" class="headerlink" title="WHERE子句"></a>WHERE子句</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> field1, field2, ...fieldN <span class="keyword">FROM</span> table_name1, table_name2... [<span class="keyword">WHERE</span> condition1] [<span class="keyword">AND</span> [<span class="keyword">OR</span>]] condition2......</span><br></pre></td></tr></table></figure>
+<h2 id="UPDATE查询"><a href="#UPDATE查询" class="headerlink" title="UPDATE查询"></a>UPDATE查询</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> table_name <span class="keyword">SET</span> field1=<span class="keyword">new</span>-value1, field2=<span class="keyword">new</span>-value2 [<span class="keyword">WHERE</span> Clause]</span><br></pre></td></tr></table></figure>
+<h2 id="DELETE语句"><a href="#DELETE语句" class="headerlink" title="DELETE语句"></a>DELETE语句</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> table_name [<span class="keyword">WHERE</span> Clause]</span><br></pre></td></tr></table></figure>
+<h2 id="LIKE子句"><a href="#LIKE子句" class="headerlink" title="LIKE子句"></a>LIKE子句</h2><p>使用百分号<code>%</code>字符来表示任意字符，类似于<code>UNIX</code>或正则表达式中的星号<code>*</code><br>如果没有使用百分号<code>%</code>，<code>LIKE</code>子句与等号<code>=</code>的效果是一样的</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> field1, field2, ...fieldN <span class="keyword">FROM</span> table_name <span class="keyword">WHERE</span> field1 <span class="keyword">LIKE</span> condition1 [<span class="keyword">AND</span> [<span class="keyword">OR</span>]] filed2 = <span class="string">'somevalue'</span></span><br></pre></td></tr></table></figure>
+<h2 id="UNION操作符"><a href="#UNION操作符" class="headerlink" title="UNION操作符"></a>UNION操作符</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> expression1, expression2, ...expression_n <span class="keyword">FROM</span> <span class="keyword">tables</span> [<span class="keyword">WHERE</span> conditions] <span class="keyword">UNION</span> [ALL | <span class="keyword">DISTINCT</span>]</span><br><span class="line"><span class="keyword">SELECT</span> expression1, expression2, ...expression_n <span class="keyword">FROM</span> <span class="keyword">tables</span> [<span class="keyword">WHERE</span> conditions];</span><br></pre></td></tr></table></figure>
+<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> field1, field2, ...fieldN table_name1, table_name2... <span class="keyword">ORDER</span> <span class="keyword">BY</span> field1, [field2...] [<span class="keyword">ASC</span> [<span class="keyword">DESC</span>]]</span><br></pre></td></tr></table></figure>
+<h2 id="GROUP-BY"><a href="#GROUP-BY" class="headerlink" title="GROUP BY"></a>GROUP BY</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name, <span class="keyword">function</span>(column_name) <span class="keyword">FROM</span> table_name <span class="keyword">WHERE</span> column_name <span class="keyword">operator</span> <span class="keyword">value</span> <span class="keyword">GROUP</span> <span class="keyword">BY</span> column_name;</span><br></pre></td></tr></table></figure>
+<p>使用<code>WITH ROLLUP</code>可以实现在分组统计数据基础上再进行相同的统计(SUM, AVG, COUNT…)。</p>
+<h2 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h2><ul>
+<li>INNER JOIN(内连接，或等值连接)：获取两个表中字段匹配关系的记录</li>
+<li>LEFT JOIN(左连接)：获取左表所有记录，即使右表没有对应匹配的记录</li>
+<li>RIGHT JOIN(右连接)：与LEFT JOIN相反，用于获取右表所有记录，即使左表没有对应匹配记录</li>
+</ul>
+<h2 id="NULL值处理"><a href="#NULL值处理" class="headerlink" title="NULL值处理"></a>NULL值处理</h2><ul>
+<li>IS NULL：当列的值是NULL，此运算符返回true</li>
+<li>IS NOT NULL：当列的值不为NULL，运算符返回true</li>
+<li>&lt;=&gt;：比较操作符（不同于=运算符），当比较的两个值为NULL时返回true</li>
+</ul>
+<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p><a href="http://www.runoob.com/mysql/mysql-regexp.html" target="_blank" rel="noopener">参考资料</a><br><strong>实例：</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">name</span> <span class="keyword">FROM</span> person_tbl <span class="keyword">WHERE</span> <span class="keyword">name</span> REGEXP <span class="string">'^st'</span>;</span><br></pre></td></tr></table></figure></p>
+<h2 id="mysql事务"><a href="#mysql事务" class="headerlink" title="mysql事务"></a>mysql事务</h2><p>主要用于处理操作量大，复杂度高的数据。</p>
+<ul>
+<li>在MySQL中只有使用了Innodb数据库引擎的数据库或表才支持事务</li>
+<li>事务处理可以用来维护数据库的完整性，保证成批的sql语句要么全部执行，要么全部不执行</li>
+<li>事务用来管理insert、update、delete语句</li>
+</ul>
+<p>满足四个条件（ACID）：</p>
+<ul>
+<li>原子性：一个事务中的所有操作，要么全部完成，要么全部不完成，不会结束在中间的某个环节。如果执行过程中发生错误，会被回滚到事务开始前的状态，就像这个事务从来没有执行过一样</li>
+<li>一致性：在事务开始之前和事务结束以后，数据库的完整性没有被破坏。这表示写入的资料必须完全符合所有的预设规则，这包含资料的精确度、串联性以及后续数据库可以自发性地完成预定的工作</li>
+<li>隔离性：数据库允许多个并发事务同时对其数据进行读写和修改能力，隔离性可以防止多个事务并发执行时由于交叉执行而导致数据的不一致。事务隔离分为不同级别，包括读未提交、读提交、可重复读和串行化</li>
+<li>持久性：事务处理结束后，对数据的修改就是永久的，即便系统故障也不会丢失</li>
+</ul>
+<p>方法：<br><strong>用 BEGIN, ROLLBACK, COMMIT来实现</strong></p>
+<ul>
+<li>BEGIN 开始一个事务</li>
+<li>ROLLBACK 事务回滚</li>
+<li>COMMIT 事务确认<br><strong>直接用SET来改变MySQL的自动提交模式</strong></li>
+<li>SET AUTOCOMMIT=0 禁止自动提交</li>
+<li>SET AUTOCOMMIT=0 开启自动提交</li>
+</ul>
+<h2 id="ALTER命令"><a href="#ALTER命令" class="headerlink" title="ALTER命令"></a>ALTER命令</h2><p><strong>删除，添加或修改表字段</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> testalter_tbl <span class="keyword">DROP</span> i;</span><br></pre></td></tr></table></figure></p>
+<p><strong>修改字段类型及名称</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> testalter_tbl <span class="keyword">MODIFY</span> c <span class="built_in">CHAR</span>(<span class="number">10</span>);</span><br></pre></td></tr></table></figure></p>
+<p><strong>修改字段默认值</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> testalter_tbl <span class="keyword">ALTER</span> i <span class="keyword">SET</span> <span class="keyword">DEFAULT</span> <span class="number">1000</span>;</span><br></pre></td></tr></table></figure></p>
+<p><strong>修改表名</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> testalter_tbl <span class="keyword">RENAME</span> <span class="keyword">TO</span> alter_tbl;</span><br></pre></td></tr></table></figure></p>
+<h2 id="MySQL索引"><a href="#MySQL索引" class="headerlink" title="MySQL索引"></a>MySQL索引</h2><p>索引的建立对于MySQL的高效运行是很重要的，索引可以大大提高MySQL的检索速度<br>索引分单列索引和组合索引。单列索引，即一个索引只包含单个列，一个表可以有多个单列索引，但这不是组合索引。组合索引，即一个索引包含多个列。<br>创建索引时，你需要确保该索引是应用在    SQL 查询语句的条件(一般作为 WHERE 子句的条件)。<br>实际上，索引也是一张表，该表保存了主键与索引字段，并指向实体表的记录。<br>上面都在说使用索引的好处，但过多的使用索引将会造成滥用。因此索引也会有它的缺点：虽然索引大大提高了查询速度，同时却会降低更新表的速度，如对表进行INSERT、UPDATE和DELETE。因为更新表时，MySQL不仅要保存数据，还要保存一下索引文件。<br>建立索引会占用磁盘空间的索引文件。<br><a href="http://www.runoob.com/mysql/mysql-index.html" target="_blank" rel="noopener">参考资料</a></p>
+<h2 id="MySQL临时表"><a href="#MySQL临时表" class="headerlink" title="MySQL临时表"></a>MySQL临时表</h2><p>MySQL 临时表在我们需要保存一些临时数据时是非常有用的。临时表只在当前连接可见，当关闭连接时，Mysql会自动删除表并释放所有空间。<br>临时表在MySQL 3.23版本中添加，如果你的MySQL版本低于 3.23版本就无法使用MySQL的临时表。不过现在一般很少有再使用这么低版本的MySQL数据库服务了。<br>MySQL临时表只在当前连接可见，如果你使用PHP脚本来创建MySQL临时表，那每当PHP脚本执行完成后，该临时表也会自动销毁。<br>如果你使用了其他MySQL客户端程序连接MySQL数据库服务器来创建临时表，那么只有在关闭客户端程序时才会销毁临时表，当然你也可以手动销毁。<br><a href="http://www.runoob.com/mysql/mysql-temporary-tables.html" target="_blank" rel="noopener">参考资料</a></p>
+<h2 id="MySQL复制表"><a href="#MySQL复制表" class="headerlink" title="MySQL复制表"></a>MySQL复制表</h2><p><a href="http://www.runoob.com/mysql/mysql-clone-tables.html" target="_blank" rel="noopener">参考资料</a></p>
+<h2 id="MySQL元数据"><a href="#MySQL元数据" class="headerlink" title="MySQL元数据"></a>MySQL元数据</h2><ul>
+<li>查询结果信息：SELECT，UPDATE或DELETE语句影响的记录数</li>
+<li>数据库和数据表的信息：包含了数据库及数据表的结构信息</li>
+<li>MySQL服务器信息：包含了数据库服务器的当前状态，版本号等</li>
+</ul>
+<h2 id="MySQL序列使用"><a href="#MySQL序列使用" class="headerlink" title="MySQL序列使用"></a>MySQL序列使用</h2><p><a href="http://www.runoob.com/mysql/mysql-using-sequences.html" target="_blank" rel="noopener">参考资料</a></p>
+<h2 id="MySQL处理重复数据"><a href="#MySQL处理重复数据" class="headerlink" title="MySQL处理重复数据"></a>MySQL处理重复数据</h2><p><a href="http://www.runoob.com/mysql/mysql-handling-duplicates.html" target="_blank" rel="noopener">参考资料</a></p>
+<h2 id="MySQL及SQL注入"><a href="#MySQL及SQL注入" class="headerlink" title="MySQL及SQL注入"></a>MySQL及SQL注入</h2><p><a href="http://www.runoob.com/mysql/mysql-sql-injection.html" target="_blank" rel="noopener">参考资料</a></p>
+<h2 id="MySQL导出数据"><a href="#MySQL导出数据" class="headerlink" title="MySQL导出数据"></a>MySQL导出数据</h2><p><a href="http://www.runoob.com/mysql/mysql-database-export.html" target="_blank" rel="noopener">参考资料</a></p>
+<h2 id="MySQL-导入数据"><a href="#MySQL-导入数据" class="headerlink" title="MySQL 导入数据"></a>MySQL 导入数据</h2><p><a href="http://www.runoob.com/mysql/mysql-database-import.html" target="_blank" rel="noopener">参考资料</a></p>
+<h2 id="mysql实例"><a href="#mysql实例" class="headerlink" title="mysql实例"></a>mysql实例</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 使用一条INSERT语句来插入多条记录</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">users</span>(<span class="keyword">name</span>, age) <span class="keyword">VALUES</span>(<span class="string">'p1'</span>, <span class="number">25</span>),(<span class="string">'p2'</span>,<span class="number">50</span>),(<span class="string">'p3'</span>,<span class="number">60</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 查询重复记录</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> jindashi <span class="keyword">group</span> <span class="keyword">by</span> <span class="keyword">name</span> <span class="keyword">having</span> <span class="keyword">count</span>(*)&gt;<span class="number">1</span>; </span><br><span class="line"></span><br><span class="line"><span class="comment">-- 插入数据</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> tabel1 (<span class="keyword">name</span>,pwd,did,<span class="keyword">role</span>,phone,nickname) <span class="keyword">SELECT</span> <span class="keyword">name</span>,pwd,did,<span class="keyword">role</span>,phone,nickname <span class="keyword">FROM</span> tabel2</span><br><span class="line"><span class="comment">-- (如果字段有默认值，不能插入)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 更新数据</span></span><br><span class="line"><span class="keyword">UPDATE</span> <span class="string">`user`</span> <span class="keyword">SET</span> <span class="string">`change`</span> = <span class="string">'0'</span>  <span class="keyword">where</span> <span class="string">`change`</span>=<span class="string">'1'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 替换数据</span></span><br><span class="line"><span class="keyword">replace</span> <span class="keyword">into</span> test_tbl (<span class="keyword">id</span>,dr) <span class="keyword">values</span> (<span class="number">1</span>,<span class="string">'2'</span>),(<span class="number">2</span>,<span class="string">'3'</span>),...(x,<span class="string">'y'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> test_tbl (<span class="keyword">id</span>,dr) <span class="keyword">values</span>  (<span class="number">1</span>,<span class="string">'2'</span>),(<span class="number">2</span>,<span class="string">'3'</span>),...(x,<span class="string">'y'</span>) <span class="keyword">on</span> <span class="keyword">duplicate</span> <span class="keyword">key</span> <span class="keyword">update</span> dr=<span class="keyword">values</span>(dr);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- replace into  和insert into on duplicate key update的不同在于：</span></span><br><span class="line"><span class="comment">-- replace into　操作本质是对重复的记录先delete 后insert，如果更新的字段不全会将缺失的字段置为缺省值</span></span><br><span class="line"><span class="comment">-- insert into 则是只update重复记录，不会改变其它字段。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 出现验证错误</span></span><br><span class="line"><span class="keyword">UPDATE</span> <span class="keyword">Time</span> <span class="keyword">SET</span> overTime=$&#123;overTime+o&#125;,restedTime=$&#123;restedTime+r&#125;,lastRestTime=$&#123;lastRestTime+l&#125; <span class="keyword">WHERE</span> uid=$&#123;uid&#125; <span class="keyword">AND</span> department=$&#123;department&#125;;</span><br><span class="line"><span class="comment">-- 原因：未加上department=$&#123;department&#125;;导致的约束条件不严格</span></span><br></pre></td></tr></table></figure>
+<h2 id="一些重要的sql命令"><a href="#一些重要的sql命令" class="headerlink" title="一些重要的sql命令"></a>一些重要的sql命令</h2><ul>
+<li>SELECT：从数据库中提取数据</li>
+<li>UPDATE：在数据库中更新数据</li>
+<li>DELETE：从数据库中删除数据</li>
+<li>INSERT INTO：插入新的数据到数据库</li>
+<li>CREATE DATABASE：创建一个新的数据库</li>
+<li>ALTER DATABASE：修改数据库</li>
+<li>CREATE TABLE：创建新表</li>
+<li>ALTER TABLE：修改表</li>
+<li>DROP TABLE：删除一个表</li>
+<li>CREATE INDEX：创建索引（搜索键）</li>
+<li>DROP INDEX：删除索引</li>
+</ul>
+<h2 id="示例表字段"><a href="#示例表字段" class="headerlink" title="示例表字段"></a>示例表字段</h2><ul>
+<li>Customers<ul>
+<li>CustomerID</li>
+<li>CustomerName</li>
+<li>ContactName</li>
+<li>Address</li>
+<li>City</li>
+<li>PostalCode</li>
+<li>Country</li>
+</ul>
+</li>
+</ul>
+<h2 id="select-查询"><a href="#select-查询" class="headerlink" title="select(查询)"></a>select(查询)</h2><h3 id="所有数据"><a href="#所有数据" class="headerlink" title="所有数据"></a>所有数据</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Customers;</span><br></pre></td></tr></table></figure>
+<h3 id="部分数据"><a href="#部分数据" class="headerlink" title="部分数据"></a>部分数据</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> CustomerName, Address <span class="keyword">from</span> Customers;</span><br></pre></td></tr></table></figure>
+<h3 id="唯一数据"><a href="#唯一数据" class="headerlink" title="唯一数据"></a>唯一数据</h3><blockquote>
+<p>如果选择了两个distinct字段，则以这两个字段为distinct id，这两个字段结合起来不相等就行了。</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> CustomerName <span class="keyword">from</span> Customers;</span><br></pre></td></tr></table></figure>
+<h3 id="数据个数"><a href="#数据个数" class="headerlink" title="数据个数"></a>数据个数</h3><ul>
+<li><p>全部数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(CustomerName) <span class="keyword">from</span> Customers;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>唯一数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(<span class="keyword">distinct</span> CustomerName) <span class="keyword">from</span> Customers;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将唯一数据个数保存为字段</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">Count</span>(*) <span class="keyword">as</span> DistinctCountries <span class="keyword">from</span> (<span class="keyword">select</span> <span class="keyword">distinct</span> Country <span class="keyword">from</span> Customers);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h3><ul>
+<li><p>查询条件是字符串</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Customers <span class="keyword">where</span> Country=<span class="string">'Mexico'</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询条件是数字</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Customers <span class="keyword">where</span> CustomerID=<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询操作符<br>操作符 | 描述<br>— | —<br><code>=</code> | 相等<br><code>&lt;&gt;</code> | 不相等，某些版本的SQL可能写作<code>!=</code><br><code>&gt;</code> | 大于<br><code>&lt;</code> | 小于<br><code>&gt;=</code> | 大于等于<br><code>&lt;=</code> | 小于等于<br><code>between and</code> | 再某个范围内，闭区间<br><code>like</code> | 模糊查询<br><code>in</code> | 指定某些可能的列集合<br><code>and</code> | 同时满足几个条件，可使用多个<code>and</code>联合查询<br><code>or</code> | 满足某个条件，可使用多个<code>or</code>联合查询<br><code>not</code> | 筛选出不满足某些条件的集合</p>
+</li>
+<li>例子<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Customers <span class="keyword">where</span> CustomerID=<span class="number">2</span>;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Customers <span class="keyword">where</span> CustomerID&lt;&gt;<span class="number">1</span>;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Customers <span class="keyword">where</span> CustomerID&gt;<span class="number">1</span>;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Customers <span class="keyword">where</span> CustomerID&lt;<span class="number">2</span>;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Customers <span class="keyword">where</span> CustomerID&gt;=<span class="number">3</span>;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Customers <span class="keyword">where</span> CustomerID&lt;=<span class="number">3</span>;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Customers <span class="keyword">where</span> CustomerID <span class="keyword">between</span> <span class="number">1</span> <span class="keyword">and</span> <span class="number">3</span>;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Customers <span class="keyword">where</span> CustomerName <span class="keyword">like</span> <span class="string">'An%'</span>; <span class="comment">-- %代表任意值</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Customers <span class="keyword">where</span> CustomerID <span class="keyword">in</span> (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Customers <span class="keyword">where</span> CustomerID=<span class="number">1</span> <span class="keyword">and</span> ContactName=<span class="string">'Maria Anders'</span> <span class="keyword">and</span> City=<span class="string">'Berlin'</span>;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Customers <span class="keyword">where</span> CustomerID=<span class="number">1</span> <span class="keyword">or</span> CustomerID=<span class="number">2</span> <span class="keyword">or</span> CustomerID=<span class="number">3</span>;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Customers <span class="keyword">where</span> <span class="keyword">not</span> CustomerID=<span class="number">1</span> <span class="keyword">and</span> <span class="keyword">not</span> CustomerID=<span class="number">2</span>; <span class="comment">-- 筛选出不包含id为1和2的数据</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Customers <span class="keyword">where</span> <span class="keyword">not</span> CustomerID=<span class="number">1</span> <span class="keyword">and</span> <span class="keyword">not</span> ContactName=<span class="string">'Maria Anders'</span>; <span class="comment">-- 筛选出不同时满足条件的记录</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Customers <span class="keyword">where</span> Country=<span class="string">'Germany'</span> <span class="keyword">and</span> (City=<span class="string">'Berlin'</span> <span class="keyword">OR</span> City=<span class="string">'München'</span>); <span class="comment">-- 多种操作符结合筛选</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="数据排序"><a href="#数据排序" class="headerlink" title="数据排序"></a>数据排序</h2><ul>
+<li>ASC: ascend 升序排列</li>
+<li>DESC: descend 降序排列<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Customers <span class="keyword">order</span> <span class="keyword">by</span> City;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Customers <span class="keyword">order</span> <span class="keyword">by</span> City, Country;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Customers <span class="keyword">order</span> <span class="keyword">by</span> City <span class="keyword">asc</span>;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Customers <span class="keyword">order</span> <span class="keyword">by</span> City <span class="keyword">desc</span>;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Customers <span class="keyword">order</span> <span class="keyword">by</span> City <span class="keyword">asc</span>, Country <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="插入数据-1"><a href="#插入数据-1" class="headerlink" title="插入数据"></a>插入数据</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> Customers (CustomerName, ContactName, Address, City, PostalCode, Country) <span class="keyword">values</span> (<span class="string">'Cardinal'</span>, <span class="string">'Tom B. Erichsen'</span>, <span class="string">'Skagen 21'</span>, <span class="string">'Stavanger'</span>, <span class="string">'4006'</span>, <span class="string">'Norway'</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="空值"><a href="#空值" class="headerlink" title="空值"></a>空值</h2><p>当某个字段是可选的时候，如果插入数据的时候没有插入该字段，该字段就会保存一个空值</p>
+<h3 id="如何测试空值"><a href="#如何测试空值" class="headerlink" title="如何测试空值"></a>如何测试空值</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> City <span class="keyword">from</span> Customers <span class="keyword">where</span> City <span class="keyword">is</span> <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">select</span> City <span class="keyword">from</span> Customers <span class="keyword">where</span> City <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">null</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="更新数据"><a href="#更新数据" class="headerlink" title="更新数据"></a>更新数据</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> Customers <span class="keyword">set</span> ContactName=<span class="string">'Alfred Schmidt'</span>, City=<span class="string">'Frankfurt'</span></span><br><span class="line"><span class="keyword">where</span> CustomerID=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">update</span> Customers <span class="keyword">set</span> ContactName=<span class="string">'Mallow'</span>; <span class="comment">-- it will update all ContactName</span></span><br></pre></td></tr></table></figure>
+<h2 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> Customers <span class="keyword">where</span> ContactName=<span class="string">'Mallow'</span>;</span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> table_name; <span class="comment">-- delete all records;</span></span><br><span class="line"><span class="keyword">delete</span> * <span class="keyword">from</span> table_name; <span class="comment">-- delete all records;</span></span><br></pre></td></tr></table></figure>
+<h2 id="取固定量数据"><a href="#取固定量数据" class="headerlink" title="取固定量数据"></a>取固定量数据</h2><h3 id="sql-sever-MS-Access-Syntax"><a href="#sql-sever-MS-Access-Syntax" class="headerlink" title="sql sever / MS Access Syntax:"></a>sql sever / MS Access Syntax:</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> top <span class="built_in">number</span>|<span class="keyword">percent</span> column_name(s)</span><br><span class="line"><span class="keyword">from</span> table_name</span><br><span class="line"><span class="keyword">where</span> condition;</span><br></pre></td></tr></table></figure>
+<h3 id="mysql-Syntax"><a href="#mysql-Syntax" class="headerlink" title="mysql Syntax:"></a>mysql Syntax:</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> column_name(s)</span><br><span class="line"><span class="keyword">from</span> table_name</span><br><span class="line"><span class="keyword">where</span> condition</span><br><span class="line"><span class="keyword">limit</span> <span class="built_in">number</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="oracle-Syntax"><a href="#oracle-Syntax" class="headerlink" title="oracle Syntax:"></a>oracle Syntax:</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> column_name(s)</span><br><span class="line"><span class="keyword">from</span> table_name</span><br><span class="line"><span class="keyword">where</span> ronum &lt;= <span class="built_in">number</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="example"><a href="#example" class="headerlink" title="example"></a>example</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> top <span class="number">3</span> * <span class="keyword">from</span> Customers; <span class="comment">-- sql server</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Customers <span class="keyword">limit</span> <span class="number">3</span>; <span class="comment">-- mysql</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Customers <span class="keyword">where</span> Country=<span class="string">'Germany'</span> <span class="keyword">and</span> <span class="keyword">rownum</span> &lt;= <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="最大-小值"><a href="#最大-小值" class="headerlink" title="最大/小值"></a>最大/小值</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">min</span>(price) <span class="keyword">from</span> Products;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">min</span>(price) <span class="keyword">as</span> smallestPrice <span class="keyword">from</span> Products;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">max</span>(price) <span class="keyword">as</span> largestPrice <span class="keyword">from</span> Products;</span><br></pre></td></tr></table></figure>
+<h2 id="计数"><a href="#计数" class="headerlink" title="计数"></a>计数</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(column_name) <span class="keyword">from</span> table_name <span class="keyword">where</span> condition;</span><br></pre></td></tr></table></figure>
+<h2 id="平均值"><a href="#平均值" class="headerlink" title="平均值"></a>平均值</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">avg</span>(column_name) <span class="keyword">from</span> table_name <span class="keyword">where</span> condition;</span><br></pre></td></tr></table></figure>
+<h2 id="求和"><a href="#求和" class="headerlink" title="求和"></a>求和</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">sum</span>(column_name) <span class="keyword">from</span> table_name <span class="keyword">where</span> condition;</span><br></pre></td></tr></table></figure>
+<h2 id="like操作符"><a href="#like操作符" class="headerlink" title="like操作符"></a>like操作符</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> column1, column2 <span class="keyword">from</span> table_name <span class="keyword">where</span> column2 <span class="keyword">like</span> pattern;</span><br><span class="line"><span class="keyword">select</span> column1, column2 <span class="keyword">from</span> table_name <span class="keyword">where</span> column2 <span class="keyword">not</span> <span class="keyword">like</span> pattern;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>pattern</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>‘a%’</td>
+<td>从a开始</td>
+</tr>
+<tr>
+<td>‘%a’</td>
+<td>以a结束</td>
+</tr>
+<tr>
+<td>‘%or%’</td>
+<td>包含or</td>
+</tr>
+<tr>
+<td>‘_r%’</td>
+<td>第二个字符是r</td>
+</tr>
+<tr>
+<td>‘a_%_%’</td>
+<td>以a开始且最少三个字符长度</td>
+</tr>
+<tr>
+<td>‘a%o’</td>
+<td>从a开始，以o结束</td>
+</tr>
+<tr>
+<td>‘[bsp]%’</td>
+<td>从b、s、p其中一个开始</td>
+</tr>
+<tr>
+<td>‘[a-z]%’</td>
+<td>从a～z开始</td>
+</tr>
+<tr>
+<td>‘[!bsp]’</td>
+<td>不从b、s、p其中一个开始</td>
+</tr>
+</tbody>
+</table>
+<h2 id="in操作符"><a href="#in操作符" class="headerlink" title="in操作符"></a>in操作符</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Customers <span class="keyword">where</span> Country <span class="keyword">in</span> (<span class="string">'Germany'</span>, <span class="string">'France'</span>, <span class="string">'UK'</span>);</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Customers <span class="keyword">where</span> Country <span class="keyword">not</span> <span class="keyword">in</span> (<span class="string">'Germany'</span>, <span class="string">'France'</span>, <span class="string">'UK'</span>);</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Customers <span class="keyword">where</span> Country <span class="keyword">in</span> (<span class="keyword">select</span> Country <span class="keyword">from</span> supplies);</span><br></pre></td></tr></table></figure>
+<h2 id="between"><a href="#between" class="headerlink" title="between"></a>between</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Customers <span class="keyword">where</span> CustomerID <span class="keyword">between</span> <span class="number">1</span> <span class="keyword">and</span> <span class="number">10</span>;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Customers <span class="keyword">where</span> CustomerID <span class="keyword">not</span> <span class="keyword">between</span> <span class="number">10</span> <span class="keyword">and</span> <span class="number">20</span>;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Customers <span class="keyword">where</span> (CustomerID <span class="keyword">between</span> <span class="number">5</span> <span class="keyword">and</span> <span class="number">15</span>) <span class="keyword">and</span> <span class="keyword">not</span> CustomerID <span class="keyword">in</span> (<span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>);</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Products</span><br><span class="line"><span class="keyword">where</span> ProductName <span class="keyword">between</span> <span class="string">'Carnarvon Tigers'</span> <span class="keyword">and</span> <span class="string">'Mozzarella di Giovanni'</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> ProductName;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Products</span><br><span class="line"><span class="keyword">where</span> ProductName <span class="keyword">not</span> <span class="keyword">between</span> <span class="string">'Carnarvon Tigers'</span> <span class="keyword">and</span> <span class="string">'Mozzarella di Giovanni'</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> ProductName;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Orders</span><br><span class="line"><span class="keyword">where</span> OrderDate <span class="keyword">between</span> #<span class="number">07</span>/<span class="number">04</span>/<span class="number">1996</span># <span class="keyword">and</span> #<span class="number">07</span>/<span class="number">09</span>/<span class="number">1996</span>#; <span class="comment">-- select date.</span></span><br></pre></td></tr></table></figure>
+<h2 id="as"><a href="#as" class="headerlink" title="as"></a>as</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> CustomerID <span class="keyword">as</span> <span class="keyword">ID</span>, CustomerName <span class="keyword">as</span> Customer <span class="keyword">from</span> Customers;</span><br><span class="line"><span class="keyword">select</span> CustomerID <span class="keyword">as</span> <span class="keyword">ID</span>, CustomerName <span class="keyword">as</span> [customer <span class="keyword">name</span>] <span class="keyword">from</span> Customers; <span class="comment">-- 带空格的字段名</span></span><br><span class="line"><span class="keyword">select</span> CustomerID, Address + <span class="string">', '</span> + PostalCode + <span class="string">' '</span> + City + <span class="string">', '</span> + Country <span class="keyword">as</span> Address <span class="keyword">from</span> Customers;</span><br><span class="line"><span class="keyword">select</span> CustomerName, <span class="keyword">concat</span>(Address,<span class="string">', '</span>,PostalCode,<span class="string">', '</span>,City,<span class="string">', '</span>,Country) <span class="keyword">as</span> Address <span class="keyword">from</span> Customers; <span class="comment">-- in mysql</span></span><br><span class="line"><span class="keyword">select</span> o.OrderID, o.OrderDate, c.CustomerName</span><br><span class="line"><span class="keyword">from</span> Customers <span class="keyword">as</span> c, Orders <span class="keyword">as</span> o</span><br><span class="line"><span class="keyword">where</span> c.CustomerName=<span class="string">'Around the Horn'</span> <span class="keyword">and</span> c.CustomerID=o.CustomerID; <span class="comment">-- 给表名来个简写</span></span><br><span class="line"><span class="keyword">select</span> Orders.OrderID, Orders.OrderDate, Customers.CustomerName</span><br><span class="line"><span class="keyword">from</span> Customers, Orders</span><br><span class="line"><span class="keyword">where</span> Customers.CustomerName=<span class="string">"Around the Horn"</span> <span class="keyword">and</span> Customers.CustomerID=Orders.CustomerID; <span class="comment">-- 未简写的表名</span></span><br></pre></td></tr></table></figure>
+<h2 id="joins"><a href="#joins" class="headerlink" title="joins"></a>joins</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> Orders.OrderID, Customers.CustomerName, Orders.OrderDate <span class="keyword">from</span> Orders <span class="keyword">inner</span> <span class="keyword">join</span> Customers <span class="keyword">on</span> Orders.CustomerID=Customers.CustomerID;</span><br><span class="line"><span class="keyword">select</span> o.orderID, c.CustomerName, o.OrderDate <span class="keyword">from</span> Orders <span class="keyword">as</span> o <span class="keyword">inner</span> <span class="keyword">join</span> Customers <span class="keyword">as</span> c <span class="keyword">on</span> o.CustomerID=c.CustomerID; <span class="comment">-- 使用别名</span></span><br></pre></td></tr></table></figure>
+<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><ul>
+<li>也就是说，innerjoin是左右两张表都有的，结果中没有空值</li>
+<li>leftjoin一定会返回左表中的所有值，如果记录匹配不到右表，右表中的相应字段出现空值</li>
+<li>rightjoin一定会返回右表中的所有值，如果记录匹配不到左表，左边中的相应字段出现空值</li>
+</ul>
+<h2 id=""><a href="#" class="headerlink" title=""></a><img src="../../images/img_innerjoin.gif" alt="img_innerjoin"></h2><h2 id="-1"><a href="#-1" class="headerlink" title=""></a><img src="../../images/img_leftjoin.gif" alt="img_leftjoin"></h2><h2 id="-2"><a href="#-2" class="headerlink" title=""></a><img src="../../images/img_rightjoin.gif" alt="img_rightjoin"></h2><p><img src="../../images/img_fulljoin.gif" alt="img_fulljoin"></p>
+<h3 id="innerjoin"><a href="#innerjoin" class="headerlink" title="innerjoin"></a>innerjoin</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> Orders.OrderID, Customers.CustomerName <span class="keyword">from</span> Orders <span class="keyword">inner</span> <span class="keyword">join</span> Customers <span class="keyword">on</span> Orders.CustomerID = Customers.CustomerID;</span><br><span class="line"><span class="keyword">select</span> o.OrderID, c.CustomerName, s.shipperName <span class="keyword">from</span> ((Orders <span class="keyword">as</span> o <span class="keyword">inner</span> <span class="keyword">join</span> Customers <span class="keyword">as</span> c <span class="keyword">on</span> o.CustomerID = c.CustomerID) <span class="keyword">inner</span> <span class="keyword">join</span> Shippers <span class="keyword">as</span> s <span class="keyword">on</span> o.ShipperID = s.ShipperID); <span class="comment">-- 使用别名，三表innerjoin</span></span><br></pre></td></tr></table></figure>
+<h3 id="leftjoin"><a href="#leftjoin" class="headerlink" title="leftjoin"></a>leftjoin</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> c.CustomerName, o.OrderID <span class="keyword">from</span> Customers <span class="keyword">as</span> c <span class="keyword">left</span> <span class="keyword">join</span> Orders <span class="keyword">as</span> o <span class="keyword">on</span> c.CustomerID=o.CustomerID <span class="keyword">order</span> <span class="keyword">by</span> c.CustomerName;</span><br></pre></td></tr></table></figure>
+<h3 id="rightjoin"><a href="#rightjoin" class="headerlink" title="rightjoin"></a>rightjoin</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> o.OrderID, e.LastName, e.FirstName <span class="keyword">from</span> Orders <span class="keyword">as</span> o <span class="keyword">right</span> <span class="keyword">join</span> Employees <span class="keyword">as</span> e <span class="keyword">on</span> o.EmployeeID=e.EmployeeID <span class="keyword">order</span> <span class="keyword">by</span> o.OrderID;</span><br></pre></td></tr></table></figure>
+<h3 id="full-outer-join"><a href="#full-outer-join" class="headerlink" title="full outer join"></a>full outer join</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> c.CustomerName, o.OrderID <span class="keyword">from</span> Customers <span class="keyword">as</span> c <span class="keyword">full</span> <span class="keyword">outer</span> <span class="keyword">join</span> Orders <span class="keyword">as</span> o <span class="keyword">on</span> c.CustomerID=o.CustomerID <span class="keyword">order</span> <span class="keyword">by</span> c.CustomerName;</span><br></pre></td></tr></table></figure>
+<h3 id="self-join"><a href="#self-join" class="headerlink" title="self join"></a>self join</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> a.CustomerName <span class="keyword">as</span> c1, b.CustomerName <span class="keyword">as</span> c2, a.City <span class="keyword">from</span> Customers a, Customers b <span class="keyword">where</span> a.CustomerID&lt;&gt;b.CustomerID <span class="keyword">and</span> a.City=b.City <span class="keyword">order</span> <span class="keyword">by</span> a.City;</span><br></pre></td></tr></table></figure>
+<h2 id="union"><a href="#union" class="headerlink" title="union"></a>union</h2><h3 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h3><ul>
+<li>每个选择声明必须有相同数量的列</li>
+<li>每列必须要有类似的数据结构</li>
+<li>查询的每列顺序必须相同</li>
+</ul>
+<h3 id="union-去重"><a href="#union-去重" class="headerlink" title="union(去重)"></a>union(去重)</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> City <span class="keyword">from</span> Customers</span><br><span class="line"><span class="keyword">union</span> <span class="comment">-- 占据一整行，看着更清晰</span></span><br><span class="line"><span class="keyword">select</span> City <span class="keyword">from</span> Suppliers</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> City;</span><br></pre></td></tr></table></figure>
+<h3 id="union-all（不去重）"><a href="#union-all（不去重）" class="headerlink" title="union all（不去重）"></a>union all（不去重）</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> City <span class="keyword">from</span> Customers</span><br><span class="line"><span class="keyword">union</span> all</span><br><span class="line"><span class="keyword">select</span> City <span class="keyword">from</span> Suppliers</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> City;</span><br></pre></td></tr></table></figure>
+<h3 id="结合where"><a href="#结合where" class="headerlink" title="结合where"></a>结合where</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> City, Country <span class="keyword">from</span> Customers</span><br><span class="line"><span class="keyword">where</span> Country=<span class="string">'Germany'</span></span><br><span class="line"><span class="keyword">union</span> <span class="comment">-- 去重</span></span><br><span class="line"><span class="keyword">select</span> City, Country <span class="keyword">from</span> Suppliers</span><br><span class="line"><span class="keyword">where</span> Country=<span class="string">'Germany'</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> City;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> City, Country <span class="keyword">from</span> Customers</span><br><span class="line"><span class="keyword">where</span> Country=<span class="string">'Germany'</span></span><br><span class="line"><span class="keyword">union</span> all <span class="comment">-- 不去重</span></span><br><span class="line"><span class="keyword">select</span> City, Country <span class="keyword">from</span> Suppliers</span><br><span class="line"><span class="keyword">where</span> Country=<span class="string">'Germany'</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> City;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="string">'Customer'</span> <span class="keyword">as</span> <span class="keyword">Type</span>, ContactName, City, Country <span class="keyword">from</span> Customers</span><br><span class="line"><span class="keyword">union</span> <span class="comment">-- 多了一行type，下面的Supplier只是占位</span></span><br><span class="line"><span class="keyword">select</span> <span class="string">'Supplier'</span>, ContactName, City, Country <span class="keyword">from</span> Suppliers;</span><br></pre></td></tr></table></figure>
+<h2 id="group-by"><a href="#group-by" class="headerlink" title="group by"></a>group by</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(CustomerID), Country <span class="keyword">from</span> Customers <span class="keyword">group</span> <span class="keyword">by</span> Country;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(CustomerID), Country <span class="keyword">from</span> Customers <span class="keyword">group</span> <span class="keyword">by</span> Country <span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">count</span>(CustomerID) <span class="keyword">desc</span>;</span><br><span class="line"><span class="keyword">select</span> s.ShipperName, <span class="keyword">count</span>(o.OrderID) <span class="keyword">as</span> NumberOfOrders <span class="keyword">from</span> Orders <span class="keyword">as</span> o <span class="keyword">left</span> <span class="keyword">join</span> Shippers <span class="keyword">as</span> s <span class="keyword">on</span> o.ShipperID=s.ShipperID <span class="keyword">group</span> <span class="keyword">by</span> ShipperName;</span><br></pre></td></tr></table></figure>
+<h2 id="having"><a href="#having" class="headerlink" title="having"></a>having</h2><p>对比于where，having和函数对象一起用</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(CustomerID), Country <span class="keyword">from</span> Customers <span class="keyword">group</span> <span class="keyword">by</span> Country <span class="keyword">having</span> <span class="keyword">count</span>(CustomerID)&gt;<span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(CustomerID), Country <span class="keyword">from</span> Customers <span class="keyword">group</span> <span class="keyword">by</span> Country <span class="keyword">having</span> <span class="keyword">count</span>(CustomerID)&gt;<span class="number">5</span> <span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">count</span>(CustomerID) <span class="keyword">desc</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> e.lastName, <span class="keyword">count</span>(o.OrderID) <span class="keyword">as</span> NumberOfOrders <span class="keyword">from</span> (Orders <span class="keyword">as</span> o <span class="keyword">inner</span> <span class="keyword">join</span> Employees <span class="keyword">as</span> e <span class="keyword">on</span> o.EmployeeID=e.EmployeeID) <span class="keyword">group</span> <span class="keyword">by</span> LastName <span class="keyword">having</span> <span class="keyword">count</span>(o.OrderID)&gt;<span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> e.lastName, <span class="keyword">count</span>(o.OrderID) <span class="keyword">as</span> NumberofOrders <span class="keyword">from</span> Orders <span class="keyword">as</span> o <span class="keyword">inner</span> <span class="keyword">join</span> Employees <span class="keyword">as</span> e <span class="keyword">on</span> o.EmployeeID=e.EmployeeID <span class="keyword">where</span> lastName=<span class="string">'Davolio'</span> <span class="keyword">or</span> LastName=<span class="string">'Fuller'</span> <span class="keyword">group</span> <span class="keyword">by</span> LastName <span class="keyword">having</span> <span class="keyword">count</span>(o.OrderID)&gt;<span class="number">25</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="exists"><a href="#exists" class="headerlink" title="exists"></a>exists</h2><p>check if records is exists.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> SupplierName <span class="keyword">from</span> Suppliers <span class="keyword">as</span> s <span class="keyword">where</span> <span class="keyword">exists</span> (<span class="keyword">select</span> ProductName <span class="keyword">from</span> Products <span class="keyword">where</span> SupplierId=s.supplierId <span class="keyword">and</span> Price&lt;<span class="number">20</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> SupplierName <span class="keyword">from</span> Suppliers <span class="keyword">as</span> s <span class="keyword">where</span> <span class="keyword">exists</span> (<span class="keyword">select</span> ProductName <span class="keyword">from</span> Products <span class="keyword">as</span> p <span class="keyword">where</span> SupplierId=s.supplierId <span class="keyword">and</span> Price=<span class="number">22</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="any-amp-all"><a href="#any-amp-all" class="headerlink" title="any&amp;all"></a>any&amp;all</h2><p>any：某条记录满足条件<br>all：所有记录满足条件<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> ProductName <span class="keyword">from</span> Products <span class="keyword">where</span> ProductID=<span class="keyword">any</span>(<span class="keyword">select</span> ProductID <span class="keyword">from</span> OrderDetails <span class="keyword">where</span> Quantity=<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> ProductName <span class="keyword">from</span> Products <span class="keyword">where</span> ProductID=<span class="keyword">any</span>(<span class="keyword">select</span> ProductID <span class="keyword">from</span> OrderDetails <span class="keyword">where</span> Quantity&gt;<span class="number">99</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> ProductName <span class="keyword">from</span> Products <span class="keyword">where</span> ProductID=all(<span class="keyword">select</span> ProductID <span class="keyword">from</span> OrderDetails <span class="keyword">where</span> Quantity=<span class="number">10</span>);</span><br></pre></td></tr></table></figure></p>
+<h2 id="select-into"><a href="#select-into" class="headerlink" title="select into"></a>select into</h2><p>copy data from one table into a new table.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">into</span> CustomersBackup2017 <span class="keyword">from</span> Customers;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">into</span> CustomersBackup2017 <span class="keyword">in</span> <span class="string">'Backup.mdb'</span> <span class="keyword">from</span> Customers;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">into</span> CustomersBackup2017 <span class="keyword">in</span> <span class="string">'Backup.mdb'</span> <span class="keyword">from</span> Customers;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> CustomerName, ContactName <span class="keyword">into</span> CustomersBackup2017 <span class="keyword">from</span> Customers;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">into</span> CustomersGermany <span class="keyword">from</span> Customers <span class="keyword">where</span> Country=<span class="string">'Germany'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> c.CustomerName, o.OrderID <span class="keyword">into</span> CustomersOrderBackup2017 <span class="keyword">from</span> Customers <span class="keyword">as</span> c <span class="keyword">left</span> <span class="keyword">join</span> Orders <span class="keyword">as</span> o <span class="keyword">on</span> c.CustomerID=o.CustomerID;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">into</span> newtable <span class="keyword">from</span> oldtable <span class="keyword">where</span> <span class="number">1</span>=<span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="insert-into"><a href="#insert-into" class="headerlink" title="insert into"></a>insert into</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> Customers (CustomerName, City, Country) <span class="keyword">select</span> SupplierName, City, Country <span class="keyword">from</span> Suppliers;</span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> Customers (CustomerName, ContactName, Address, City, PostalCode, Country) <span class="keyword">select</span> SupplierName, ContactName, Address, City, PostalCode, Country <span class="keyword">from</span> Suppliers;</span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> Customers (CustomerName, City, Country) <span class="keyword">select</span> SupplierName, City, Country <span class="keyword">from</span> Suppliers <span class="keyword">where</span> Country=<span class="string">'Germany'</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="null-functions"><a href="#null-functions" class="headerlink" title="null functions"></a>null functions</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> ProductName, UnitPrice * (UnitsInStock + <span class="keyword">ifnull</span>(UnitsOnOrder, <span class="number">0</span>)) <span class="keyword">from</span> Products; <span class="comment">-- mysql</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> ProductName, UnitPrice * (UnitsInStock + <span class="keyword">coalesce</span>(UnitsOnOrder, <span class="number">0</span>)) <span class="keyword">from</span> Products; <span class="comment">-- mysql</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> ProductName, UnitPrice * (UnitsInStock + <span class="keyword">isnull</span>(UnitsOnOrder, <span class="number">0</span>)) <span class="keyword">from</span> Products; <span class="comment">-- sql server</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> ProductName, UnitPrice * (UnitsInStock + <span class="keyword">iif</span>(<span class="keyword">isnull</span>(UnitsOnOrder), <span class="number">0</span>, UnitsOnOrder)) <span class="keyword">from</span> Products; <span class="comment">-- ms access</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> ProductName, UnitPrice * (UnitsInStock + nvl(UnitsOnOrder, <span class="number">0</span>)) <span class="keyword">from</span> Products; <span class="comment">-- oracle</span></span><br></pre></td></tr></table></figure>
+<h2 id="stored-procedure"><a href="#stored-procedure" class="headerlink" title="stored procedure"></a>stored procedure</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">procedure</span> SelectAllCustomers <span class="keyword">as</span> <span class="keyword">select</span> * <span class="keyword">from</span> Customers</span><br><span class="line"><span class="keyword">go</span>;</span><br><span class="line">exec SelectAllCustomers;</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">procedure</span> SelectAllCustomers @City nvachar(<span class="number">30</span>) <span class="keyword">as</span> <span class="keyword">select</span> * <span class="keyword">from</span> Customers <span class="keyword">where</span> City=@City</span><br><span class="line"><span class="keyword">go</span>;</span><br><span class="line">exec SelectAllCustomers City = "London";</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">procedure</span> SelectAllCustomers @City nvarcahr(<span class="number">30</span>), @PostalCode <span class="keyword">nvarchar</span>(<span class="number">10</span>)</span><br><span class="line"><span class="keyword">as</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Customers <span class="keyword">where</span> City=@City <span class="keyword">and</span> PostalCode=@PostalCode</span><br><span class="line"><span class="keyword">go</span>;</span><br><span class="line">exec SelectAllCustomers City='London', PostalCode='WALLDP';</span><br></pre></td></tr></table></figure>
+<h2 id="comments"><a href="#comments" class="headerlink" title="comments"></a>comments</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- Select all:</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Customers;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- where City='Berlin':</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Customers;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- select * from Customers:</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Products;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Select all the columns of all the records in the Customers table: */</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Customers;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* select * from Customers;</span></span><br><span class="line"><span class="comment">select * from Products;</span></span><br><span class="line"><span class="comment">select * from Orders;</span></span><br><span class="line"><span class="comment">select * from Categories; */</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Suppliers;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> CustomerName, <span class="comment">/* City, */</span></span><br><span class="line">Country <span class="keyword">from</span> Customers;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Customers <span class="keyword">where</span> (CustomerName <span class="keyword">like</span> <span class="string">'L%'</span> <span class="keyword">or</span> CustomerName <span class="keyword">like</span> <span class="string">'R%'</span> <span class="comment">/* or CustomerName like 'S%' or CustomerName like 'T%' */</span> <span class="keyword">or</span> CustomerName <span class="keyword">like</span> <span class="string">'W%'</span>) <span class="keyword">and</span> Country=<span class="string">'USA'</span> <span class="keyword">order</span> <span class="keyword">by</span> CustomerName;</span><br></pre></td></tr></table></figure>
+<h2 id="create-database"><a href="#create-database" class="headerlink" title="create database"></a>create database</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> testDB;</span><br></pre></td></tr></table></figure>
+<h2 id="drop"><a href="#drop" class="headerlink" title="drop"></a>drop</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">database</span> testDB;</span><br></pre></td></tr></table></figure>
+<h2 id="truncate"><a href="#truncate" class="headerlink" title="truncate"></a>truncate</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">truncate</span> <span class="keyword">table</span> table_name;</span><br></pre></td></tr></table></figure>
+<h2 id="create-table"><a href="#create-table" class="headerlink" title="create table"></a>create table</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> Persons (</span><br><span class="line">  PersonID <span class="built_in">int</span>,</span><br><span class="line">  LastName <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">  FirstName <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">  Address <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">  City <span class="built_in">varchar</span>(<span class="number">255</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h2 id="alter-table"><a href="#alter-table" class="headerlink" title="alter table"></a>alter table</h2><ul>
+<li><p>alter add命令用来增加表的字段。</p>
+</li>
+<li><p>alter add命令格式：alter table 表名 add字段 类型 其他;</p>
+</li>
+<li><p>例如，在表MyClass中添加了一个字段passtest，类型为int(4)，默认值为0：</p>
+<ul>
+<li>mysql&gt; alter table MyClass add passtest int(4) default ‘0’;</li>
+</ul>
+</li>
+</ul>
+<p>1) 加索引<br>   mysql&gt; alter table 表名 add index 索引名 (字段名1[，字段名2 …]);</p>
+<p>例子： mysql&gt; alter table employee add index emp_name (name);</p>
+<p>2) 加主关键字的索引<br>    mysql&gt; alter table 表名 add primary key (字段名);</p>
+<p>例子： mysql&gt; alter table employee add primary key(id);</p>
+<p>3) 加唯一限制条件的索引<br>   mysql&gt; alter table 表名 add unique 索引名 (字段名);</p>
+<p>例子： mysql&gt; alter table employee add unique emp_name2(cardnumber);</p>
+<p>4) 删除某个索引<br>   mysql&gt; alter table 表名 drop index 索引名;</p>
+<p>例子： mysql&gt;alter table employee drop index emp_name;</p>
+<p>5) 增加字段<br>    mysql&gt; ALTER TABLE table_name ADD field_name field_type;</p>
+<p>6) 修改原字段名称及类型<br>    mysql&gt; ALTER TABLE table_name CHANGE old_field_name new_field_name field_type;</p>
+<p>7) 删除字段<br>    MySQL ALTER TABLE table_name DROP field_name;</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> table_name <span class="keyword">alter</span> <span class="keyword">column</span> column_name datatype; <span class="comment">-- sql server / ma access</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> table_name <span class="keyword">modify</span> <span class="keyword">column</span> column_name datatype; <span class="comment">-- my sql / oracle</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> table_name <span class="keyword">modify</span> column_name datatype; <span class="comment">-- oracle 10g and later</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> Presons <span class="keyword">alter</span> <span class="keyword">column</span> DateOfBirth <span class="keyword">year</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> Persons <span class="keyword">drop</span> <span class="keyword">column</span> DateOfBirth;</span><br></pre></td></tr></table></figure>
+<h2 id="sql-constraints-约束"><a href="#sql-constraints-约束" class="headerlink" title="sql constraints(约束)"></a>sql constraints(约束)</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> table_name (</span><br><span class="line">  column1 datatype <span class="keyword">constraint</span>,</span><br><span class="line">  column2 datatype <span class="keyword">constraint</span>,</span><br><span class="line">  column3 datatype <span class="keyword">constraint</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>type:</p>
+<ul>
+<li>not null: 不能为空</li>
+<li>unique: 唯一值，不能和其它值相同</li>
+<li>primary key: 即不为空又是唯一的，一般用作id，一般是自增的id</li>
+<li>foreign key: 另一个表的唯一标示</li>
+<li>check: 确保某一列的所有值满足一个特定的条件</li>
+<li>default: 当没有设置值的时候设置一个默认值</li>
+<li>index: 使用索引加快数据检索速度</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- not null constraint</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> Persons (</span><br><span class="line">  <span class="keyword">ID</span> <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">  LastName <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">  FirstName <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">  Age <span class="built_in">int</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- unique constraint</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- sql server/oracle/ma access</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> Persons (</span><br><span class="line">  <span class="keyword">ID</span> <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">unique</span>,</span><br><span class="line">  LastName <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">  Firstname <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">  Age <span class="built_in">int</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- mysql</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> Persons (</span><br><span class="line">  <span class="keyword">ID</span> <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">  LastName <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">  FirstName <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">  Age <span class="built_in">int</span>,</span><br><span class="line">  <span class="keyword">unique</span> (<span class="keyword">ID</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- mysql/ sql server / oracle / ms access:</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> Persons (</span><br><span class="line">  <span class="keyword">ID</span> <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">  LastName <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">  FirstName <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">  Age <span class="built_in">int</span>,</span><br><span class="line">  <span class="keyword">constraint</span> UC_Person <span class="keyword">unique</span> (<span class="keyword">ID</span>, LastName)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> Persons <span class="keyword">add</span> <span class="keyword">unique</span> (<span class="keyword">ID</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> Persons <span class="keyword">add</span> <span class="keyword">constraint</span> UC_Person <span class="keyword">unique</span> (<span class="keyword">ID</span>, LastName);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- mysql</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> Persons <span class="keyword">drop</span> <span class="keyword">unique</span> UC_Person;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- sql server / oracle / ms access:</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> Persons <span class="keyword">drop</span> <span class="keyword">constraint</span> UC_Person;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- mysql</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> Persons (</span><br><span class="line">  <span class="keyword">ID</span> <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">  LastName <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">  FirstName <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">  Age <span class="built_in">int</span>,</span><br><span class="line">  primary <span class="keyword">key</span> (<span class="keyword">ID</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- sql sever / oracle / ms access:</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> Persons (</span><br><span class="line">  <span class="keyword">ID</span> <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span> primary <span class="keyword">key</span>,</span><br><span class="line">  LastName <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">  FirstName <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">  Age <span class="built_in">int</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">-- mysql / sql server/ oracle / ms access:</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> Persons (</span><br><span class="line">  <span class="keyword">ID</span> <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">  Lastname <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">  FirstName <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">  Age <span class="built_in">int</span>,</span><br><span class="line">  <span class="keyword">constraint</span> PK_Preson primary <span class="keyword">key</span> (<span class="keyword">ID</span>, LastName)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> Persons <span class="keyword">add</span> primary <span class="keyword">key</span> (<span class="keyword">ID</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> Persons <span class="keyword">add</span> <span class="keyword">constraint</span> PK_Person primary <span class="keyword">key</span> (<span class="keyword">ID</span>, LastName);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- mysql</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> Persons <span class="keyword">drop</span> primary <span class="keyword">key</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- sql server / oracle / ms access:</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> Persons <span class="keyword">drop</span> <span class="keyword">constraint</span> PK_Person;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- mysql</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> Orders (</span><br><span class="line">  OrderID <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">  OrderNumber <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">  PersonID <span class="built_in">int</span>,</span><br><span class="line">  primary <span class="keyword">key</span> (OrderID),</span><br><span class="line">  foreign <span class="keyword">key</span> (PersonID),</span><br><span class="line">  <span class="keyword">references</span> Persons(PersonID)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- sql server / oracle / ms access:</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> Orders (</span><br><span class="line">  OrderID <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span> primary <span class="keyword">key</span>,</span><br><span class="line">  OrderNumber <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">  PersonID <span class="built_in">int</span> foreign <span class="keyword">key</span> <span class="keyword">references</span> Persons(PersonID)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- mysql / sql server / oracle / ms access:</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> Orders (</span><br><span class="line">  OrderID <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">  OrderNumber <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">  PersonID <span class="built_in">int</span>,</span><br><span class="line">  primary <span class="keyword">key</span> (OrderID),</span><br><span class="line">  <span class="keyword">constraint</span> FK_PersonOrder foreign <span class="keyword">key</span> (PersonID) <span class="keyword">references</span> Persons(PersonID)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> Orders <span class="keyword">add</span> foreign <span class="keyword">key</span> (PersonID) <span class="keyword">references</span> Persons(PersonID);</span><br><span class="line"></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> Orders <span class="keyword">add</span> <span class="keyword">constraint</span> FK_PersonOrder foreign <span class="keyword">key</span> (PersonID) <span class="keyword">references</span> Persons(PersonID);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- mysql</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> Orders <span class="keyword">drop</span> foreign <span class="keyword">key</span> FK_PersonOrder;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- sql server/ oracle/ ms access:</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> Orders <span class="keyword">drop</span> <span class="keyword">constraint</span> FK_PersonOrder;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- mysql</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> Persons (</span><br><span class="line">  <span class="keyword">ID</span> <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">  LastName <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">  FirstName <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">  Age <span class="built_in">int</span>,</span><br><span class="line">  <span class="keyword">check</span> (Age&gt;=<span class="number">18</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- sql server/ oracle/ ms access:</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> Persons (</span><br><span class="line">  <span class="keyword">ID</span> <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">  LastName <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">  FirstName <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">  Age <span class="built_in">int</span> <span class="keyword">check</span> (Age&gt;=<span class="number">18</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- mysql/ sql server/ oracle/ ms access:</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> Persons (</span><br><span class="line">  <span class="keyword">ID</span> <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">  LastName <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">  FirstName <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">  Age <span class="built_in">int</span>,</span><br><span class="line">  City <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">  <span class="keyword">constraint</span> CHK_Person <span class="keyword">check</span> (Age&gt;=<span class="number">18</span> <span class="keyword">and</span> City=<span class="string">'Sandnes'</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- mysql/ sql server / oracle / ms access:</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> Persons <span class="keyword">add</span> <span class="keyword">check</span> (Age&gt;=<span class="number">18</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> Persons <span class="keyword">add</span> <span class="keyword">constraint</span> CHK_PersonAge <span class="keyword">check</span> (Age&gt;=<span class="number">18</span> <span class="keyword">and</span> City=<span class="string">'Sandnes'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- sql server / oracle / ms access:</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> Persons <span class="keyword">drop</span> <span class="keyword">constraint</span> CHK_PersonAge;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- mysql</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> Persons <span class="keyword">drop</span> <span class="keyword">check</span> CHK_PersonAge;</span><br><span class="line"></span><br><span class="line"><span class="comment">--- mysql / sql server / oracle / ms access:</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> Persons (</span><br><span class="line">  <span class="keyword">ID</span> <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">  LastName <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">  FirstName <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">  Age <span class="built_in">int</span>,</span><br><span class="line">  City <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">default</span> <span class="string">'Sandnes'</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> Orders (</span><br><span class="line">  <span class="keyword">ID</span> <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">  OrderNumber <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">  OrderDate <span class="built_in">date</span> <span class="keyword">default</span> <span class="keyword">getdate</span>()</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">-- mysql:</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> Persons</span><br><span class="line"><span class="keyword">alter</span> City <span class="keyword">set</span> <span class="keyword">default</span> <span class="string">'Sandnes'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- sql server / ms access:</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> Persons</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">column</span> City <span class="keyword">set</span> <span class="keyword">default</span> <span class="string">'Sandnes'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- oracle:</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> Persons</span><br><span class="line"><span class="keyword">modify</span> City <span class="keyword">default</span> <span class="string">'Sandnes'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- mysql:</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> Persons</span><br><span class="line"><span class="keyword">alter</span> City <span class="keyword">drop</span> <span class="keyword">default</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- sql server/ oracle/ ms access:</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> Persons</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">column</span> City <span class="keyword">drop</span> <span class="keyword">default</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">index</span> idx_lastname <span class="keyword">on</span> Persons (LastName);</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">index</span> idx_pname <span class="keyword">on</span> Persons (LastName, FirstName);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- ms access:</span></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">index</span> index_name <span class="keyword">on</span> table_name;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- sql server:</span></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">index</span> table_name.index_name;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- db2/oracle:</span></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">index</span> index_name;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- mysql:</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> table_name</span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">index</span> index_name;</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> Persons (</span><br><span class="line">  <span class="keyword">ID</span> <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span> auto_increment,</span><br><span class="line">  LastName <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">  FirstName <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">  Age <span class="built_in">int</span>,</span><br><span class="line">  primary <span class="keyword">key</span> (<span class="keyword">ID</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> Persons auto_increment=<span class="number">100</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> Persons (FirstName, LastName) <span class="keyword">values</span> (<span class="string">'Lars'</span>, <span class="string">'Monsen'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> Persons (</span><br><span class="line">  <span class="keyword">ID</span> <span class="built_in">int</span> <span class="keyword">identity</span>(<span class="number">1</span>, <span class="number">1</span>) primary <span class="keyword">key</span>,</span><br><span class="line">  LastName <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">  FirstName <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">  Age <span class="built_in">int</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> Persons (FirstName, LastName) <span class="keyword">values</span> (<span class="string">'Lars'</span>, <span class="string">'Monsen'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> Persons (</span><br><span class="line">  <span class="keyword">ID</span> <span class="built_in">integer</span> primary <span class="keyword">key</span> autoincrement,</span><br><span class="line">  LastName <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">  FirstName <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">  Age <span class="built_in">int</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> Persons (FirstName, LastName) <span class="keyword">values</span> (<span class="string">'Lars'</span>, <span class="string">'Monsen'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">sequence</span> seq_person <span class="keyword">minvalue</span> <span class="number">1</span> <span class="keyword">start</span> <span class="keyword">with</span> <span class="number">1</span> <span class="keyword">increment</span> <span class="keyword">by</span> <span class="number">1</span> <span class="keyword">cache</span> <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> Persons (<span class="keyword">ID</span>, FirstName, LastName) <span class="keyword">values</span> (seq_person.nextval, <span class="string">'Lars'</span>, <span class="string">'Monsen'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Orders <span class="keyword">where</span> OrderDate=<span class="string">'2008-11-11'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Orders <span class="keyword">where</span> OrderDate=<span class="string">'2008-11-11'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">view</span> view_name <span class="keyword">as</span> <span class="keyword">select</span> column1, column2, ... <span class="keyword">from</span> table_name <span class="keyword">where</span> condition;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">Users</span> <span class="keyword">where</span> UserId=<span class="number">105</span> <span class="keyword">or</span> <span class="number">1</span>=<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+  <div class="guide-links">
+    
+    
+      <span>← <a href="/v3/server/2-arithmetic.html">算法</a></span>
+    
+    
+    
+  </div>
+  <div class="footer">
+    发现错误？想参与编辑？
+    <a href="https://github.com/mallow-fight/blog/tree/master/source/v3/server/3-database.md" target="_blank">
+      在 GitHub 上编辑此页！
+    </a>
+    
+    <span>更新于：2019-06-03 17:06:96</span>
+  </div>
+</div>
+
+
+<!-- <div id="disqus_thread"></div>
+<script>
+  // it seems slowly page, so i annotation it.
+  // disqus评论系统
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  var disqus_config = function () {
+    this.page.url = 'https://mallow-fight.github.io/';  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = 'https://mallow-fight.github.io/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://mallow-blog.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
+    </div>
+    <script src="/js/smooth-scroll.min.js"></script>
+  
+  <!-- main custom script for sidebars, version selects etc. -->
+  <script src="/js/css.escape.js"></script>
+  <script src="/js/common.js"></script>
+  <!-- search -->
+  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/search.css">
+  <script src="/js/docsearch.js"></script>
+  <script>
+  [
+    '#search-query-nav',
+    '#search-query-sidebar',
+    '#search-query-menu'
+  ].forEach(function (selector) {
+    if (!document.querySelector(selector)) return
+    docsearch({
+      appId: 'FKZQZEMOI4',
+      apiKey: '82fdcfac2e888595cb2807aa60aaad58',
+      indexName: 'prod_blog',
+      inputSelector: selector
+    })
+  })
+  </script>
+  <!-- fastclick -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+</body>
+</html>

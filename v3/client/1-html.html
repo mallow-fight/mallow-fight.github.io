@@ -212,8 +212,8 @@
       
     
       <li>
-        <a href="/v3/client/6-react.html" class="sidebar-link">
-          react
+        <a href="/v3/client/6-framework.html" class="sidebar-link">
+          framework
         </a>
       </li>
       
@@ -461,6 +461,635 @@
 <li>块级：div、ul、li、h1、p</li>
 <li>空：br、img、hr、input、link、meta、source</li>
 </ul>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p><strong>HTML 是用超文本标记语言（一套标记标签）来描述网页的一种语言，它不是一种编程语言。</strong></p>
+<h2 id="HTML5新增内容"><a href="#HTML5新增内容" class="headerlink" title="HTML5新增内容"></a>HTML5新增内容</h2><blockquote>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/HTML5" target="_blank" rel="noopener">参考资料</a></p>
+</blockquote>
+<p><strong>通常，html5、css3和js在一起统称为HTML5</strong></p>
+<h3 id="语义-1"><a href="#语义-1" class="headerlink" title="语义"></a>语义</h3><p><strong>能够让你更恰当地描述你的内容是什么</strong></p>
+<ul>
+<li><p>字段和提纲</p>
+<ul>
+<li><code>&lt;section&gt;</code></li>
+<li><code>&lt;article&gt;</code></li>
+<li><code>&lt;nav&gt;</code></li>
+<li><code>&lt;header&gt;</code></li>
+<li><code>&lt;footer&gt;</code></li>
+<li><code>&lt;aside&gt;</code></li>
+<li><code>&lt;hgroup&gt;</code></li>
+</ul>
+</li>
+<li><p>音频和视频</p>
+<ul>
+<li><code>&lt;audio&gt;</code></li>
+<li><code>&lt;video&gt;</code></li>
+</ul>
+</li>
+<li><p>表单</p>
+<ul>
+<li><code>required</code>：强制验证</li>
+<li><code>&lt;input&gt;</code>：属性<code>type</code>的一些新值</li>
+<li><code>&lt;output&gt;</code>：新的元素</li>
+</ul>
+</li>
+<li><p>语义元素</p>
+<ul>
+<li><code>&lt;mark&gt;</code></li>
+<li><code>&lt;figure&gt;</code></li>
+<li><code>&lt;figcaption&gt;</code></li>
+<li><code>&lt;data&gt;</code></li>
+<li><code>&lt;time&gt;</code></li>
+<li><code>&lt;output&gt;</code></li>
+<li><code>&lt;progress&gt;</code></li>
+<li><code>&lt;meter&gt;</code></li>
+<li><code>&lt;main&gt;</code></li>
+</ul>
+</li>
+<li><p><code>&lt;iframe&gt;</code></p>
+<ul>
+<li><code>sandbox</code></li>
+<li><code>seamless</code></li>
+<li><code>srcdoc</code></li>
+<li>通过这些属性，可以精确的控制安全级别以及期望的渲染</li>
+</ul>
+</li>
+<li><p>允许直接嵌入数学公式</p>
+<ul>
+<li>MathML</li>
+</ul>
+</li>
+</ul>
+<h3 id="连通性-1"><a href="#连通性-1" class="headerlink" title="连通性"></a>连通性</h3><p><strong>能够让你和服务器之间通过创新的新技术方法进行通信</strong></p>
+<ul>
+<li><p>web sockets：允许在页面和服务器之间建立持久连接并通过这种方法来交换非HTML数据</p>
+</li>
+<li><p>server-sent events：允许服务器向客户端推送事件，而不是仅在响应客户端请求时服务器才能发送数据的传统范式</p>
+</li>
+<li><p>webRTC：RTC代表即时通信，允许连接到其他人，直接在浏览器中控制视频会议，而不需要一个插件或是外部的应用程序</p>
+</li>
+</ul>
+<h3 id="离线-amp-存储-1"><a href="#离线-amp-存储-1" class="headerlink" title="离线 &amp; 存储"></a>离线 &amp; 存储</h3><p><strong>能够让网页在客户端本地存储数据以及更高效地离线运行</strong></p>
+<ul>
+<li><p>离线资源（应用程序缓存）：火狐全面支持HTML5离线资源规范，其他大多数针对离线资源仅提供了某种程度上的支持</p>
+</li>
+<li><p>在线和离线事件：Firefox 3支持WHATWG在线和离线事件，这可以让应用程序和扩展检测是否存在可用的网络连接，以及在连接建立和断开时能感知到</p>
+</li>
+<li><p>DOM存储：客户端会话和持久化存储让web应用程序能够在客户端存储结构化数据</p>
+</li>
+<li><p>IndexedDB：为了能够在浏览器中存储大量结构化数据，并且能够在这些数据上使用索引进行高性能检索的Web标准</p>
+</li>
+<li><p>选择使用本地文件：对新的 <code>HTML5</code> 文件 <code>API</code> 的支持已经被添加到 <code>Gecko</code> 中，从而使 <code>Web</code> 应用程序可以访问由用户选择的本地文件。这包括使用 <code>type = file</code> 的 <code>&lt;input&gt;</code> 元素的新的 <code>multiple</code> 属性针对多文件选择的支持。 还有 <code>FileReader</code>。</p>
+</li>
+</ul>
+<h3 id="多媒体-1"><a href="#多媒体-1" class="headerlink" title="多媒体"></a>多媒体</h3><p><strong>使video和audio成为了在所有web中的一等公民</strong></p>
+<ul>
+<li><p>使用HTML5音视频：<code>&lt;audio&gt;</code>和<code>&lt;video&gt;</code>元素嵌入并支持新的多媒体操作内容的操作</p>
+</li>
+<li><p>WebRTC：允许连接到其他人，在浏览器中直接控制视频会议，而不需要一个插件或是外部的应用程序</p>
+</li>
+<li><p>Camera：允许使用，操作计算机摄像头，并从中存储图像</p>
+</li>
+<li><p>Track &amp; WebVTT：<code>&lt;track&gt;</code>元素支持字幕和章节，<code>WebVTT</code>是一个文本轨道格式</p>
+</li>
+</ul>
+<h3 id="2D-3D-绘图-amp-效果-1"><a href="#2D-3D-绘图-amp-效果-1" class="headerlink" title="2D/3D 绘图 &amp; 效果"></a>2D/3D 绘图 &amp; 效果</h3><p><strong>提供了一个更加分化范围的呈现选择</strong></p>
+<ul>
+<li><p>canvas</p>
+</li>
+<li><p>WebGL：非常符合OpenGL ES2.0并且可以用在HTML5<code>&lt;canvas&gt;</code>元素中的API给web带来了3D图像功能</p>
+</li>
+<li><p>SVG：基于XML可以直接嵌入到HTML中的矢量图像格式</p>
+</li>
+</ul>
+<h3 id="性能-amp-集成-1"><a href="#性能-amp-集成-1" class="headerlink" title="性能 &amp; 集成"></a>性能 &amp; 集成</h3><p><strong>提供了非常显著的性能优化和更有效的计算机硬件使用</strong></p>
+<ul>
+<li><p>web workers：能够把js计算委托给后台线程，通过允许这些活动以防止使交互型事件变得缓慢</p>
+</li>
+<li><p>XMLHttpRequest Level 2：允许异步读取页面的某些部分，允许其显示动态内容，根据时间和用户行为而有所不同。这是在Ajax背后的技术</p>
+</li>
+<li><p>即时编译的js引擎：新一代的js引擎功能更强大，性能更杰出</p>
+</li>
+<li><p>History：允许对浏览器历史记录进行操作，这对于那些交互地加载新信息的页面尤其有用</p>
+</li>
+<li><p>contentEditable属性：把你的网站变成wiki</p>
+</li>
+<li><p>拖放：支持在网站内部和网站之间拖放项目，同时也提供了一个更简单的供扩展和基于Mozilla的应用程序使用的API</p>
+</li>
+<li><p>焦点管理：支持<code>activeElement</code>和<code>hasFocus</code>属性</p>
+</li>
+<li><p>基于Web的协议处理程序：你现在可以使用<code>navigator.registerProtocolHandler()</code>方法把web应用程序注册成一个协议处理程序</p>
+</li>
+<li><p>requestAnimationFrame：允许控制动画渲染以获得更优性能</p>
+</li>
+<li><p>全屏：为一个网页或者应用程序控制使用整个屏幕，而不显示浏览器界面</p>
+</li>
+<li><p>指针锁定：允许锁定到内容的指针，这样游戏或者类似的应用程序在指针到达窗口限制时也不会失去焦点</p>
+</li>
+<li><p>在线和离线事件：为了构建一个良好的具有离线功能的web应用程序，你需要知道什么时候你的应用程序确实离线了，顺便提一句，在你的应用程序又再回到在线状态时你也需要知道</p>
+</li>
+</ul>
+<h3 id="设备访问-Device-Access-1"><a href="#设备访问-Device-Access-1" class="headerlink" title="设备访问 Device Access"></a>设备访问 Device Access</h3><p><strong>能够处理各种输入和输出设备</strong></p>
+<ul>
+<li><p>camera：允许使用和操作计算机的摄像头，并从中存取照片。</p>
+</li>
+<li><p>触控事件：对用户按下触控屏的事件做出反应的处理程序。</p>
+</li>
+<li><p>使用地理位置定位：让浏览器使用地理位置服务定位用户的位置。</p>
+</li>
+<li><p>检测设备方向：让用户在运行浏览器的设备变更方向时能够得到信息，这可以被用作一种输入设备或者使页面的布局跟屏幕的方向相适应</p>
+</li>
+<li><p>指针锁定：允许锁定到内容的指针，这样游戏或者类似的应用程序在指针到达窗口限制时也不会失去焦点</p>
+</li>
+</ul>
+<h2 id="样式设计：创作更加复杂的主题-1"><a href="#样式设计：创作更加复杂的主题-1" class="headerlink" title="样式设计：创作更加复杂的主题"></a>样式设计：创作更加复杂的主题</h2><p><strong>CSS已经扩展到能够以一个更加复杂的方法给元素设置样式，这通常被称为CSS3，尽管CSS已经不再是很难触动的规范，并且不同的模块并不全部位于level3：其中一些位于level1而另一些位于level4，覆盖了所有中间的层次</strong></p>
+<ul>
+<li><p>新的背景样式特性：现在可以使用<code>box-shadow</code>给逻辑框设置一个阴影，而且可以设置多背景</p>
+</li>
+<li><p>更精美的边框：现在不仅可以使用图像来格式化边框，使用<code>border-image</code>和它关联的普通属性，而且可以通过<code>border-radius</code>属性来支持圆角边框</p>
+</li>
+<li><p>为你的样式设置动画：使用CSS Transitions以在不同的状态间设置动画，或者使用CSS Animations在页面的某些部分设置动画而不需要一个触发事件，你现在可以在页面中控制移动元素了</p>
+</li>
+<li><p>排版方面的改进：不但可以控制<code>text-overflow</code>和<code>hyphenation</code>，还可以给它设置一个阴影或者更精细地控制它的<code>decorations</code>。感谢新的<code>@font-face</code>规则，现在我们可以下载并应用自定义的字体了</p>
+</li>
+<li><p>新的展示性布局：为了提高设计的灵活性，已经有两种新的布局被添加了进来：CSS多栏布局(cloumn)，以及CSS灵活方框布局(flex)</p>
+</li>
+</ul>
+<h2 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h2><ul>
+<li><p>由尖括号包围的关键词，比如 <code>&lt;html&gt;</code></p>
+</li>
+<li><p>通常是成对出现的，比如 <code>&lt;b&gt;</code> 和 <code>&lt;/b&gt;</code></p>
+</li>
+<li><p>标签对中的第一个标签是开始标签，第二个标签是结束标签</p>
+</li>
+<li><p>开始和结束标签也被称为开放标签和闭合标签</p>
+</li>
+</ul>
+<h2 id="结构化网站"><a href="#结构化网站" class="headerlink" title="结构化网站"></a>结构化网站</h2><ul>
+<li><p>标题: <code>&lt;header&gt;</code></p>
+</li>
+<li><p>导航栏: <code>&lt;nav&gt;</code></p>
+</li>
+<li><p>主要内容: <code>&lt;main&gt;</code>, 具有代表性的内容段落主题可以使用 <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, 和 <code>&lt;div&gt;</code> 元素</p>
+</li>
+<li><p>侧栏: <code>&lt;aside&gt;</code>; 经常嵌套在 <code>&lt;main&gt;</code> 中</p>
+</li>
+<li><p>页脚: <code>&lt;footer&gt;</code></p>
+</li>
+</ul>
+<h2 id="没有特定语义"><a href="#没有特定语义" class="headerlink" title="没有特定语义"></a>没有特定语义</h2><ul>
+<li><p><code>span</code>是一个<code>行内无语义元素</code>，你应该仅仅当<code>无法找到更好的语义元素包含内容</code>时使用，或者<code>不想增加特定的含义</code></p>
+</li>
+<li><p><code>div</code>是一个<code>块级无语义元素</code>，你应该仅仅当<code>找不到更好的块级元素</code>时使用，或者<code>不想增加特定的含义</code></p>
+</li>
+</ul>
+<p class="tip"><code>div</code>用起来非常便利以至于很容易被滥用。因为它们不携带语义值，所以会让你的HTML代码变的混乱。要小心的使用它们，只有当没有更好的语义解决方案才能使用，而且要尽可能把它的使用量降到最低，否则，当你升级和维护你的文档时会非常困难。</p>
+
+<h2 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h2><ul>
+<li><p><code>&lt;br&gt;</code>在一个段落中创建一个换行</p>
+</li>
+<li><p><code>&lt;hr&gt;</code>在文档中生成一条水平分割线</p>
+</li>
+</ul>
+<h2 id="figure-描绘"><a href="#figure-描绘" class="headerlink" title="figure(描绘)"></a>figure(描绘)</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">figure</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/dinosaur.jpg"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">alt</span>=<span class="string">"The head and torso of a dinosaur skeleton;</span></span></span><br><span class="line"><span class="tag"><span class="string">            it has a large head with long sharp teeth"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">width</span>=<span class="string">"400"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">height</span>=<span class="string">"341"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">figcaption</span>&gt;</span>A T-Rex on display in the Manchester University Museum.<span class="tag">&lt;/<span class="name">figcaption</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">figure</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果图像对您的内容里有意义，则应使用HTML图像。 如果图像纯粹是装饰，则应使用CSS背景图片。</p>
+</blockquote>
+<h2 id="HTML5示例"><a href="#HTML5示例" class="headerlink" title="HTML5示例"></a>HTML5示例</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>My test page<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>This is my page<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p><code>&lt;!DOCTYPE html&gt;</code>：最短的有效的文档声明</p>
+</li>
+<li><p><code>&lt;html&gt;</code>：包裹了整个完整的页面，是一个<strong>根元素</strong></p>
+</li>
+<li><p><code>&lt;head&gt;</code>：一个容器，它包含了所有你想包含在HTML页面中但不想在HTML页面中显示的内容。这些内容包括你想在搜索结果中出现的关键字和页面描述，CSS样式，字符集声明等</p>
+</li>
+<li><p><code>&lt;meta charset=&quot;utf-8&quot;&gt;</code>：设置文档使用<code>utf-8</code>字符集编码，<code>utf-8</code>字符集包含了人类大部分的文字，使用它能避免很多问题</p>
+</li>
+<li><p><code>&lt;title&gt;</code>：设置页面标题，出现在浏览器标签上，当你<code>标记/收藏</code>页面时它可用来描述页面</p>
+</li>
+<li><p><code>&lt;body&gt;</code>：包含了你访问页面时所有显示在页面上的内容，文本，图片，音频，游戏等</p>
+</li>
+</ul>
+<h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2><h3 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h3><ul>
+<li><p>开始标签，例：<code>&lt;p&gt;</code></p>
+</li>
+<li><p>结束标签，例：<code>&lt;/p&gt;</code></p>
+</li>
+<li><p>内容：<code>开始标签</code> + <code>结束标签</code>之间的<code>文本</code> + <code>嵌套元素</code></p>
+</li>
+<li><p>元素：<code>开始标签</code> + <code>内容</code> + <code>结束标签</code> 组成的整个元素</p>
+</li>
+</ul>
+<h3 id="嵌套"><a href="#嵌套" class="headerlink" title="嵌套"></a>嵌套</h3><p><strong>元素可以放置在其它元素中</strong></p>
+<h3 id="种类"><a href="#种类" class="headerlink" title="种类"></a>种类</h3><h4 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h4><ul>
+<li><p>每个块级元素独占一行</p>
+</li>
+<li><p>元素的<code>height</code>、<code>width</code>、<code>line-height</code>、<code>margin-top</code>、<code>margin-bottom</code>都可设置</p>
+</li>
+<li><p>元素宽度在不设置的情况下，是它本身父容器的100%，除非设定一个宽度</p>
+</li>
+</ul>
+<h4 id="内联元素"><a href="#内联元素" class="headerlink" title="内联元素"></a>内联元素</h4><ul>
+<li><p>和其他元素都在一行上</p>
+</li>
+<li><p>元素的<code>height</code>、<code>width</code>、<code>margin-top</code>、<code>margin-bottom</code>都不可设置</p>
+</li>
+<li><p>元素的宽度就是它包含的文字或图片的宽度，不可改变</p>
+</li>
+<li><p>多个内联元素的宽度超过行宽时，会自动换行</p>
+</li>
+</ul>
+<h4 id="内联块状元素"><a href="#内联块状元素" class="headerlink" title="内联块状元素"></a>内联块状元素</h4><ul>
+<li><p>和其他元素都在一行上</p>
+</li>
+<li><p>元素的<code>height</code>、<code>width</code>、<code>line-height</code>、<code>margin-top</code>、<code>margin-bottom</code>都可设置</p>
+</li>
+<li><p>多个内联块状元素的宽度超过行宽时，会自动换行</p>
+</li>
+</ul>
+<h4 id="空元素"><a href="#空元素" class="headerlink" title="空元素"></a>空元素</h4><ul>
+<li><p>开始标签和结束标签之间内容和嵌套元素不生效的元素，例：</p>
+<ul>
+<li><p><code>&lt;img&gt;</code></p>
+</li>
+<li><p><code>&lt;input&gt;</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><p><strong>标准结构：一个空格 + 属性名 + <code>=</code> + 带双引号的属性值</strong></p>
+<h3 id="布尔属性"><a href="#布尔属性" class="headerlink" title="布尔属性"></a>布尔属性</h3><p><strong>可以设置布尔值的属性，例：<code>&lt;button disabled&gt;</code>，如果不设置属性值，默认是<code>true</code></strong></p>
+<h3 id="包围属性的引号"><a href="#包围属性的引号" class="headerlink" title="包围属性的引号"></a>包围属性的引号</h3><p><strong>可以不写，可以单引号，也可以双引号，但是强烈建议使用双引号，单引号留给脚本文件，这是业界默认标准</strong></p>
+<h2 id="统一资源定位器-URL-与路径-path"><a href="#统一资源定位器-URL-与路径-path" class="headerlink" title="统一资源定位器(URL)与路径(path)"></a>统一资源定位器(URL)与路径(path)</h2><h3 id="指向相同目录"><a href="#指向相同目录" class="headerlink" title="指向相同目录"></a>指向相同目录</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"contacts.html"</span>&gt;</span>contacts page<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="指向子目录"><a href="#指向子目录" class="headerlink" title="指向子目录"></a>指向子目录</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"projects/child.html"</span>&gt;</span>go to child<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="指向上级目录"><a href="#指向上级目录" class="headerlink" title="指向上级目录"></a>指向上级目录</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"../parent/parent.html"</span>&gt;</span>go to parent<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="文档片段"><a href="#文档片段" class="headerlink" title="文档片段"></a>文档片段</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 当前页面跳转到指定元素 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#test"</span>&gt;</span> go to test<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"test"</span>&gt;</span>this is test<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 跳转到不同页面的指定元素 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"test.html#test"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- test.html --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"test"</span>&gt;</span>this is test.html #test<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="绝对链接"><a href="#绝对链接" class="headerlink" title="绝对链接"></a>绝对链接</h3><p><strong>访问文件的完整链接，可以是服务器上的路径，也可以是本地路径。</strong></p>
+<blockquote>
+<p>绝对URL总是指向相同的位置，不管它在哪里使用。<br>一般可以省略<code>index.html</code>，这是访问一个链接的默认文件名。</p>
+</blockquote>
+<h3 id="相对链接"><a href="#相对链接" class="headerlink" title="相对链接"></a>相对链接</h3><p><strong>相对于当前文件的路径，一般较短，推荐使用。</strong></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li><p>用清晰的链接措辞</p>
+</li>
+<li><p>尽可能使用相对链接</p>
+</li>
+<li><p>链接到非html资源时，留下清晰的指示</p>
+</li>
+<li><p>在下载链接时使用下载属性</p>
+</li>
+<li><p>当您链接到要下载的资源而不是在浏览器中打开时，您可以使用下载属性来提供一个默认的保存文件名。下面是一个下载链接到<code>Firefox 39 Windows</code>版本的示例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://download.mozilla.org/?product=firefox-39.0-SSL&amp;os=win&amp;lang=en-US"</span></span></span><br><span class="line"><span class="tag">   <span class="attr">download</span>=<span class="string">"firefox-39-installer.exe"</span>&gt;</span></span><br><span class="line">  Download Firefox 39 for Windows</span><br><span class="line"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="多媒体与嵌入"><a href="#多媒体与嵌入" class="headerlink" title="多媒体与嵌入"></a>多媒体与嵌入</h2><h3 id="iframe"><a href="#iframe" class="headerlink" title="iframe"></a>iframe</h3><h4 id="基本要素"><a href="#基本要素" class="headerlink" title="基本要素"></a>基本要素</h4><ul>
+<li><p>allowfullscreen</p>
+</li>
+<li><p>frameborder: 默认是1，会在此框架和其他框架之间绘制边框，0:删除边框</p>
+</li>
+<li><p>src</p>
+</li>
+<li><p>width/height</p>
+</li>
+<li><p>备选内容: 防止不支持iframe的情况</p>
+</li>
+<li><p>sandbox: 提高安全性设置</p>
+</li>
+</ul>
+<p><strong>为了提高速度，在主内容完成加载后，使用js设置iframe的src属性是个好主意,这使得页面可以更快的使用，并减少您的官方页面加载时间（重要的seo指标）</strong></p>
+<h3 id="安全隐患"><a href="#安全隐患" class="headerlink" title="安全隐患"></a>安全隐患</h3><ul>
+<li><p>只有在必要时嵌入</p>
+<ul>
+<li><p>安全问题</p>
+</li>
+<li><p>知识产权问题</p>
+</li>
+</ul>
+</li>
+<li><p>使用https</p>
+<ul>
+<li><p>https减少了远程内容在传输过程中被篡改的机会</p>
+</li>
+<li><p>https防止嵌入式内容访问您的父文档中的内容，反之亦然</p>
+</li>
+</ul>
+</li>
+<li><p>始终使用sandbox属性</p>
+<ul>
+<li>沙箱：一个代码可以适当使用或用于测试的容器，但不能对其他代码库造成任何损害称为沙箱</li>
+</ul>
+</li>
+<li><p>配置CSP指令</p>
+</li>
+</ul>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
+<li>图片存储在和<code>HTML</code>页面同路径的<code>images</code>文件夹下，利于<code>SEO</code>/索引</li>
+<li>搜索引擎也读取图像的文件名并把他们计入<code>SEO</code>，因此给图片取一个描述性的文件名</li>
+<li>选取相对路径优于绝对路径，绝对路径会使浏览器做更多的工作，例如重新通过<code>DNS</code>寻找<code>ip</code>地址，所以通常会把<code>html</code>和图片放在同一个服务器上</li>
+</ul>
+<h3 id="备选文本"><a href="#备选文本" class="headerlink" title="备选文本"></a>备选文本</h3><p><strong>内容取决于该图片想要表现的内容</strong></p>
+<h3 id="图片尺寸"><a href="#图片尺寸" class="headerlink" title="图片尺寸"></a>图片尺寸</h3><p><strong>使用<code>html</code>属性来改变图片大小</strong></p>
+<ul>
+<li>尺寸设定的太大了：图片会模糊</li>
+<li>尺寸设定的太小了：下载图片时会浪费带宽</li>
+<li>尺寸设定的不对：图片会扭曲</li>
+</ul>
+<blockquote>
+<p>如果你需要改变图片尺寸，你应该使用<code>CSS</code>而不是<code>HTML</code></p>
+</blockquote>
+<h3 id="title"><a href="#title" class="headerlink" title="title"></a>title</h3><p><strong>没有空间时可以使用</strong></p>
+<h3 id="解说图片"><a href="#解说图片" class="headerlink" title="解说图片"></a>解说图片</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">figure</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"xxx"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">figcaption</span>&gt;</span>a handsome dog.<span class="tag">&lt;/<span class="name">figcaption</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">figure</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="css背景图片"><a href="#css背景图片" class="headerlink" title="css背景图片"></a>css背景图片</h3><p><strong>如果图像对您的内容有意义，则应使用HTML图像。如果图像纯粹是装饰，则应使用CSS背景图片。</strong></p>
+<h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><h3 id="标签（-lt-video-gt-）"><a href="#标签（-lt-video-gt-）" class="headerlink" title="标签（&lt;video&gt;）"></a>标签<code>（&lt;video&gt;）</code></h3><ol>
+<li><p>src: 视频资源</p>
+</li>
+<li><p>controls: 控制视频的组件</p>
+</li>
+<li><p><code>&lt;video&gt;</code>标签内的段落: 后备内容，当浏览器不支持该标签时，会显示出来</p>
+</li>
+</ol>
+<h3 id="多格式支持"><a href="#多格式支持" class="headerlink" title="多格式支持"></a>多格式支持</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">controls</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"test.mp4"</span> <span class="attr">type</span>=<span class="string">"video/mp4"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"test.webm"</span> <span class="attr">type</span>=<span class="string">"video/webm"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>your brower doesn't support HTML5 video. Here is a </span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"test.xxx"</span>&gt;</span>link to the video<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ol>
+<li><p>width/height：<code>&lt;audio&gt;</code>不支持，无视觉部件</p>
+</li>
+<li><p>autoplay：自动播放</p>
+</li>
+<li><p>loop：循环播放</p>
+</li>
+<li><p>muted：默认关闭声音</p>
+</li>
+<li><p>poster：视频播放前显示的图片 <code>&lt;audio&gt;</code>不支持，无视觉部件</p>
+</li>
+<li><p>preload：缓冲较大的文件</p>
+<p><code>none</code>: 不缓冲</p>
+<p><code>auto</code>: 页面加载后缓存媒体文件</p>
+<p><code>metadata</code>: 仅缓冲文件的元数据</p>
+</li>
+</ol>
+<h3 id="音轨文本"><a href="#音轨文本" class="headerlink" title="音轨文本"></a>音轨文本</h3><p><strong>种类：</strong></p>
+<ol>
+<li><p>subtitle: 翻译字幕</p>
+</li>
+<li><p>captions: 同步翻译对白, 帮助不能听音频的人</p>
+</li>
+<li><p>timed descriptions: 文字转换为音频，用于服务有视觉障碍的人</p>
+</li>
+</ol>
+<p>例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">controls</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"test.mp4"</span> <span class="attr">type</span>=<span class="string">"video/mp4"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"test.webm"</span> <span class="attr">type</span>=<span class="string">"video/webm"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">track</span> <span class="attr">kind</span>=<span class="string">"subtitles"</span> <span class="attr">src</span>=<span class="string">"subtitles_en.vtt"</span> <span class="attr">srclang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="页面测试以及排错"><a href="#页面测试以及排错" class="headerlink" title="页面测试以及排错"></a>页面测试以及排错</h2><h3 id="测试网站"><a href="#测试网站" class="headerlink" title="测试网站"></a>测试网站</h3><ul>
+<li><a href="https://validator.w3.org/" target="_blank" rel="noopener">w3c</a></li>
+</ul>
+<h3 id="测试工具"><a href="#测试工具" class="headerlink" title="测试工具"></a>测试工具</h3><ul>
+<li>根据谷歌开发者工具提供的功能排查</li>
+</ul>
+<h3 id="测试方法"><a href="#测试方法" class="headerlink" title="测试方法"></a>测试方法</h3><ul>
+<li><p>单元测试（测试逻辑）</p>
+</li>
+<li><p>集成测试（测试渲染状况）</p>
+</li>
+</ul>
+<h3 id="自动化测试"><a href="#自动化测试" class="headerlink" title="自动化测试"></a>自动化测试</h3><p><strong><code>Selenium</code>是最流行的浏览器自动化测试工具。最易使用的方法是使用基于<code>Selenium</code>的<code>WebDriver API</code>，它通过调用浏览器接口实现自动化，执行诸如“打开网页”、“移动网页上的元素”、“点击链接”、“查看链接是否打开URL”等。对于运行自动化测试来说是一个十分理想的方法。</strong></p>
+<h3 id="vconsole"><a href="#vconsole" class="headerlink" title="vconsole"></a>vconsole</h3><p><strong>适用于移动端的调试以及查看日志工具</strong></p>
+<blockquote>
+<p><a href="https://github.com/Tencent/vConsole" target="_blank" rel="noopener">仓库地址</a></p>
+</blockquote>
+<h2 id="H5新增内容"><a href="#H5新增内容" class="headerlink" title="H5新增内容"></a>H5新增内容</h2><p><a href="./define.html">H5新增内容</a></p>
+<h2 id="行内元素有哪些？块级元素有哪些？空（void）元素有哪些？"><a href="#行内元素有哪些？块级元素有哪些？空（void）元素有哪些？" class="headerlink" title="行内元素有哪些？块级元素有哪些？空（void）元素有哪些？"></a>行内元素有哪些？块级元素有哪些？空（void）元素有哪些？</h2><ol>
+<li><p>行内元素：a、b、span、img、input、select、strong</p>
+</li>
+<li><p>块级元素：div、ul、ol、li、dl、dt、dd、h1、h2、h3、h4、p</p>
+</li>
+<li><p>空元素：br、hr、img、input、link、meta、area、base、col、command、embed、keygen、param、source、track、wbr</p>
+</li>
+</ol>
+<h2 id="如何实现浏览器多个标签页之间的通信？"><a href="#如何实现浏览器多个标签页之间的通信？" class="headerlink" title="如何实现浏览器多个标签页之间的通信？"></a>如何实现浏览器多个标签页之间的通信？</h2><ul>
+<li>WebSocket</li>
+<li>SharedWorker</li>
+<li>调用localstorage、cookies等本地储存方式<ul>
+<li>localstorage在另一个上下文里被添加、修改或删除时，会触发一个事件，通过监听事件，控制它的值来进行页面信息通信（注意：Safari在无痕模式下设置localstorage值时会抛出QuotaExceedError的异常）</li>
+<li>触发事件仅限于同域名<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'storage'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(event.key, event.newValue);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="webSocket如何兼容低版本浏览器？"><a href="#webSocket如何兼容低版本浏览器？" class="headerlink" title="webSocket如何兼容低版本浏览器？"></a>webSocket如何兼容低版本浏览器？</h2><ul>
+<li>Adobe Flash Socket</li>
+<li>ActiveX HTMLFile（IE）</li>
+<li>基于multipart编码发送的XHR</li>
+<li>基于长轮询的XHR</li>
+</ul>
+<h2 id="页面可见性可以有哪些用途？"><a href="#页面可见性可以有哪些用途？" class="headerlink" title="页面可见性可以有哪些用途？"></a>页面可见性可以有哪些用途？</h2><p>通过visibilityState的值检测当前页面是否可见，以及打开网页的时间等，在页面被切换到后台其他进程的时候，自动暂停音乐或视频的播放。</p>
+<h2 id="Doctype作用？标准模式和兼容模式各有什么区别？"><a href="#Doctype作用？标准模式和兼容模式各有什么区别？" class="headerlink" title="Doctype作用？标准模式和兼容模式各有什么区别？"></a>Doctype作用？标准模式和兼容模式各有什么区别？</h2><ol>
+<li><code>&lt;!DOCTYPE&gt;</code>声明位于HTML文档的第一行，处于<code>&lt;html&gt;</code>标签之前。告知浏览器的解析器用什么文档标准来解析这个文档。DOCTYPE不存在或格式不正确会导致文档以兼容模式呈现。</li>
+<li>标准模式的排版和JS运作模式都是以该浏览器支持的最高标准运行。在兼容模式中，页面以宽松的向后兼容的方式显示，模拟老式浏览器的行为以防止站点无法工作。</li>
+</ol>
+<h2 id="什么是SGML？什么是DTD？"><a href="#什么是SGML？什么是DTD？" class="headerlink" title="什么是SGML？什么是DTD？"></a>什么是SGML？什么是DTD？</h2><ul>
+<li><p>SGML：标准通用标记语言（Standard Generalized Markup Language，SGML）是现时常用的超文本格式的最高层次标准，是可以定义标记语言的元语言，甚至可以定义不必采用&lt; &gt;的常规方式。由于它的复杂，因而难以普及。</p>
+</li>
+<li><p>DTD：概念缘于SGML，每一份SGML文件，均应有相对应的DTD。对XML文件而言，DTD并非特别需要，well-formed XML就不需要有DTD。DTD有四个组成如下：</p>
+<ul>
+<li>元素（Elements）</li>
+<li>属性（Attribute）</li>
+<li>实体（Entities）</li>
+<li>注释（Comments）</li>
+</ul>
+</li>
+</ul>
+<h2 id="H5为什么只需要写-lt-DOCTYPE-HTML-gt"><a href="#H5为什么只需要写-lt-DOCTYPE-HTML-gt" class="headerlink" title="H5为什么只需要写&lt;!DOCTYPE HTML&gt;?"></a>H5为什么只需要写&lt;!DOCTYPE HTML&gt;?</h2><ul>
+<li>H5不基于SGML，因此不需要对DTD进行引用，但是需要doctype来规范浏览器的行为（让浏览器按照它们应该的方式来运行）</li>
+<li>H4.01基于SGML，所以需要对DTD进行引用，才能告知浏览器文档所使用的文档类型</li>
+</ul>
+<h2 id="页面导入样式时，使用link和-import有什么区别？"><a href="#页面导入样式时，使用link和-import有什么区别？" class="headerlink" title="页面导入样式时，使用link和@import有什么区别？"></a>页面导入样式时，使用link和@import有什么区别？</h2><ol>
+<li><p>link属于XHTML标签，除了加载CSS外，还能用于定义RSS，定义rel连接属性等作用，而@import是CSS提供的，只能用于加载CSS</p>
+</li>
+<li><p>页面被加载时，link会同时被加载，而@import引用的CSS会等到页面被加载完再加载</p>
+</li>
+<li><p>import是CSS2.1提出的，值在IE5以上才能被识别，而link是XHTML标签，无兼容问题</p>
+</li>
+<li><p>link支持使用js控制DOM去改变样式，而@import不支持</p>
+</li>
+</ol>
+<h2 id="介绍一下你对浏览器内核的理解？"><a href="#介绍一下你对浏览器内核的理解？" class="headerlink" title="介绍一下你对浏览器内核的理解？"></a>介绍一下你对浏览器内核的理解？</h2><p><strong>主要分为两个部分：</strong></p>
+<ol>
+<li><p>渲染引擎：负责取得页面的内容（HTML、XML、图像等）、整理讯息（加入CSS），以及计算网页的显示方式，然后会输出至显示器</p>
+</li>
+<li><p>JS引擎：解析和执行js来实现网页的动态效果</p>
+</li>
+<li><p>最开始渲染引擎和JS引擎并没有明确区分，后来JS引擎越来越独立，内核就倾向于指渲染引擎</p>
+</li>
+</ol>
+<h2 id="常见的浏览器内核有哪些？"><a href="#常见的浏览器内核有哪些？" class="headerlink" title="常见的浏览器内核有哪些？"></a>常见的浏览器内核有哪些？</h2><ol>
+<li><p>Trident内核：IE、MaxThon、TT、The World、360、搜狗浏览器。[又称MSHTML]</p>
+</li>
+<li><p>Gecko内核：Netscape6及以上版本、FF、MozillaSuite/SeaMonkey等。</p>
+</li>
+<li><p>Presto内核：Opera7及以上。[Opera内核原为：Presto，现为：Blink]</p>
+</li>
+<li><p>WebKit内核：Safari、Chrome等。[Chrome: Blink(WebKit的分支)]</p>
+</li>
+</ol>
+<h2 id="H5有哪些新特性？移除了哪些元素？如何处理H5新标签的浏览器兼容问题？如何区分HTML和H5？"><a href="#H5有哪些新特性？移除了哪些元素？如何处理H5新标签的浏览器兼容问题？如何区分HTML和H5？" class="headerlink" title="H5有哪些新特性？移除了哪些元素？如何处理H5新标签的浏览器兼容问题？如何区分HTML和H5？"></a>H5有哪些新特性？移除了哪些元素？如何处理H5新标签的浏览器兼容问题？如何区分HTML和H5？</h2><ul>
+<li><p>H5现在已经不是SGML的子集，主要是关于图像、位置、存储、多任务等功能的增加。</p>
+<ul>
+<li>绘画canvas</li>
+<li>video、audio</li>
+<li>localStorage、sessionStorage</li>
+<li>语意化：article、footer、header、nav、section</li>
+<li>表单控件：calendar、date、time、email、url、search</li>
+<li>新的技术：webworker、websocket、Geolocation</li>
+</ul>
+</li>
+<li><p>移除的元素</p>
+<ul>
+<li>纯表现的元素：basefont、big、center、font、s、strike、tt、u</li>
+<li>对可用性产生负面影响的元素：frame、frameset、noframes</li>
+</ul>
+</li>
+<li><p>如何支持H5新标签</p>
+<ul>
+<li>IE8/IE7/IE6支持通过document.createElement方法产生的标签，可以利用这一特性让这些浏览器支持HTML5标签，浏览器支持新标签后，还需要添加标签默认的样式，当然也可以直接使用成熟的框架，比如html5shim：<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- [if it IE 9]&gt;</span></span><br><span class="line"><span class="comment">&lt;script src="http://html5shim.googlecode.com/svn/trunk/html5.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">&lt;![endIf]--&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>如何区分H5：DOCTYPE声明、新增的结构元素、功能元素</p>
+</li>
+</ul>
+<h2 id="简述一下你对HTML语义化的理解？"><a href="#简述一下你对HTML语义化的理解？" class="headerlink" title="简述一下你对HTML语义化的理解？"></a>简述一下你对HTML语义化的理解？</h2><p><strong>用正确的标签做正确的事，html语义化让页面的内容结构化，结构更清晰，便于浏览器、搜索引擎解析。即使在没有样式的情况下也以一种文档格式显示，并且是容易阅读的。搜索引擎的爬虫也依赖于HTML标记来确定上下文和各个关键字的权重，利于SEO。使阅读源代码的人更荣誉将网站分块，便于阅读维护理解。</strong></p>
+<h2 id="H5的离线存储怎么使用，工作原理？"><a href="#H5的离线存储怎么使用，工作原理？" class="headerlink" title="H5的离线存储怎么使用，工作原理？"></a>H5的离线存储怎么使用，工作原理？</h2><ul>
+<li>在用户没有与因特网连接时，可以正常访问站点或应用，在用户与因特网连接时，更新用户机器上的缓存文件</li>
+<li>原理：H5的离线存储是基于一个新建的.appcache文件的缓存机制（不是存储技术），通过这个文件上的解析清单离线存储资源，这些资源就会像cookie一样被存储了下来。之后当网络处于离线状态时，浏览器会通过被离线存储的数据进行页面展示。</li>
+<li>如何使用：<ul>
+<li>页面头部加入一个manifast属性</li>
+<li>在cache.manifest文件编写离线存储的资源</li>
+<li>在离线状态时，操作window.applicationCache进行需求实现</li>
+</ul>
+</li>
+</ul>
+<h2 id="浏览器是怎么对H5的离线存储资源进行管理和加载呢？"><a href="#浏览器是怎么对H5的离线存储资源进行管理和加载呢？" class="headerlink" title="浏览器是怎么对H5的离线存储资源进行管理和加载呢？"></a>浏览器是怎么对H5的离线存储资源进行管理和加载呢？</h2><p><strong>在线情况下，浏览器发现html头部有manifest属性，它会请求manifest文件，如果是第一次访问app，那么浏览器就会根据manifest文件下载相应的资源并且进行离线存储。如果已经访问过app并且已经离线存储了，那么浏览器就会使用离线资源加载页面。然后浏览器会对比新的manifest文件和旧的manifest文件，如果文件没有发生改变，就不做任何操作，如果文件改变了，那么就会重新下载文件中的资源并进行离线存储。离线的情况下，浏览器就直接使用离线存储的资源。</strong></p>
+<h2 id="cookies、sessionStorage和localStorage的区别？"><a href="#cookies、sessionStorage和localStorage的区别？" class="headerlink" title="cookies、sessionStorage和localStorage的区别？"></a>cookies、sessionStorage和localStorage的区别？</h2><ul>
+<li>cookie是网站为了标示用户身份而储存在用户本地终端上的数据（通常经过加密）。</li>
+<li>cookie数据始终在同源的http请求下携带（即使不需要），即会在浏览器和服务器间来回传递。</li>
+<li>储存大小<ul>
+<li>cookie数据大小不能超过4k。</li>
+<li>sessionStorage和localStorage虽然也有储存大小限制，但比cookie大得多。可以达到5M或更大。</li>
+</ul>
+</li>
+<li>有期时间<ul>
+<li>localStorage：储存持久数据，浏览器关闭后数据不丢失除非主动删除数据</li>
+<li>sessionStorage：数据在当前浏览器窗口关闭后自动删除</li>
+<li>cookie：设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭</li>
+</ul>
+</li>
+</ul>
+<h2 id="iframe有哪些优缺点？"><a href="#iframe有哪些优缺点？" class="headerlink" title="iframe有哪些优缺点？"></a>iframe有哪些优缺点？</h2><ul>
+<li>iframe会阻塞主页面的onLoad事件</li>
+<li>搜索引擎的检索程序无法解读这种页面，不利于SEO</li>
+<li>iframe和主页面共享连接池，而浏览器对相同域的连接有限制，所以会影响页面的并行加载</li>
+<li>使用iframe之前需要考虑这两个缺点，如果需要使用iframe，最好是通过js动态给iframe添加src属性，这样可以绕开以上两个问题</li>
+</ul>
+<h2 id="Label的作用是什么？是怎么用的？"><a href="#Label的作用是什么？是怎么用的？" class="headerlink" title="Label的作用是什么？是怎么用的？"></a>Label的作用是什么？是怎么用的？</h2><p><strong>label标签来定义表单控制间的关系，当用户选择该标签时，浏览器会自动将焦点转到和标签相关的表单控件上：</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"Name"</span>&gt;</span>Number:<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"Name"</span> <span class="attr">id</span>=<span class="string">"Name"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">label</span>&gt;</span>Date:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"B"</span> /&gt;</span> <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="H5的form如何关闭自动完成功能？"><a href="#H5的form如何关闭自动完成功能？" class="headerlink" title="H5的form如何关闭自动完成功能？"></a>H5的form如何关闭自动完成功能？</h2><p><strong>给不想要提示的form或某个input设置：autocomplete=off</strong></p>
+<h2 id="如何在页面上实现一个圆形的可点击区域？"><a href="#如何在页面上实现一个圆形的可点击区域？" class="headerlink" title="如何在页面上实现一个圆形的可点击区域？"></a>如何在页面上实现一个圆形的可点击区域？</h2><ol>
+<li>map+area或者svg</li>
+<li>border-radius</li>
+<li>纯js实现，需要求一个点在不在圆上的简单算法，获取鼠标坐标等</li>
+</ol>
+<h2 id="实现不使用border画出1px高的线，在不同浏览器的标准模式与怪异模式下都能保持一致的效果。"><a href="#实现不使用border画出1px高的线，在不同浏览器的标准模式与怪异模式下都能保持一致的效果。" class="headerlink" title="实现不使用border画出1px高的线，在不同浏览器的标准模式与怪异模式下都能保持一致的效果。"></a>实现不使用border画出1px高的线，在不同浏览器的标准模式与怪异模式下都能保持一致的效果。</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"height: 1px; overflow: hidden; background: red"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="网页验证码是干嘛的，是为了解决什么安全问题。"><a href="#网页验证码是干嘛的，是为了解决什么安全问题。" class="headerlink" title="网页验证码是干嘛的，是为了解决什么安全问题。"></a>网页验证码是干嘛的，是为了解决什么安全问题。</h2><ul>
+<li>区分用户是计算机还是人的公共全自动程序，可以防止恶意破解密码、刷票、论坛灌水</li>
+<li>有效防止黑客对某一个特定注册用户用特定程序程序暴力破解方式进行不断的登录尝试</li>
+</ul>
+<h2 id="title和h1的区别、b和strong的区别、i和em的区别"><a href="#title和h1的区别、b和strong的区别、i和em的区别" class="headerlink" title="title和h1的区别、b和strong的区别、i和em的区别"></a>title和h1的区别、b和strong的区别、i和em的区别</h2><ul>
+<li>title属性没有明确意义只表示是个标题，H1则表示层次明确的标题，对页面信息的抓取也有很大的影响。</li>
+<li>strong是标明重点内容，有语气加强的含义，使用阅读设备阅读网络时：strong会重读，而b是展示强调内容</li>
+<li>i内容展示为斜体，em表示强调的文本</li>
+<li><p>标签类型</p>
+<ul>
+<li>自然样式标签：b、i、u、s、pre</li>
+<li>语义样式标签：strong、em、ins、del、code</li>
+</ul>
+</li>
+<li><p>应该准确使用语义样式标签，但不能滥用，如果不能确定时首选使用自然样式标签</p>
+</li>
+</ul>
+<h2 id="HTML-amp-CSS"><a href="#HTML-amp-CSS" class="headerlink" title="HTML&amp;CSS"></a>HTML&amp;CSS</h2><ul>
+<li>对Web标准的理解（结构、表现、行为）</li>
+<li>浏览器内核</li>
+<li>渲染原理</li>
+<li>依赖管理</li>
+<li>兼容性</li>
+<li>CSS语法<ul>
+<li>层次关系</li>
+<li>常用属性</li>
+<li>布局</li>
+<li>选择器</li>
+<li>权重</li>
+<li>盒模型</li>
+<li>Hack</li>
+<li>CSS预处理器</li>
+<li>CSS3</li>
+<li>Flexbox</li>
+<li>CSS Modules</li>
+<li>Document flow</li>
+<li>BFC</li>
+<li>HTML5（离线&amp;存储、History、多媒体、WebGL、SVG、Canvas）</li>
+</ul>
+</li>
+</ul>
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><ul>
+<li>数据类型</li>
+<li>运算</li>
+<li>对象</li>
+<li>Function</li>
+<li>继承</li>
+<li>闭包</li>
+<li>作用域</li>
+<li>事件</li>
+<li>Prototype</li>
+<li>RegExp</li>
+<li>JSON</li>
+<li>Ajax</li>
+<li>DOM</li>
+<li>BOM</li>
+<li>跨域</li>
+<li>异步请求</li>
+<li>模版引擎</li>
+<li>模块化</li>
+<li>Flux</li>
+<li>同构</li>
+<li>算法</li>
+<li>ECMAScript6</li>
+<li>Nodejs</li>
+<li>HTTP</li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<li>主流MVVM框架（React、Vue、Angular）</li>
+<li>Hybrid App、React Native、Weex</li>
+<li>TypeScript</li>
+<li>RESTFul</li>
+<li>WEB安全</li>
+<li>前端工程化</li>
+<li>性能优化</li>
+<li>重构</li>
+<li>团队协作</li>
+<li>可维护性</li>
+<li>易用性</li>
+<li>SEO</li>
+<li>UED</li>
+<li>前端技术选型</li>
+<li>快速学习能力</li>
+</ul>
+<h2 id="必须掌握的知识点"><a href="#必须掌握的知识点" class="headerlink" title="必须掌握的知识点"></a>必须掌握的知识点</h2><ul>
+<li>DOM结构：两个节点之间可能存在哪些关系以及如何在节点之间任意移动。</li>
+<li>DOM操作：如何添加、移除、移动、复制、创建和查找节点等。</li>
+<li>事件：如何使用事件，以及IE和标准DOM事件模型之间存在的差别。</li>
+<li>XMLHttpRequest：这个什么、怎样完整的执行一次GET请求、如何检测错误。</li>
+<li>严格模式和混杂模式：如何触发这两种模式，区分它们有何意义。</li>
+<li>盒模型：外边距、内边距、边框之间的关系，及IE8以下版本的浏览器中的盒模型。</li>
+<li>块级元素和行内元素：怎么用CSS控制它们，以及如何合理的使用它们。</li>
+<li>浮动元素：怎么使用它们、它们有什么问题以及怎么解决这些问题。</li>
+<li>HTML和XHTML：二者有什么区别，你觉得应该使用哪一个并说明理由。</li>
+<li>JSON：作用、用途、设计结构。</li>
+</ul>
 
   <div class="guide-links">
     
@@ -478,7 +1107,7 @@
       在 GitHub 上编辑此页！
     </a>
     
-    <span>更新于：2019-05-22 11:05:91</span>
+    <span>更新于：2019-06-03 18:06:03</span>
   </div>
 </div>
 
