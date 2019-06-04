@@ -158,7 +158,7 @@
   
   
   
-    <span style="float: right; margin-right: 30px;">← <a style="color: goldenrod;" href="/v3/client/3-js.html">js</a></span>
+    <span style="float: right; margin-right: 30px;">← <a style="color: goldenrod;" href="/v3/client/3-js.html">JavaScript</a></span>
   
 </div>
 
@@ -192,7 +192,7 @@
     
       <li>
         <a href="/v3/client/3-js.html" class="sidebar-link">
-          js
+          JavaScript
         </a>
       </li>
       
@@ -214,6 +214,13 @@
       <li>
         <a href="/v3/client/6-framework.html" class="sidebar-link">
           framework
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/v3/client/7-develop.html" class="sidebar-link">
+          开发工具
         </a>
       </li>
       
@@ -2199,11 +2206,36 @@
 <p>不多逼逼《阅读css揭秘》</p>
 </blockquote>
 <h2 id="js是如何操纵dom树的"><a href="#js是如何操纵dom树的" class="headerlink" title="js是如何操纵dom树的"></a>js是如何操纵dom树的</h2><p>通过统一的api，其实非js也可以操作dom，只不过js和dom的配套比较成熟</p>
+<h2 id="浏览器多个标签页通信"><a href="#浏览器多个标签页通信" class="headerlink" title="浏览器多个标签页通信"></a>浏览器多个标签页通信</h2><ul>
+<li>WebSocket：类似于聊天室</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/SharedWorker" target="_blank" rel="noopener">SharedWorker</a></li>
+<li>调用localstorage、cookies等本地储存方式<ul>
+<li>localstorage在另一个上下文里被添加、修改或删除时，会触发一个事件，通过监听事件，控制它的值来进行页面信息通信（注意：Safari在无痕模式下设置localstorage值时会抛出QuotaExceedError的异常）</li>
+<li>触发事件仅限于同域名<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'storage'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(event.key, event.newValue);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="cookies、sessionStorage、localStorage"><a href="#cookies、sessionStorage、localStorage" class="headerlink" title="cookies、sessionStorage、localStorage"></a>cookies、sessionStorage、localStorage</h2><ul>
+<li>cookie是网站为了标示用户身份而储存在用户本地终端上的数据（通常经过加密）。</li>
+<li>cookie数据始终在同源的http请求下携带（即使不需要），即会在浏览器和服务器间来回传递。</li>
+<li>储存大小<ul>
+<li>cookie数据大小不能超过4k。</li>
+<li>sessionStorage和localStorage虽然也有储存大小限制，但比cookie大得多。可以达到5M或更大。</li>
+</ul>
+</li>
+<li>有期时间<ul>
+<li>localStorage：储存持久数据，浏览器关闭后数据不丢失除非主动删除数据</li>
+<li>sessionStorage：数据在当前浏览器窗口关闭后自动删除</li>
+<li>cookie：设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭</li>
+</ul>
+</li>
+</ul>
 
   <div class="guide-links">
     
     
-      <span>← <a href="/v3/client/3-js.html">js</a></span>
+      <span>← <a href="/v3/client/3-js.html">JavaScript</a></span>
     
     
     
@@ -2216,7 +2248,7 @@
       在 GitHub 上编辑此页！
     </a>
     
-    <span>更新于：2019-06-03 18:06:55</span>
+    <span>更新于：2019-06-04 14:06:05</span>
   </div>
 </div>
 
