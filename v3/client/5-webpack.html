@@ -191,6 +191,13 @@
       
     
       <li>
+        <a href="/v3/client/3-js-important.html" class="sidebar-link">
+          js重点
+        </a>
+      </li>
+      
+    
+      <li>
         <a href="/v3/client/4-browser.html" class="sidebar-link">
           浏览器
         </a>
@@ -350,6 +357,8 @@
   
   <h2 id="todos"><a href="#todos" class="headerlink" title="todos"></a>todos</h2><ul>
 <li style="list-style: none"><input type="checkbox"> router的按需加载是怎么实现的</li>
+<li style="list-style: none"><input type="checkbox"> <a href="https://zhuanlan.zhihu.com/p/27289600" target="_blank" rel="noopener">ES6编译成ES5</a></li>
+<li style="list-style: none"><input type="checkbox"> <a href="https://webpack.docschina.org/loaders/css-loader" target="_blank" rel="noopener">css-loader</a></li>
 </ul>
 <h2 id="minipack"><a href="#minipack" class="headerlink" title="minipack"></a>minipack</h2><blockquote>
 <p>参考了github上的一个迷你打包器，简化了webpack，但是核心思想理念是不变的。<br><a href="https://github.com/ronami/minipack" target="_blank" rel="noopener">github</a></p>
@@ -394,6 +403,14 @@
 <h2 id="编写babel插件"><a href="#编写babel插件" class="headerlink" title="编写babel插件"></a>编写babel插件</h2><blockquote>
 <p><a href="https://github.com/jamiebuilds/babel-handbook" target="_blank" rel="noopener">babel手册</a></p>
 </blockquote>
+<h2 id="热更新实现原理"><a href="#热更新实现原理" class="headerlink" title="热更新实现原理"></a>热更新实现原理</h2><ol>
+<li>Webpack编译期，为需要热更新的 entry 注入热更新代码(EventSource通信)</li>
+<li>页面首次打开后，服务端与客户端通过 EventSource 建立通信渠道，把下一次的 hash 返回前端</li>
+<li>客户端获取到hash，这个hash将作为下一次请求服务端 hot-update.js 和 hot-update.json的hash</li>
+<li>修改页面代码后，Webpack 监听到文件修改后，开始编译，编译完成后，发送 build 消息给客户端</li>
+<li>客户端获取到hash，成功后客户端构造hot-update.js script链接，然后插入主文档</li>
+<li>hot-update.js 插入成功后，执行hotAPI 的 createRecord 和 reload方法，获取到 Vue 组件的 render方法，重新 render 组件， 继而实现 UI 无刷新更新。</li>
+</ol>
 
   <div class="guide-links">
     
@@ -411,7 +428,7 @@
       在 GitHub 上编辑此页！
     </a>
     
-    <span>更新于：2019-05-22 11:05:38</span>
+    <span>更新于：2019-06-05 17:06:83</span>
   </div>
 </div>
 
