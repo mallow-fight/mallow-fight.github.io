@@ -2238,6 +2238,15 @@
 </ul>
 </li>
 </ul>
+<h2 id="onmessage"><a href="#onmessage" class="headerlink" title="onmessage"></a>onmessage</h2><ul>
+<li>这玩意不太好用，post过去的信息刷新页面后就没了，而且必须要延迟一段时间post信息，这段时间不太好把握</li>
+<li>还不如直接在window.open返回的句柄上添加一个属性，然后到新页面的时候缓存到storage中，这样就不会刷新后数据消失了</li>
+<li>监听父页面设置storage也不太好，会导致所有子页面同时更新</li>
+</ul>
+<h2 id="localstorage-1"><a href="#localstorage-1" class="headerlink" title="localstorage"></a>localstorage</h2><ul>
+<li>同域下修改某个tablocalstorage里的值会导致所有tab页下的localstorage对应的值发生改变</li>
+<li>可以从父亲页面获取一个唯一键作为当前</li>
+</ul>
 
   <div class="guide-links">
     
@@ -2255,7 +2264,7 @@
       在 GitHub 上编辑此页！
     </a>
     
-    <span>更新于：2019-06-04 14:06:05</span>
+    <span>更新于：2019-06-10 16:06:60</span>
   </div>
 </div>
 
