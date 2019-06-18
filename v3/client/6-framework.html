@@ -231,6 +231,13 @@
         </a>
       </li>
       
+    
+      <li>
+        <a href="/v3/client/9-npm.html" class="sidebar-link">
+          npm
+        </a>
+      </li>
+      
 </ul>
     </div>
     <h3>浏览其它</h3>
@@ -651,7 +658,14 @@
 <li>getState，获取store里面的值。</li>
 <li>疑难点在如何dispatch之后去更新视图，可能的做法是实例将挂载阶段注册实例到一个全局数组中，在commit的时候，当更新完store里面对应的值之后，去遍历这个实例数组，如果实例的props中有对应store里面的key，就修改这个实例render的上下文，在forceUpdate，达到同步更新视图的目的。</li>
 </ol>
-<h2 id="antd"><a href="#antd" class="headerlink" title="antd"></a>antd</h2><h3 id="form"><a href="#form" class="headerlink" title="form"></a>form</h3><h4 id="FormCreator"><a href="#FormCreator" class="headerlink" title="FormCreator"></a>FormCreator</h4><ol>
+<h2 id="antd"><a href="#antd" class="headerlink" title="antd"></a>antd</h2><h3 id="icon"><a href="#icon" class="headerlink" title="icon"></a>icon</h3><ol>
+<li>图标的大小通过font-size来控制，而不是height和width</li>
+</ol>
+<h3 id="form"><a href="#form" class="headerlink" title="form"></a>form</h3><h4 id="rules"><a href="#rules" class="headerlink" title="rules"></a>rules</h4><ul>
+<li>如果想通过一个表单元素去控制另一个表单元素的规则进行联动，应该这么做：<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123;</span><br><span class="line">    required: <span class="literal">true</span>,</span><br><span class="line">    message: <span class="string">'转出账号必填'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    validator: <span class="function">(<span class="params">rule, value, cb</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> a = form.getFieldValue(<span class="string">'a'</span>);</span><br><span class="line">      <span class="keyword">if</span> (value === a) &#123;</span><br><span class="line">        <span class="keyword">return</span> cb(<span class="string">'xxx'</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      a &amp;&amp; form.validateFields([<span class="string">'b'</span>], &#123;</span><br><span class="line">        force: <span class="literal">true</span></span><br><span class="line">      &#125;);</span><br><span class="line">      cb();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="FormCreator"><a href="#FormCreator" class="headerlink" title="FormCreator"></a>FormCreator</h4><ol>
 <li>FormList：数组，里面每一个元素都是一个指定类型的表单元素。</li>
 <li>touchAction：函数，代理了所有表单元素的交互事件，参数有Form，以及交互产生的值。通过Form来修改其他表单元素的值，通过修改state中的FormList来修改options等配置选项。</li>
 </ol>
@@ -2092,7 +2106,7 @@
       在 GitHub 上编辑此页！
     </a>
     
-    <span>更新于：2019-06-05 17:06:20</span>
+    <span>更新于：2019-06-18 11:06:73</span>
   </div>
 </div>
 
