@@ -1,0 +1,573 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>原型 - mallow</title>
+  <meta charset="utf-8">
+  <meta name="description" content="mallow's blog.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="原型 — mallow">
+  <meta property="og:description" content="mallow's blog.">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120215204-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-120215204-1');
+  </script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="icon" href="/images/logo.png" type="image/png">
+  <!-- main page styles -->
+  <link rel="stylesheet" href="/css/page.css">
+  <!-- import vue from there so that you can use vue in markdown -->
+  <script src="/js/vue.min.js"></script>
+  <script>window.PAGE_TYPE = "special"</script>
+</head>
+<body class="docs">
+  <div id="mobile-bar" >
+    <a class="menu-button"></a>
+    <a class="logo" href="/"></a>
+  </div>
+  <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logo.png">
+    <span>Mallow</span>
+  </a>
+  <ul id="nav">
+    <li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+  </form>
+</li>
+
+<!-- v3 directory -->
+<!-- <li class="nav-dropdown-container learn">
+  <a href="/v3/client/index.html" class="nav-link">客户端</a>
+</li>
+
+<li class="nav-dropdown-container learn">
+  <a href="/v3/http/index.html" class="nav-link">HTTP</a>
+</li>
+
+<li class="nav-dropdown-container learn">
+  <a href="/v3/server/index.html" class="nav-link">服务端</a>
+</li>
+ -->
+
+<!-- v2 directory -->
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">理论</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/v2/theory/dataStructure/1_intro.html" class="nav-link">数据结构</a></li>
+    <li><a href="/v2/theory/computerNet/1_intro.html" class="nav-link">计算机网络</a></li>
+    <li><a href="/v2/theory/computerContain/1_intro.html" class="nav-link">计算机组成原理</a></li>
+    <li><a href="/v2/theory/arithmeticV2/1_intro.html" class="nav-link">算法</a></li>
+    <li><a href="/v2/theory/compile/1_intro.html" class="nav-link">编译原理</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">基础</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/v2/basic/frontend/1_intro.html" class="nav-link">前端</a></li>
+    <li><a href="/v2/basic/http/1_intro.html" class="nav-link">http</a></li>
+    <li><a href="/v2/basic/backend/1_intro.html" class="nav-link">后端</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">框架</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/v2/frame/react/1_intro.html" class="nav-link">React相关</a></li>
+    <li><a href="/v2/theory/vue/1_intro.html" class="nav-link">Vue相关</a></li>
+    <li><a href="/v2/theory/lodash/1_intro.html" class="nav-link">Lodash</a></li>
+    <li><a href="/v2/theory/axios/1_intro.html" class="nav-link">axios</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+    <a class="nav-link">开发</a><span class="arrow"></span>
+    <ul class="nav-dropdown">
+      <li><a href="/v2/dev/ide/1_intro.html" class="nav-link">IDE</a></li>
+      <li><a href="/v2/dev/codeManage/1_intro.html" class="nav-link">代码管理</a></li>
+      <li><a href="/v2/dev/packTools/1_intro.html" class="nav-link">打包工具</a></li>
+      <li><a href="/v2/dev/staging/1_intro.html" class="nav-link">脚手架</a></li>
+      <li><a href="/v2/dev/debug/1_intro.html" class="nav-link">debug</a></li>
+      <li><a href="/v2/dev/unitTest/1_intro.html" class="nav-link">单元测试</a></li>
+      <li><a href="/v2/dev/deploy/1_intro.html" class="nav-link">构建和部署</a></li>
+      <li><a href="/v2/dev/serverOprate/1_intro.html" class="nav-link">服务器操作</a></li>
+    </ul>
+  </li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">运行</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/v2/runtime/browser/1_intro.html" class="nav-link">浏览器</a></li>
+    <li><a href="/v2/runtime/app/1_intro.html" class="nav-link">app</a></li>
+    <li><a href="/v2/runtime/desktop/1_intro.html" class="nav-link">桌面</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">监控</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/v2/monitor/browser/1_intro.html" class="nav-link">浏览器</a></li>
+    <li><a href="/v2/monitor/app/1_intro.html" class="nav-link">app</a></li>
+    <li><a href="/v2/monitor/desktop/1_intro.html" class="nav-link">桌面</a></li>
+  </ul>
+</li>
+<!-- <li class="nav-dropdown-container learn">
+	<a class="nav-link">v2</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+		<li><h4>理论</h4></li>
+		<li><ul>
+			<li><a href="/v2/theory/dataStructure/1_intro.html" class="nav-link">数据结构</a></li>
+			<li><a href="/v2/theory/computerNet/1_intro.html" class="nav-link">计算机网络</a></li>
+			<li><a href="/v2/theory/computerContain/1_intro.html" class="nav-link">计算机组成原理</a></li>
+			<li><a href="/v2/theory/arithmeticV2/1_intro.html" class="nav-link">算法</a></li>
+			<li><a href="/v2/theory/compile/1_intro.html" class="nav-link">编译原理</a></li>
+		</ul></li>
+		<li><h4>基础</h4></li>
+    <li><ul>
+			<li><a href="/v2/basic/frontend/1_intro.html" class="nav-link">前端</a></li>
+			<li><a href="/v2/basic/http/1_intro.html" class="nav-link">http</a></li>
+			<li><a href="/v2/basic/backend/1_intro.html" class="nav-link">后端</a></li>
+		</ul></li>
+		<li><h4>框架&工具</h4></li>
+		<li><ul>
+			<li><a href="/v2/frame/react/1_intro.html" class="nav-link">React相关</a></li>
+			<li><a href="/v2/theory/vue/1_intro.html" class="nav-link">Vue相关</a></li>
+			<li><a href="/v2/theory/lodash/1_intro.html" class="nav-link">Lodash</a></li>
+			<li><a href="/v2/theory/axios/1_intro.html" class="nav-link">axios</a></li>
+		</ul></li>
+		<li><h4>开发环境</h4></li>
+		<li><ul>
+			<li><a href="/v2/dev/ide/1_intro.html" class="nav-link">IDE</a></li>
+			<li><a href="/v2/dev/codeManage/1_intro.html" class="nav-link">代码管理</a></li>
+			<li><a href="/v2/dev/packTools/1_intro.html" class="nav-link">打包工具</a></li>
+			<li><a href="/v2/dev/staging/1_intro.html" class="nav-link">脚手架</a></li>
+			<li><a href="/v2/dev/debug/1_intro.html" class="nav-link">debug</a></li>
+			<li><a href="/v2/dev/unitTest/1_intro.html" class="nav-link">单元测试</a></li>
+			<li><a href="/v2/dev/deploy/1_intro.html" class="nav-link">构建和部署</a></li>
+			<li><a href="/v2/dev/serverOprate/1_intro.html" class="nav-link">服务器操作</a></li>
+		</ul></li>
+		<li><h4>运行环境</h4></li>
+		<li><ul>
+			<li><a href="/v2/runtime/browser/1_intro.html" class="nav-link">浏览器</a></li>
+			<li><a href="/v2/runtime/app/1_intro.html" class="nav-link">app</a></li>
+			<li><a href="/v2/runtime/desktop/1_intro.html" class="nav-link">桌面</a></li>
+		</ul></li>
+		<li><h4>监控&分析</h4></li>
+		<li><ul>
+			<li><a href="/v2/monitor/browser/1_intro.html" class="nav-link">浏览器</a></li>
+			<li><a href="/v2/monitor/app/1_intro.html" class="nav-link">app</a></li>
+			<li><a href="/v2/monitor/desktop/1_intro.html" class="nav-link">桌面</a></li>
+		</ul></li>
+		<li class="nav-dropdown-container learn">
+			<a href="/special/1_原型.html" class="nav-link">专题</a>
+		</li>			
+  </ul>
+</li>
+ -->
+
+<!-- v1 directory -->
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">v1</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>软件工程化</h4></li>
+    <li><ul>
+      <li><a href="/software/engineering.html" class="nav-link">概念&实践</a></li>
+    </ul></li>
+    <li><h4>前端</h4></li>
+    <li><ul>
+      <li><a href="/frontend/skeleton/1_skeleton.html" class="nav-link">skeleton</a></li>
+      <li><a href="/frontend/html/1_define.html" class="nav-link">html</a></li>
+      <li><a href="/frontend/css/1_define.html" class="nav-link">css</a></li>
+      <li><a href="/frontend/js/1_enter&going.html" class="nav-link">javascript</a></li>
+      <li><a href="/frontend/framework/1_vue.html" class="nav-link">framework</a></li>
+      <li><a href="/frontend/browser/1_safe.html" class="nav-link">browser</a></li>
+      <li><a href="/frontend/important/1_conclude.html" class="nav-link">conclude</a></li>
+    </ul></li>
+    <li><h4>后端</h4></li>
+    <li><ul>
+      <li><a href="/backend/node/note.html" class="nav-link">node</a></li>
+      <li><a href="/backend/http/1_http.html" class="nav-link">http</a></li>
+      <li><a href="/backend/java/core.html" class="nav-link">java</a></li>
+      <li><a href="/backend/database/1_mysql.html" class="nav-link">database</a></li>
+    </ul></li>
+    <li><h4>算法</h4></li>
+    <li><ul>
+      <li><a href="/arithmetic/1_lintcode.html" class="nav-link">概念&实践</a></li>
+    </ul></li>
+    <li><h4>读书</h4></li>
+    <li><ul>
+      <li><a href="/books/memory/1_利玛窦的记忆宫殿.html" class="nav-link">记忆学</a></li>
+      <li><a href="/books/computer/1_构建高性能web网站.html" class="nav-link">计算机</a></li>
+      <li><a href="/books/history/资治通鉴/1_周纪一.html" class="nav-link">历史</a></li>
+      <li><a href="/books/economics/1_国富论.html" class="nav-link">经济</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+  </ul>
+</div>
+  
+    <div id="main" class="fix-sidebar">
+        <div class="guide-links">
+  
+  
+    <span style="float: right;"><a style="color: green;" href="/v1/special/2_webpack.html">webpack</a> →</span>
+  
+  
+  
+</div>
+
+  <div class="sidebar">
+  <div class="sidebar-inner">
+    <h3>当前位置：special</h3>
+    <div class="list">
+      <ul class="menu-root">
+  
+    
+      <li>
+        <a href="/v1/special/1_原型.html" class="sidebar-link current">
+          原型
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/v1/special/2_webpack.html" class="sidebar-link">
+          webpack
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/v1/special/3_异步.html" class="sidebar-link">
+          异步
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/v1/special/4_浏览器如何解析html.html" class="sidebar-link">
+          浏览器如何解析html
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/v1/special/5_网站性能优化.html" class="sidebar-link">
+          网站性能优化
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/v1/special/6_http图解.html" class="sidebar-link">
+          http图解
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/v1/special/7_react源码.html" class="sidebar-link">
+          react源码
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/v1/special/8_登录状态的保持.html" class="sidebar-link">
+          登录状态的保持
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/v1/special/9_小知识点.html" class="sidebar-link">
+          小知识点
+        </a>
+      </li>
+      
+</ul>
+    </div>
+    <h3>浏览其它</h3>
+    <ul class="main-menu">
+      <li>
+  <form id="search-form">
+    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
+  </form>
+</li>
+
+<!-- v3 directory -->
+<!-- <li class="nav-dropdown-container learn">
+  <a href="/v3/client/index.html" class="nav-link">客户端</a>
+</li>
+
+<li class="nav-dropdown-container learn">
+  <a href="/v3/http/index.html" class="nav-link">HTTP</a>
+</li>
+
+<li class="nav-dropdown-container learn">
+  <a href="/v3/server/index.html" class="nav-link">服务端</a>
+</li>
+ -->
+
+<!-- v2 directory -->
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">理论</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/v2/theory/dataStructure/1_intro.html" class="nav-link">数据结构</a></li>
+    <li><a href="/v2/theory/computerNet/1_intro.html" class="nav-link">计算机网络</a></li>
+    <li><a href="/v2/theory/computerContain/1_intro.html" class="nav-link">计算机组成原理</a></li>
+    <li><a href="/v2/theory/arithmeticV2/1_intro.html" class="nav-link">算法</a></li>
+    <li><a href="/v2/theory/compile/1_intro.html" class="nav-link">编译原理</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">基础</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/v2/basic/frontend/1_intro.html" class="nav-link">前端</a></li>
+    <li><a href="/v2/basic/http/1_intro.html" class="nav-link">http</a></li>
+    <li><a href="/v2/basic/backend/1_intro.html" class="nav-link">后端</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">框架</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/v2/frame/react/1_intro.html" class="nav-link">React相关</a></li>
+    <li><a href="/v2/theory/vue/1_intro.html" class="nav-link">Vue相关</a></li>
+    <li><a href="/v2/theory/lodash/1_intro.html" class="nav-link">Lodash</a></li>
+    <li><a href="/v2/theory/axios/1_intro.html" class="nav-link">axios</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+    <a class="nav-link">开发</a><span class="arrow"></span>
+    <ul class="nav-dropdown">
+      <li><a href="/v2/dev/ide/1_intro.html" class="nav-link">IDE</a></li>
+      <li><a href="/v2/dev/codeManage/1_intro.html" class="nav-link">代码管理</a></li>
+      <li><a href="/v2/dev/packTools/1_intro.html" class="nav-link">打包工具</a></li>
+      <li><a href="/v2/dev/staging/1_intro.html" class="nav-link">脚手架</a></li>
+      <li><a href="/v2/dev/debug/1_intro.html" class="nav-link">debug</a></li>
+      <li><a href="/v2/dev/unitTest/1_intro.html" class="nav-link">单元测试</a></li>
+      <li><a href="/v2/dev/deploy/1_intro.html" class="nav-link">构建和部署</a></li>
+      <li><a href="/v2/dev/serverOprate/1_intro.html" class="nav-link">服务器操作</a></li>
+    </ul>
+  </li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">运行</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/v2/runtime/browser/1_intro.html" class="nav-link">浏览器</a></li>
+    <li><a href="/v2/runtime/app/1_intro.html" class="nav-link">app</a></li>
+    <li><a href="/v2/runtime/desktop/1_intro.html" class="nav-link">桌面</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">监控</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/v2/monitor/browser/1_intro.html" class="nav-link">浏览器</a></li>
+    <li><a href="/v2/monitor/app/1_intro.html" class="nav-link">app</a></li>
+    <li><a href="/v2/monitor/desktop/1_intro.html" class="nav-link">桌面</a></li>
+  </ul>
+</li>
+<!-- <li class="nav-dropdown-container learn">
+	<a class="nav-link">v2</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+		<li><h4>理论</h4></li>
+		<li><ul>
+			<li><a href="/v2/theory/dataStructure/1_intro.html" class="nav-link">数据结构</a></li>
+			<li><a href="/v2/theory/computerNet/1_intro.html" class="nav-link">计算机网络</a></li>
+			<li><a href="/v2/theory/computerContain/1_intro.html" class="nav-link">计算机组成原理</a></li>
+			<li><a href="/v2/theory/arithmeticV2/1_intro.html" class="nav-link">算法</a></li>
+			<li><a href="/v2/theory/compile/1_intro.html" class="nav-link">编译原理</a></li>
+		</ul></li>
+		<li><h4>基础</h4></li>
+    <li><ul>
+			<li><a href="/v2/basic/frontend/1_intro.html" class="nav-link">前端</a></li>
+			<li><a href="/v2/basic/http/1_intro.html" class="nav-link">http</a></li>
+			<li><a href="/v2/basic/backend/1_intro.html" class="nav-link">后端</a></li>
+		</ul></li>
+		<li><h4>框架&工具</h4></li>
+		<li><ul>
+			<li><a href="/v2/frame/react/1_intro.html" class="nav-link">React相关</a></li>
+			<li><a href="/v2/theory/vue/1_intro.html" class="nav-link">Vue相关</a></li>
+			<li><a href="/v2/theory/lodash/1_intro.html" class="nav-link">Lodash</a></li>
+			<li><a href="/v2/theory/axios/1_intro.html" class="nav-link">axios</a></li>
+		</ul></li>
+		<li><h4>开发环境</h4></li>
+		<li><ul>
+			<li><a href="/v2/dev/ide/1_intro.html" class="nav-link">IDE</a></li>
+			<li><a href="/v2/dev/codeManage/1_intro.html" class="nav-link">代码管理</a></li>
+			<li><a href="/v2/dev/packTools/1_intro.html" class="nav-link">打包工具</a></li>
+			<li><a href="/v2/dev/staging/1_intro.html" class="nav-link">脚手架</a></li>
+			<li><a href="/v2/dev/debug/1_intro.html" class="nav-link">debug</a></li>
+			<li><a href="/v2/dev/unitTest/1_intro.html" class="nav-link">单元测试</a></li>
+			<li><a href="/v2/dev/deploy/1_intro.html" class="nav-link">构建和部署</a></li>
+			<li><a href="/v2/dev/serverOprate/1_intro.html" class="nav-link">服务器操作</a></li>
+		</ul></li>
+		<li><h4>运行环境</h4></li>
+		<li><ul>
+			<li><a href="/v2/runtime/browser/1_intro.html" class="nav-link">浏览器</a></li>
+			<li><a href="/v2/runtime/app/1_intro.html" class="nav-link">app</a></li>
+			<li><a href="/v2/runtime/desktop/1_intro.html" class="nav-link">桌面</a></li>
+		</ul></li>
+		<li><h4>监控&分析</h4></li>
+		<li><ul>
+			<li><a href="/v2/monitor/browser/1_intro.html" class="nav-link">浏览器</a></li>
+			<li><a href="/v2/monitor/app/1_intro.html" class="nav-link">app</a></li>
+			<li><a href="/v2/monitor/desktop/1_intro.html" class="nav-link">桌面</a></li>
+		</ul></li>
+		<li class="nav-dropdown-container learn">
+			<a href="/special/1_原型.html" class="nav-link">专题</a>
+		</li>			
+  </ul>
+</li>
+ -->
+
+<!-- v1 directory -->
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">v1</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>软件工程化</h4></li>
+    <li><ul>
+      <li><a href="/software/engineering.html" class="nav-link">概念&实践</a></li>
+    </ul></li>
+    <li><h4>前端</h4></li>
+    <li><ul>
+      <li><a href="/frontend/skeleton/1_skeleton.html" class="nav-link">skeleton</a></li>
+      <li><a href="/frontend/html/1_define.html" class="nav-link">html</a></li>
+      <li><a href="/frontend/css/1_define.html" class="nav-link">css</a></li>
+      <li><a href="/frontend/js/1_enter&going.html" class="nav-link">javascript</a></li>
+      <li><a href="/frontend/framework/1_vue.html" class="nav-link">framework</a></li>
+      <li><a href="/frontend/browser/1_safe.html" class="nav-link">browser</a></li>
+      <li><a href="/frontend/important/1_conclude.html" class="nav-link">conclude</a></li>
+    </ul></li>
+    <li><h4>后端</h4></li>
+    <li><ul>
+      <li><a href="/backend/node/note.html" class="nav-link">node</a></li>
+      <li><a href="/backend/http/1_http.html" class="nav-link">http</a></li>
+      <li><a href="/backend/java/core.html" class="nav-link">java</a></li>
+      <li><a href="/backend/database/1_mysql.html" class="nav-link">database</a></li>
+    </ul></li>
+    <li><h4>算法</h4></li>
+    <li><ul>
+      <li><a href="/arithmetic/1_lintcode.html" class="nav-link">概念&实践</a></li>
+    </ul></li>
+    <li><h4>读书</h4></li>
+    <li><ul>
+      <li><a href="/books/memory/1_利玛窦的记忆宫殿.html" class="nav-link">记忆学</a></li>
+      <li><a href="/books/computer/1_构建高性能web网站.html" class="nav-link">计算机</a></li>
+      <li><a href="/books/history/资治通鉴/1_周纪一.html" class="nav-link">历史</a></li>
+      <li><a href="/books/economics/1_国富论.html" class="nav-link">经济</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+    </ul>
+  </div>
+</div>
+
+
+<div class="content special with-sidebar ">
+  <ul class="menu-root">
+  
+</ul>
+  
+    <h1>原型</h1>
+  
+  <h2 id="理解何为prototype、-proto-和constructor"><a href="#理解何为prototype、-proto-和constructor" class="headerlink" title="理解何为prototype、__proto__和constructor"></a>理解何为prototype、<code>__proto__</code>和constructor</h2><h3 id="prototype"><a href="#prototype" class="headerlink" title="prototype"></a>prototype</h3><ul>
+<li>指的是构造函数的原型对象，只有函数作为构造函数的时候这个属性才有用，可以被实例继承。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params"></span>) </span>&#123; &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 默认的prototype是一个对象，默认有一个constructor属性</span></span><br><span class="line">Foo.prototype <span class="comment">// &#123;constructor: f&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// constructor默认等于构造函数本身，所以Foo和Foo.prototype.constructor表现形式一样，都有name、caller、length、arguments等属性</span></span><br><span class="line">Foo.prototype.constructor === Foo <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 可以为prototype添加一些属性</span></span><br><span class="line">Foo.prototype.test = <span class="string">'peter'</span></span><br><span class="line">Foo.prototype <span class="comment">// &#123;test: 'peter', constructor: f&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 同样可以通过constructor为添加和修改属性</span></span><br><span class="line">Foo.prototype.constructor.prototype.test1 = <span class="string">'mallow'</span></span><br><span class="line">Foo.prototype.constructor.prototype.test = <span class="string">'lucy'</span></span><br><span class="line">Foo.prototype <span class="comment">// &#123;test: 'lucy', test1: 'mallow', constructor: f&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 所以说Foo和Foo.prototype.constructor是全等的，保存的都是同一个对象索引，所以只需要继续对Foo.prototype研究就行了</span></span><br><span class="line"><span class="comment">// 因为Foo.prototype是一个对象，所以它是没有prototype的，到此结束，这就是普通函数的所有prototype结构</span></span><br><span class="line">Foo.prototype.prototype <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 注意：es6的箭头函数没有prototype，所以这也导致了它没有constructor，继而不能作为构造函数</span></span><br><span class="line"><span class="keyword">const</span> baz = <span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;</span><br><span class="line">baz.prototype <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+<h3 id="proto"><a href="#proto" class="headerlink" title="__proto__"></a><code>__proto__</code></h3><ul>
+<li><p>指的是对象上的一个属性，指代由哪个构造函数构造，包括一些自带的属性。</p>
+</li>
+<li><p>从下面的例子可以看出，不管是什么样的对象，最终肯定都继承自<code>null</code>，这就是所谓的原型委托，面向<code>null</code>编程，哈哈</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params">a</span>) </span>&#123; <span class="keyword">this</span>.a = a &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 首先我们看看Foo的__proto__，显示是一个对象</span></span><br><span class="line">Foo.__proto__ <span class="comment">// ƒ () &#123; [native code] &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 可以看到，Foo也是一个对象，继承了名为Function的构造函数的原型</span></span><br><span class="line">Foo.__proto__ === <span class="built_in">Function</span>.prototype <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 可以看到Function.prototype也是一个对象，包含constructor、__proto__等</span></span><br><span class="line"><span class="built_in">Function</span>.prototype.constructor <span class="comment">// ƒ Function() &#123; [native code] &#125;</span></span><br><span class="line"><span class="built_in">Function</span>.prototype.constructor === <span class="built_in">Function</span> <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 所以说因为Function.prototype是一个对象，所以它也继承了Object构造函数的prototype</span></span><br><span class="line"><span class="built_in">Function</span>.prototype.__proto__ === <span class="built_in">Object</span>.prototype</span><br><span class="line"><span class="built_in">Function</span>.prototype.__proto__ === &#123;&#125;.__proto__</span><br><span class="line"></span><br><span class="line"><span class="comment">// ok 到此为止，问题都转化为了关于Object构造函数的问题</span></span><br><span class="line"></span><br><span class="line">Foo.prototype._a = <span class="string">'this is _a'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 首先创造一个Foo的实例</span></span><br><span class="line"><span class="keyword">const</span> foo = <span class="keyword">new</span> Foo(<span class="string">'this is a'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//可以看到创造的实例是这样子的，包括创建过程中赋值给实例对象和一个__proto__属性</span></span><br><span class="line">foo <span class="comment">// &#123;a: 'this is a', __proto__: &#123;_a: 'this is _a', constructor: ƒ Foo, __proto__: Object&#125;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 继续往下看，foo.__proto__没什么好解释，可以看到foo.__proto__还有一个__proto__属性</span></span><br><span class="line"><span class="comment">// 下面这行代码说明，foo.__proto__只是一个普通的对象，是由Object函数构造的，所以它继承了Object.prototype的属性</span></span><br><span class="line">foo.__proto__.__proto__ === <span class="built_in">Object</span>.prototype <span class="comment">// true</span></span><br><span class="line"><span class="comment">// 所以可以得到如下结果，所有的对象都继承了Object构造函数的prototype，Object只是一个构造函数，没什么好神秘的</span></span><br><span class="line">foo.__proto__.__proto__ === &#123;&#125;.__proto__ <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 可以看到，只是一个构造函数</span></span><br><span class="line"><span class="built_in">Object</span> <span class="comment">// ƒ Object() &#123; [native code] &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ok，既然Object是一个构造函数，那它肯定有一个prototype属性，具有constructor和一些内置属性</span></span><br><span class="line"><span class="built_in">Object</span>.prototype <span class="comment">// &#123;constructor: ƒ Object(), hasOwnProperty, ....&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 不解释</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.constructor === <span class="built_in">Object</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 天地无常，万法归null</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.__proto__ === <span class="literal">null</span></span><br></pre></td></tr></table></figure>
+<h3 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h3><ul>
+<li><p>理解了<code>prototype</code>和<code>__proto__</code>，这个就不难理解了，<code>constructor</code>只会出现在<code>__proto__</code>和<code>prototype</code>对象中</p>
+</li>
+<li><p>在<code>__proto__</code>中，指代的是这个对象是由什么函数构造的，指向构造它的函数，不管是<code>Foo</code>也好，内置的<code>Object</code>也好</p>
+</li>
+<li><p>在<code>prototype</code>中，指代的就是构造函数本身</p>
+</li>
+</ul>
+<h3 id="new创建对象的过程发生了什么"><a href="#new创建对象的过程发生了什么" class="headerlink" title="new创建对象的过程发生了什么"></a><code>new</code>创建对象的过程发生了什么</h3><h4 id="通用观点"><a href="#通用观点" class="headerlink" title="通用观点"></a>通用观点</h4><ul>
+<li>用来实例化一个类，从而在内存中分配一个实例对象</li>
+</ul>
+<h4 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line">Person.hairColor = <span class="string">'black'</span>;</span><br><span class="line">Person.prototype.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'my name is '</span> + <span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> john = <span class="keyword">new</span> Person(<span class="string">'john'</span>);</span><br><span class="line">john.name <span class="comment">// John</span></span><br><span class="line">john.hairColor <span class="comment">// undefined</span></span><br><span class="line">john.height <span class="comment">// undefined</span></span><br><span class="line">john.say() <span class="comment">// my name is john</span></span><br><span class="line">Person.name <span class="comment">// Person</span></span><br><span class="line">Person.hairColor <span class="comment">// black</span></span><br><span class="line">Person.say() <span class="comment">// Person.say is not a function</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>JS引擎在执行这段代码：<code>var john = new Person(&#39;john&#39;)</code>时，在内部做了很多工作，用伪代码模拟就是：<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line">obj.__proto__ = Person.prototype; <span class="comment">// 此时建立了obj对象的原型链</span></span><br><span class="line"><span class="comment">// obj -&gt; Person.prototype -&gt; Object.prototype -&gt; null</span></span><br><span class="line"><span class="keyword">var</span> result = Person.call(obj, <span class="string">'John'</span>); <span class="comment">// 相当于obj.Person('John')</span></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">typeof</span> result === <span class="string">'object'</span> ? result : obj; <span class="comment">// 如果无返回值或者返回一个非对象值，则将obj返回作为新对象</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+
+  <div class="guide-links">
+    
+    
+    
+    
+      <span style="float: right;"><a href="/v1/special/2_webpack.html">webpack</a> →</span>
+    
+  </div>
+  <div class="footer">
+    发现错误？想参与编辑？
+    <a href="https://github.com/mallow-fight/blog/tree/master/source/v1/special/1_原型.md" target="_blank">
+      在 GitHub 上编辑此页！
+    </a>
+    
+    <span>更新于：2018-11-27 10:11:31</span>
+  </div>
+</div>
+
+
+<!-- <div id="disqus_thread"></div>
+<script>
+  // it seems slowly page, so i annotation it.
+  // disqus评论系统
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  var disqus_config = function () {
+    this.page.url = 'https://mallow-fight.github.io/';  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = 'https://mallow-fight.github.io/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://mallow-blog.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
+    </div>
+    <script src="/js/smooth-scroll.min.js"></script>
+  
+  <!-- main custom script for sidebars, version selects etc. -->
+  <script src="/js/css.escape.js"></script>
+  <script src="/js/common.js"></script>
+  <!-- search -->
+  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/search.css">
+  <script src="/js/docsearch.js"></script>
+  <script>
+  [
+    '#search-query-nav',
+    '#search-query-sidebar',
+    '#search-query-menu'
+  ].forEach(function (selector) {
+    if (!document.querySelector(selector)) return
+    docsearch({
+      appId: 'FKZQZEMOI4',
+      apiKey: '82fdcfac2e888595cb2807aa60aaad58',
+      indexName: 'prod_blog',
+      inputSelector: selector
+    })
+  })
+  </script>
+  <!-- fastclick -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+</body>
+</html>

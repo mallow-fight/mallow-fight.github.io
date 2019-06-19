@@ -1,0 +1,631 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>多媒体 - mallow</title>
+  <meta charset="utf-8">
+  <meta name="description" content="mallow's blog.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="多媒体 — mallow">
+  <meta property="og:description" content="mallow's blog.">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120215204-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-120215204-1');
+  </script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="icon" href="/images/logo.png" type="image/png">
+  <!-- main page styles -->
+  <link rel="stylesheet" href="/css/page.css">
+  <!-- import vue from there so that you can use vue in markdown -->
+  <script src="/js/vue.min.js"></script>
+  <script>window.PAGE_TYPE = "html"</script>
+</head>
+<body class="docs">
+  <div id="mobile-bar" >
+    <a class="menu-button"></a>
+    <a class="logo" href="/"></a>
+  </div>
+  <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logo.png">
+    <span>Mallow</span>
+  </a>
+  <ul id="nav">
+    <li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+  </form>
+</li>
+
+<!-- v3 directory -->
+<!-- <li class="nav-dropdown-container learn">
+  <a href="/v3/client/index.html" class="nav-link">客户端</a>
+</li>
+
+<li class="nav-dropdown-container learn">
+  <a href="/v3/http/index.html" class="nav-link">HTTP</a>
+</li>
+
+<li class="nav-dropdown-container learn">
+  <a href="/v3/server/index.html" class="nav-link">服务端</a>
+</li>
+ -->
+
+<!-- v2 directory -->
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">理论</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/v2/theory/dataStructure/1_intro.html" class="nav-link">数据结构</a></li>
+    <li><a href="/v2/theory/computerNet/1_intro.html" class="nav-link">计算机网络</a></li>
+    <li><a href="/v2/theory/computerContain/1_intro.html" class="nav-link">计算机组成原理</a></li>
+    <li><a href="/v2/theory/arithmeticV2/1_intro.html" class="nav-link">算法</a></li>
+    <li><a href="/v2/theory/compile/1_intro.html" class="nav-link">编译原理</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">基础</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/v2/basic/frontend/1_intro.html" class="nav-link">前端</a></li>
+    <li><a href="/v2/basic/http/1_intro.html" class="nav-link">http</a></li>
+    <li><a href="/v2/basic/backend/1_intro.html" class="nav-link">后端</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">框架</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/v2/frame/react/1_intro.html" class="nav-link">React相关</a></li>
+    <li><a href="/v2/theory/vue/1_intro.html" class="nav-link">Vue相关</a></li>
+    <li><a href="/v2/theory/lodash/1_intro.html" class="nav-link">Lodash</a></li>
+    <li><a href="/v2/theory/axios/1_intro.html" class="nav-link">axios</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+    <a class="nav-link">开发</a><span class="arrow"></span>
+    <ul class="nav-dropdown">
+      <li><a href="/v2/dev/ide/1_intro.html" class="nav-link">IDE</a></li>
+      <li><a href="/v2/dev/codeManage/1_intro.html" class="nav-link">代码管理</a></li>
+      <li><a href="/v2/dev/packTools/1_intro.html" class="nav-link">打包工具</a></li>
+      <li><a href="/v2/dev/staging/1_intro.html" class="nav-link">脚手架</a></li>
+      <li><a href="/v2/dev/debug/1_intro.html" class="nav-link">debug</a></li>
+      <li><a href="/v2/dev/unitTest/1_intro.html" class="nav-link">单元测试</a></li>
+      <li><a href="/v2/dev/deploy/1_intro.html" class="nav-link">构建和部署</a></li>
+      <li><a href="/v2/dev/serverOprate/1_intro.html" class="nav-link">服务器操作</a></li>
+    </ul>
+  </li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">运行</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/v2/runtime/browser/1_intro.html" class="nav-link">浏览器</a></li>
+    <li><a href="/v2/runtime/app/1_intro.html" class="nav-link">app</a></li>
+    <li><a href="/v2/runtime/desktop/1_intro.html" class="nav-link">桌面</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">监控</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/v2/monitor/browser/1_intro.html" class="nav-link">浏览器</a></li>
+    <li><a href="/v2/monitor/app/1_intro.html" class="nav-link">app</a></li>
+    <li><a href="/v2/monitor/desktop/1_intro.html" class="nav-link">桌面</a></li>
+  </ul>
+</li>
+<!-- <li class="nav-dropdown-container learn">
+	<a class="nav-link">v2</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+		<li><h4>理论</h4></li>
+		<li><ul>
+			<li><a href="/v2/theory/dataStructure/1_intro.html" class="nav-link">数据结构</a></li>
+			<li><a href="/v2/theory/computerNet/1_intro.html" class="nav-link">计算机网络</a></li>
+			<li><a href="/v2/theory/computerContain/1_intro.html" class="nav-link">计算机组成原理</a></li>
+			<li><a href="/v2/theory/arithmeticV2/1_intro.html" class="nav-link">算法</a></li>
+			<li><a href="/v2/theory/compile/1_intro.html" class="nav-link">编译原理</a></li>
+		</ul></li>
+		<li><h4>基础</h4></li>
+    <li><ul>
+			<li><a href="/v2/basic/frontend/1_intro.html" class="nav-link">前端</a></li>
+			<li><a href="/v2/basic/http/1_intro.html" class="nav-link">http</a></li>
+			<li><a href="/v2/basic/backend/1_intro.html" class="nav-link">后端</a></li>
+		</ul></li>
+		<li><h4>框架&工具</h4></li>
+		<li><ul>
+			<li><a href="/v2/frame/react/1_intro.html" class="nav-link">React相关</a></li>
+			<li><a href="/v2/theory/vue/1_intro.html" class="nav-link">Vue相关</a></li>
+			<li><a href="/v2/theory/lodash/1_intro.html" class="nav-link">Lodash</a></li>
+			<li><a href="/v2/theory/axios/1_intro.html" class="nav-link">axios</a></li>
+		</ul></li>
+		<li><h4>开发环境</h4></li>
+		<li><ul>
+			<li><a href="/v2/dev/ide/1_intro.html" class="nav-link">IDE</a></li>
+			<li><a href="/v2/dev/codeManage/1_intro.html" class="nav-link">代码管理</a></li>
+			<li><a href="/v2/dev/packTools/1_intro.html" class="nav-link">打包工具</a></li>
+			<li><a href="/v2/dev/staging/1_intro.html" class="nav-link">脚手架</a></li>
+			<li><a href="/v2/dev/debug/1_intro.html" class="nav-link">debug</a></li>
+			<li><a href="/v2/dev/unitTest/1_intro.html" class="nav-link">单元测试</a></li>
+			<li><a href="/v2/dev/deploy/1_intro.html" class="nav-link">构建和部署</a></li>
+			<li><a href="/v2/dev/serverOprate/1_intro.html" class="nav-link">服务器操作</a></li>
+		</ul></li>
+		<li><h4>运行环境</h4></li>
+		<li><ul>
+			<li><a href="/v2/runtime/browser/1_intro.html" class="nav-link">浏览器</a></li>
+			<li><a href="/v2/runtime/app/1_intro.html" class="nav-link">app</a></li>
+			<li><a href="/v2/runtime/desktop/1_intro.html" class="nav-link">桌面</a></li>
+		</ul></li>
+		<li><h4>监控&分析</h4></li>
+		<li><ul>
+			<li><a href="/v2/monitor/browser/1_intro.html" class="nav-link">浏览器</a></li>
+			<li><a href="/v2/monitor/app/1_intro.html" class="nav-link">app</a></li>
+			<li><a href="/v2/monitor/desktop/1_intro.html" class="nav-link">桌面</a></li>
+		</ul></li>
+		<li class="nav-dropdown-container learn">
+			<a href="/special/1_原型.html" class="nav-link">专题</a>
+		</li>			
+  </ul>
+</li>
+ -->
+
+<!-- v1 directory -->
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">v1</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>软件工程化</h4></li>
+    <li><ul>
+      <li><a href="/software/engineering.html" class="nav-link">概念&实践</a></li>
+    </ul></li>
+    <li><h4>前端</h4></li>
+    <li><ul>
+      <li><a href="/frontend/skeleton/1_skeleton.html" class="nav-link">skeleton</a></li>
+      <li><a href="/frontend/html/1_define.html" class="nav-link">html</a></li>
+      <li><a href="/frontend/css/1_define.html" class="nav-link">css</a></li>
+      <li><a href="/frontend/js/1_enter&going.html" class="nav-link">javascript</a></li>
+      <li><a href="/frontend/framework/1_vue.html" class="nav-link">framework</a></li>
+      <li><a href="/frontend/browser/1_safe.html" class="nav-link">browser</a></li>
+      <li><a href="/frontend/important/1_conclude.html" class="nav-link">conclude</a></li>
+    </ul></li>
+    <li><h4>后端</h4></li>
+    <li><ul>
+      <li><a href="/backend/node/note.html" class="nav-link">node</a></li>
+      <li><a href="/backend/http/1_http.html" class="nav-link">http</a></li>
+      <li><a href="/backend/java/core.html" class="nav-link">java</a></li>
+      <li><a href="/backend/database/1_mysql.html" class="nav-link">database</a></li>
+    </ul></li>
+    <li><h4>算法</h4></li>
+    <li><ul>
+      <li><a href="/arithmetic/1_lintcode.html" class="nav-link">概念&实践</a></li>
+    </ul></li>
+    <li><h4>读书</h4></li>
+    <li><ul>
+      <li><a href="/books/memory/1_利玛窦的记忆宫殿.html" class="nav-link">记忆学</a></li>
+      <li><a href="/books/computer/1_构建高性能web网站.html" class="nav-link">计算机</a></li>
+      <li><a href="/books/history/资治通鉴/1_周纪一.html" class="nav-link">历史</a></li>
+      <li><a href="/books/economics/1_国富论.html" class="nav-link">经济</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+  </ul>
+</div>
+  
+    <div id="main" class="fix-sidebar">
+        <div class="guide-links">
+  
+  
+    <span style="float: right;"><a style="color: green;" href="/v1/frontend/html/6_test.html">测试工具和方法</a> →</span>
+  
+  
+  
+    <span style="float: right; margin-right: 30px;">← <a style="color: goldenrod;" href="/v1/frontend/html/4_link.html">Url&Path</a></span>
+  
+</div>
+
+  <div class="sidebar">
+  <div class="sidebar-inner">
+    <h3>当前位置：html</h3>
+    <div class="list">
+      <ul class="menu-root">
+  
+    
+      <li>
+        <a href="/v1/frontend/html/1_define.html" class="sidebar-link">
+          html与html5
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/v1/frontend/html/2_tag.html" class="sidebar-link">
+          标签
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/v1/frontend/html/3_element&attribute.html" class="sidebar-link">
+          元素与属性
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/v1/frontend/html/4_link.html" class="sidebar-link">
+          Url&Path
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/v1/frontend/html/5_media.html" class="sidebar-link current">
+          多媒体
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/v1/frontend/html/6_test.html" class="sidebar-link">
+          测试工具和方法
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/v1/frontend/html/7_questions.html" class="sidebar-link">
+          问题
+        </a>
+      </li>
+      
+</ul>
+    </div>
+    <h3>浏览其它</h3>
+    <ul class="main-menu">
+      <li>
+  <form id="search-form">
+    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
+  </form>
+</li>
+
+<!-- v3 directory -->
+<!-- <li class="nav-dropdown-container learn">
+  <a href="/v3/client/index.html" class="nav-link">客户端</a>
+</li>
+
+<li class="nav-dropdown-container learn">
+  <a href="/v3/http/index.html" class="nav-link">HTTP</a>
+</li>
+
+<li class="nav-dropdown-container learn">
+  <a href="/v3/server/index.html" class="nav-link">服务端</a>
+</li>
+ -->
+
+<!-- v2 directory -->
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">理论</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/v2/theory/dataStructure/1_intro.html" class="nav-link">数据结构</a></li>
+    <li><a href="/v2/theory/computerNet/1_intro.html" class="nav-link">计算机网络</a></li>
+    <li><a href="/v2/theory/computerContain/1_intro.html" class="nav-link">计算机组成原理</a></li>
+    <li><a href="/v2/theory/arithmeticV2/1_intro.html" class="nav-link">算法</a></li>
+    <li><a href="/v2/theory/compile/1_intro.html" class="nav-link">编译原理</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">基础</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/v2/basic/frontend/1_intro.html" class="nav-link">前端</a></li>
+    <li><a href="/v2/basic/http/1_intro.html" class="nav-link">http</a></li>
+    <li><a href="/v2/basic/backend/1_intro.html" class="nav-link">后端</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">框架</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/v2/frame/react/1_intro.html" class="nav-link">React相关</a></li>
+    <li><a href="/v2/theory/vue/1_intro.html" class="nav-link">Vue相关</a></li>
+    <li><a href="/v2/theory/lodash/1_intro.html" class="nav-link">Lodash</a></li>
+    <li><a href="/v2/theory/axios/1_intro.html" class="nav-link">axios</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+    <a class="nav-link">开发</a><span class="arrow"></span>
+    <ul class="nav-dropdown">
+      <li><a href="/v2/dev/ide/1_intro.html" class="nav-link">IDE</a></li>
+      <li><a href="/v2/dev/codeManage/1_intro.html" class="nav-link">代码管理</a></li>
+      <li><a href="/v2/dev/packTools/1_intro.html" class="nav-link">打包工具</a></li>
+      <li><a href="/v2/dev/staging/1_intro.html" class="nav-link">脚手架</a></li>
+      <li><a href="/v2/dev/debug/1_intro.html" class="nav-link">debug</a></li>
+      <li><a href="/v2/dev/unitTest/1_intro.html" class="nav-link">单元测试</a></li>
+      <li><a href="/v2/dev/deploy/1_intro.html" class="nav-link">构建和部署</a></li>
+      <li><a href="/v2/dev/serverOprate/1_intro.html" class="nav-link">服务器操作</a></li>
+    </ul>
+  </li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">运行</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/v2/runtime/browser/1_intro.html" class="nav-link">浏览器</a></li>
+    <li><a href="/v2/runtime/app/1_intro.html" class="nav-link">app</a></li>
+    <li><a href="/v2/runtime/desktop/1_intro.html" class="nav-link">桌面</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">监控</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/v2/monitor/browser/1_intro.html" class="nav-link">浏览器</a></li>
+    <li><a href="/v2/monitor/app/1_intro.html" class="nav-link">app</a></li>
+    <li><a href="/v2/monitor/desktop/1_intro.html" class="nav-link">桌面</a></li>
+  </ul>
+</li>
+<!-- <li class="nav-dropdown-container learn">
+	<a class="nav-link">v2</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+		<li><h4>理论</h4></li>
+		<li><ul>
+			<li><a href="/v2/theory/dataStructure/1_intro.html" class="nav-link">数据结构</a></li>
+			<li><a href="/v2/theory/computerNet/1_intro.html" class="nav-link">计算机网络</a></li>
+			<li><a href="/v2/theory/computerContain/1_intro.html" class="nav-link">计算机组成原理</a></li>
+			<li><a href="/v2/theory/arithmeticV2/1_intro.html" class="nav-link">算法</a></li>
+			<li><a href="/v2/theory/compile/1_intro.html" class="nav-link">编译原理</a></li>
+		</ul></li>
+		<li><h4>基础</h4></li>
+    <li><ul>
+			<li><a href="/v2/basic/frontend/1_intro.html" class="nav-link">前端</a></li>
+			<li><a href="/v2/basic/http/1_intro.html" class="nav-link">http</a></li>
+			<li><a href="/v2/basic/backend/1_intro.html" class="nav-link">后端</a></li>
+		</ul></li>
+		<li><h4>框架&工具</h4></li>
+		<li><ul>
+			<li><a href="/v2/frame/react/1_intro.html" class="nav-link">React相关</a></li>
+			<li><a href="/v2/theory/vue/1_intro.html" class="nav-link">Vue相关</a></li>
+			<li><a href="/v2/theory/lodash/1_intro.html" class="nav-link">Lodash</a></li>
+			<li><a href="/v2/theory/axios/1_intro.html" class="nav-link">axios</a></li>
+		</ul></li>
+		<li><h4>开发环境</h4></li>
+		<li><ul>
+			<li><a href="/v2/dev/ide/1_intro.html" class="nav-link">IDE</a></li>
+			<li><a href="/v2/dev/codeManage/1_intro.html" class="nav-link">代码管理</a></li>
+			<li><a href="/v2/dev/packTools/1_intro.html" class="nav-link">打包工具</a></li>
+			<li><a href="/v2/dev/staging/1_intro.html" class="nav-link">脚手架</a></li>
+			<li><a href="/v2/dev/debug/1_intro.html" class="nav-link">debug</a></li>
+			<li><a href="/v2/dev/unitTest/1_intro.html" class="nav-link">单元测试</a></li>
+			<li><a href="/v2/dev/deploy/1_intro.html" class="nav-link">构建和部署</a></li>
+			<li><a href="/v2/dev/serverOprate/1_intro.html" class="nav-link">服务器操作</a></li>
+		</ul></li>
+		<li><h4>运行环境</h4></li>
+		<li><ul>
+			<li><a href="/v2/runtime/browser/1_intro.html" class="nav-link">浏览器</a></li>
+			<li><a href="/v2/runtime/app/1_intro.html" class="nav-link">app</a></li>
+			<li><a href="/v2/runtime/desktop/1_intro.html" class="nav-link">桌面</a></li>
+		</ul></li>
+		<li><h4>监控&分析</h4></li>
+		<li><ul>
+			<li><a href="/v2/monitor/browser/1_intro.html" class="nav-link">浏览器</a></li>
+			<li><a href="/v2/monitor/app/1_intro.html" class="nav-link">app</a></li>
+			<li><a href="/v2/monitor/desktop/1_intro.html" class="nav-link">桌面</a></li>
+		</ul></li>
+		<li class="nav-dropdown-container learn">
+			<a href="/special/1_原型.html" class="nav-link">专题</a>
+		</li>			
+  </ul>
+</li>
+ -->
+
+<!-- v1 directory -->
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">v1</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>软件工程化</h4></li>
+    <li><ul>
+      <li><a href="/software/engineering.html" class="nav-link">概念&实践</a></li>
+    </ul></li>
+    <li><h4>前端</h4></li>
+    <li><ul>
+      <li><a href="/frontend/skeleton/1_skeleton.html" class="nav-link">skeleton</a></li>
+      <li><a href="/frontend/html/1_define.html" class="nav-link">html</a></li>
+      <li><a href="/frontend/css/1_define.html" class="nav-link">css</a></li>
+      <li><a href="/frontend/js/1_enter&going.html" class="nav-link">javascript</a></li>
+      <li><a href="/frontend/framework/1_vue.html" class="nav-link">framework</a></li>
+      <li><a href="/frontend/browser/1_safe.html" class="nav-link">browser</a></li>
+      <li><a href="/frontend/important/1_conclude.html" class="nav-link">conclude</a></li>
+    </ul></li>
+    <li><h4>后端</h4></li>
+    <li><ul>
+      <li><a href="/backend/node/note.html" class="nav-link">node</a></li>
+      <li><a href="/backend/http/1_http.html" class="nav-link">http</a></li>
+      <li><a href="/backend/java/core.html" class="nav-link">java</a></li>
+      <li><a href="/backend/database/1_mysql.html" class="nav-link">database</a></li>
+    </ul></li>
+    <li><h4>算法</h4></li>
+    <li><ul>
+      <li><a href="/arithmetic/1_lintcode.html" class="nav-link">概念&实践</a></li>
+    </ul></li>
+    <li><h4>读书</h4></li>
+    <li><ul>
+      <li><a href="/books/memory/1_利玛窦的记忆宫殿.html" class="nav-link">记忆学</a></li>
+      <li><a href="/books/computer/1_构建高性能web网站.html" class="nav-link">计算机</a></li>
+      <li><a href="/books/history/资治通鉴/1_周纪一.html" class="nav-link">历史</a></li>
+      <li><a href="/books/economics/1_国富论.html" class="nav-link">经济</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+    </ul>
+  </div>
+</div>
+
+
+<div class="content html with-sidebar ">
+  <ul class="menu-root">
+  
+</ul>
+  
+    <h1>多媒体</h1>
+  
+  <h2 id="多媒体与嵌入"><a href="#多媒体与嵌入" class="headerlink" title="多媒体与嵌入"></a>多媒体与嵌入</h2><h3 id="iframe"><a href="#iframe" class="headerlink" title="iframe"></a>iframe</h3><h4 id="基本要素"><a href="#基本要素" class="headerlink" title="基本要素"></a>基本要素</h4><ul>
+<li><p>allowfullscreen</p>
+</li>
+<li><p>frameborder: 默认是1，会在此框架和其他框架之间绘制边框，0:删除边框</p>
+</li>
+<li><p>src</p>
+</li>
+<li><p>width/height</p>
+</li>
+<li><p>备选内容: 防止不支持iframe的情况</p>
+</li>
+<li><p>sandbox: 提高安全性设置</p>
+</li>
+</ul>
+<p><strong>为了提高速度，在主内容完成加载后，使用js设置iframe的src属性是个好主意,这使得页面可以更快的使用，并减少您的官方页面加载时间（重要的seo指标）</strong></p>
+<h3 id="安全隐患"><a href="#安全隐患" class="headerlink" title="安全隐患"></a>安全隐患</h3><ul>
+<li><p>只有在必要时嵌入</p>
+<ul>
+<li><p>安全问题</p>
+</li>
+<li><p>知识产权问题</p>
+</li>
+</ul>
+</li>
+<li><p>使用https</p>
+<ul>
+<li><p>https减少了远程内容在传输过程中被篡改的机会</p>
+</li>
+<li><p>https防止嵌入式内容访问您的父文档中的内容，反之亦然</p>
+</li>
+</ul>
+</li>
+<li><p>始终使用sandbox属性</p>
+<ul>
+<li>沙箱：一个代码可以适当使用或用于测试的容器，但不能对其他代码库造成任何损害称为沙箱</li>
+</ul>
+</li>
+<li><p>配置CSP指令</p>
+</li>
+</ul>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
+<li>图片存储在和<code>HTML</code>页面同路径的<code>images</code>文件夹下，利于<code>SEO</code>/索引</li>
+<li>搜索引擎也读取图像的文件名并把他们计入<code>SEO</code>，因此给图片取一个描述性的文件名</li>
+<li>选取相对路径优于绝对路径，绝对路径会使浏览器做更多的工作，例如重新通过<code>DNS</code>寻找<code>ip</code>地址，所以通常会把<code>html</code>和图片放在同一个服务器上</li>
+</ul>
+<h3 id="备选文本"><a href="#备选文本" class="headerlink" title="备选文本"></a>备选文本</h3><p><strong>内容取决于该图片想要表现的内容</strong></p>
+<h3 id="图片尺寸"><a href="#图片尺寸" class="headerlink" title="图片尺寸"></a>图片尺寸</h3><p><strong>使用<code>html</code>属性来改变图片大小</strong></p>
+<ul>
+<li>尺寸设定的太大了：图片会模糊</li>
+<li>尺寸设定的太小了：下载图片时会浪费带宽</li>
+<li>尺寸设定的不对：图片会扭曲</li>
+</ul>
+<blockquote>
+<p>如果你需要改变图片尺寸，你应该使用<code>CSS</code>而不是<code>HTML</code></p>
+</blockquote>
+<h3 id="title"><a href="#title" class="headerlink" title="title"></a>title</h3><p><strong>没有空间时可以使用</strong></p>
+<h3 id="解说图片"><a href="#解说图片" class="headerlink" title="解说图片"></a>解说图片</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">figure</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"xxx"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">figcaption</span>&gt;</span>a handsome dog.<span class="tag">&lt;/<span class="name">figcaption</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">figure</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="css背景图片"><a href="#css背景图片" class="headerlink" title="css背景图片"></a>css背景图片</h3><p><strong>如果图像对您的内容有意义，则应使用HTML图像。如果图像纯粹是装饰，则应使用CSS背景图片。</strong></p>
+<h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><h3 id="标签（-lt-video-gt-）"><a href="#标签（-lt-video-gt-）" class="headerlink" title="标签（&lt;video&gt;）"></a>标签<code>（&lt;video&gt;）</code></h3><ol>
+<li><p>src: 视频资源</p>
+</li>
+<li><p>controls: 控制视频的组件</p>
+</li>
+<li><p><code>&lt;video&gt;</code>标签内的段落: 后备内容，当浏览器不支持该标签时，会显示出来</p>
+</li>
+</ol>
+<h3 id="多格式支持"><a href="#多格式支持" class="headerlink" title="多格式支持"></a>多格式支持</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">controls</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"test.mp4"</span> <span class="attr">type</span>=<span class="string">"video/mp4"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"test.webm"</span> <span class="attr">type</span>=<span class="string">"video/webm"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>your brower doesn't support HTML5 video. Here is a </span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"test.xxx"</span>&gt;</span>link to the video<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ol>
+<li><p>width/height：<code>&lt;audio&gt;</code>不支持，无视觉部件</p>
+</li>
+<li><p>autoplay：自动播放</p>
+</li>
+<li><p>loop：循环播放</p>
+</li>
+<li><p>muted：默认关闭声音</p>
+</li>
+<li><p>poster：视频播放前显示的图片 <code>&lt;audio&gt;</code>不支持，无视觉部件</p>
+</li>
+<li><p>preload：缓冲较大的文件</p>
+<p><code>none</code>: 不缓冲</p>
+<p><code>auto</code>: 页面加载后缓存媒体文件</p>
+<p><code>metadata</code>: 仅缓冲文件的元数据</p>
+</li>
+</ol>
+<h3 id="音轨文本"><a href="#音轨文本" class="headerlink" title="音轨文本"></a>音轨文本</h3><p><strong>种类：</strong></p>
+<ol>
+<li><p>subtitle: 翻译字幕</p>
+</li>
+<li><p>captions: 同步翻译对白, 帮助不能听音频的人</p>
+</li>
+<li><p>timed descriptions: 文字转换为音频，用于服务有视觉障碍的人</p>
+</li>
+</ol>
+<p>例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">controls</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"test.mp4"</span> <span class="attr">type</span>=<span class="string">"video/mp4"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"test.webm"</span> <span class="attr">type</span>=<span class="string">"video/webm"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">track</span> <span class="attr">kind</span>=<span class="string">"subtitles"</span> <span class="attr">src</span>=<span class="string">"subtitles_en.vtt"</span> <span class="attr">srclang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+
+  <div class="guide-links">
+    
+    
+      <span>← <a href="/v1/frontend/html/4_link.html">Url&Path</a></span>
+    
+    
+    
+      <span style="float: right;"><a href="/v1/frontend/html/6_test.html">测试工具和方法</a> →</span>
+    
+  </div>
+  <div class="footer">
+    发现错误？想参与编辑？
+    <a href="https://github.com/mallow-fight/blog/tree/master/source/v1/frontend/html/5_media.md" target="_blank">
+      在 GitHub 上编辑此页！
+    </a>
+    
+    <span>更新于：2018-09-13 14:09:21</span>
+  </div>
+</div>
+
+
+<!-- <div id="disqus_thread"></div>
+<script>
+  // it seems slowly page, so i annotation it.
+  // disqus评论系统
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  var disqus_config = function () {
+    this.page.url = 'https://mallow-fight.github.io/';  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = 'https://mallow-fight.github.io/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://mallow-blog.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
+    </div>
+    <script src="/js/smooth-scroll.min.js"></script>
+  
+  <!-- main custom script for sidebars, version selects etc. -->
+  <script src="/js/css.escape.js"></script>
+  <script src="/js/common.js"></script>
+  <!-- search -->
+  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/search.css">
+  <script src="/js/docsearch.js"></script>
+  <script>
+  [
+    '#search-query-nav',
+    '#search-query-sidebar',
+    '#search-query-menu'
+  ].forEach(function (selector) {
+    if (!document.querySelector(selector)) return
+    docsearch({
+      appId: 'FKZQZEMOI4',
+      apiKey: '82fdcfac2e888595cb2807aa60aaad58',
+      indexName: 'prod_blog',
+      inputSelector: selector
+    })
+  })
+  </script>
+  <!-- fastclick -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+</body>
+</html>

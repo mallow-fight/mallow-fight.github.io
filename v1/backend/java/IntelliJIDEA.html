@@ -1,0 +1,560 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>IntelliJ IDEA 工具下载安装 - mallow</title>
+  <meta charset="utf-8">
+  <meta name="description" content="mallow's blog.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="IntelliJ IDEA 工具下载安装 — mallow">
+  <meta property="og:description" content="mallow's blog.">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120215204-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-120215204-1');
+  </script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="icon" href="/images/logo.png" type="image/png">
+  <!-- main page styles -->
+  <link rel="stylesheet" href="/css/page.css">
+  <!-- import vue from there so that you can use vue in markdown -->
+  <script src="/js/vue.min.js"></script>
+  <script>window.PAGE_TYPE = "java"</script>
+</head>
+<body class="docs">
+  <div id="mobile-bar" >
+    <a class="menu-button"></a>
+    <a class="logo" href="/"></a>
+  </div>
+  <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logo.png">
+    <span>Mallow</span>
+  </a>
+  <ul id="nav">
+    <li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+  </form>
+</li>
+
+<!-- v3 directory -->
+<!-- <li class="nav-dropdown-container learn">
+  <a href="/v3/client/index.html" class="nav-link">客户端</a>
+</li>
+
+<li class="nav-dropdown-container learn">
+  <a href="/v3/http/index.html" class="nav-link">HTTP</a>
+</li>
+
+<li class="nav-dropdown-container learn">
+  <a href="/v3/server/index.html" class="nav-link">服务端</a>
+</li>
+ -->
+
+<!-- v2 directory -->
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">理论</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/v2/theory/dataStructure/1_intro.html" class="nav-link">数据结构</a></li>
+    <li><a href="/v2/theory/computerNet/1_intro.html" class="nav-link">计算机网络</a></li>
+    <li><a href="/v2/theory/computerContain/1_intro.html" class="nav-link">计算机组成原理</a></li>
+    <li><a href="/v2/theory/arithmeticV2/1_intro.html" class="nav-link">算法</a></li>
+    <li><a href="/v2/theory/compile/1_intro.html" class="nav-link">编译原理</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">基础</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/v2/basic/frontend/1_intro.html" class="nav-link">前端</a></li>
+    <li><a href="/v2/basic/http/1_intro.html" class="nav-link">http</a></li>
+    <li><a href="/v2/basic/backend/1_intro.html" class="nav-link">后端</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">框架</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/v2/frame/react/1_intro.html" class="nav-link">React相关</a></li>
+    <li><a href="/v2/theory/vue/1_intro.html" class="nav-link">Vue相关</a></li>
+    <li><a href="/v2/theory/lodash/1_intro.html" class="nav-link">Lodash</a></li>
+    <li><a href="/v2/theory/axios/1_intro.html" class="nav-link">axios</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+    <a class="nav-link">开发</a><span class="arrow"></span>
+    <ul class="nav-dropdown">
+      <li><a href="/v2/dev/ide/1_intro.html" class="nav-link">IDE</a></li>
+      <li><a href="/v2/dev/codeManage/1_intro.html" class="nav-link">代码管理</a></li>
+      <li><a href="/v2/dev/packTools/1_intro.html" class="nav-link">打包工具</a></li>
+      <li><a href="/v2/dev/staging/1_intro.html" class="nav-link">脚手架</a></li>
+      <li><a href="/v2/dev/debug/1_intro.html" class="nav-link">debug</a></li>
+      <li><a href="/v2/dev/unitTest/1_intro.html" class="nav-link">单元测试</a></li>
+      <li><a href="/v2/dev/deploy/1_intro.html" class="nav-link">构建和部署</a></li>
+      <li><a href="/v2/dev/serverOprate/1_intro.html" class="nav-link">服务器操作</a></li>
+    </ul>
+  </li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">运行</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/v2/runtime/browser/1_intro.html" class="nav-link">浏览器</a></li>
+    <li><a href="/v2/runtime/app/1_intro.html" class="nav-link">app</a></li>
+    <li><a href="/v2/runtime/desktop/1_intro.html" class="nav-link">桌面</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">监控</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/v2/monitor/browser/1_intro.html" class="nav-link">浏览器</a></li>
+    <li><a href="/v2/monitor/app/1_intro.html" class="nav-link">app</a></li>
+    <li><a href="/v2/monitor/desktop/1_intro.html" class="nav-link">桌面</a></li>
+  </ul>
+</li>
+<!-- <li class="nav-dropdown-container learn">
+	<a class="nav-link">v2</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+		<li><h4>理论</h4></li>
+		<li><ul>
+			<li><a href="/v2/theory/dataStructure/1_intro.html" class="nav-link">数据结构</a></li>
+			<li><a href="/v2/theory/computerNet/1_intro.html" class="nav-link">计算机网络</a></li>
+			<li><a href="/v2/theory/computerContain/1_intro.html" class="nav-link">计算机组成原理</a></li>
+			<li><a href="/v2/theory/arithmeticV2/1_intro.html" class="nav-link">算法</a></li>
+			<li><a href="/v2/theory/compile/1_intro.html" class="nav-link">编译原理</a></li>
+		</ul></li>
+		<li><h4>基础</h4></li>
+    <li><ul>
+			<li><a href="/v2/basic/frontend/1_intro.html" class="nav-link">前端</a></li>
+			<li><a href="/v2/basic/http/1_intro.html" class="nav-link">http</a></li>
+			<li><a href="/v2/basic/backend/1_intro.html" class="nav-link">后端</a></li>
+		</ul></li>
+		<li><h4>框架&工具</h4></li>
+		<li><ul>
+			<li><a href="/v2/frame/react/1_intro.html" class="nav-link">React相关</a></li>
+			<li><a href="/v2/theory/vue/1_intro.html" class="nav-link">Vue相关</a></li>
+			<li><a href="/v2/theory/lodash/1_intro.html" class="nav-link">Lodash</a></li>
+			<li><a href="/v2/theory/axios/1_intro.html" class="nav-link">axios</a></li>
+		</ul></li>
+		<li><h4>开发环境</h4></li>
+		<li><ul>
+			<li><a href="/v2/dev/ide/1_intro.html" class="nav-link">IDE</a></li>
+			<li><a href="/v2/dev/codeManage/1_intro.html" class="nav-link">代码管理</a></li>
+			<li><a href="/v2/dev/packTools/1_intro.html" class="nav-link">打包工具</a></li>
+			<li><a href="/v2/dev/staging/1_intro.html" class="nav-link">脚手架</a></li>
+			<li><a href="/v2/dev/debug/1_intro.html" class="nav-link">debug</a></li>
+			<li><a href="/v2/dev/unitTest/1_intro.html" class="nav-link">单元测试</a></li>
+			<li><a href="/v2/dev/deploy/1_intro.html" class="nav-link">构建和部署</a></li>
+			<li><a href="/v2/dev/serverOprate/1_intro.html" class="nav-link">服务器操作</a></li>
+		</ul></li>
+		<li><h4>运行环境</h4></li>
+		<li><ul>
+			<li><a href="/v2/runtime/browser/1_intro.html" class="nav-link">浏览器</a></li>
+			<li><a href="/v2/runtime/app/1_intro.html" class="nav-link">app</a></li>
+			<li><a href="/v2/runtime/desktop/1_intro.html" class="nav-link">桌面</a></li>
+		</ul></li>
+		<li><h4>监控&分析</h4></li>
+		<li><ul>
+			<li><a href="/v2/monitor/browser/1_intro.html" class="nav-link">浏览器</a></li>
+			<li><a href="/v2/monitor/app/1_intro.html" class="nav-link">app</a></li>
+			<li><a href="/v2/monitor/desktop/1_intro.html" class="nav-link">桌面</a></li>
+		</ul></li>
+		<li class="nav-dropdown-container learn">
+			<a href="/special/1_原型.html" class="nav-link">专题</a>
+		</li>			
+  </ul>
+</li>
+ -->
+
+<!-- v1 directory -->
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">v1</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>软件工程化</h4></li>
+    <li><ul>
+      <li><a href="/software/engineering.html" class="nav-link">概念&实践</a></li>
+    </ul></li>
+    <li><h4>前端</h4></li>
+    <li><ul>
+      <li><a href="/frontend/skeleton/1_skeleton.html" class="nav-link">skeleton</a></li>
+      <li><a href="/frontend/html/1_define.html" class="nav-link">html</a></li>
+      <li><a href="/frontend/css/1_define.html" class="nav-link">css</a></li>
+      <li><a href="/frontend/js/1_enter&going.html" class="nav-link">javascript</a></li>
+      <li><a href="/frontend/framework/1_vue.html" class="nav-link">framework</a></li>
+      <li><a href="/frontend/browser/1_safe.html" class="nav-link">browser</a></li>
+      <li><a href="/frontend/important/1_conclude.html" class="nav-link">conclude</a></li>
+    </ul></li>
+    <li><h4>后端</h4></li>
+    <li><ul>
+      <li><a href="/backend/node/note.html" class="nav-link">node</a></li>
+      <li><a href="/backend/http/1_http.html" class="nav-link">http</a></li>
+      <li><a href="/backend/java/core.html" class="nav-link">java</a></li>
+      <li><a href="/backend/database/1_mysql.html" class="nav-link">database</a></li>
+    </ul></li>
+    <li><h4>算法</h4></li>
+    <li><ul>
+      <li><a href="/arithmetic/1_lintcode.html" class="nav-link">概念&实践</a></li>
+    </ul></li>
+    <li><h4>读书</h4></li>
+    <li><ul>
+      <li><a href="/books/memory/1_利玛窦的记忆宫殿.html" class="nav-link">记忆学</a></li>
+      <li><a href="/books/computer/1_构建高性能web网站.html" class="nav-link">计算机</a></li>
+      <li><a href="/books/history/资治通鉴/1_周纪一.html" class="nav-link">历史</a></li>
+      <li><a href="/books/economics/1_国富论.html" class="nav-link">经济</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+  </ul>
+</div>
+  
+    <div id="main" class="fix-sidebar">
+        <div class="guide-links">
+  
+  
+    <span style="float: right;"><a style="color: green;" href="/v1/backend/java/firstProject.html">新建Java项目</a> →</span>
+  
+  
+  
+    <span style="float: right; margin-right: 30px;">← <a style="color: goldenrod;" href="/v1/backend/java/helloworld.html">HelloWorld</a></span>
+  
+</div>
+
+  <div class="sidebar">
+  <div class="sidebar-inner">
+    <h3>当前位置：java</h3>
+    <div class="list">
+      <ul class="menu-root">
+  
+    
+      <li>
+        <a href="/v1/backend/java/core.html" class="sidebar-link">
+          核心
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/v1/backend/java/java.html" class="sidebar-link">
+          JDK环境配置
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/v1/backend/java/helloworld.html" class="sidebar-link">
+          HelloWorld
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/v1/backend/java/IntelliJIDEA.html" class="sidebar-link current">
+          IntelliJ IDEA 工具下载安装
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/v1/backend/java/firstProject.html" class="sidebar-link">
+          新建Java项目
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/v1/backend/java/basic_java.html" class="sidebar-link">
+          Basic Java
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/v1/backend/java/oop.html" class="sidebar-link">
+          类与对象
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/v1/backend/java/Java SE.html" class="sidebar-link">
+          Java SE
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/v1/backend/java/jdbc.html" class="sidebar-link">
+          JDBC
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/v1/backend/java/servlet.html" class="sidebar-link">
+          Web模块
+        </a>
+      </li>
+      
+</ul>
+    </div>
+    <h3>浏览其它</h3>
+    <ul class="main-menu">
+      <li>
+  <form id="search-form">
+    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
+  </form>
+</li>
+
+<!-- v3 directory -->
+<!-- <li class="nav-dropdown-container learn">
+  <a href="/v3/client/index.html" class="nav-link">客户端</a>
+</li>
+
+<li class="nav-dropdown-container learn">
+  <a href="/v3/http/index.html" class="nav-link">HTTP</a>
+</li>
+
+<li class="nav-dropdown-container learn">
+  <a href="/v3/server/index.html" class="nav-link">服务端</a>
+</li>
+ -->
+
+<!-- v2 directory -->
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">理论</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/v2/theory/dataStructure/1_intro.html" class="nav-link">数据结构</a></li>
+    <li><a href="/v2/theory/computerNet/1_intro.html" class="nav-link">计算机网络</a></li>
+    <li><a href="/v2/theory/computerContain/1_intro.html" class="nav-link">计算机组成原理</a></li>
+    <li><a href="/v2/theory/arithmeticV2/1_intro.html" class="nav-link">算法</a></li>
+    <li><a href="/v2/theory/compile/1_intro.html" class="nav-link">编译原理</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">基础</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/v2/basic/frontend/1_intro.html" class="nav-link">前端</a></li>
+    <li><a href="/v2/basic/http/1_intro.html" class="nav-link">http</a></li>
+    <li><a href="/v2/basic/backend/1_intro.html" class="nav-link">后端</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">框架</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/v2/frame/react/1_intro.html" class="nav-link">React相关</a></li>
+    <li><a href="/v2/theory/vue/1_intro.html" class="nav-link">Vue相关</a></li>
+    <li><a href="/v2/theory/lodash/1_intro.html" class="nav-link">Lodash</a></li>
+    <li><a href="/v2/theory/axios/1_intro.html" class="nav-link">axios</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+    <a class="nav-link">开发</a><span class="arrow"></span>
+    <ul class="nav-dropdown">
+      <li><a href="/v2/dev/ide/1_intro.html" class="nav-link">IDE</a></li>
+      <li><a href="/v2/dev/codeManage/1_intro.html" class="nav-link">代码管理</a></li>
+      <li><a href="/v2/dev/packTools/1_intro.html" class="nav-link">打包工具</a></li>
+      <li><a href="/v2/dev/staging/1_intro.html" class="nav-link">脚手架</a></li>
+      <li><a href="/v2/dev/debug/1_intro.html" class="nav-link">debug</a></li>
+      <li><a href="/v2/dev/unitTest/1_intro.html" class="nav-link">单元测试</a></li>
+      <li><a href="/v2/dev/deploy/1_intro.html" class="nav-link">构建和部署</a></li>
+      <li><a href="/v2/dev/serverOprate/1_intro.html" class="nav-link">服务器操作</a></li>
+    </ul>
+  </li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">运行</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/v2/runtime/browser/1_intro.html" class="nav-link">浏览器</a></li>
+    <li><a href="/v2/runtime/app/1_intro.html" class="nav-link">app</a></li>
+    <li><a href="/v2/runtime/desktop/1_intro.html" class="nav-link">桌面</a></li>
+  </ul>
+</li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">监控</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="/v2/monitor/browser/1_intro.html" class="nav-link">浏览器</a></li>
+    <li><a href="/v2/monitor/app/1_intro.html" class="nav-link">app</a></li>
+    <li><a href="/v2/monitor/desktop/1_intro.html" class="nav-link">桌面</a></li>
+  </ul>
+</li>
+<!-- <li class="nav-dropdown-container learn">
+	<a class="nav-link">v2</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+		<li><h4>理论</h4></li>
+		<li><ul>
+			<li><a href="/v2/theory/dataStructure/1_intro.html" class="nav-link">数据结构</a></li>
+			<li><a href="/v2/theory/computerNet/1_intro.html" class="nav-link">计算机网络</a></li>
+			<li><a href="/v2/theory/computerContain/1_intro.html" class="nav-link">计算机组成原理</a></li>
+			<li><a href="/v2/theory/arithmeticV2/1_intro.html" class="nav-link">算法</a></li>
+			<li><a href="/v2/theory/compile/1_intro.html" class="nav-link">编译原理</a></li>
+		</ul></li>
+		<li><h4>基础</h4></li>
+    <li><ul>
+			<li><a href="/v2/basic/frontend/1_intro.html" class="nav-link">前端</a></li>
+			<li><a href="/v2/basic/http/1_intro.html" class="nav-link">http</a></li>
+			<li><a href="/v2/basic/backend/1_intro.html" class="nav-link">后端</a></li>
+		</ul></li>
+		<li><h4>框架&工具</h4></li>
+		<li><ul>
+			<li><a href="/v2/frame/react/1_intro.html" class="nav-link">React相关</a></li>
+			<li><a href="/v2/theory/vue/1_intro.html" class="nav-link">Vue相关</a></li>
+			<li><a href="/v2/theory/lodash/1_intro.html" class="nav-link">Lodash</a></li>
+			<li><a href="/v2/theory/axios/1_intro.html" class="nav-link">axios</a></li>
+		</ul></li>
+		<li><h4>开发环境</h4></li>
+		<li><ul>
+			<li><a href="/v2/dev/ide/1_intro.html" class="nav-link">IDE</a></li>
+			<li><a href="/v2/dev/codeManage/1_intro.html" class="nav-link">代码管理</a></li>
+			<li><a href="/v2/dev/packTools/1_intro.html" class="nav-link">打包工具</a></li>
+			<li><a href="/v2/dev/staging/1_intro.html" class="nav-link">脚手架</a></li>
+			<li><a href="/v2/dev/debug/1_intro.html" class="nav-link">debug</a></li>
+			<li><a href="/v2/dev/unitTest/1_intro.html" class="nav-link">单元测试</a></li>
+			<li><a href="/v2/dev/deploy/1_intro.html" class="nav-link">构建和部署</a></li>
+			<li><a href="/v2/dev/serverOprate/1_intro.html" class="nav-link">服务器操作</a></li>
+		</ul></li>
+		<li><h4>运行环境</h4></li>
+		<li><ul>
+			<li><a href="/v2/runtime/browser/1_intro.html" class="nav-link">浏览器</a></li>
+			<li><a href="/v2/runtime/app/1_intro.html" class="nav-link">app</a></li>
+			<li><a href="/v2/runtime/desktop/1_intro.html" class="nav-link">桌面</a></li>
+		</ul></li>
+		<li><h4>监控&分析</h4></li>
+		<li><ul>
+			<li><a href="/v2/monitor/browser/1_intro.html" class="nav-link">浏览器</a></li>
+			<li><a href="/v2/monitor/app/1_intro.html" class="nav-link">app</a></li>
+			<li><a href="/v2/monitor/desktop/1_intro.html" class="nav-link">桌面</a></li>
+		</ul></li>
+		<li class="nav-dropdown-container learn">
+			<a href="/special/1_原型.html" class="nav-link">专题</a>
+		</li>			
+  </ul>
+</li>
+ -->
+
+<!-- v1 directory -->
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">v1</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>软件工程化</h4></li>
+    <li><ul>
+      <li><a href="/software/engineering.html" class="nav-link">概念&实践</a></li>
+    </ul></li>
+    <li><h4>前端</h4></li>
+    <li><ul>
+      <li><a href="/frontend/skeleton/1_skeleton.html" class="nav-link">skeleton</a></li>
+      <li><a href="/frontend/html/1_define.html" class="nav-link">html</a></li>
+      <li><a href="/frontend/css/1_define.html" class="nav-link">css</a></li>
+      <li><a href="/frontend/js/1_enter&going.html" class="nav-link">javascript</a></li>
+      <li><a href="/frontend/framework/1_vue.html" class="nav-link">framework</a></li>
+      <li><a href="/frontend/browser/1_safe.html" class="nav-link">browser</a></li>
+      <li><a href="/frontend/important/1_conclude.html" class="nav-link">conclude</a></li>
+    </ul></li>
+    <li><h4>后端</h4></li>
+    <li><ul>
+      <li><a href="/backend/node/note.html" class="nav-link">node</a></li>
+      <li><a href="/backend/http/1_http.html" class="nav-link">http</a></li>
+      <li><a href="/backend/java/core.html" class="nav-link">java</a></li>
+      <li><a href="/backend/database/1_mysql.html" class="nav-link">database</a></li>
+    </ul></li>
+    <li><h4>算法</h4></li>
+    <li><ul>
+      <li><a href="/arithmetic/1_lintcode.html" class="nav-link">概念&实践</a></li>
+    </ul></li>
+    <li><h4>读书</h4></li>
+    <li><ul>
+      <li><a href="/books/memory/1_利玛窦的记忆宫殿.html" class="nav-link">记忆学</a></li>
+      <li><a href="/books/computer/1_构建高性能web网站.html" class="nav-link">计算机</a></li>
+      <li><a href="/books/history/资治通鉴/1_周纪一.html" class="nav-link">历史</a></li>
+      <li><a href="/books/economics/1_国富论.html" class="nav-link">经济</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+    </ul>
+  </div>
+</div>
+
+
+<div class="content java with-sidebar ">
+  <ul class="menu-root">
+  
+</ul>
+  
+    <h1>IntelliJ IDEA 工具下载安装</h1>
+  
+  <h2 id="下载安装IntelliJ-IDEA-开发工具"><a href="#下载安装IntelliJ-IDEA-开发工具" class="headerlink" title="下载安装IntelliJ IDEA 开发工具"></a>下载安装IntelliJ IDEA 开发工具</h2><h3 id="版本说明-–-下载"><a href="#版本说明-–-下载" class="headerlink" title="版本说明 –  下载"></a>版本说明 – <em> <a href="https://www.jetbrains.com/idea/download/" target="_blank" rel="noopener">下载</a></em></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* 下载页面有Utimate和Community两个版本，其中Utimate可以免费试用，过期需要提供账户权限验证；Community是免费版，可以永久免费使用。</span><br><span class="line">* 两个版本在功能上也有所区别，Community不支持Java Web项目，如果需要进行Web项目的开发，仍然需要使用Utimate版本</span><br><span class="line">* 目前不需要进行Web项目开发，推荐选择下载Community版本</span><br></pre></td></tr></table></figure>
+<h3 id="软件使用-–-官方说明"><a href="#软件使用-–-官方说明" class="headerlink" title="软件使用 – 官方说明"></a>软件使用 – <em><a href="https://www.jetbrains.com/help/idea/meet-intellij-idea.html" target="_blank" rel="noopener">官方说明</a></em></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* 要求已配置好JDK开发环境，若未配置，请参考相关文档</span><br><span class="line">* 开发工具下载安装完成以后，需要配置软件JDK环境：</span><br><span class="line">	1. 首页Configure - Project Defaults - Project Structure </span><br><span class="line">	2. SDKs - &quot;+&quot; - 添加JDK，选择JDK安装目录，如C:\Program Files\Java\jdk1.8.0_151</span><br></pre></td></tr></table></figure>
+
+  <div class="guide-links">
+    
+    
+      <span>← <a href="/v1/backend/java/helloworld.html">HelloWorld</a></span>
+    
+    
+    
+      <span style="float: right;"><a href="/v1/backend/java/firstProject.html">新建Java项目</a> →</span>
+    
+  </div>
+  <div class="footer">
+    发现错误？想参与编辑？
+    <a href="https://github.com/mallow-fight/blog/tree/master/source/v1/backend/java/IntelliJIDEA.md" target="_blank">
+      在 GitHub 上编辑此页！
+    </a>
+    
+    <span>更新于：2018-09-13 14:09:19</span>
+  </div>
+</div>
+
+
+<!-- <div id="disqus_thread"></div>
+<script>
+  // it seems slowly page, so i annotation it.
+  // disqus评论系统
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  var disqus_config = function () {
+    this.page.url = 'https://mallow-fight.github.io/';  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = 'https://mallow-fight.github.io/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://mallow-blog.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
+    </div>
+    <script src="/js/smooth-scroll.min.js"></script>
+  
+  <!-- main custom script for sidebars, version selects etc. -->
+  <script src="/js/css.escape.js"></script>
+  <script src="/js/common.js"></script>
+  <!-- search -->
+  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/search.css">
+  <script src="/js/docsearch.js"></script>
+  <script>
+  [
+    '#search-query-nav',
+    '#search-query-sidebar',
+    '#search-query-menu'
+  ].forEach(function (selector) {
+    if (!document.querySelector(selector)) return
+    docsearch({
+      appId: 'FKZQZEMOI4',
+      apiKey: '82fdcfac2e888595cb2807aa60aaad58',
+      indexName: 'prod_blog',
+      inputSelector: selector
+    })
+  })
+  </script>
+  <!-- fastclick -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+</body>
+</html>
