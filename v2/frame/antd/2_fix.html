@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>介绍 - mallow</title>
+  <title>修复 - mallow</title>
   <meta charset="utf-8">
   <meta name="description" content="mallow's blog.">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
   <meta property="og:type" content="article">
-  <meta property="og:title" content="介绍 — mallow">
+  <meta property="og:title" content="修复 — mallow">
   <meta property="og:description" content="mallow's blog.">
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120215204-1"></script>
@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="/css/page.css">
   <!-- import vue from there so that you can use vue in markdown -->
   <script src="/js/vue.min.js"></script>
-  <script>window.PAGE_TYPE = "v2/theory/dataStructure"</script>
+  <script>window.PAGE_TYPE = "v2/frame/antd"</script>
 </head>
 <body class="docs">
   <div id="mobile-bar" >
@@ -216,36 +216,29 @@
         <div class="guide-links">
   
   
-    <span style="float: right;"><a style="color: green;" href="/v2/theory/dataStructure/2_list.html">表</a> →</span>
   
   
+    <span style="float: right; margin-right: 30px;">← <a style="color: goldenrod;" href="/v2/frame/antd/1_intro.html">介绍</a></span>
   
 </div>
 
   <div class="sidebar">
   <div class="sidebar-inner">
-    <h3>当前位置：v2/theory/dataStructure</h3>
+    <h3>当前位置：v2/frame/antd</h3>
     <div class="list">
       <ul class="menu-root">
   
     
       <li>
-        <a href="/v2/theory/dataStructure/1_intro.html" class="sidebar-link current">
+        <a href="/v2/frame/antd/1_intro.html" class="sidebar-link">
           介绍
         </a>
       </li>
       
     
       <li>
-        <a href="/v2/theory/dataStructure/2_list.html" class="sidebar-link">
-          表
-        </a>
-      </li>
-      
-    
-      <li>
-        <a href="/v2/theory/dataStructure/3_queue.html" class="sidebar-link">
-          队列
+        <a href="/v2/frame/antd/2_fix.html" class="sidebar-link current">
+          修复
         </a>
       </li>
       
@@ -428,120 +421,34 @@
 </div>
 
 
-<div class="content v2/theory/dataStructure with-sidebar ">
+<div class="content v2/frame/antd with-sidebar ">
   <ul class="menu-root">
   
 </ul>
   
-    <h1>介绍</h1>
+    <h1>修复</h1>
   
-  <ol>
-<li>数据作为计算机加工处理的对象，如何在计算机中表示和存储是计算机科学研究的主要内容之一，更是计算机技术需要解决的关键问题之一。</li>
-<li>数据是计算机化的信息，是计算机处理的主要对象。</li>
-<li>科学计算、数据处理、过程控制、文件存储、数据库技术等，都是对数据进行加工处理的过程。</li>
-<li>因此，要设计出一个结构好、效率高的程序，必须研究数据的的特性、数据间的相互关系及其对应的存储表示方法，并利用这些特性和关系设计对应的算法和程序。</li>
+  <h2 id="面包屑链接"><a href="#面包屑链接" class="headerlink" title="面包屑链接"></a>面包屑链接</h2><ol>
+<li>这个不仅仅有href，而且点击事件代理了</li>
+<li>需要阻止事件冒泡，需要移除自带的事件</li>
+<li>触发自定义的点击事件</li>
 </ol>
-<h2 id="从问题到程序"><a href="#从问题到程序" class="headerlink" title="从问题到程序"></a>从问题到程序</h2><ol>
-<li>“数据结构”的主要研究内容是数据之间的逻辑关系和物理实现，即探索有利的数据组织形式及存取方式。</li>
-<li>想要更好的运用计算机来解决实际问题，仅仅依赖几种计算机程序设计语言是不够的，还必须学习和掌握数据结构的有关知识。</li>
-<li>使用计算机来解决一个具体问题时，一般需要经过下列几个步骤：<br><img src="./images/question2result.png" alt="question2result"></li>
-<li>由于当时所涉及的运算对象是简单的整型数据、实型数据或布尔型数据，所以程序设计者的主要精力集中在程序设计的技巧上，而无需重视数据结构。</li>
-<li>随着计算机应用领域的扩大和软/硬件的发展，非数值计算问题显得越来越重要。</li>
-<li>当今处理非数值计算性问题占用了90%以上的机器时间，这类问题涉及的处理对象不再是简单的数据类型，其形式更加多样，结构更为复杂，数据元素之间的相互关系一般无法直接用数学方程式加以描述。</li>
-<li>解决这类问题的关键不再是数学分析和计算方法，而是设计出合适的数据结构，以便有效地解决问题。</li>
-</ol>
-<h2 id="有关概念和术语"><a href="#有关概念和术语" class="headerlink" title="有关概念和术语"></a>有关概念和术语</h2><ol>
-<li><strong>数据</strong>：信息的载体，能够被计算机识别、存储和处理。是计算机程序加工的原料，应用程序能处理数值数据（整数、实数、复数），非数值数据（字符、文字、图形、图像、语音）。</li>
-<li><strong>数据元素</strong>：数据的基本单位，在计算机程序中通常作为一个整体进行考虑和处理，一个数据元素由若干个数据项组成。</li>
-<li><strong>数据项</strong>：指不可分割的、具有独立意义的最小数据单位，有时也称为字段或域。</li>
-<li><strong>数据结构</strong>：互相之间存在着一种或多种关系的数据元素的集合。<ol>
-<li><em>集合结构</em>：数据元素之间的关系是“属于同一个集合”。</li>
-<li><em>线性结构</em>：除了属于同一个集合外，还存在着一对一的顺序关系。</li>
-<li><em>树形结构</em>：除了属于同一个集合外，还存在着一对多的顺序关系。</li>
-<li><em>图状结构</em>：除了属于同一个集合外，还存在着多对多的任意关系，也称网状结构。<br><img src="./images/data-type.png" alt="数据结构类型"></li>
-</ol>
-</li>
-<li><strong>一个数据结构有两个要素</strong>：一是数据元素，二是数据元素之间的关系，通常可以采用一个二元组来表示：<code>Data_Structure = (D, R)</code>，D是数据元素集合，R是D中元素之间关系的集合。</li>
-<li><strong>数据结构包括数据的逻辑结构和物理结构</strong>：<ol>
-<li><em>逻辑结构</em>：从具体问题抽象出来的数学模型，与数据的存储无关。</li>
-<li><em>物理结构</em>：数据的逻辑结构在计算机中的存储表示（映像），也称存储结构。数据的存储方法包括顺序存储和链式存储：<ol>
-<li><em>顺序存储</em>：通过数据元素在计算机中存储位置关系来表示元素间的逻辑关系，通常把逻辑上相邻的元素存储在物理位置相邻的存储单元中。是一种最基本的存储表示方法，通常借助程序设计语言中的数组来实现。</li>
-<li><em>链式存储</em>：对逻辑上相邻的元素不要求其物理位置相邻，元素间的逻辑关系通过指针字段来表示，通常借助程序设计语言中的指针来实现。</li>
-<li>其他：索引存储、散列表存储。</li>
-</ol>
-</li>
-</ol>
-</li>
-<li><strong>数据类型</strong><ol>
-<li>在高级程序设计语言中用以限制变量取值范围和可能进行的操作的总和称为数据类型。</li>
-<li>两类：<ol>
-<li>非结构的原子类型，不可再分解（如C语言中的：整型、实型、字符型、指针类型和空类型）。</li>
-<li>结构类型：由多个结构类型组成，并可以分解，结构类型的成分可以是非结构的，也可以是结构的（例：数组中的元素）。</li>
-</ol>
-</li>
-</ol>
-</li>
-<li><strong>抽象数据类型</strong><ol>
-<li>指一个数学模型及定义在该模型上的一组操作（如不同处理器中的整数表示，在用户看来都是相同的）。</li>
-<li>一般可以由元素、关系及操作三个要素来定义。</li>
-</ol>
-</li>
-</ol>
-<h2 id="算法及算法分析"><a href="#算法及算法分析" class="headerlink" title="算法及算法分析"></a>算法及算法分析</h2><h3 id="算法特性"><a href="#算法特性" class="headerlink" title="算法特性"></a>算法特性</h3><ol>
-<li>有穷性：必须在有穷步之后结束，也就是在有限时间内完成。</li>
-<li>确定性：每一步必须有确切的定义，无二义性，且在任何条件下算法只有唯一一条执行路径，即对于相同的输入只能得出相同的输出。</li>
-<li>可行性：算法中的每一步都可以通过已经实现的基本运算的有限次执行得以实现。</li>
-<li>输入：一个算法具有零个或多个输入，这些输入取自特定的数据对象集合。</li>
-<li>输出：一个算法具有一个或多个输出，这些输出同输入之间存在某种特定的关系。</li>
-</ol>
-<h3 id="算法设计"><a href="#算法设计" class="headerlink" title="算法设计"></a>算法设计</h3><ol>
-<li>正确性：算法的执行结果应当满足预先规定的功能和性能要求。</li>
-<li>可读性：一个算法应当思路清晰、层次分明、简单明了、易读易懂。</li>
-<li>健壮性：当输入不合法数据时，应能适当处理，不至于引起严重后果。</li>
-<li>高效性：有效使用存储控价和有较好的时间效率。</li>
-</ol>
-<h3 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h3><ol>
-<li>自然语言描述。</li>
-<li>框图算法描述。</li>
-<li>伪代码算法描述。</li>
-<li>高级程序设计语言编写的程序或函数。</li>
-</ol>
-<h3 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h3><p><strong>好的算法除了上述提到的基本要求外，还必须以较少的时间和空间代价来解决相同规模的问题。算法分析就是预先分析算法在实际执行时的时空代价指标。</strong></p>
-<p><strong>影响算法效率的因素：</strong></p>
-<ol>
-<li>硬件的速度：即主机本身运行速度，主要与CPU的主频和字长有关，也与主机系统采用的技术有关，如多机系统的运算速度一般比单机系统要快。</li>
-<li>实现算法的程序设计语言。</li>
-<li>编译程序所生成目标代码的质量。</li>
-<li>算法所采用的策略，一般情况下时间指标和空间指标常常是矛盾的两个方面。</li>
-<li>问题的规模。</li>
-</ol>
-<h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><ol>
-<li>指该程序的运行时间与问题规模的对应关系。</li>
-<li>使用大O记号表示算法的时间复杂度，称为算法的渐进时间复杂度，意思就是这个渐进时间复杂度是算法的最理想情况，大多数情况下算法都慢于这个复杂度。</li>
-</ol>
-<h3 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h3><ol>
-<li>指程序运行从开始到结束所需的存储量与问题规模的对应关系。</li>
-<li>一般而言，常常以算法执行时间作为算法优劣。</li>
-</ol>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
-<p>数据结构（邓文华）</p>
-</blockquote>
-
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">fixBreadLink = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">const</span> eles = <span class="built_in">document</span>.querySelectorAll(<span class="string">'.ant-breadcrumb-link'</span>);</span><br><span class="line">	<span class="keyword">const</span> eleA = eles[<span class="number">3</span>].children[<span class="number">0</span>];</span><br><span class="line">	eleA.removeAttribute(<span class="string">'href'</span>);</span><br><span class="line">	eleA.addEventListener(<span class="string">'click'</span>, (e) =&gt; &#123;</span><br><span class="line">		e.stopPropagation();</span><br><span class="line">		<span class="keyword">this</span>.handleOnClick();</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   <div class="guide-links">
     
     
+      <span>← <a href="/v2/frame/antd/1_intro.html">介绍</a></span>
     
     
-      <span style="float: right;"><a href="/v2/theory/dataStructure/2_list.html">表</a> →</span>
     
   </div>
   <div class="footer">
     发现错误？想参与编辑？
-    <a href="https://github.com/mallow-fight/blog/tree/master/source/v2/theory/dataStructure/1_intro.md" target="_blank">
+    <a href="https://github.com/mallow-fight/blog/tree/master/source/v2/frame/antd/2_fix.md" target="_blank">
       在 GitHub 上编辑此页！
     </a>
     
-    <span>更新于：2019-06-21 14:06:34</span>
+    <span>更新于：2019-06-24 17:06:95</span>
   </div>
 </div>
 
