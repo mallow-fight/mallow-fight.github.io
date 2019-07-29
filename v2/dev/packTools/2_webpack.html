@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>队列 - mallow</title>
+  <title>介绍 - mallow</title>
   <meta charset="utf-8">
   <meta name="description" content="mallow's blog.">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
   <meta property="og:type" content="article">
-  <meta property="og:title" content="队列 — mallow">
+  <meta property="og:title" content="介绍 — mallow">
   <meta property="og:description" content="mallow's blog.">
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120215204-1"></script>
@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="/css/page.css">
   <!-- import vue from there so that you can use vue in markdown -->
   <script src="/js/vue.min.js"></script>
-  <script>window.PAGE_TYPE = "v2/theory/dataStructure"</script>
+  <script>window.PAGE_TYPE = "packTools"</script>
 </head>
 <body class="docs">
   <div id="mobile-bar" >
@@ -216,52 +216,29 @@
         <div class="guide-links">
   
   
-    <span style="float: right;"><a style="color: green;" href="/v2/theory/dataStructure/4_stack.html">堆栈</a> →</span>
   
   
-  
-    <span style="float: right; margin-right: 30px;">← <a style="color: goldenrod;" href="/v2/theory/dataStructure/2_list.html">表</a></span>
+    <span style="float: right; margin-right: 30px;">← <a style="color: goldenrod;" href="/v2/dev/packTools/1_intro.html">介绍</a></span>
   
 </div>
 
   <div class="sidebar">
   <div class="sidebar-inner">
-    <h3>当前位置：v2/theory/dataStructure</h3>
+    <h3>当前位置：packTools</h3>
     <div class="list">
       <ul class="menu-root">
   
     
       <li>
-        <a href="/v2/theory/dataStructure/1_intro.html" class="sidebar-link">
+        <a href="/v2/dev/packTools/1_intro.html" class="sidebar-link current">
           介绍
         </a>
       </li>
       
     
       <li>
-        <a href="/v2/theory/dataStructure/2_list.html" class="sidebar-link">
-          表
-        </a>
-      </li>
-      
-    
-      <li>
-        <a href="/v2/theory/dataStructure/3_queue.html" class="sidebar-link current">
-          队列
-        </a>
-      </li>
-      
-    
-      <li>
-        <a href="/v2/theory/dataStructure/4_stack.html" class="sidebar-link">
-          堆栈
-        </a>
-      </li>
-      
-    
-      <li>
-        <a href="/v2/theory/dataStructure/5_tree.html" class="sidebar-link">
-          树
+        <a href="/v2/dev/packTools/2_webpack.html" class="sidebar-link current">
+          介绍
         </a>
       </li>
       
@@ -444,37 +421,35 @@
 </div>
 
 
-<div class="content v2/theory/dataStructure with-sidebar ">
+<div class="content packTools with-sidebar ">
   <ul class="menu-root">
   
 </ul>
   
-    <h1>队列</h1>
+    <h1>介绍</h1>
   
-  <h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><ol>
-<li>是一种运算受限的线性表，只允许在表的一端进行插入，而在表的另一端进行删除，允许插入的一端称为队尾，允许删除的一端称为队头。</li>
-<li>使用js实现的话可以用数组作为载体，这样实现队列的入队、出队等操作就很方便了。</li>
-</ol>
-<h2 id="杨辉三角"><a href="#杨辉三角" class="headerlink" title="杨辉三角"></a>杨辉三角</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">yhsj</span>(<span class="params">line</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (line &lt; <span class="number">1</span>) <span class="keyword">return</span> <span class="built_in">console</span>.log(<span class="string">'line must &gt;= 1'</span>);</span><br><span class="line">	<span class="keyword">const</span> index = line - <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">const</span> session = [];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt;= index; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (i === <span class="number">0</span>) &#123;</span><br><span class="line">			session.push([<span class="number">1</span>, <span class="number">1</span>])</span><br><span class="line">			<span class="built_in">console</span>.log(session[i]);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">const</span> temp = [];</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">let</span> j = <span class="number">0</span>; j &lt;= i + <span class="number">1</span>; j++) &#123;</span><br><span class="line">				<span class="keyword">const</span> top = session[i - <span class="number">1</span>];</span><br><span class="line">				<span class="keyword">const</span> top_left_item = top[j - <span class="number">1</span>];</span><br><span class="line">				<span class="keyword">const</span> top_right_item = top[j];</span><br><span class="line">				<span class="keyword">if</span> (!top_left_item || !top_right_item) &#123;</span><br><span class="line">					temp.push(<span class="number">1</span>);</span><br><span class="line">				&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">					<span class="keyword">const</span> value = top_left_item + top_right_item;</span><br><span class="line">					temp.push(value);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			session.push(temp);</span><br><span class="line">			<span class="built_in">console</span>.log(temp);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> session;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><h3 id="数组形式"><a href="#数组形式" class="headerlink" title="数组形式"></a>数组形式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">QueueArray</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.queue = [];</span><br><span class="line">	<span class="keyword">this</span>.clear = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.queue = [];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">this</span>.put = <span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.queue.push(item);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">this</span>.poll = <span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.queue.shift();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">this</span>.get = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(<span class="keyword">this</span>.queue));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// example</span></span><br><span class="line"><span class="keyword">const</span> queue = <span class="keyword">new</span> QueueArray();</span><br><span class="line">queue.put(<span class="string">'mallow'</span>);</span><br><span class="line">queue.get();</span><br><span class="line">queue.put(<span class="string">'lucy'</span>);</span><br><span class="line">queue.put(<span class="string">'annie'</span>);</span><br><span class="line">queue.get();</span><br><span class="line">queue.poll();</span><br><span class="line">queue.get();</span><br></pre></td></tr></table></figure>
-<h3 id="链表形式"><a href="#链表形式" class="headerlink" title="链表形式"></a>链表形式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">QueueList</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.list = &#123;</span><br><span class="line">		content: <span class="literal">null</span>,</span><br><span class="line">		next: <span class="literal">null</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">this</span>.put = <span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">let</span> end = <span class="keyword">this</span>.list;</span><br><span class="line">		<span class="keyword">while</span>(end.next) &#123;</span><br><span class="line">			end = end.next;</span><br><span class="line">		&#125;</span><br><span class="line">		end.next = &#123;</span><br><span class="line">			content: item,</span><br><span class="line">			next: <span class="literal">null</span></span><br><span class="line">		&#125;;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.list;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">this</span>.poll = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (!<span class="keyword">this</span>.list.next) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="string">'没东西给你poll了'</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 去除头指针</span></span><br><span class="line">		<span class="keyword">this</span>.list = <span class="keyword">this</span>.list.next.next;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">this</span>.get = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(<span class="keyword">this</span>.list));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// example</span></span><br><span class="line"><span class="keyword">const</span> queue = <span class="keyword">new</span> QueueList();</span><br><span class="line">queue.put(<span class="string">'mallow'</span>);</span><br><span class="line">queue.get();</span><br><span class="line">queue.put(<span class="string">'lucy'</span>);</span><br><span class="line">queue.put(<span class="string">'annie'</span>);</span><br><span class="line">queue.get();</span><br><span class="line">queue.poll();</span><br><span class="line">queue.get();</span><br></pre></td></tr></table></figure>
+  <h2 id="typeof导致的死循环"><a href="#typeof导致的死循环" class="headerlink" title="typeof导致的死循环"></a>typeof导致的死循环</h2><ul>
+<li>注意@babel/preset-env的版本要小于@babel/core的版本</li>
+</ul>
+<h2 id="theme-js的使用"><a href="#theme-js的使用" class="headerlink" title="theme.js的使用"></a>theme.js的使用</h2><ul>
+<li>由于使用了babel-plugin-import之后会生成对应组件的less，项目中已经有了对应的webpack配置了，所以会直接将theme加到编译less的过程中，故只要保证组件库生成正确的less就可以了。</li>
+</ul>
+
   <div class="guide-links">
     
     
-      <span>← <a href="/v2/theory/dataStructure/2_list.html">表</a></span>
+      <span>← <a href="/v2/dev/packTools/1_intro.html">介绍</a></span>
     
     
-    
-      <span style="float: right;"><a href="/v2/theory/dataStructure/4_stack.html">堆栈</a> →</span>
     
   </div>
   <div class="footer">
     发现错误？想参与编辑？
-    <a href="https://github.com/mallow-fight/blog/tree/master/source/v2/theory/dataStructure/3_queue.md" target="_blank">
+    <a href="https://github.com/mallow-fight/blog/tree/master/source/v2/dev/packTools/2_webpack.md" target="_blank">
       在 GitHub 上编辑此页！
     </a>
     
-    <span>更新于：2019-07-29 15:07:96</span>
+    <span>更新于：2019-07-10 18:07:04</span>
   </div>
 </div>
 

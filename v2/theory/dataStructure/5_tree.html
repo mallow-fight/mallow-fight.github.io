@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>队列 - mallow</title>
+  <title>树 - mallow</title>
   <meta charset="utf-8">
   <meta name="description" content="mallow's blog.">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
   <meta property="og:type" content="article">
-  <meta property="og:title" content="队列 — mallow">
+  <meta property="og:title" content="树 — mallow">
   <meta property="og:description" content="mallow's blog.">
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120215204-1"></script>
@@ -216,11 +216,9 @@
         <div class="guide-links">
   
   
-    <span style="float: right;"><a style="color: green;" href="/v2/theory/dataStructure/4_stack.html">堆栈</a> →</span>
   
   
-  
-    <span style="float: right; margin-right: 30px;">← <a style="color: goldenrod;" href="/v2/theory/dataStructure/2_list.html">表</a></span>
+    <span style="float: right; margin-right: 30px;">← <a style="color: goldenrod;" href="/v2/theory/dataStructure/4_stack.html">堆栈</a></span>
   
 </div>
 
@@ -246,7 +244,7 @@
       
     
       <li>
-        <a href="/v2/theory/dataStructure/3_queue.html" class="sidebar-link current">
+        <a href="/v2/theory/dataStructure/3_queue.html" class="sidebar-link">
           队列
         </a>
       </li>
@@ -260,7 +258,7 @@
       
     
       <li>
-        <a href="/v2/theory/dataStructure/5_tree.html" class="sidebar-link">
+        <a href="/v2/theory/dataStructure/5_tree.html" class="sidebar-link current">
           树
         </a>
       </li>
@@ -449,32 +447,39 @@
   
 </ul>
   
-    <h1>队列</h1>
+    <h1>树</h1>
   
-  <h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><ol>
-<li>是一种运算受限的线性表，只允许在表的一端进行插入，而在表的另一端进行删除，允许插入的一端称为队尾，允许删除的一端称为队头。</li>
-<li>使用js实现的话可以用数组作为载体，这样实现队列的入队、出队等操作就很方便了。</li>
+  <h2 id="todos"><a href="#todos" class="headerlink" title="todos"></a>todos</h2><ul>
+<li style="list-style: none"><input type="checkbox"> 如何使用JS表示树和树的操作方法</li>
+<li style="list-style: none"><input type="checkbox"> 如何根据树的遍历结果反推出树的结构</li>
+</ul>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><ol>
+<li>树是由根结点和若干颗子树构成的。</li>
+<li>树是由一个集合以及在该集合上定义的一种关系构成的。</li>
+<li>集合中的元素称为树的结点，所定义的关系称为父子关系。</li>
+<li>父子关系在树的结点之间建立了一个层次结构，在这种层次结构中有一个结点具有特殊的地位，这个结点称为该树的根结点，或称为树根。</li>
 </ol>
-<h2 id="杨辉三角"><a href="#杨辉三角" class="headerlink" title="杨辉三角"></a>杨辉三角</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">yhsj</span>(<span class="params">line</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (line &lt; <span class="number">1</span>) <span class="keyword">return</span> <span class="built_in">console</span>.log(<span class="string">'line must &gt;= 1'</span>);</span><br><span class="line">	<span class="keyword">const</span> index = line - <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">const</span> session = [];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt;= index; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (i === <span class="number">0</span>) &#123;</span><br><span class="line">			session.push([<span class="number">1</span>, <span class="number">1</span>])</span><br><span class="line">			<span class="built_in">console</span>.log(session[i]);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">const</span> temp = [];</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">let</span> j = <span class="number">0</span>; j &lt;= i + <span class="number">1</span>; j++) &#123;</span><br><span class="line">				<span class="keyword">const</span> top = session[i - <span class="number">1</span>];</span><br><span class="line">				<span class="keyword">const</span> top_left_item = top[j - <span class="number">1</span>];</span><br><span class="line">				<span class="keyword">const</span> top_right_item = top[j];</span><br><span class="line">				<span class="keyword">if</span> (!top_left_item || !top_right_item) &#123;</span><br><span class="line">					temp.push(<span class="number">1</span>);</span><br><span class="line">				&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">					<span class="keyword">const</span> value = top_left_item + top_right_item;</span><br><span class="line">					temp.push(value);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			session.push(temp);</span><br><span class="line">			<span class="built_in">console</span>.log(temp);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> session;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><h3 id="数组形式"><a href="#数组形式" class="headerlink" title="数组形式"></a>数组形式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">QueueArray</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.queue = [];</span><br><span class="line">	<span class="keyword">this</span>.clear = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.queue = [];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">this</span>.put = <span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.queue.push(item);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">this</span>.poll = <span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.queue.shift();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">this</span>.get = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(<span class="keyword">this</span>.queue));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// example</span></span><br><span class="line"><span class="keyword">const</span> queue = <span class="keyword">new</span> QueueArray();</span><br><span class="line">queue.put(<span class="string">'mallow'</span>);</span><br><span class="line">queue.get();</span><br><span class="line">queue.put(<span class="string">'lucy'</span>);</span><br><span class="line">queue.put(<span class="string">'annie'</span>);</span><br><span class="line">queue.get();</span><br><span class="line">queue.poll();</span><br><span class="line">queue.get();</span><br></pre></td></tr></table></figure>
-<h3 id="链表形式"><a href="#链表形式" class="headerlink" title="链表形式"></a>链表形式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">QueueList</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.list = &#123;</span><br><span class="line">		content: <span class="literal">null</span>,</span><br><span class="line">		next: <span class="literal">null</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">this</span>.put = <span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">let</span> end = <span class="keyword">this</span>.list;</span><br><span class="line">		<span class="keyword">while</span>(end.next) &#123;</span><br><span class="line">			end = end.next;</span><br><span class="line">		&#125;</span><br><span class="line">		end.next = &#123;</span><br><span class="line">			content: item,</span><br><span class="line">			next: <span class="literal">null</span></span><br><span class="line">		&#125;;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.list;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">this</span>.poll = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (!<span class="keyword">this</span>.list.next) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="string">'没东西给你poll了'</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 去除头指针</span></span><br><span class="line">		<span class="keyword">this</span>.list = <span class="keyword">this</span>.list.next.next;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">this</span>.get = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(<span class="keyword">this</span>.list));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// example</span></span><br><span class="line"><span class="keyword">const</span> queue = <span class="keyword">new</span> QueueList();</span><br><span class="line">queue.put(<span class="string">'mallow'</span>);</span><br><span class="line">queue.get();</span><br><span class="line">queue.put(<span class="string">'lucy'</span>);</span><br><span class="line">queue.put(<span class="string">'annie'</span>);</span><br><span class="line">queue.get();</span><br><span class="line">queue.poll();</span><br><span class="line">queue.get();</span><br></pre></td></tr></table></figure>
+<h3 id="完全二叉树"><a href="#完全二叉树" class="headerlink" title="完全二叉树"></a>完全二叉树</h3><ol>
+<li>若设二叉树的深度为h，除第h层外，其它各层（1～h-1）的结点数都达到最大个数，第h层所有的结点都连续集中在最左边，这就是完全二叉树。</li>
+</ol>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><pre><code class="js">
+</code></pre>
+
   <div class="guide-links">
     
     
-      <span>← <a href="/v2/theory/dataStructure/2_list.html">表</a></span>
+      <span>← <a href="/v2/theory/dataStructure/4_stack.html">堆栈</a></span>
     
     
-    
-      <span style="float: right;"><a href="/v2/theory/dataStructure/4_stack.html">堆栈</a> →</span>
     
   </div>
   <div class="footer">
     发现错误？想参与编辑？
-    <a href="https://github.com/mallow-fight/blog/tree/master/source/v2/theory/dataStructure/3_queue.md" target="_blank">
+    <a href="https://github.com/mallow-fight/blog/tree/master/source/v2/theory/dataStructure/5_tree.md" target="_blank">
       在 GitHub 上编辑此页！
     </a>
     
-    <span>更新于：2019-07-29 15:07:96</span>
+    <span>更新于：2019-07-29 17:07:81</span>
   </div>
 </div>
 
