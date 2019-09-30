@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <title>多媒体 - mallow</title>
   <meta charset="utf-8">
   <meta name="description" content="mallow's blog.">
@@ -29,7 +29,7 @@
   <script>window.PAGE_TYPE = "html"</script>
 </head>
 <body class="docs">
-  <div id="mobile-bar" >
+  <div id="mobile-bar">
     <a class="menu-button"></a>
     <a class="logo" href="/"></a>
   </div>
@@ -522,6 +522,7 @@
 </blockquote>
 <h3 id="title"><a href="#title" class="headerlink" title="title"></a>title</h3><p><strong>没有空间时可以使用</strong></p>
 <h3 id="解说图片"><a href="#解说图片" class="headerlink" title="解说图片"></a>解说图片</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">figure</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"xxx"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">figcaption</span>&gt;</span>a handsome dog.<span class="tag">&lt;/<span class="name">figcaption</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">figure</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="css背景图片"><a href="#css背景图片" class="headerlink" title="css背景图片"></a>css背景图片</h3><p><strong>如果图像对您的内容有意义，则应使用HTML图像。如果图像纯粹是装饰，则应使用CSS背景图片。</strong></p>
 <h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><h3 id="标签（-lt-video-gt-）"><a href="#标签（-lt-video-gt-）" class="headerlink" title="标签（&lt;video&gt;）"></a>标签<code>（&lt;video&gt;）</code></h3><ol>
 <li><p>src: 视频资源</p>
@@ -532,6 +533,7 @@
 </li>
 </ol>
 <h3 id="多格式支持"><a href="#多格式支持" class="headerlink" title="多格式支持"></a>多格式支持</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">controls</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"test.mp4"</span> <span class="attr">type</span>=<span class="string">"video/mp4"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"test.webm"</span> <span class="attr">type</span>=<span class="string">"video/webm"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>your brower doesn't support HTML5 video. Here is a </span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"test.xxx"</span>&gt;</span>link to the video<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ol>
 <li><p>width/height：<code>&lt;audio&gt;</code>不支持，无视觉部件</p>
 </li>
@@ -558,8 +560,8 @@
 <li><p>timed descriptions: 文字转换为音频，用于服务有视觉障碍的人</p>
 </li>
 </ol>
-<p>例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">controls</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"test.mp4"</span> <span class="attr">type</span>=<span class="string">"video/mp4"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"test.webm"</span> <span class="attr">type</span>=<span class="string">"video/webm"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">track</span> <span class="attr">kind</span>=<span class="string">"subtitles"</span> <span class="attr">src</span>=<span class="string">"subtitles_en.vtt"</span> <span class="attr">srclang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-
+<p>例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">controls</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"test.mp4"</span> <span class="attr">type</span>=<span class="string">"video/mp4"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"test.webm"</span> <span class="attr">type</span>=<span class="string">"video/webm"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">track</span> <span class="attr">kind</span>=<span class="string">"subtitles"</span> <span class="attr">src</span>=<span class="string">"subtitles_en.vtt"</span> <span class="attr">srclang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
   <div class="guide-links">
     
     
@@ -607,7 +609,7 @@
   <script src="/js/css.escape.js"></script>
   <script src="/js/common.js"></script>
   <!-- search -->
-  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/css/search.css">
   <script src="/js/docsearch.js"></script>
   <script>

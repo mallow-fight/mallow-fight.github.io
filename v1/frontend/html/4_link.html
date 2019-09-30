@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <title>Url&Path - mallow</title>
   <meta charset="utf-8">
   <meta name="description" content="mallow's blog.">
@@ -29,7 +29,7 @@
   <script>window.PAGE_TYPE = "html"</script>
 </head>
 <body class="docs">
-  <div id="mobile-bar" >
+  <div id="mobile-bar">
     <a class="menu-button"></a>
     <a class="logo" href="/"></a>
   </div>
@@ -466,9 +466,13 @@
     <h1>Url&Path</h1>
   
   <h2 id="统一资源定位器-URL-与路径-path"><a href="#统一资源定位器-URL-与路径-path" class="headerlink" title="统一资源定位器(URL)与路径(path)"></a>统一资源定位器(URL)与路径(path)</h2><h3 id="指向相同目录"><a href="#指向相同目录" class="headerlink" title="指向相同目录"></a>指向相同目录</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"contacts.html"</span>&gt;</span>contacts page<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="指向子目录"><a href="#指向子目录" class="headerlink" title="指向子目录"></a>指向子目录</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"projects/child.html"</span>&gt;</span>go to child<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="指向上级目录"><a href="#指向上级目录" class="headerlink" title="指向上级目录"></a>指向上级目录</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"../parent/parent.html"</span>&gt;</span>go to parent<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="文档片段"><a href="#文档片段" class="headerlink" title="文档片段"></a>文档片段</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 当前页面跳转到指定元素 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#test"</span>&gt;</span> go to test<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"test"</span>&gt;</span>this is test<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 跳转到不同页面的指定元素 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"test.html#test"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- test.html --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"test"</span>&gt;</span>this is test.html #test<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="绝对链接"><a href="#绝对链接" class="headerlink" title="绝对链接"></a>绝对链接</h3><p><strong>访问文件的完整链接，可以是服务器上的路径，也可以是本地路径。</strong></p>
 <blockquote>
 <p>绝对URL总是指向相同的位置，不管它在哪里使用。<br>一般可以省略<code>index.html</code>，这是访问一个链接的默认文件名。</p>
@@ -534,7 +538,7 @@
   <script src="/js/css.escape.js"></script>
   <script src="/js/common.js"></script>
   <!-- search -->
-  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/css/search.css">
   <script src="/js/docsearch.js"></script>
   <script>

@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <title>作用域与闭包 - mallow</title>
   <meta charset="utf-8">
   <meta name="description" content="mallow's blog.">
@@ -29,7 +29,7 @@
   <script>window.PAGE_TYPE = "js"</script>
 </head>
 <body class="docs">
-  <div id="mobile-bar" >
+  <div id="mobile-bar">
     <a class="menu-button"></a>
     <a class="logo" href="/"></a>
   </div>
@@ -497,14 +497,17 @@
 <li>例子1</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">2</span></span><br><span class="line"><span class="keyword">var</span> a</span><br><span class="line"><span class="built_in">console</span>.log(a) <span class="comment">// 2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 等价于</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a</span><br><span class="line">a = <span class="number">2</span></span><br><span class="line"><span class="built_in">console</span>.log(a)</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>例子二</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a) <span class="comment">// undefined</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 等价于</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a</span><br><span class="line"><span class="built_in">console</span>.log(a)</span><br><span class="line">a = <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>例子三</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果a声明了变量和函数，那么打印出来的一直都会是函数，而不是变量值，这个地方页体现了函数优先</span></span><br><span class="line"><span class="built_in">console</span>.log(a) <span class="comment">// function a...</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">1</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><p>在你的代码任何部分被执行之前，所有的声明，变量和函数都会被首先处理，全局作用域和每个局部作用域都会进行这种处理。</p>
 </li>
@@ -564,7 +567,7 @@
   <script src="/js/css.escape.js"></script>
   <script src="/js/common.js"></script>
   <!-- search -->
-  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/css/search.css">
   <script src="/js/docsearch.js"></script>
   <script>

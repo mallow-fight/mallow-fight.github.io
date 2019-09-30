@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <title>mac相关 - mallow</title>
   <meta charset="utf-8">
   <meta name="description" content="mallow's blog.">
@@ -29,7 +29,7 @@
   <script>window.PAGE_TYPE = "software"</script>
 </head>
 <body class="docs">
-  <div id="mobile-bar" >
+  <div id="mobile-bar">
     <a class="menu-button"></a>
     <a class="logo" href="/"></a>
   </div>
@@ -516,8 +516,11 @@
 <li>首先将输入法切换成美式输入法，然后打开activity monitor，将其中的中文输入法任务中止。回到输入法切换项，将输入法切换回中文输入法，即可。</li>
 </ul>
 <h2 id="mac获取秘钥"><a href="#mac获取秘钥" class="headerlink" title="mac获取秘钥"></a>mac获取秘钥</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.ssh <span class="comment"># 配置目录</span></span><br><span class="line">cat id_rsa.pub <span class="comment"># 公钥</span></span><br><span class="line">config <span class="comment"># 快捷登录服务器</span></span><br><span class="line"><span class="built_in">cd</span> /etc/nginx/conf.d <span class="comment"># 配置nginx目录</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="iterm-终端-操作指令"><a href="#iterm-终端-操作指令" class="headerlink" title="iterm(终端)操作指令"></a>iterm(终端)操作指令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># command</span></span><br><span class="line"><span class="built_in">command</span> + t <span class="comment"># 新建标签</span></span><br><span class="line"><span class="built_in">command</span> + w <span class="comment"># 关闭标签</span></span><br><span class="line"><span class="built_in">command</span> + number <span class="comment"># 切换标签</span></span><br><span class="line"><span class="built_in">command</span> + left or right <span class="comment"># 向左/向右 切换标签</span></span><br><span class="line"><span class="built_in">command</span> + enter <span class="comment"># 全屏显示</span></span><br><span class="line"><span class="built_in">command</span> + f <span class="comment"># 查找</span></span><br><span class="line"><span class="built_in">command</span> + d <span class="comment"># 垂直分屏</span></span><br><span class="line"><span class="built_in">command</span> + <span class="built_in">shift</span> + d <span class="comment"># 水平分屏</span></span><br><span class="line"><span class="built_in">command</span> + option + 方向键 <span class="comment"># 切换屏幕</span></span><br><span class="line"><span class="built_in">command</span> + ; <span class="comment"># 查看历史命令</span></span><br><span class="line"><span class="built_in">command</span> + <span class="built_in">shift</span> + h <span class="comment"># 查看剪贴板历史</span></span><br><span class="line"><span class="built_in">command</span> + r <span class="comment"># 清屏</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ctrl</span></span><br><span class="line">ctrl + u <span class="comment"># 清除当前行</span></span><br><span class="line">ctrl + a <span class="comment"># 到行首</span></span><br><span class="line">ctrl + e <span class="comment"># 到行尾</span></span><br><span class="line">ctrl + f/b <span class="comment"># 前进后退，相当于左右键，可以通过iterm的`profiles` - `open` - `keys` - `+`来绑定ctrl + b 为向后跳过一个单词</span></span><br><span class="line">ctrl + p <span class="comment"># 上一条命令</span></span><br><span class="line">ctrl + r <span class="comment"># 搜索命令历史</span></span><br><span class="line">ctrl + d <span class="comment"># 删除当前光标的字符</span></span><br><span class="line">ctrl + h <span class="comment"># 删除光标之前的单个字符</span></span><br><span class="line">ctrl + w <span class="comment"># 删除光标之前的单词</span></span><br><span class="line">ctrl + k <span class="comment"># 删除到文本末尾</span></span><br><span class="line">ctrl + t <span class="comment"># 交换光标处文本</span></span><br><span class="line">ctrl + l <span class="comment"># 清屏</span></span><br><span class="line">ctrl + u <span class="comment"># 清空当前行，无论光标在什么位置</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">i <span class="comment"># 进入编辑模式</span></span><br><span class="line">esc <span class="comment"># 退出编辑模式</span></span><br><span class="line">: <span class="comment"># 输入操作指令，比如</span></span><br><span class="line">  q! <span class="comment"># 离开vi，并放弃刚在缓冲区内编辑的内容</span></span><br><span class="line">  wq <span class="comment"># 将缓冲区内的资料写入磁盘中，并离开vi</span></span><br><span class="line">  x <span class="comment"># 同wq</span></span><br><span class="line">  X <span class="comment"># 文件加密</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="代理proxy"><a href="#代理proxy" class="headerlink" title="代理proxy"></a>代理proxy</h2><blockquote>
 <p><a href="https://github.com/2ndalpha/gasmask" target="_blank" rel="noopener">gasmask</a></p>
 </blockquote>
@@ -551,6 +554,7 @@
 </li>
 </ul>
 <h3 id="服务器和doker相关指令"><a href="#服务器和doker相关指令" class="headerlink" title="服务器和doker相关指令"></a>服务器和doker相关指令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置登录文件</span></span><br><span class="line">vim ~/.ssh/config</span><br><span class="line"><span class="comment"># 配置完成后可以这么登录</span></span><br><span class="line">ssh disney</span><br><span class="line"><span class="comment"># 显示服务器上docker的容器</span></span><br><span class="line">docker ps</span><br><span class="line"><span class="comment"># 进入这个容器</span></span><br><span class="line">docker <span class="built_in">exec</span> -it [contain id] bash</span><br><span class="line"><span class="comment"># 打印docker容器日志</span></span><br><span class="line">docker logs [contain id]</span><br><span class="line"><span class="comment"># 垃圾清理</span></span><br><span class="line">docker rmi $(docker images | grep <span class="string">"baidao"</span> | awk <span class="string">'&#123;print($3)&#125;'</span>)</span><br><span class="line">df -i</span><br></pre></td></tr></table></figure>
+
 <h2 id="查询-amp-终止端口占用"><a href="#查询-amp-终止端口占用" class="headerlink" title="查询&amp;终止端口占用"></a>查询&amp;终止端口占用</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lsof -i:xxxx <span class="comment"># 查找xxxx端口占用的pid</span></span><br><span class="line"><span class="built_in">kill</span> -9 <span class="variable">$pid</span> <span class="comment"># 关闭指定pid</span></span><br></pre></td></tr></table></figure>
   <div class="guide-links">
     
@@ -599,7 +603,7 @@
   <script src="/js/css.escape.js"></script>
   <script src="/js/common.js"></script>
   <!-- search -->
-  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/css/search.css">
   <script src="/js/docsearch.js"></script>
   <script>

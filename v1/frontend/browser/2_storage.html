@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <title>缓存 - mallow</title>
   <meta charset="utf-8">
   <meta name="description" content="mallow's blog.">
@@ -29,7 +29,7 @@
   <script>window.PAGE_TYPE = "browser"</script>
 </head>
 <body class="docs">
-  <div id="mobile-bar" >
+  <div id="mobile-bar">
     <a class="menu-button"></a>
     <a class="logo" href="/"></a>
   </div>
@@ -497,6 +497,7 @@
 <h3 id="大小限制"><a href="#大小限制" class="headerlink" title="大小限制"></a>大小限制</h3><p>4KB左右</p>
 <h3 id="存在时间"><a href="#存在时间" class="headerlink" title="存在时间"></a>存在时间</h3><p>如果不在浏览器中设置过期时间，<code>cookie</code>被保存在内存中，生命周期随浏览器的关闭而结束，这种<code>cookie</code>简称会话<code>cookie</code>。如果在浏览器中设置了<code>cookie</code>的过期时间，<code>cookie</code>被保存在硬盘中，关闭浏览器后，<code>cookie</code>数据仍然存在，直到过期时间结束才消失。</p>
 <h3 id="如何清除"><a href="#如何清除" class="headerlink" title="如何清除"></a>如何清除</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 设置cookie</span></span><br><span class="line"><span class="comment"> * @param &#123;string&#125; name  键名</span></span><br><span class="line"><span class="comment"> * @param &#123;string&#125; value 键值</span></span><br><span class="line"><span class="comment"> * @param &#123;integer&#125; days cookie周期</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setCookie</span>(<span class="params">name,value,days</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (days) &#123;</span><br><span class="line">        <span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">        date.setTime(date.getTime()+(days*<span class="number">24</span>*<span class="number">60</span>*<span class="number">60</span>*<span class="number">1000</span>));</span><br><span class="line">        <span class="keyword">var</span> expires = <span class="string">"; expires="</span>+date.toGMTString();</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> expires = <span class="string">""</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">document</span>.cookie = name+<span class="string">"="</span>+value+expires+<span class="string">"; path=/"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 获取cookie</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCookie</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> nameEQ = name + <span class="string">"="</span>;</span><br><span class="line">    <span class="keyword">var</span> ca = <span class="built_in">document</span>.cookie.split(<span class="string">';'</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i &lt; ca.length;i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> c = ca[i];</span><br><span class="line">        <span class="keyword">while</span> (c.charAt(<span class="number">0</span>)==<span class="string">' '</span>) c = c.substring(<span class="number">1</span>,c.length);</span><br><span class="line">        <span class="keyword">if</span> (c.indexOf(nameEQ) == <span class="number">0</span>) <span class="keyword">return</span> c.substring(nameEQ.length,c.length);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 删除cookie</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deleteCookie</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    setCookie(name,<span class="string">""</span>,<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="localstorage"><a href="#localstorage" class="headerlink" title="localstorage"></a>localstorage</h2><h3 id="存在时间-1"><a href="#存在时间-1" class="headerlink" title="存在时间"></a>存在时间</h3><p>除非被清除，否则永久保存</p>
 <h2 id="大小限制-1"><a href="#大小限制-1" class="headerlink" title="大小限制"></a>大小限制</h2><p>一般为5MB</p>
 <h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
@@ -554,7 +555,7 @@
   <script src="/js/css.escape.js"></script>
   <script src="/js/common.js"></script>
   <!-- search -->
-  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/css/search.css">
   <script src="/js/docsearch.js"></script>
   <script>

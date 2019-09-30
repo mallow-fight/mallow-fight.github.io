@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <title>异步 - mallow</title>
   <meta charset="utf-8">
   <meta name="description" content="mallow's blog.">
@@ -29,7 +29,7 @@
   <script>window.PAGE_TYPE = "special"</script>
 </head>
 <body class="docs">
-  <div id="mobile-bar" >
+  <div id="mobile-bar">
     <a class="menu-button"></a>
     <a class="logo" href="/"></a>
   </div>
@@ -502,7 +502,8 @@
 </li>
 <li><p>因为Job发生在当前的事件轮询tick的末尾，而定时器会在下一个事件轮询tick触发</p>
 </li>
-<li>Promises的异步行为基于Job的，所以搞明白它与事件轮询行为的联系是很重要的</li>
+<li><p>Promises的异步行为基于Job的，所以搞明白它与事件轮询行为的联系是很重要的</p>
+</li>
 </ul>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
 <li><p>一个JS程序总是被打断为两个或更多的代码块儿，第一个代码块儿现在运行，下一个代码块儿稍后运行，来响应一个事件。虽然程序是一块儿一块儿被执行的，但它们都共享相同的程序作用域和状态，所以对状态的每次修改都是在前一个状态之上的。</p>
@@ -549,6 +550,7 @@
 </li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ajax</span>(<span class="params">url, suc, fail</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">  xhr.open(<span class="string">'GET'</span>, url, <span class="literal">true</span>);</span><br><span class="line">  xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (xhr.readyState === <span class="number">4</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (xhr.status === <span class="number">200</span>) &#123;</span><br><span class="line">        suc(xhr.responseText);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        fail(xhr.responseText);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  xhr.send(<span class="literal">null</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="Promises"><a href="#Promises" class="headerlink" title="Promises"></a>Promises</h2><ul>
 <li><p>Promise很牛，解决了肆掠在回调代码中的控制倒转问题</p>
 </li>
@@ -560,6 +562,7 @@
 </li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Promise</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.resolveFn = <span class="literal">null</span>;</span><br><span class="line">  <span class="keyword">this</span>.rejectFn =  <span class="literal">null</span>;</span><br><span class="line">  <span class="keyword">const</span> _this = <span class="keyword">this</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">resolve</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> f = _this.resolveFn;</span><br><span class="line">    f(data);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">reject</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> f = <span class="keyword">this</span>.rejectFn;</span><br><span class="line">    f(err);</span><br><span class="line">  &#125;</span><br><span class="line">  fn(resolve, reject);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Promise</span>.prototype.then = <span class="function"><span class="keyword">function</span> (<span class="params">f</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.resolveFn = f;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Promise</span>.prototype.then = <span class="function"><span class="keyword">function</span> (<span class="params">f</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.rejectFn = f;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="Generator"><a href="#Generator" class="headerlink" title="Generator"></a>Generator</h2><ul>
 <li><p>一种es6的新函数类型，它不像普通函数那样运行至完成。相反，它可以暂停在一种中间完成状态（完整地保留它的状态），而且它可以从暂停的地方重新开始</p>
 </li>
@@ -622,7 +625,7 @@
   <script src="/js/css.escape.js"></script>
   <script src="/js/common.js"></script>
   <!-- search -->
-  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/css/search.css">
   <script src="/js/docsearch.js"></script>
   <script>

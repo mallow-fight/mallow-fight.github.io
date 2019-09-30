@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <title>兼容 - mallow</title>
   <meta charset="utf-8">
   <meta name="description" content="mallow's blog.">
@@ -29,7 +29,7 @@
   <script>window.PAGE_TYPE = "browser"</script>
 </head>
 <body class="docs">
-  <div id="mobile-bar" >
+  <div id="mobile-bar">
     <a class="menu-button"></a>
     <a class="logo" href="/"></a>
   </div>
@@ -521,6 +521,7 @@
 </li>
 <li><p>禁用缩放：对于不需要缩放的页面，通过设置<code>meta</code>标签禁用缩放，表明这个页面是不需要缩放的，双击缩放就没有意义了。此时浏览器可以禁用默认的双击缩放行为并且去掉<code>300ms</code>的点击延迟。该方法缺点在于必须通过完全禁用缩放来达到去掉点击延迟的目的，但我们初衷是想禁止默认双击缩放行为，这样就不用等待<code>300ms</code>来判断当前操作是否是双击。但是通常情况下我们还是希望能通过双指缩放来进行缩放操作，比如放大图片，很小的一段文字等</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"user-scalable=no"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"initial-scale=1,maximum-scale=1"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h3 id="fastclick原理"><a href="#fastclick原理" class="headerlink" title="fastclick原理"></a>fastclick原理</h3><ul>
@@ -555,6 +556,7 @@
 </li>
 </ul>
 <h2 id="自适应所有手机和电脑浏览器大小"><a href="#自适应所有手机和电脑浏览器大小" class="headerlink" title="自适应所有手机和电脑浏览器大小"></a>自适应所有手机和电脑浏览器大小</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-widht,initial-scale=1.0,suer-scalable=1.0,maximum-scale=1.0,minimum-scale=1.0"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="built_in">document</span>.documentElement,</span><br><span class="line">        a = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="comment">// 获取屏幕宽度</span></span><br><span class="line">            <span class="keyword">var</span> a = b.getBoundingClientRect().width;</span><br><span class="line">            <span class="comment">// size is screen width</span></span><br><span class="line">            b.style.fontSize = (a / <span class="string">'size'</span>) * <span class="number">100</span> + <span class="string">"px"</span>;</span><br><span class="line">        &#125;, c = <span class="literal">null</span>;</span><br><span class="line">    <span class="built_in">window</span>.addEventListener(<span class="string">"resize"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        clearTimeout(c);</span><br><span class="line">        c = setTimeout(a, <span class="number">300</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    a();</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
   <div class="guide-links">
     
@@ -603,7 +605,7 @@
   <script src="/js/css.escape.js"></script>
   <script src="/js/common.js"></script>
   <!-- search -->
-  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/css/search.css">
   <script src="/js/docsearch.js"></script>
   <script>

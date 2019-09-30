@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <title>问题 - mallow</title>
   <meta charset="utf-8">
   <meta name="description" content="mallow's blog.">
@@ -29,7 +29,7 @@
   <script>window.PAGE_TYPE = "css"</script>
 </head>
 <body class="docs">
-  <div id="mobile-bar" >
+  <div id="mobile-bar">
     <a class="menu-button"></a>
     <a class="logo" href="/"></a>
   </div>
@@ -492,15 +492,21 @@
 </blockquote>
 <h2 id="高度塌陷-使用float的元素高度会塌陷，造成接下来的元素不能在它下方显示"><a href="#高度塌陷-使用float的元素高度会塌陷，造成接下来的元素不能在它下方显示" class="headerlink" title="高度塌陷 - 使用float的元素高度会塌陷，造成接下来的元素不能在它下方显示"></a>高度塌陷 - 使用float的元素高度会塌陷，造成接下来的元素不能在它下方显示</h2><p>解决方案：<br>给这个元素的接下来的元素设置样式</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.after-box</span>&#123;</span><br><span class="line">    <span class="comment">/* 和float方向保持一致 */</span></span><br><span class="line">    <span class="attribute">clear</span>: left;</span><br><span class="line">    <span class="comment">/* clear: both 清除所有方向的浮动 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 或者 */</span></span><br><span class="line"><span class="selector-class">.after-box</span>&#123;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="图片比元素还要高，会造成图片溢出元素范围"><a href="#图片比元素还要高，会造成图片溢出元素范围" class="headerlink" title="图片比元素还要高，会造成图片溢出元素范围"></a>图片比元素还要高，会造成图片溢出元素范围</h2><p>解决方案：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span>&#123;</span><br><span class="line">    <span class="attribute">overflow</span>: auto;</span><br><span class="line">    <span class="comment">/* for ie6 */</span></span><br><span class="line">    <span class="attribute">zoom</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="元素的边框和内边距会撑开元素"><a href="#元素的边框和内边距会撑开元素" class="headerlink" title="元素的边框和内边距会撑开元素"></a>元素的边框和内边距会撑开元素</h2><ul>
 <li>解决方案: 设置一个元素为<code>box-sizing: border-box</code>,则此元素的内边距和边框不会增加它的宽度</li>
 </ul>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.simple</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">500px</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">20px</span> auto;</span><br><span class="line">    <span class="attribute">border</span>: solid blue <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">-webkit-box-sizing</span>: border-box;</span><br><span class="line">    <span class="attribute">-moz-box-sizing</span>: border-box;</span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="inline-block元素的对齐"><a href="#inline-block元素的对齐" class="headerlink" title="inline-block元素的对齐"></a><code>inline-block</code>元素的对齐</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.align</span>&#123;</span><br><span class="line">    <span class="attribute">vertical-align</span>: middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="超出部分字体省略号"><a href="#超出部分字体省略号" class="headerlink" title="超出部分字体省略号"></a>超出部分字体省略号</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.ignore</span>&#123;</span><br><span class="line">    <span class="attribute">white-space</span>: nowrap;</span><br><span class="line">    <span class="attribute">text-overflow</span>: ellipsis;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="ios下流畅的滑动"><a href="#ios下流畅的滑动" class="headerlink" title="ios下流畅的滑动"></a>ios下流畅的滑动</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.scroll</span>&#123;</span><br><span class="line">    <span class="attribute">overflow</span>: scroll;</span><br><span class="line">    <span class="attribute">-webkit-overflow-scrolling</span>: touch;</span><br><span class="line">    <span class="attribute">overflow</span>: scroll;</span><br><span class="line">    <span class="attribute">-webkit-overflow-scrolling</span>: touch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="多列布局"><a href="#多列布局" class="headerlink" title="多列布局"></a>多列布局</h2><blockquote>
 <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Using_multi-column_layouts" target="_blank" rel="noopener">MDN</a></p>
 </blockquote>
@@ -599,7 +605,9 @@
 <li>:checked：单选框或复选框被选中</li>
 </ul>
 <h2 id="如何居中div"><a href="#如何居中div" class="headerlink" title="如何居中div"></a>如何居中div</h2><h3 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h3 id="水平垂直居中"><a href="#水平垂直居中" class="headerlink" title="水平垂直居中"></a>水平垂直居中</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">margin</span>: auto;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">500px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translate</span>(-50%, -50%);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.container</span> <span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: pink;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="display有哪些值？说明它们的作用。"><a href="#display有哪些值？说明它们的作用。" class="headerlink" title="display有哪些值？说明它们的作用。"></a>display有哪些值？说明它们的作用。</h2><ul>
 <li>block：块类型，默认宽度为父元素宽度，可设置宽高，换行显示</li>
 <li>none：缺省值，像行内元素类型一样显示</li>
@@ -629,6 +637,7 @@
 </ul>
 <h2 id="CSS3的Flexbox，适用场景？"><a href="#CSS3的Flexbox，适用场景？" class="headerlink" title="CSS3的Flexbox，适用场景？"></a>CSS3的Flexbox，适用场景？</h2><p><strong>一个用于页面布局的全新CSS3功能，Flexbox可以把列表放在同一个方向（从上到下排列，从左到右），并让列表能延伸到占用可用的空间。较为复杂的布局还可以通过嵌套一个伸缩容器来实现。采用Flex布局的元素，称为Flex容器，简称容器。它的所有子元素自动称为容器成员，称为Flex项目，简称项目。常规布局是基于块和内联流方向。而Flex布局是基于flex-flow流可以很方便的用来做居中，能对不同屏幕大小自适应。在布局上有了比以前更加灵活的空间。</strong></p>
 <h2 id="用纯CSS创建一个三角形的原理是什么？"><a href="#用纯CSS创建一个三角形的原理是什么？" class="headerlink" title="用纯CSS创建一个三角形的原理是什么？"></a>用纯CSS创建一个三角形的原理是什么？</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">border-width</span>: <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">border-style</span>: solid;</span><br><span class="line">  <span class="attribute">border-color</span>: transparent transparent red transparent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="一个满屏品字布局如何设计？"><a href="#一个满屏品字布局如何设计？" class="headerlink" title="一个满屏品字布局如何设计？"></a>一个满屏品字布局如何设计？</h2><ul>
 <li>上面的div宽100%</li>
 <li>下面的两个div分别宽50%</li>
@@ -641,11 +650,13 @@
 <li>其他比这列矮的列会用它们的padding-bottom补偿这部分高度差</li>
 </ul>
 <h2 id="经常遇到的浏览器兼容性有哪些？原因，解决方法是什么？常用hack技巧？"><a href="#经常遇到的浏览器兼容性有哪些？原因，解决方法是什么？常用hack技巧？" class="headerlink" title="经常遇到的浏览器兼容性有哪些？原因，解决方法是什么？常用hack技巧？"></a>经常遇到的浏览器兼容性有哪些？原因，解决方法是什么？常用hack技巧？</h2><ul>
-<li>png24位图片在IE6上出现背景：做成png8</li>
-<li>浏览器默认的margin和padding不同：加一个全局的*{margin: 0; padding: 0}</li>
+<li><p>png24位图片在IE6上出现背景：做成png8</p>
+</li>
+<li><p>浏览器默认的margin和padding不同：加一个全局的*{margin: 0; padding: 0}</p>
+</li>
 <li><p>IE6双边距bug：浮动ie产生的双倍距离 #box{ float:left; width:10px; margin:0 0 0 100px;}</p>
 <ul>
-<li>这种情况之下IE会产生20px的距离，解决方案是在float的标签样式控制中加入 <em>display:inline;将其转化为行内属性。(</em>这个符号只有ie6会识别)</li>
+<li>这种情况之下IE会产生20px的距离，解决方案是在float的标签样式控制中加入 _display:inline;将其转化为行内属性。(_这个符号只有ie6会识别)</li>
 </ul>
 </li>
 <li><p>背景兼容</p>
@@ -681,13 +692,16 @@
 </ul>
 <h2 id="li与li之间有看不见的空白间隔是什么原因引起的？有什么解决办法？"><a href="#li与li之间有看不见的空白间隔是什么原因引起的？有什么解决办法？" class="headerlink" title="li与li之间有看不见的空白间隔是什么原因引起的？有什么解决办法？"></a>li与li之间有看不见的空白间隔是什么原因引起的？有什么解决办法？</h2><p><strong>行框的排列会受到中间空白（回车\空格）等的影响，因为空格也属于字符,这些空白也会被应用样式，占据空间，所以会有间隔，把字符大小设为0，就没有空格了。</strong></p>
 <h2 id="为什么要初始化CSS样式？"><a href="#为什么要初始化CSS样式？" class="headerlink" title="为什么要初始化CSS样式？"></a>为什么要初始化CSS样式？</h2><ul>
-<li>因为浏览器的兼容问题，不同浏览器对有些标签的默认值是不同的，如果没对CSS初始化往往会出现浏览器之间的页面显示差异。</li>
-<li>当然，初始化样式会对SEO有一定的影响，但鱼和熊掌不可兼得，但力求影响最小的情况下初始化。</li>
+<li><p>因为浏览器的兼容问题，不同浏览器对有些标签的默认值是不同的，如果没对CSS初始化往往会出现浏览器之间的页面显示差异。</p>
+</li>
+<li><p>当然，初始化样式会对SEO有一定的影响，但鱼和熊掌不可兼得，但力求影响最小的情况下初始化。</p>
+</li>
 <li><p>最简单的初始化方法（强烈不建议）： </p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* &#123;<span class="attribute">padding</span>: <span class="number">0</span>; <span class="attribute">margin</span>: <span class="number">0</span>;&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>淘宝的样式初始化代码：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span>, <span class="selector-tag">h1</span>, <span class="selector-tag">h2</span>, <span class="selector-tag">h3</span>, <span class="selector-tag">h4</span>, <span class="selector-tag">h5</span>, <span class="selector-tag">h6</span>, <span class="selector-tag">hr</span>, <span class="selector-tag">p</span>, <span class="selector-tag">blockquote</span>, <span class="selector-tag">dl</span>, <span class="selector-tag">dt</span>, <span class="selector-tag">dd</span>, <span class="selector-tag">ul</span>, <span class="selector-tag">ol</span>, <span class="selector-tag">li</span>, <span class="selector-tag">pre</span>, <span class="selector-tag">form</span>, <span class="selector-tag">fieldset</span>, <span class="selector-tag">legend</span>, <span class="selector-tag">button</span>, <span class="selector-tag">input</span>, <span class="selector-tag">textarea</span>, <span class="selector-tag">th</span>, <span class="selector-tag">td</span> &#123; <span class="attribute">margin</span>:<span class="number">0</span>; <span class="attribute">padding</span>:<span class="number">0</span>; &#125;</span><br><span class="line"><span class="selector-tag">body</span>, <span class="selector-tag">button</span>, <span class="selector-tag">input</span>, <span class="selector-tag">select</span>, <span class="selector-tag">textarea</span> &#123; <span class="attribute">font</span>:<span class="number">12px</span>/<span class="number">1.5</span>tahoma, arial, \<span class="number">5</span>b8b\<span class="number">4</span>f53; &#125;</span><br><span class="line"><span class="selector-tag">h1</span>, <span class="selector-tag">h2</span>, <span class="selector-tag">h3</span>, <span class="selector-tag">h4</span>, <span class="selector-tag">h5</span>, <span class="selector-tag">h6</span>&#123; <span class="attribute">font-size</span>:<span class="number">100%</span>; &#125;</span><br><span class="line"><span class="selector-tag">address</span>, <span class="selector-tag">cite</span>, <span class="selector-tag">dfn</span>, <span class="selector-tag">em</span>, <span class="selector-tag">var</span> &#123; <span class="attribute">font-style</span>:normal; &#125;</span><br><span class="line"><span class="selector-tag">code</span>, <span class="selector-tag">kbd</span>, <span class="selector-tag">pre</span>, <span class="selector-tag">samp</span> &#123; <span class="attribute">font-family</span>:couriernew, courier, monospace; &#125;</span><br><span class="line"><span class="selector-tag">small</span>&#123; <span class="attribute">font-size</span>:<span class="number">12px</span>; &#125;</span><br><span class="line"><span class="selector-tag">ul</span>, <span class="selector-tag">ol</span> &#123; <span class="attribute">list-style</span>:none; &#125;</span><br><span class="line"><span class="selector-tag">a</span> &#123; <span class="attribute">text-decoration</span>:none; &#125;</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123; <span class="attribute">text-decoration</span>:underline; &#125;</span><br><span class="line"><span class="selector-tag">sup</span> &#123; <span class="attribute">vertical-align</span>:text-top; &#125;</span><br><span class="line"><span class="selector-tag">sub</span>&#123; <span class="attribute">vertical-align</span>:text-bottom; &#125;</span><br><span class="line"><span class="selector-tag">legend</span> &#123; <span class="attribute">color</span>:<span class="number">#000</span>; &#125;</span><br><span class="line"><span class="selector-tag">fieldset</span>, <span class="selector-tag">img</span> &#123; <span class="attribute">border</span>:<span class="number">0</span>; &#125;</span><br><span class="line"><span class="selector-tag">button</span>, <span class="selector-tag">input</span>, <span class="selector-tag">select</span>, <span class="selector-tag">textarea</span> &#123; <span class="attribute">font-size</span>:<span class="number">100%</span>; &#125;</span><br><span class="line"><span class="selector-tag">table</span> &#123; <span class="attribute">border-collapse</span>:collapse; <span class="attribute">border-spacing</span>:<span class="number">0</span>; &#125;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h2 id="absolute的containing-block-容器块-计算方式跟正常流有什么不同？"><a href="#absolute的containing-block-容器块-计算方式跟正常流有什么不同？" class="headerlink" title="absolute的containing block(容器块)计算方式跟正常流有什么不同？"></a>absolute的containing block(容器块)计算方式跟正常流有什么不同？</h2><ul>
@@ -774,6 +788,7 @@
 <li>如果按堆栈视角，::after生成的内容会在::before生成的内容之上</li>
 </ul>
 <h2 id="如何修改chrome记住密码后自动填充表单的黄色背景-？"><a href="#如何修改chrome记住密码后自动填充表单的黄色背景-？" class="headerlink" title="如何修改chrome记住密码后自动填充表单的黄色背景 ？"></a>如何修改chrome记住密码后自动填充表单的黄色背景 ？</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:-webkit-autofill</span>, <span class="selector-tag">textarea</span><span class="selector-pseudo">:-webkit-autofill</span>, <span class="selector-tag">select</span><span class="selector-pseudo">:-webkit-autofill</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="built_in">rgb</span>(250, 255, 189); <span class="comment">/* #FAFFBD; */</span></span><br><span class="line">  <span class="attribute">background-image</span>: none;</span><br><span class="line">  <span class="attribute">color</span>: <span class="built_in">rgb</span>(0, 0, 0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="你对line-height是如何理解的？"><a href="#你对line-height是如何理解的？" class="headerlink" title="你对line-height是如何理解的？"></a>你对line-height是如何理解的？</h2><blockquote>
 <p><a href="https://www.zhangxinxu.com/wordpress/2009/11/css%E8%A1%8C%E9%AB%98line-height%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%8F%8A%E5%BA%94%E7%94%A8/" target="_blank" rel="noopener">博客</a></p>
 </blockquote>
@@ -786,7 +801,9 @@
 </ul>
 <h2 id="让页面里的字体变清晰，变细用CSS怎么做？"><a href="#让页面里的字体变清晰，变细用CSS怎么做？" class="headerlink" title="让页面里的字体变清晰，变细用CSS怎么做？"></a>让页面里的字体变清晰，变细用CSS怎么做？</h2><p><strong>-webkit-font-smoothing: antialiased;</strong></p>
 <h2 id="font-style属性可以让它赋值为“oblique”-oblique是什么意思？"><a href="#font-style属性可以让它赋值为“oblique”-oblique是什么意思？" class="headerlink" title="font-style属性可以让它赋值为“oblique” oblique是什么意思？"></a>font-style属性可以让它赋值为“oblique” oblique是什么意思？</h2><p><strong>倾斜的字体样式</strong></p>
-<h2 id="position-fixed-在IOS下无效怎么处理？"><a href="#position-fixed-在IOS下无效怎么处理？" class="headerlink" title="position:fixed;在IOS下无效怎么处理？"></a>position:fixed;在IOS下无效怎么处理？</h2><p>fixed的元素是相对整个页面固定位置的，你在屏幕上滑动只是在移动这个所谓的viewport，原来的网页还好好的在那，fixed的内容也没有变过位置，所以说并不是iOS不支持fixed，只是fixed的元素不是相对手机屏幕固定的。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="position-fixed-在IOS下无效怎么处理？"><a href="#position-fixed-在IOS下无效怎么处理？" class="headerlink" title="position:fixed;在IOS下无效怎么处理？"></a>position:fixed;在IOS下无效怎么处理？</h2><p>fixed的元素是相对整个页面固定位置的，你在屏幕上滑动只是在移动这个所谓的viewport，原来的网页还好好的在那，fixed的内容也没有变过位置，所以说并不是iOS不支持fixed，只是fixed的元素不是相对手机屏幕固定的。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/&gt;</span><br></pre></td></tr></table></figure>
+
 <h2 id="如果需要手动写动画，你认为最小时间间隔是多久，为什么？"><a href="#如果需要手动写动画，你认为最小时间间隔是多久，为什么？" class="headerlink" title="如果需要手动写动画，你认为最小时间间隔是多久，为什么？"></a>如果需要手动写动画，你认为最小时间间隔是多久，为什么？</h2><p><strong>多数显示器默认频率是60Hz，即1秒刷新60次，所以理论上最小间隔为1/60 ＊ 1000 ms ＝ 16.7ms</strong></p>
 <h2 id="display-inline-block-什么时候会显示间隙？"><a href="#display-inline-block-什么时候会显示间隙？" class="headerlink" title="display:inline-block 什么时候会显示间隙？"></a>display:inline-block 什么时候会显示间隙？</h2><p><strong>移除空格、使用margin负值、使用font-size:0、letter-spacing、word-spacing</strong></p>
 <h2 id="overflow-scroll时不能平滑滚动的问题怎么处理？"><a href="#overflow-scroll时不能平滑滚动的问题怎么处理？" class="headerlink" title="overflow: scroll时不能平滑滚动的问题怎么处理？"></a>overflow: scroll时不能平滑滚动的问题怎么处理？</h2><blockquote>
@@ -865,7 +882,7 @@
   <script src="/js/css.escape.js"></script>
   <script src="/js/common.js"></script>
   <!-- search -->
-  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/css/search.css">
   <script src="/js/docsearch.js"></script>
   <script>

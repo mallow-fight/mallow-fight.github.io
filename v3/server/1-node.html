@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <title>node - mallow</title>
   <meta charset="utf-8">
   <meta name="description" content="mallow's blog.">
@@ -29,7 +29,7 @@
   <script>window.PAGE_TYPE = "v3/server"</script>
 </head>
 <body class="docs">
-  <div id="mobile-bar" >
+  <div id="mobile-bar">
     <a class="menu-button"></a>
     <a class="logo" href="/"></a>
   </div>
@@ -492,6 +492,7 @@
 <p>我们只要先知道它本身是异步和事件驱动的，记住这点，下面的问题就有了答案，我们一一来看。</p>
 <h4 id="与操作系统的交互"><a href="#与操作系统的交互" class="headerlink" title="与操作系统的交互"></a>与操作系统的交互</h4><p>举个简单的例子，我们想要打开一个文件，并进行一些操作，可以写下面这样一段代码：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line">fs.open(<span class="string">'./test.txt'</span>, <span class="string">"w"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, fd</span>) </span>&#123;</span><br><span class="line">	<span class="comment">//..do something</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <p>这段代码的调用过程大致可描述为：lib/fs.js → src/node_file.cc → uv_fs</p>
 <p>Node.js 深入浅出上的一幅图：<br><img src="../../images/node_oprate.png" alt="node_oprate"></p>
 <p>具体来说，当我们调用 fs.open 时，Node.js 通过 process.binding 调用 C/C++ 层面的 Open 函数，然后通过它调用 Libuv 中的具体方法 uv_fs_open，最后执行的结果通过回调的方式传回，完成流程。在图中，可以看到平台判断的流程，需要说明的是，这一步是在编译的时候已经决定好的，并不是在运行时中。</p>
@@ -566,7 +567,9 @@
 </li>
 </ul>
 <h2 id="exports的用法"><a href="#exports的用法" class="headerlink" title="exports的用法"></a>exports的用法</h2><h3 id="当成一个对象使用"><a href="#当成一个对象使用" class="headerlink" title="当成一个对象使用"></a>当成一个对象使用</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// test.js</span></span><br><span class="line">exports.test1 = <span class="string">'i am test1'</span></span><br><span class="line">exports.test2 = <span class="function"><span class="params">()</span> =&gt;</span> exports.test3 = <span class="string">'i am test3'</span></span><br></pre></td></tr></table></figure>
+
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> test = <span class="built_in">require</span>(<span class="string">'test.js'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(test) <span class="comment">// &#123;test1: 'i am test1', test2: [function]&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(test.test2()) <span class="comment">// i am test3</span></span><br><span class="line"><span class="built_in">console</span>.log(test) <span class="comment">// &#123;test1: 'i am test1', test2: [function], test3: 'i am test3'&#125;</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="如何使用node注册终端指令"><a href="#如何使用node注册终端指令" class="headerlink" title="如何使用node注册终端指令"></a>如何使用node注册终端指令</h2><ul>
 <li><a href="https://www.npmjs.com/package/v8-compile-cache" target="_blank" rel="noopener">阮一峰</a></li>
 </ul>
@@ -654,7 +657,7 @@
   <script src="/js/css.escape.js"></script>
   <script src="/js/common.js"></script>
   <!-- search -->
-  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/css/search.css">
   <script src="/js/docsearch.js"></script>
   <script>

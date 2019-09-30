@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <title>对比 - mallow</title>
   <meta charset="utf-8">
   <meta name="description" content="mallow's blog.">
@@ -29,7 +29,7 @@
   <script>window.PAGE_TYPE = "framework"</script>
 </head>
 <body class="docs">
-  <div id="mobile-bar" >
+  <div id="mobile-bar">
     <a class="menu-button"></a>
     <a class="logo" href="/"></a>
   </div>
@@ -498,7 +498,8 @@
 </li>
 </ul>
 <h3 id="HTML-amp-CSS"><a href="#HTML-amp-CSS" class="headerlink" title="HTML&amp;CSS"></a>HTML&amp;CSS</h3><h4 id="Vue-1"><a href="#Vue-1" class="headerlink" title="Vue"></a>Vue</h4><ul>
-<li>拥抱经典的<code>Web</code>技术，并在其上进行扩展</li>
+<li><p>拥抱经典的<code>Web</code>技术，并在其上进行扩展</p>
+</li>
 <li><p>很多主流的<code>css-in-js</code>库也都支持<code>vue</code>（<code>styled-components-vue</code>和<code>vue-emotion</code>），设置样式的默认方法是单文件组件里类似<code>style</code>的标签</p>
 <ul>
 <li>通过<code>vue-loader</code>，可以使用任意的预处理器、后处理器，甚至深度集成在<code>css modules</code>中</li>
@@ -517,7 +518,8 @@
 </li>
 </ul>
 <h4 id="React-1"><a href="#React-1" class="headerlink" title="React"></a>React</h4><ul>
-<li>一切都是<code>js</code>，不仅仅是<code>HTML</code>可以用<code>JSX</code>来表达，现在的潮流也越来越多地将<code>CSS</code>纳入到<code>js</code>中来处理</li>
+<li><p>一切都是<code>js</code>，不仅仅是<code>HTML</code>可以用<code>JSX</code>来表达，现在的潮流也越来越多地将<code>CSS</code>纳入到<code>js</code>中来处理</p>
+</li>
 <li><p>所有的组件的渲染功能都依靠<code>jsx</code>，<code>jsx</code>是使用<code>XML</code>语法来编写<code>js</code>的一种语法糖，优势：</p>
 <ul>
 <li>使用完整的编程语言<code>js</code>功能来构建你的视图页面。比如：临时变量、流程控制、直接引用当前<code>js</code>作用域中的值等</li>
@@ -642,7 +644,8 @@
 </li>
 </ol>
 <h4 id="异步更新队列"><a href="#异步更新队列" class="headerlink" title="异步更新队列"></a>异步更新队列</h4><p><code>Vue</code> 异步执行 <code>DOM</code> 更新。只要观察到数据变化，<code>Vue</code> 将开启一个队列，并缓冲在同一事件循环中发生的所有数据改变。如果同一个 <code>watcher</code> 被多次触发，只会被推入到队列中一次。这种在缓冲时去除重复数据对于避免不必要的计算和 <code>DOM</code> 操作上非常重要。然后，在下一个的事件循环“<code>tick</code>”中，<code>Vue</code> 刷新队列并执行实际 (已去重的) 工作。<code>Vue</code> 在内部尝试对异步队列使用原生的 <code>Promise.then</code> 和 <code>MessageChannel</code>，如果执行环境不支持，会采用 <code>setTimeout(fn, 0)</code> 代替。例：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">  el: <span class="string">'#example'</span>,</span></span><br><span class="line"><span class="undefined">  data: &#123;</span></span><br><span class="line"><span class="javascript">    message: <span class="string">'123'</span></span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">&#125;)</span></span><br><span class="line"><span class="javascript">vm.message = <span class="string">'new message'</span> <span class="comment">// 更改数据</span></span></span><br><span class="line"><span class="javascript">vm.$el.textContent === <span class="string">'new message'</span> <span class="comment">// false</span></span></span><br><span class="line"><span class="javascript">Vue.nextTick(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">  vm.$el.textContent === <span class="string">'new message'</span> <span class="comment">// true</span></span></span><br><span class="line"><span class="undefined">&#125;)</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">  el: <span class="string">'#example'</span>,</span></span><br><span class="line">  data: &#123;</span><br><span class="line"><span class="javascript">    message: <span class="string">'123'</span></span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="javascript">vm.message = <span class="string">'new message'</span> <span class="comment">// 更改数据</span></span></span><br><span class="line"><span class="javascript">vm.$el.textContent === <span class="string">'new message'</span> <span class="comment">// false</span></span></span><br><span class="line"><span class="javascript">Vue.nextTick(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">  vm.$el.textContent === <span class="string">'new message'</span> <span class="comment">// true</span></span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="react"><a href="#react" class="headerlink" title="react"></a>react</h3><h4 id="虚拟dom"><a href="#虚拟dom" class="headerlink" title="虚拟dom"></a>虚拟dom</h4><ul>
 <li><p>一种编程概念，是指虚拟的视图被保存在内存中，并通过诸如ReactDOM这样的库与“真实”的DOM保持同步。这个过程被称为和解。</p>
 </li>
@@ -748,7 +751,7 @@
   <script src="/js/css.escape.js"></script>
   <script src="/js/common.js"></script>
   <!-- search -->
-  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/css/search.css">
   <script src="/js/docsearch.js"></script>
   <script>

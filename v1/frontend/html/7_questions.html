@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <title>问题 - mallow</title>
   <meta charset="utf-8">
   <meta name="description" content="mallow's blog.">
@@ -29,7 +29,7 @@
   <script>window.PAGE_TYPE = "html"</script>
 </head>
 <body class="docs">
-  <div id="mobile-bar" >
+  <div id="mobile-bar">
     <a class="menu-button"></a>
     <a class="logo" href="/"></a>
   </div>
@@ -478,6 +478,7 @@
 <li>调用localstorage、cookies等本地储存方式<ul>
 <li>localstorage在另一个上下文里被添加、修改或删除时，会触发一个事件，通过监听事件，控制它的值来进行页面信息通信（注意：Safari在无痕模式下设置localstorage值时会抛出QuotaExceedError的异常）</li>
 <li>触发事件仅限于同域名<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'storage'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(event.key, event.newValue);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 </li>
@@ -505,7 +506,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="H5为什么只需要写-lt-DOCTYPE-HTML-gt"><a href="#H5为什么只需要写-lt-DOCTYPE-HTML-gt" class="headerlink" title="H5为什么只需要写&lt;!DOCTYPE HTML&gt;?"></a>H5为什么只需要写&lt;!DOCTYPE HTML&gt;?</h2><ul>
+<h2 id="H5为什么只需要写"><a href="#H5为什么只需要写" class="headerlink" title="H5为什么只需要写?"></a>H5为什么只需要写<!DOCTYPE HTML>?</h2><ul>
 <li>H5不基于SGML，因此不需要对DTD进行引用，但是需要doctype来规范浏览器的行为（让浏览器按照它们应该的方式来运行）</li>
 <li>H4.01基于SGML，所以需要对DTD进行引用，才能告知浏览器文档所使用的文档类型</li>
 </ul>
@@ -597,7 +598,9 @@
 <li>iframe和主页面共享连接池，而浏览器对相同域的连接有限制，所以会影响页面的并行加载</li>
 <li>使用iframe之前需要考虑这两个缺点，如果需要使用iframe，最好是通过js动态给iframe添加src属性，这样可以绕开以上两个问题</li>
 </ul>
-<h2 id="Label的作用是什么？是怎么用的？"><a href="#Label的作用是什么？是怎么用的？" class="headerlink" title="Label的作用是什么？是怎么用的？"></a>Label的作用是什么？是怎么用的？</h2><p><strong>label标签来定义表单控制间的关系，当用户选择该标签时，浏览器会自动将焦点转到和标签相关的表单控件上：</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"Name"</span>&gt;</span>Number:<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"Name"</span> <span class="attr">id</span>=<span class="string">"Name"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">label</span>&gt;</span>Date:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"B"</span> /&gt;</span> <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="Label的作用是什么？是怎么用的？"><a href="#Label的作用是什么？是怎么用的？" class="headerlink" title="Label的作用是什么？是怎么用的？"></a>Label的作用是什么？是怎么用的？</h2><p><strong>label标签来定义表单控制间的关系，当用户选择该标签时，浏览器会自动将焦点转到和标签相关的表单控件上：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"Name"</span>&gt;</span>Number:<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"Name"</span> <span class="attr">id</span>=<span class="string">"Name"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">label</span>&gt;</span>Date:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"B"</span> /&gt;</span> <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="H5的form如何关闭自动完成功能？"><a href="#H5的form如何关闭自动完成功能？" class="headerlink" title="H5的form如何关闭自动完成功能？"></a>H5的form如何关闭自动完成功能？</h2><p><strong>给不想要提示的form或某个input设置：autocomplete=off</strong></p>
 <h2 id="如何在页面上实现一个圆形的可点击区域？"><a href="#如何在页面上实现一个圆形的可点击区域？" class="headerlink" title="如何在页面上实现一个圆形的可点击区域？"></a>如何在页面上实现一个圆形的可点击区域？</h2><ol>
 <li>map+area或者svg</li>
@@ -605,14 +608,18 @@
 <li>纯js实现，需要求一个点在不在圆上的简单算法，获取鼠标坐标等</li>
 </ol>
 <h2 id="实现不使用border画出1px高的线，在不同浏览器的标准模式与怪异模式下都能保持一致的效果。"><a href="#实现不使用border画出1px高的线，在不同浏览器的标准模式与怪异模式下都能保持一致的效果。" class="headerlink" title="实现不使用border画出1px高的线，在不同浏览器的标准模式与怪异模式下都能保持一致的效果。"></a>实现不使用border画出1px高的线，在不同浏览器的标准模式与怪异模式下都能保持一致的效果。</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"height: 1px; overflow: hidden; background: red"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="网页验证码是干嘛的，是为了解决什么安全问题。"><a href="#网页验证码是干嘛的，是为了解决什么安全问题。" class="headerlink" title="网页验证码是干嘛的，是为了解决什么安全问题。"></a>网页验证码是干嘛的，是为了解决什么安全问题。</h2><ul>
 <li>区分用户是计算机还是人的公共全自动程序，可以防止恶意破解密码、刷票、论坛灌水</li>
 <li>有效防止黑客对某一个特定注册用户用特定程序程序暴力破解方式进行不断的登录尝试</li>
 </ul>
 <h2 id="title和h1的区别、b和strong的区别、i和em的区别"><a href="#title和h1的区别、b和strong的区别、i和em的区别" class="headerlink" title="title和h1的区别、b和strong的区别、i和em的区别"></a>title和h1的区别、b和strong的区别、i和em的区别</h2><ul>
-<li>title属性没有明确意义只表示是个标题，H1则表示层次明确的标题，对页面信息的抓取也有很大的影响。</li>
-<li>strong是标明重点内容，有语气加强的含义，使用阅读设备阅读网络时：strong会重读，而b是展示强调内容</li>
-<li>i内容展示为斜体，em表示强调的文本</li>
+<li><p>title属性没有明确意义只表示是个标题，H1则表示层次明确的标题，对页面信息的抓取也有很大的影响。</p>
+</li>
+<li><p>strong是标明重点内容，有语气加强的含义，使用阅读设备阅读网络时：strong会重读，而b是展示强调内容</p>
+</li>
+<li><p>i内容展示为斜体，em表示强调的文本</p>
+</li>
 <li><p>标签类型</p>
 <ul>
 <li>自然样式标签：b、i、u、s、pre</li>
@@ -668,7 +675,7 @@
   <script src="/js/css.escape.js"></script>
   <script src="/js/common.js"></script>
   <!-- search -->
-  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/css/search.css">
   <script src="/js/docsearch.js"></script>
   <script>

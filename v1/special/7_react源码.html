@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <title>react源码 - mallow</title>
   <meta charset="utf-8">
   <meta name="description" content="mallow's blog.">
@@ -29,7 +29,7 @@
   <script>window.PAGE_TYPE = "special"</script>
 </head>
 <body class="docs">
-  <div id="mobile-bar" >
+  <div id="mobile-bar">
     <a class="menu-button"></a>
     <a class="logo" href="/"></a>
   </div>
@@ -545,9 +545,12 @@
 </li>
 <li><p>for example：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ReactTestRenderer = <span class="built_in">require</span>(<span class="string">'react-test-renderer'</span>);</span><br><span class="line"><span class="keyword">const</span> renderer = ReactTestRenderer.create(</span><br><span class="line">  &lt;Link page = <span class="string">"https://www.facebook.com/"</span>&gt;Facebook&lt;<span class="regexp">/Link&gt;</span></span><br><span class="line"><span class="regexp">)</span></span><br><span class="line"><span class="regexp">renderer.toJSON();</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ &#123;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/   type: 'a',</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/   props: &#123; href: 'https:/</span><span class="regexp">/www.facebook.com/</span><span class="string">' &#125;,</span></span><br><span class="line"><span class="string">//   children: [ '</span>Facebook<span class="string">' ]</span></span><br><span class="line"><span class="string">// &#125;</span></span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
-<h2 id="研究思路"><a href="#研究思路" class="headerlink" title="研究思路"></a>研究思路</h2><h3 id="渲染过程"><a href="#渲染过程" class="headerlink" title="渲染过程"></a>渲染过程</h3><p>一般的web应用在脚手架中都是通过这种方式渲染出来的：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; render &#125; <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line">render(</span><br><span class="line">  &lt;App /&gt;,</span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'app'</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
+<h2 id="研究思路"><a href="#研究思路" class="headerlink" title="研究思路"></a>研究思路</h2><h3 id="渲染过程"><a href="#渲染过程" class="headerlink" title="渲染过程"></a>渲染过程</h3><p>一般的web应用在脚手架中都是通过这种方式渲染出来的：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; render &#125; <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line">render(</span><br><span class="line">  &lt;App /&gt;,</span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'app'</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
 <h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><p>对应到<code>&lt;App /&gt;</code>的产生</p>
 <h3 id="class"><a href="#class" class="headerlink" title="class"></a>class</h3><ul>
 <li><p>是构造函数的语法糖</p>
@@ -567,13 +570,17 @@
 <li><a href="https://reactjs.org/docs/introducing-jsx.html" target="_blank" rel="noopener">参考</a></li>
 </ul>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = (</span><br><span class="line">  &lt;h1 className = <span class="string">"greeting"</span>&gt;</span><br><span class="line">    hello, world!</span><br><span class="line">  &lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">)</span></span><br></pre></td></tr></table></figure>
+
 <p>同：</p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = React.createElement(</span><br><span class="line">  <span class="string">'h1'</span>,</span><br><span class="line">  &#123;<span class="attr">className</span>: <span class="string">'greeting'</span>&#125;,</span><br><span class="line">  <span class="string">'hello, world!'</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
 <p>经过React.createElement之后的简单结构：</p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = &#123;</span><br><span class="line">  type: <span class="string">'h1'</span>,</span><br><span class="line">  props: &#123;</span><br><span class="line">    className: <span class="string">'greeting'</span>,</span><br><span class="line">    children: <span class="string">'hello, world!'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>可以看到，React.createElement会对树状结构的jsx进行处理来生成需要的数据结构，所以说首先需要知道React.createElement干了些啥</p>
 <h2 id="createElement"><a href="#createElement" class="headerlink" title="createElement"></a>createElement</h2><p><a href="https://reactjs.org/docs/react-api.html#createelement" target="_blank" rel="noopener">参考</a></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">React.createElement(</span><br><span class="line">  type,</span><br><span class="line">  [props],</span><br><span class="line">  [...children]</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
 <h3 id="type"><a href="#type" class="headerlink" title="type"></a>type</h3><ul>
 <li>tag字符串名，如：’div’、’span’</li>
 <li>React component：class、function</li>
@@ -628,7 +635,7 @@
   <script src="/js/css.escape.js"></script>
   <script src="/js/common.js"></script>
   <!-- search -->
-  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/css/search.css">
   <script src="/js/docsearch.js"></script>
   <script>

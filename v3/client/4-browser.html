@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <title>浏览器 - mallow</title>
   <meta charset="utf-8">
   <meta name="description" content="mallow's blog.">
@@ -29,7 +29,7 @@
   <script>window.PAGE_TYPE = "v3/client"</script>
 </head>
 <body class="docs">
-  <div id="mobile-bar" >
+  <div id="mobile-bar">
     <a class="menu-button"></a>
     <a class="logo" href="/"></a>
   </div>
@@ -490,8 +490,8 @@
 <p><a href="https://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/" target="_blank" rel="noopener">浏览器工作原理</a><br><a href="https://segmentfault.com/a/1190000010537218" target="_blank" rel="noopener">整个请求过程</a></p>
 </blockquote>
 <h2 id="todos"><a href="#todos" class="headerlink" title="todos"></a>todos</h2><ul>
-<li style="list-style: none"><input type="checkbox"> 怎么解决跨域</li>
-<li style="list-style: none"><input type="checkbox"> ## 浏览器事件解读</li>
+<li><input disabled type="checkbox"> 怎么解决跨域</li>
+<li><input disabled type="checkbox"> <h2 id="浏览器事件解读"><a href="#浏览器事件解读" class="headerlink" title="浏览器事件解读"></a>浏览器事件解读</h2></li>
 </ul>
 <blockquote>
 <p><a href="https://zhuanlan.zhihu.com/p/23059366" target="_blank" rel="noopener">知乎</a></p>
@@ -500,12 +500,12 @@
 <p><a href="https://www.cnblogs.com/owenChen/archive/2013/02/18/2915521.html" target="_blank" rel="noopener">参考资料</a></p>
 </blockquote>
 <ul>
-<li><p>[ ] app内嵌网页携带参数:&gt; <a href="https://segmentfault.com/a/1190000010356403" target="_blank" rel="noopener">参考资料</a></p>
+<li><input disabled type="checkbox"> <p>app内嵌网页携带参数:&gt; <a href="https://segmentfault.com/a/1190000010356403" target="_blank" rel="noopener">参考资料</a></p>
 <blockquote>
 <p><a href="https://dailc.github.io/2018/03/12/whenyouenteraurl.html" target="_blank" rel="noopener">参考资料 - 偏前端</a><br><a href="http://fex.baidu.com/blog/2014/05/what-happen/" target="_blank" rel="noopener">参考资料 - 偏硬件</a></p>
 </blockquote>
 </li>
-<li><p>[ ] <a href="https://segmentfault.com/a/1190000012800222" target="_blank" rel="noopener">gzip探秘</a></p>
+<li><input disabled type="checkbox"> <p><a href="https://segmentfault.com/a/1190000012800222" target="_blank" rel="noopener">gzip探秘</a></p>
 </li>
 </ul>
 <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><ol>
@@ -601,8 +601,7 @@
 <th>利用</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>XSS</td>
 <td>跨站脚本</td>
 <td>将用户发送的数据显示给用户或另一个用户</td>
@@ -616,8 +615,7 @@
 <td>向web页面注入客户端脚本</td>
 <td>网站对其用户提供的信任</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h3 id="预防措施"><a href="#预防措施" class="headerlink" title="预防措施"></a>预防措施</h3><ul>
 <li>始终检查用户发送给服务器的数据，尽量不要显示用户提供的html内容</li>
 <li>执行存储用户发送的数据的清理工作</li>
@@ -643,6 +641,7 @@
 <h3 id="大小限制"><a href="#大小限制" class="headerlink" title="大小限制"></a>大小限制</h3><p>4KB左右</p>
 <h3 id="存在时间"><a href="#存在时间" class="headerlink" title="存在时间"></a>存在时间</h3><p>如果不在浏览器中设置过期时间，<code>cookie</code>被保存在内存中，生命周期随浏览器的关闭而结束，这种<code>cookie</code>简称会话<code>cookie</code>。如果在浏览器中设置了<code>cookie</code>的过期时间，<code>cookie</code>被保存在硬盘中，关闭浏览器后，<code>cookie</code>数据仍然存在，直到过期时间结束才消失。</p>
 <h3 id="如何清除"><a href="#如何清除" class="headerlink" title="如何清除"></a>如何清除</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 设置cookie</span></span><br><span class="line"><span class="comment"> * @param &#123;string&#125; name  键名</span></span><br><span class="line"><span class="comment"> * @param &#123;string&#125; value 键值</span></span><br><span class="line"><span class="comment"> * @param &#123;integer&#125; days cookie周期</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setCookie</span>(<span class="params">name,value,days</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (days) &#123;</span><br><span class="line">        <span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">        date.setTime(date.getTime()+(days*<span class="number">24</span>*<span class="number">60</span>*<span class="number">60</span>*<span class="number">1000</span>));</span><br><span class="line">        <span class="keyword">var</span> expires = <span class="string">"; expires="</span>+date.toGMTString();</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> expires = <span class="string">""</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">document</span>.cookie = name+<span class="string">"="</span>+value+expires+<span class="string">"; path=/"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 获取cookie</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCookie</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> nameEQ = name + <span class="string">"="</span>;</span><br><span class="line">    <span class="keyword">var</span> ca = <span class="built_in">document</span>.cookie.split(<span class="string">';'</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i &lt; ca.length;i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> c = ca[i];</span><br><span class="line">        <span class="keyword">while</span> (c.charAt(<span class="number">0</span>)==<span class="string">' '</span>) c = c.substring(<span class="number">1</span>,c.length);</span><br><span class="line">        <span class="keyword">if</span> (c.indexOf(nameEQ) == <span class="number">0</span>) <span class="keyword">return</span> c.substring(nameEQ.length,c.length);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 删除cookie</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deleteCookie</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    setCookie(name,<span class="string">""</span>,<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="localstorage"><a href="#localstorage" class="headerlink" title="localstorage"></a>localstorage</h2><h3 id="存在时间-1"><a href="#存在时间-1" class="headerlink" title="存在时间"></a>存在时间</h3><p>除非被清除，否则永久保存</p>
 <h2 id="大小限制-1"><a href="#大小限制-1" class="headerlink" title="大小限制"></a>大小限制</h2><p>一般为5MB</p>
 <h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
@@ -653,7 +652,9 @@
 <h2 id="sessionstorage"><a href="#sessionstorage" class="headerlink" title="sessionstorage"></a>sessionstorage</h2><h3 id="存在时间-2"><a href="#存在时间-2" class="headerlink" title="存在时间"></a>存在时间</h3><p>页面会话结束——也就是说当页面被关闭时，数据存储在 <code>sessionStorage</code> 会被清除，页面刷新不会被删除。不能在不同页面间共享，可以在同一个页面的多个iframe中共享。</p>
 <h3 id="大小限制-2"><a href="#大小限制-2" class="headerlink" title="大小限制"></a>大小限制</h3><p>一般为5MB</p>
 <h2 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h2><p><a href="https://zhuanlan.zhihu.com/p/37730038" target="_blank" rel="noopener">知乎专栏</a><br><a href="https://github.com/DDFE/DDFE-blog/issues/9" target="_blank" rel="noopener">DDFE</a></p>
-<h3 id="hash模式"><a href="#hash模式" class="headerlink" title="hash模式"></a>hash模式</h3><p>2014年之前，通过hash来实现路由：<br><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">http://www.xxx.com/#/login</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="hash模式"><a href="#hash模式" class="headerlink" title="hash模式"></a>hash模式</h3><p>2014年之前，通过hash来实现路由：</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">http://www.xxx.com/#/login</span></span><br></pre></td></tr></table></figure>
+
 <p>这种<code>#/login</code>hash值的变化，不会导致浏览器向服务器发出请求，所以不会刷新页面。hash值的变化，会触发<code>hashchange</code>这个事件，通过这个事件我们就可以知道hash值发生了哪些变化。然后我们可以监听<code>hashchange</code>来实现更新页面部分内容的操作。</p>
 <h3 id="history模式"><a href="#history模式" class="headerlink" title="history模式"></a>history模式</h3><p>2014年后，因为 <code>HTML5</code> 标准发布。多了<code>pushState</code>、<code>popState</code>、<code>replaceState</code>，可以改变 <code>url</code> 地址且不会发送请求。通过这些就能用另一种方式来实现前端路由了，但原理都是跟 <code>hash</code> 实现相同的。用了 <code>HTML5</code> 的实现，单页路由的 <code>url</code> 就不会多出一个<code>#</code>，变得更加美观。但因为没有 <code>#</code> 号，所以当用户刷新页面之类的操作时，浏览器还是会给服务器发送请求。为了避免出现这种情况，所以这个实现需要服务器的支持，需要把所有路由都重定向到根页面。</p>
 <h3 id="vue-router示意图"><a href="#vue-router示意图" class="headerlink" title="vue-router示意图"></a>vue-router示意图</h3><p><img src="./images/vueRouter.png" alt="vue-router示意图"></p>
@@ -699,6 +700,7 @@
 </li>
 <li><p>禁用缩放：对于不需要缩放的页面，通过设置<code>meta</code>标签禁用缩放，表明这个页面是不需要缩放的，双击缩放就没有意义了。此时浏览器可以禁用默认的双击缩放行为并且去掉<code>300ms</code>的点击延迟。该方法缺点在于必须通过完全禁用缩放来达到去掉点击延迟的目的，但我们初衷是想禁止默认双击缩放行为，这样就不用等待<code>300ms</code>来判断当前操作是否是双击。但是通常情况下我们还是希望能通过双指缩放来进行缩放操作，比如放大图片，很小的一段文字等</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"user-scalable=no"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"initial-scale=1,maximum-scale=1"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h3 id="fastclick原理"><a href="#fastclick原理" class="headerlink" title="fastclick原理"></a>fastclick原理</h3><ul>
@@ -733,7 +735,9 @@
 </li>
 </ul>
 <h2 id="自适应所有手机和电脑浏览器大小"><a href="#自适应所有手机和电脑浏览器大小" class="headerlink" title="自适应所有手机和电脑浏览器大小"></a>自适应所有手机和电脑浏览器大小</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-widht,initial-scale=1.0,suer-scalable=1.0,maximum-scale=1.0,minimum-scale=1.0"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="built_in">document</span>.documentElement,</span><br><span class="line">        a = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="comment">// 获取屏幕宽度</span></span><br><span class="line">            <span class="keyword">var</span> a = b.getBoundingClientRect().width;</span><br><span class="line">            <span class="comment">// size is screen width</span></span><br><span class="line">            b.style.fontSize = (a / <span class="string">'size'</span>) * <span class="number">100</span> + <span class="string">"px"</span>;</span><br><span class="line">        &#125;, c = <span class="literal">null</span>;</span><br><span class="line">    <span class="built_in">window</span>.addEventListener(<span class="string">"resize"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        clearTimeout(c);</span><br><span class="line">        c = setTimeout(a, <span class="number">300</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    a();</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+
 <h2 id="事件捕获和冒泡"><a href="#事件捕获和冒泡" class="headerlink" title="事件捕获和冒泡"></a>事件捕获和冒泡</h2><ul>
 <li><p>先捕获再冒泡</p>
 </li>
@@ -745,6 +749,7 @@
 </ul>
 <h2 id="addEventListener"><a href="#addEventListener" class="headerlink" title="addEventListener"></a>addEventListener</h2><ul>
 <li>挂载在window对象上的keypress事件会重复触发，我们只需要判断e中的元素是不是我们需要处理的元素来触发响应的回调函数就可以了<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;input /&gt;</span><br><span class="line">&lt;input /&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="built_in">window</span>.addEventListener(<span class="string">'keypress'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(e)</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="built_in">window</span>.addEventListener(<span class="string">'keypress'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(e)</span><br><span class="line">  &#125;)</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h2 id="chrome开启GPU渲染"><a href="#chrome开启GPU渲染" class="headerlink" title="chrome开启GPU渲染"></a>chrome开启GPU渲染</h2><ul>
@@ -809,7 +814,8 @@
 </li>
 <li><p>不要经常访问会引起浏览器<code>flush</code>队列的属性，如果你确实要访问，利用缓存</p>
 </li>
-<li>让元素脱离动画流，减少回流的<code>Render Tree</code>的规模</li>
+<li><p>让元素脱离动画流，减少回流的<code>Render Tree</code>的规模</p>
+</li>
 </ol>
 <h2 id="页面优化"><a href="#页面优化" class="headerlink" title="页面优化"></a>页面优化</h2><h3 id="用户角度"><a href="#用户角度" class="headerlink" title="用户角度"></a>用户角度</h3><p>优化能够让页面加载得更快、对用户的操作响应得更及时，能够给用户提供更为友好的体验</p>
 <h3 id="服务商角度"><a href="#服务商角度" class="headerlink" title="服务商角度"></a>服务商角度</h3><p>优化能够减少页面请求数、或者减小请求所占带宽，能够节省可观的资源</p>
@@ -969,7 +975,8 @@
 <p><a href="https://www.jianshu.com/p/7f58ddfc1392" target="_blank" rel="noopener">如何开启dns-prefetch</a></p>
 </blockquote>
 <h2 id="TCP-IP请求"><a href="#TCP-IP请求" class="headerlink" title="TCP/IP请求"></a>TCP/IP请求</h2><ul>
-<li>http本质就是TCP/IP请求</li>
+<li><p>http本质就是TCP/IP请求</p>
+</li>
 <li><p>建立连接：三次握手，抽象为：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">客户端：hello，你是sever么？</span><br><span class="line">服务端：hello，我是server，你是client么？</span><br><span class="line">客户端：yes，我是client！</span><br></pre></td></tr></table></figure>
 </li>
@@ -1132,8 +1139,7 @@
 <th>响应头部</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>Accept</td>
 <td>Content-Type</td>
 </tr>
@@ -1149,8 +1155,7 @@
 <td>If-None-Match</td>
 <td>ETag</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <ul>
 <li><p>请求/响应实体</p>
 <ul>
@@ -1389,7 +1394,9 @@
 <li><p>解析过程：Bytes -&gt; characters -&gt; tokens -&gt; nodes -&gt; DOM</p>
 </li>
 </ul>
-<p>实例，假设有这样一个HTML页面：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width,initial-scale=1"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"style.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Critical Path<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>Hello <span class="tag">&lt;<span class="name">span</span>&gt;</span>web performance<span class="tag">&lt;/<span class="name">span</span>&gt;</span> students!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"awesome-photo.jpg"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>实例，假设有这样一个HTML页面：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width,initial-scale=1"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"style.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Critical Path<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>Hello <span class="tag">&lt;<span class="name">span</span>&gt;</span>web performance<span class="tag">&lt;/<span class="name">span</span>&gt;</span> students!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"awesome-photo.jpg"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>浏览器处理如下：<br><img src="../../images/browser_parse_html.png" alt="browser_parse_html"></p>
 <p>重点过程：</p>
 <ul>
@@ -1405,6 +1412,7 @@
 <h2 id="生成CSS规则"><a href="#生成CSS规则" class="headerlink" title="生成CSS规则"></a>生成CSS规则</h2><p>简述为：Bytes -&gt; characters -&gt; tokens -&gt; nodes -&gt; CSSOM</p>
 <p>实例，有这样一个css文件：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123; <span class="attribute">font-size</span>: <span class="number">16px</span> &#125;</span><br><span class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">font-weight</span>: bold &#125;</span><br><span class="line"><span class="selector-tag">span</span> &#123; <span class="attribute">color</span>: red &#125;</span><br><span class="line"><span class="selector-tag">p</span> <span class="selector-tag">span</span> &#123; <span class="attribute">display</span>: none &#125;</span><br><span class="line"><span class="selector-tag">img</span> &#123; <span class="attribute">float</span>: right &#125;</span><br></pre></td></tr></table></figure>
+
 <p>最终的CSSOM树就是：<br><img src="../../images/browser_parse_cssom.png" alt="browser_parse_cssom"></p>
 <h2 id="构建渲染树"><a href="#构建渲染树" class="headerlink" title="构建渲染树"></a>构建渲染树</h2><ul>
 <li><p>当DOM树和CSSOM都有了后，就要开始构建渲染树了</p>
@@ -1465,6 +1473,7 @@
 </li>
 </ul>
 <h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="built_in">document</span>.body.style;</span><br><span class="line">s.padding = <span class="string">"2px"</span>; <span class="comment">// 回流 + 重绘</span></span><br><span class="line">s.border = <span class="string">"1px solid red"</span>; <span class="comment">// 再一次 回流 + 重绘</span></span><br><span class="line">s.color = <span class="string">"blue"</span>; <span class="comment">// 再一次重绘</span></span><br><span class="line">s.backgroundColor = <span class="string">"#ccc"</span>; <span class="comment">// 再一次 重绘</span></span><br><span class="line">s.fontSize = <span class="string">"14px"</span>; <span class="comment">// 再一次 回流 + 重绘</span></span><br><span class="line"><span class="built_in">document</span>.body.appendChild(<span class="built_in">document</span>.createTextNode(<span class="string">'abc!'</span>)); <span class="comment">// 添加node，再一次 回流 + 重绘</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="简单层和复合层"><a href="#简单层和复合层" class="headerlink" title="简单层和复合层"></a>简单层和复合层</h2><p>上述中的渲染止步于绘制，但实际上绘制这一步就没有这么简单，它可以结合复合层和简单层的概念来讲。</p>
 <p>简述：</p>
 <ul>
@@ -1847,7 +1856,13 @@
 <h3 id="更进一步的优化"><a href="#更进一步的优化" class="headerlink" title="更进一步的优化"></a>更进一步的优化</h3><ol>
 <li><p>增加一个版本号，第一次拉取ip-list时，不但把ip-list放到APP本地，并把版本号也拿到。未来不用每次都拿ip-list，而是先拿版本号，如果版本号不变，直接使用本地的ip-list，只有版本号变化时，才需要重新拉取ip-list</p>
 </li>
-<li><p>使用nginx不好做异构服务器的负载均衡，难以根据后端服务的处理能力来分配负载，使用ip-list，只要加上一个权重参数，就可以实现异构服务器的负载均衡：<br>192.168.1.1, 10<br>192.168.1.2, 10<br>192.168.1.3, 20</p>
+<li><p>使用nginx不好做异构服务器的负载均衡，难以根据后端服务的处理能力来分配负载，使用ip-list，只要加上一个权重参数，就可以实现异构服务器的负载均衡：</p>
+</li>
+<li><p>168.1.1, 10</p>
+</li>
+<li><p>168.1.2, 10</p>
+</li>
+<li><p>168.1.3, 20</p>
 </li>
 </ol>
 <h3 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h3><ul>
@@ -1977,6 +1992,7 @@
 <li>调用localstorage、cookies等本地储存方式<ul>
 <li>localstorage在另一个上下文里被添加、修改或删除时，会触发一个事件，通过监听事件，控制它的值来进行页面信息通信（注意：Safari在无痕模式下设置localstorage值时会抛出QuotaExceedError的异常）</li>
 <li>触发事件仅限于同域名<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'storage'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(event.key, event.newValue);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 </li>
@@ -2053,7 +2069,7 @@
   <script src="/js/css.escape.js"></script>
   <script src="/js/common.js"></script>
   <!-- search -->
-  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/css/search.css">
   <script src="/js/docsearch.js"></script>
   <script>

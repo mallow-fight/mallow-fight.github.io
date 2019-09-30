@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <title>JDK环境配置 - mallow</title>
   <meta charset="utf-8">
   <meta name="description" content="mallow's blog.">
@@ -29,7 +29,7 @@
   <script>window.PAGE_TYPE = "java"</script>
 </head>
 <body class="docs">
-  <div id="mobile-bar" >
+  <div id="mobile-bar">
     <a class="menu-button"></a>
     <a class="logo" href="/"></a>
   </div>
@@ -486,21 +486,19 @@
   
     <h1>JDK环境配置</h1>
   
-  <h2 id="安装JDK开发工具包"><a href="#安装JDK开发工具包" class="headerlink" title="安装JDK开发工具包"></a>安装JDK开发工具包</h2><h3 id="下载JDK"><a href="#下载JDK" class="headerlink" title="下载JDK"></a><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">下载JDK</a></h3><pre><code>JDK是Java Development Kit的缩写，包含JRE(Java Runtime Environment,即Java运行时环境)以及一些必要的Jar包。
-</code></pre><h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><ul>
+  <h2 id="安装JDK开发工具包"><a href="#安装JDK开发工具包" class="headerlink" title="安装JDK开发工具包"></a>安装JDK开发工具包</h2><h3 id="下载JDK"><a href="#下载JDK" class="headerlink" title="下载JDK"></a><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">下载JDK</a></h3><pre><code>JDK是Java Development Kit的缩写，包含JRE(Java Runtime Environment,即Java运行时环境)以及一些必要的Jar包。</code></pre><h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><ul>
 <li>需要的是JDK而不是JRE</li>
 <li>Windows或Linux: 32位选择x86，64位选择x64</li>
 <li>Linux:选择.tar.gz版本</li>
 <li>接收许可协议，然后下载文件</li>
 </ul>
-<h3 id="设置JDK"><a href="#设置JDK" class="headerlink" title="设置JDK"></a>设置JDK</h3><pre><code>下载JDK后，需要安装这个开发包并明确要在哪里安装，后面还会需要这个信息
-</code></pre><h5 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h5><ul>
+<h3 id="设置JDK"><a href="#设置JDK" class="headerlink" title="设置JDK"></a>设置JDK</h3><pre><code>下载JDK后，需要安装这个开发包并明确要在哪里安装，后面还会需要这个信息</code></pre><h5 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h5><ul>
 <li>在Windows上，启动安装程序。一般默认安装目录会是相应的Program Files，自己也可以自定义安装在其他目录</li>
 <li>在MAC上，运行安装程序。这会把软件安装到/Library/Java?JavaVirtualMachines/jdk1.8.0_version_jdk/Contents/Home。用Finder找到这个目录。</li>
 <li>在Linux上，只需要把.tar.gz文件解压缩到你选择的某个位置，如你的主目录，或者/opt。如果从RPM文件安装，则要反复检查是否安装在/user/java/jdk1.8.0_version。<h5 id="注意-1"><a href="#注意-1" class="headerlink" title="注意"></a>注意</h5>在Windows或Linux上安装JDK时，还需要另外完成一个步骤：将JDK安装目录添加到执行路径中–执行路径是操作系统查找可执行文件时所遍历的目录列表。</li>
 </ul>
 <ul>
-<li><p>在Linux上，需要在~/.bashrc或~/.bash_profile文件的最后增加这样一行：<br><code>export PATH=jdk/bin:$PATH</code>,其中jdk指JDK安装路径。一定要使用JDK的正确路径。</p>
+<li><p>在Linux上，需要在<del>/.bashrc或</del>/.bash_profile文件的最后增加这样一行：<br><code>export PATH=jdk/bin:$PATH</code>,其中jdk指JDK安装路径。一定要使用JDK的正确路径。</p>
 </li>
 <li><p>在Windows上，启动控制面板，选择“系统与安全”，再选择“系统”，选择高级系统设置。在系统属性对话框中，点击“高级”标签页，然后点击“环境变量”按钮。<br> 滚动“系统变量列表”，直到找到名为Path的变量。点击“编辑”按钮，再点击“新建”，将jdk/bin目录增加到其中。主要要把jdk替换为具体的Java安装路径。<br> 保存所做的设置。之后新打开的所有控制台窗口都会有正确的路径。<br> 可以如下测试设置是否正确：打开一个终端窗口，键入：<br> javac -version<br> 然后按回车键。应该能看到显示以下信息：<br> javac 1.8.0_31<br> 如果得到诸如”javac:commond not found”（javac:命令未找到）或”The name specified is no recognized as an internal or external command,operable program or batch file”（指定名不是一个内部或外部命令、可执行的程序或批文件），就需要退回去反复检查你的安装。</p>
 </li>
@@ -553,7 +551,7 @@
   <script src="/js/css.escape.js"></script>
   <script src="/js/common.js"></script>
   <!-- search -->
-  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/css/search.css">
   <script src="/js/docsearch.js"></script>
   <script>

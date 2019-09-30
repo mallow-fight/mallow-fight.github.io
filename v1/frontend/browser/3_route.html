@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <title>路由 - mallow</title>
   <meta charset="utf-8">
   <meta name="description" content="mallow's blog.">
@@ -29,7 +29,7 @@
   <script>window.PAGE_TYPE = "browser"</script>
 </head>
 <body class="docs">
-  <div id="mobile-bar" >
+  <div id="mobile-bar">
     <a class="menu-button"></a>
     <a class="logo" href="/"></a>
   </div>
@@ -480,7 +480,9 @@
     <h1>路由</h1>
   
   <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p><a href="https://zhuanlan.zhihu.com/p/37730038" target="_blank" rel="noopener">知乎专栏</a><br><a href="https://github.com/DDFE/DDFE-blog/issues/9" target="_blank" rel="noopener">DDFE</a></p>
-<h3 id="hash模式"><a href="#hash模式" class="headerlink" title="hash模式"></a>hash模式</h3><p>2014年之前，通过hash来实现路由：<br><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">http://www.xxx.com/#/login</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="hash模式"><a href="#hash模式" class="headerlink" title="hash模式"></a>hash模式</h3><p>2014年之前，通过hash来实现路由：</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">http://www.xxx.com/#/login</span></span><br></pre></td></tr></table></figure>
+
 <p>这种<code>#/login</code>hash值的变化，不会导致浏览器向服务器发出请求，所以不会刷新页面。hash值的变化，会触发<code>hashchange</code>这个事件，通过这个事件我们就可以知道hash值发生了哪些变化。然后我们可以监听<code>hashchange</code>来实现更新页面部分内容的操作。</p>
 <h3 id="history模式"><a href="#history模式" class="headerlink" title="history模式"></a>history模式</h3><p>2014年后，因为 <code>HTML5</code> 标准发布。多了<code>pushState</code>、<code>popState</code>、<code>replaceState</code>，可以改变 <code>url</code> 地址且不会发送请求。通过这些就能用另一种方式来实现前端路由了，但原理都是跟 <code>hash</code> 实现相同的。用了 <code>HTML5</code> 的实现，单页路由的 <code>url</code> 就不会多出一个<code>#</code>，变得更加美观。但因为没有 <code>#</code> 号，所以当用户刷新页面之类的操作时，浏览器还是会给服务器发送请求。为了避免出现这种情况，所以这个实现需要服务器的支持，需要把所有路由都重定向到根页面。</p>
 <h3 id="vue-router示意图"><a href="#vue-router示意图" class="headerlink" title="vue-router示意图"></a>vue-router示意图</h3><p><img src="../../images/vueRouter.png" alt="vue-router示意图"></p>
@@ -532,7 +534,7 @@
   <script src="/js/css.escape.js"></script>
   <script src="/js/common.js"></script>
   <!-- search -->
-  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+  <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/css/search.css">
   <script src="/js/docsearch.js"></script>
   <script>
