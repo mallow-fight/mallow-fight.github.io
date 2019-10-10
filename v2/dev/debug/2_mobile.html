@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.9.0">
-  <title>介绍 - mallow</title>
+  <title>移动端调试 - mallow</title>
   <meta charset="utf-8">
   <meta name="description" content="mallow's blog.">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
   <meta property="og:type" content="article">
-  <meta property="og:title" content="介绍 — mallow">
+  <meta property="og:title" content="移动端调试 — mallow">
   <meta property="og:description" content="mallow's blog.">
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120215204-1"></script>
@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="/css/page.css">
   <!-- import vue from there so that you can use vue in markdown -->
   <script src="/js/vue.min.js"></script>
-  <script>window.PAGE_TYPE = "app"</script>
+  <script>window.PAGE_TYPE = "debug"</script>
 </head>
 <body class="docs">
   <div id="mobile-bar">
@@ -218,25 +218,27 @@
   
   
   
+    <span style="float: right; margin-right: 30px;">← <a style="color: goldenrod;" href="/v2/dev/debug/1_intro.html">介绍</a></span>
+  
 </div>
 
   <div class="sidebar">
   <div class="sidebar-inner">
-    <h3>当前位置：app</h3>
+    <h3>当前位置：debug</h3>
     <div class="list">
       <ul class="menu-root">
   
     
       <li>
-        <a href="/v2/runtime/app/1_intro.html" class="sidebar-link current">
+        <a href="/v2/dev/debug/1_intro.html" class="sidebar-link">
           介绍
         </a>
       </li>
       
     
       <li>
-        <a href="/v2/monitor/app/1_intro.html" class="sidebar-link current">
-          介绍
+        <a href="/v2/dev/debug/2_mobile.html" class="sidebar-link current">
+          移动端调试
         </a>
       </li>
       
@@ -419,28 +421,52 @@
 </div>
 
 
-<div class="content app with-sidebar ">
+<div class="content debug with-sidebar ">
   <ul class="menu-root">
   
 </ul>
   
-    <h1>介绍</h1>
+    <h1>移动端调试</h1>
   
-  <p>介绍</p>
+  <h2 id="switchhost"><a href="#switchhost" class="headerlink" title="switchhost"></a>switchhost</h2><p>将本地IP代理到线上域名：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1(也就是localhost)	xxx.xx.com</span><br></pre></td></tr></table></figure>
+
+<h2 id="charles"><a href="#charles" class="headerlink" title="charles"></a>charles</h2><ol>
+<li>点击proxy-&gt;proxy setting，端口随便设置一个，不占用其它端口就行</li>
+<li>破解：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">在Help窗口内选择 Register Charles。</span><br><span class="line"></span><br><span class="line">Registered Name: https://zhile.io</span><br><span class="line">License Key: 48891cf209c6d32bf4</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><ol>
+<li>注意，电脑和手机必须是同一个局域网</li>
+<li>手机点击wifi的手动代理，代理地址填写电脑的IP，代理端口填写charles的端口</li>
+</ol>
+<h2 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">brew install nginx	<span class="comment"># 注意不能用sudo，不然由于安全原因装不上</span></span><br><span class="line">sudo nginx	<span class="comment"># 启动nginx</span></span><br><span class="line">code /usr/<span class="built_in">local</span>/etc/nginx/nginx.conf	<span class="comment"># 修改nginx配置，此处使用的的vscode快捷打开，也可以使用vim</span></span><br></pre></td></tr></table></figure>
+
+<p>修改nginx.conf如下(在本身自带的server下面添加一个server项)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">		listen 80;</span><br><span class="line">		server_name  xxx.xx.com;</span><br><span class="line"></span><br><span class="line">		location /&#123;</span><br><span class="line">			proxy_pass http://127.0.0.1:3000;</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol>
+<li>如果node请求的静态资源中包含本地的静态资源，需要把这些静态资源指向本机的ip，这样在手机上访问的时候就可以直接访问到本机的静态资源了</li>
+<li>通过这种方法可以实现热更新，在电脑上开发可以马上热更新到手机上</li>
+<li>移动端网页添加一个vconsole效果更佳</li>
+</ol>
 
   <div class="guide-links">
     
+    
+      <span>← <a href="/v2/dev/debug/1_intro.html">介绍</a></span>
     
     
     
   </div>
   <div class="footer">
     发现错误？想参与编辑？
-    <a href="https://github.com/mallow-fight/blog/tree/master/source/v2/monitor/app/1_intro.md" target="_blank">
+    <a href="https://github.com/mallow-fight/blog/tree/master/source/v2/dev/debug/2_mobile.md" target="_blank">
       在 GitHub 上编辑此页！
     </a>
     
-    <span>更新于：2019-02-14 12:02:28</span>
+    <span>更新于：2019-10-10 19:10:63</span>
   </div>
 </div>
 
