@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.9.0">
-  <title>缓存 - mallow</title>
+  <title>html - mallow</title>
   <meta charset="utf-8">
   <meta name="description" content="mallow's blog.">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
   <meta property="og:type" content="article">
-  <meta property="og:title" content="缓存 — mallow">
+  <meta property="og:title" content="html — mallow">
   <meta property="og:description" content="mallow's blog.">
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120215204-1"></script>
@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="/css/page.css">
   <!-- import vue from there so that you can use vue in markdown -->
   <script src="/js/vue.min.js"></script>
-  <script>window.PAGE_TYPE = "browser"</script>
+  <script>window.PAGE_TYPE = "v3/client"</script>
 </head>
 <body class="docs">
   <div id="mobile-bar">
@@ -216,80 +216,87 @@
         <div class="guide-links">
   
   
-    <span style="float: right;"><a style="color: green;" href="/v1/frontend/browser/3_route.html">路由</a> →</span>
+    <span style="float: right;"><a style="color: green;" href="/draft/v3/client/2-css.html">css</a> →</span>
   
   
   
-    <span style="float: right; margin-right: 30px;">← <a style="color: goldenrod;" href="/v2/monitor/browser/1_intro.html">介绍</a></span>
+    <span style="float: right; margin-right: 30px;">← <a style="color: goldenrod;" href="/draft/v3/client/index.html">介绍</a></span>
   
 </div>
 
   <div class="sidebar">
   <div class="sidebar-inner">
-    <h3>当前位置：browser</h3>
+    <h3>当前位置：v3/client</h3>
     <div class="list">
       <ul class="menu-root">
   
     
       <li>
-        <a href="/v2/monitor/browser/1_intro.html" class="sidebar-link">
+        <a href="/draft/v3/client/index.html" class="sidebar-link">
           介绍
         </a>
       </li>
       
     
       <li>
-        <a href="/v2/runtime/browser/1_intro.html" class="sidebar-link">
-          介绍
+        <a href="/draft/v3/client/1-html.html" class="sidebar-link current">
+          html
         </a>
       </li>
       
     
       <li>
-        <a href="/v1/frontend/browser/1_safe.html" class="sidebar-link">
-          安全
+        <a href="/draft/v3/client/2-css.html" class="sidebar-link">
+          css
         </a>
       </li>
       
     
       <li>
-        <a href="/v1/frontend/browser/2_storage.html" class="sidebar-link current">
-          缓存
+        <a href="/draft/v3/client/3-js-important.html" class="sidebar-link">
+          js重点
         </a>
       </li>
       
     
       <li>
-        <a href="/v1/frontend/browser/3_route.html" class="sidebar-link">
-          路由
+        <a href="/draft/v3/client/4-browser.html" class="sidebar-link">
+          浏览器
         </a>
       </li>
       
     
       <li>
-        <a href="/v1/frontend/browser/4_compatibility.html" class="sidebar-link">
-          兼容
+        <a href="/draft/v3/client/5-webpack.html" class="sidebar-link">
+          webpack
         </a>
       </li>
       
     
       <li>
-        <a href="/v1/frontend/browser/5_event.html" class="sidebar-link">
-          事件
+        <a href="/draft/v3/client/6-framework.html" class="sidebar-link">
+          framework
         </a>
       </li>
       
     
       <li>
-        <a href="/v1/frontend/browser/6_performance.html" class="sidebar-link">
-          性能
+        <a href="/draft/v3/client/7-develop.html" class="sidebar-link">
+          开发工具
         </a>
       </li>
       
     
       <li>
-        <a href="/v1/frontend/browser/7_communication.html" class="sidebar-link">
-          通信
+        <a href="/draft/v3/client/8-js-grammar.html" class="sidebar-link">
+          js语法
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/draft/v3/client/9-npm.html" class="sidebar-link">
+          npm
         </a>
       </li>
       
@@ -472,59 +479,294 @@
 </div>
 
 
-<div class="content browser with-sidebar ">
+<div class="content v3/client with-sidebar ">
   <ul class="menu-root">
   
 </ul>
   
-    <h1>缓存</h1>
+    <h1>html</h1>
   
-  <ul>
-<li><p><strong>浏览器只能对非httpOnly的cookie进行操作。</strong></p>
+  <h2 id="html5新特性"><a href="#html5新特性" class="headerlink" title="html5新特性"></a>html5新特性</h2><blockquote>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/HTML5" target="_blank" rel="noopener">新特性</a></p>
+</blockquote>
+<h3 id="语义"><a href="#语义" class="headerlink" title="语义"></a>语义</h3><p><strong>能够让你更恰当地描述你的内容是什么</strong><br><strong>让页面的内容结构化，结构更清晰，便于浏览器、搜索引擎解析</strong></p>
+<ul>
+<li><p>字段和提纲</p>
+<ul>
+<li><code>&lt;section&gt;</code></li>
+<li><code>&lt;article&gt;</code></li>
+<li><code>&lt;nav&gt;</code></li>
+<li><code>&lt;header&gt;</code></li>
+<li><code>&lt;footer&gt;</code></li>
+<li><code>&lt;aside&gt;</code></li>
+<li><code>&lt;hgroup&gt;</code></li>
+</ul>
 </li>
-<li><p><strong>httpOnly的cookie只能由服务器操作。</strong></p>
+<li><p>音频和视频</p>
+<ul>
+<li><code>&lt;audio&gt;</code></li>
+<li><code>&lt;video&gt;</code></li>
+</ul>
 </li>
-<li><p><strong>不要在缓存中存储敏感信息，服务器需要对缓存数据进行校验。</strong></p>
+<li><p>表单</p>
+<ul>
+<li><code>required</code>：强制验证</li>
+<li><code>&lt;input&gt;</code>：属性<code>type</code>的一些新值</li>
+<li><code>&lt;output&gt;</code>：新的元素</li>
+</ul>
+</li>
+<li><p>语义元素</p>
+<ul>
+<li><code>&lt;mark&gt;</code></li>
+<li><code>&lt;figure&gt;</code></li>
+<li><code>&lt;figcaption&gt;</code></li>
+<li><code>&lt;data&gt;</code></li>
+<li><code>&lt;time&gt;</code></li>
+<li><code>&lt;output&gt;</code></li>
+<li><code>&lt;progress&gt;</code></li>
+<li><code>&lt;meter&gt;</code></li>
+<li><code>&lt;main&gt;</code></li>
+</ul>
+</li>
+<li><p><code>&lt;iframe&gt;</code></p>
+<ul>
+<li><code>sandbox</code></li>
+<li><code>seamless</code></li>
+<li><code>srcdoc</code></li>
+<li>通过这些属性，可以精确的控制安全级别以及期望的渲染</li>
+</ul>
+</li>
+<li><p>允许直接嵌入数学公式</p>
+<ul>
+<li>MathML</li>
+</ul>
 </li>
 </ul>
-<h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p><strong>服务器发送到用户浏览器并保存在本地的一小块数据，它用于告知服务端两个请求是否来自同一浏览器</strong></p>
-<h3 id="用处"><a href="#用处" class="headerlink" title="用处"></a>用处</h3><ul>
-<li>会话状态管理：用户登录状态，购物车，游戏分数等</li>
-<li>个性化设置：用户个性化设置,主题等</li>
-<li>浏览器行为跟踪：跟踪分析用户行为等</li>
+<h3 id="连通性"><a href="#连通性" class="headerlink" title="连通性"></a>连通性</h3><p><strong>能够让你和服务器之间通过创新的新技术方法进行通信</strong></p>
+<ul>
+<li><p>web sockets：允许在页面和服务器之间建立持久连接并通过这种方法来交换非HTML数据</p>
+</li>
+<li><p>server-sent events：允许服务器向客户端推送事件，而不是仅在响应客户端请求时服务器才能发送数据的传统范式</p>
+</li>
+<li><p>webRTC：RTC代表即时通信，允许连接到其他人，直接在浏览器中控制视频会议，而不需要一个插件或是外部的应用程序</p>
+</li>
 </ul>
-<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>由于服务器指定<code>Cookie</code>后，浏览器的每次请求都会携带<code>Cookie</code>数据，会带来额外的性能开销（尤其是在移动环境下）</p>
-<h3 id="大小限制"><a href="#大小限制" class="headerlink" title="大小限制"></a>大小限制</h3><p>4KB左右</p>
-<h3 id="存在时间"><a href="#存在时间" class="headerlink" title="存在时间"></a>存在时间</h3><p>如果不在浏览器中设置过期时间，<code>cookie</code>被保存在内存中，生命周期随浏览器的关闭而结束，这种<code>cookie</code>简称会话<code>cookie</code>。如果在浏览器中设置了<code>cookie</code>的过期时间，<code>cookie</code>被保存在硬盘中，关闭浏览器后，<code>cookie</code>数据仍然存在，直到过期时间结束才消失。</p>
-<h3 id="如何清除"><a href="#如何清除" class="headerlink" title="如何清除"></a>如何清除</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 设置cookie</span></span><br><span class="line"><span class="comment"> * @param &#123;string&#125; name  键名</span></span><br><span class="line"><span class="comment"> * @param &#123;string&#125; value 键值</span></span><br><span class="line"><span class="comment"> * @param &#123;integer&#125; days cookie周期</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setCookie</span>(<span class="params">name,value,days</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (days) &#123;</span><br><span class="line">        <span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">        date.setTime(date.getTime()+(days*<span class="number">24</span>*<span class="number">60</span>*<span class="number">60</span>*<span class="number">1000</span>));</span><br><span class="line">        <span class="keyword">var</span> expires = <span class="string">"; expires="</span>+date.toGMTString();</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> expires = <span class="string">""</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">document</span>.cookie = name+<span class="string">"="</span>+value+expires+<span class="string">"; path=/"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 获取cookie</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCookie</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> nameEQ = name + <span class="string">"="</span>;</span><br><span class="line">    <span class="keyword">var</span> ca = <span class="built_in">document</span>.cookie.split(<span class="string">';'</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i &lt; ca.length;i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> c = ca[i];</span><br><span class="line">        <span class="keyword">while</span> (c.charAt(<span class="number">0</span>)==<span class="string">' '</span>) c = c.substring(<span class="number">1</span>,c.length);</span><br><span class="line">        <span class="keyword">if</span> (c.indexOf(nameEQ) == <span class="number">0</span>) <span class="keyword">return</span> c.substring(nameEQ.length,c.length);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 删除cookie</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deleteCookie</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    setCookie(name,<span class="string">""</span>,<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="离线-amp-存储"><a href="#离线-amp-存储" class="headerlink" title="离线 &amp; 存储"></a>离线 &amp; 存储</h3><p><strong>能够让网页在客户端本地存储数据以及更高效地离线运行</strong></p>
+<ul>
+<li><p>离线资源（应用程序缓存）：火狐全面支持HTML5离线资源规范，其他大多数针对离线资源仅提供了某种程度上的支持</p>
+</li>
+<li><p>在线和离线事件：Firefox 3支持WHATWG在线和离线事件，这可以让应用程序和扩展检测是否存在可用的网络连接，以及在连接建立和断开时能感知到</p>
+</li>
+<li><p>DOM存储：客户端会话和持久化存储让web应用程序能够在客户端存储结构化数据</p>
+</li>
+<li><p>IndexedDB：为了能够在浏览器中存储大量结构化数据，并且能够在这些数据上使用索引进行高性能检索的Web标准</p>
+</li>
+<li><p>选择使用本地文件：对新的 <code>HTML5</code> 文件 <code>API</code> 的支持已经被添加到 <code>Gecko</code> 中，从而使 <code>Web</code> 应用程序可以访问由用户选择的本地文件。这包括使用 <code>type = file</code> 的 <code>&lt;input&gt;</code> 元素的新的 <code>multiple</code> 属性针对多文件选择的支持。 还有 <code>FileReader</code>。</p>
+</li>
+</ul>
+<h3 id="多媒体"><a href="#多媒体" class="headerlink" title="多媒体"></a>多媒体</h3><p><strong>使video和audio成为了在所有web中的一等公民</strong></p>
+<ul>
+<li><p>使用HTML5音视频：<code>&lt;audio&gt;</code>和<code>&lt;video&gt;</code>元素嵌入并支持新的多媒体操作内容的操作</p>
+</li>
+<li><p>WebRTC：允许连接到其他人，在浏览器中直接控制视频会议，而不需要一个插件或是外部的应用程序</p>
+</li>
+<li><p>Camera：允许使用，操作计算机摄像头，并从中存储图像</p>
+</li>
+<li><p>Track &amp; WebVTT：<code>&lt;track&gt;</code>元素支持字幕和章节，<code>WebVTT</code>是一个文本轨道格式</p>
+</li>
+</ul>
+<h3 id="2D-3D-绘图-amp-效果"><a href="#2D-3D-绘图-amp-效果" class="headerlink" title="2D/3D 绘图 &amp; 效果"></a>2D/3D 绘图 &amp; 效果</h3><p><strong>提供了一个更加分化范围的呈现选择</strong></p>
+<ul>
+<li><p>canvas</p>
+</li>
+<li><p>WebGL：非常符合OpenGL ES2.0并且可以用在HTML5<code>&lt;canvas&gt;</code>元素中的API给web带来了3D图像功能</p>
+</li>
+<li><p>SVG：基于XML可以直接嵌入到HTML中的矢量图像格式</p>
+</li>
+</ul>
+<h3 id="性能-amp-集成"><a href="#性能-amp-集成" class="headerlink" title="性能 &amp; 集成"></a>性能 &amp; 集成</h3><p><strong>提供了非常显著的性能优化和更有效的计算机硬件使用</strong></p>
+<ul>
+<li><p>web workers：能够把js计算委托给后台线程，通过允许这些活动以防止使交互型事件变得缓慢</p>
+</li>
+<li><p>XMLHttpRequest Level 2：允许异步读取页面的某些部分，允许其显示动态内容，根据时间和用户行为而有所不同。这是在Ajax背后的技术</p>
+</li>
+<li><p>即时编译的js引擎：新一代的js引擎功能更强大，性能更杰出</p>
+</li>
+<li><p>History：允许对浏览器历史记录进行操作，这对于那些交互地加载新信息的页面尤其有用</p>
+</li>
+<li><p>contentEditable属性：把你的网站变成wiki</p>
+</li>
+<li><p>拖放：支持在网站内部和网站之间拖放项目，同时也提供了一个更简单的供扩展和基于Mozilla的应用程序使用的API</p>
+</li>
+<li><p>焦点管理：支持<code>activeElement</code>和<code>hasFocus</code>属性</p>
+</li>
+<li><p>基于Web的协议处理程序：你现在可以使用<code>navigator.registerProtocolHandler()</code>方法把web应用程序注册成一个协议处理程序</p>
+</li>
+<li><p>requestAnimationFrame：允许控制动画渲染以获得更优性能</p>
+</li>
+<li><p>全屏：为一个网页或者应用程序控制使用整个屏幕，而不显示浏览器界面</p>
+</li>
+<li><p>指针锁定：允许锁定到内容的指针，这样游戏或者类似的应用程序在指针到达窗口限制时也不会失去焦点</p>
+</li>
+<li><p>在线和离线事件：为了构建一个良好的具有离线功能的web应用程序，你需要知道什么时候你的应用程序确实离线了，顺便提一句，在你的应用程序又再回到在线状态时你也需要知道</p>
+</li>
+</ul>
+<h3 id="设备访问-Device-Access"><a href="#设备访问-Device-Access" class="headerlink" title="设备访问 Device Access"></a>设备访问 Device Access</h3><p><strong>能够处理各种输入和输出设备</strong></p>
+<ul>
+<li><p>camera：允许使用和操作计算机的摄像头，并从中存取照片。</p>
+</li>
+<li><p>触控事件：对用户按下触控屏的事件做出反应的处理程序。</p>
+</li>
+<li><p>使用地理位置定位：让浏览器使用地理位置服务定位用户的位置。</p>
+</li>
+<li><p>检测设备方向：让用户在运行浏览器的设备变更方向时能够得到信息，这可以被用作一种输入设备或者使页面的布局跟屏幕的方向相适应</p>
+</li>
+<li><p>指针锁定：允许锁定到内容的指针，这样游戏或者类似的应用程序在指针到达窗口限制时也不会失去焦点</p>
+</li>
+</ul>
+<h3 id="样式设计：创作更加复杂的主题"><a href="#样式设计：创作更加复杂的主题" class="headerlink" title="样式设计：创作更加复杂的主题"></a>样式设计：创作更加复杂的主题</h3><p><strong>CSS已经扩展到能够以一个更加复杂的方法给元素设置样式，这通常被称为CSS3，尽管CSS已经不再是很难触动的规范，并且不同的模块并不全部位于level3：其中一些位于level1而另一些位于level4，覆盖了所有中间的层次</strong></p>
+<ul>
+<li><p>新的背景样式特性：现在可以使用<code>box-shadow</code>给逻辑框设置一个阴影，而且可以设置多背景</p>
+</li>
+<li><p>更精美的边框：现在不仅可以使用图像来格式化边框，使用<code>border-image</code>和它关联的普通属性，而且可以通过<code>border-radius</code>属性来支持圆角边框</p>
+</li>
+<li><p>为你的样式设置动画：使用CSS Transitions以在不同的状态间设置动画，或者使用CSS Animations在页面的某些部分设置动画而不需要一个触发事件，你现在可以在页面中控制移动元素了</p>
+</li>
+<li><p>排版方面的改进：不但可以控制<code>text-overflow</code>和<code>hyphenation</code>，还可以给它设置一个阴影或者更精细地控制它的<code>decorations</code>。感谢新的<code>@font-face</code>规则，现在我们可以下载并应用自定义的字体了</p>
+</li>
+<li><p>新的展示性布局：为了提高设计的灵活性，已经有两种新的布局被添加了进来：CSS多栏布局(cloumn)，以及CSS灵活方框布局(flex)</p>
+</li>
+</ul>
+<h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><h3 id="dataset"><a href="#dataset" class="headerlink" title="dataset"></a>dataset</h3><ul>
+<li>data-* 全局属性 是一类被称为自定义数据属性的属性，它赋予我们在所有 HTML 元素上嵌入自定义数据属性的能力，并可以通过脚本(一般指JavaScript) 与 HTML 之间进行专有数据的交换。</li>
+<li>通过HEMLElement.dataset.testValue或者是HTMLElement.dataset[‘testValue’]来访问。</li>
+<li>例子<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;img <span class="class"><span class="keyword">class</span></span>=<span class="string">"spaceship cruiserX3"</span> src=<span class="string">"shipX3.png"</span></span><br><span class="line">  data-ship-id=<span class="string">"324"</span> data-weapons=<span class="string">"laserI laserII"</span> data-shields=<span class="string">"72%"</span></span><br><span class="line">  data-x=<span class="string">"414354"</span> data-y=<span class="string">"85160"</span> data-z=<span class="string">"31940"</span></span><br><span class="line">  onclick=<span class="string">"spaceships[this.dataset.shipId].blasted()"</span>&gt;</span><br><span class="line">&lt;<span class="regexp">/img&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="localstorage"><a href="#localstorage" class="headerlink" title="localstorage"></a>localstorage</h2><h3 id="存在时间-1"><a href="#存在时间-1" class="headerlink" title="存在时间"></a>存在时间</h3><p>除非被清除，否则永久保存</p>
-<h2 id="大小限制-1"><a href="#大小限制-1" class="headerlink" title="大小限制"></a>大小限制</h2><p>一般为5MB</p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
-<li>不同浏览器无法共享localStorage或sessionStorage中的信息。</li>
-<li>相同浏览器且相同域名和端口的不同页面间可以共享相同的localStorage。</li>
-<li>不同页面或标签页间无法共享sessionStorage的信息。这里需要注意的是，页面及标签页仅指顶级窗口，如果一个标签页包含多个iframe标签且他们属于同源页面，那么他们之间是可以共享sessionStorage的。</li>
+</li>
 </ul>
-<h2 id="sessionstorage"><a href="#sessionstorage" class="headerlink" title="sessionstorage"></a>sessionstorage</h2><h3 id="存在时间-2"><a href="#存在时间-2" class="headerlink" title="存在时间"></a>存在时间</h3><p>页面会话结束——也就是说当页面被关闭时，数据存储在 <code>sessionStorage</code> 会被清除，页面刷新不会被删除。不能在不同页面间共享，可以在同一个页面的多个iframe中共享。</p>
-<h3 id="大小限制-2"><a href="#大小限制-2" class="headerlink" title="大小限制"></a>大小限制</h3><p>一般为5MB</p>
+<blockquote>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes/data-*" target="_blank" rel="noopener">参考</a></p>
+</blockquote>
+<h3 id="url-amp-path"><a href="#url-amp-path" class="headerlink" title="url&amp;path"></a>url&amp;path</h3><ul>
+<li>绝对路径：完整的访问路径</li>
+<li>相对路径：相对本身的访问路径</li>
+<li>文档片段：定位到某个文档id为#xxx的片段</li>
+</ul>
+<h3 id="元素类型"><a href="#元素类型" class="headerlink" title="元素类型"></a>元素类型</h3><ul>
+<li>行内：a、span、img、input、select、strong</li>
+<li>块级：div、ul、li、h1、p</li>
+<li>空：br、img、hr、input、link、meta、source</li>
+</ul>
+<h3 id="无语义元素"><a href="#无语义元素" class="headerlink" title="无语义元素"></a>无语义元素</h3><ul>
+<li><p><code>span</code>是一个<code>行内无语义元素</code>，你应该仅仅当<code>无法找到更好的语义元素包含内容</code>时使用，或者<code>不想增加特定的含义</code></p>
+</li>
+<li><p><code>div</code>是一个<code>块级无语义元素</code>，你应该仅仅当<code>找不到更好的块级元素</code>时使用，或者<code>不想增加特定的含义</code></p>
+</li>
+</ul>
+<p class="tip">`div`用起来非常便利以至于很容易被滥用。因为它们不携带语义值，所以会让你的HTML代码变的混乱。要小心的使用它们，只有当没有更好的语义解决方案才能使用，而且要尽可能把它的使用量降到最低，否则，当你升级和维护你的文档时会非常困难。</p>
+
+<h3 id="换行-amp-分割"><a href="#换行-amp-分割" class="headerlink" title="换行 &amp; 分割"></a>换行 &amp; 分割</h3><ul>
+<li><p><code>&lt;br&gt;</code>在一个段落中创建一个换行</p>
+</li>
+<li><p><code>&lt;hr&gt;</code>在文档中生成一条水平分割线</p>
+</li>
+</ul>
+<h3 id="元素种类"><a href="#元素种类" class="headerlink" title="元素种类"></a>元素种类</h3><h4 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h4><ul>
+<li><p>每个块级元素独占一行</p>
+</li>
+<li><p>元素的<code>height</code>、<code>width</code>、<code>line-height</code>、<code>margin-top</code>、<code>margin-bottom</code>都可设置</p>
+</li>
+<li><p>元素宽度在不设置的情况下，是它本身父容器的100%，除非设定一个宽度</p>
+</li>
+</ul>
+<h4 id="内联元素"><a href="#内联元素" class="headerlink" title="内联元素"></a>内联元素</h4><ul>
+<li><p>和其他元素都在一行上</p>
+</li>
+<li><p>元素的<code>height</code>、<code>width</code>、<code>margin-top</code>、<code>margin-bottom</code>都不可设置</p>
+</li>
+<li><p>元素的宽度就是它包含的文字或图片的宽度，不可改变</p>
+</li>
+<li><p>多个内联元素的宽度超过行宽时，会自动换行</p>
+</li>
+</ul>
+<h4 id="内联块状元素"><a href="#内联块状元素" class="headerlink" title="内联块状元素"></a>内联块状元素</h4><ul>
+<li><p>和其他元素都在一行上</p>
+</li>
+<li><p>元素的<code>height</code>、<code>width</code>、<code>line-height</code>、<code>margin-top</code>、<code>margin-bottom</code>都可设置</p>
+</li>
+<li><p>多个内联块状元素的宽度超过行宽时，会自动换行</p>
+</li>
+</ul>
+<h4 id="空元素"><a href="#空元素" class="headerlink" title="空元素"></a>空元素</h4><ul>
+<li><p>开始标签和结束标签之间内容和嵌套元素不生效的元素，例：</p>
+<ul>
+<li><p><code>&lt;img&gt;</code></p>
+</li>
+<li><p><code>&lt;input&gt;</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="布尔属性"><a href="#布尔属性" class="headerlink" title="布尔属性"></a>布尔属性</h3><p><strong>可以设置布尔值的属性，例：<code>&lt;button disabled&gt;</code>，如果不设置属性值，默认是<code>true</code></strong></p>
+<h3 id="webSocket兼容低版本浏览器"><a href="#webSocket兼容低版本浏览器" class="headerlink" title="webSocket兼容低版本浏览器"></a>webSocket兼容低版本浏览器</h3><ul>
+<li>Adobe Flash Socket</li>
+<li>ActiveX HTMLFile（IE）</li>
+<li>基于multipart编码发送的XHR</li>
+<li>基于长轮询的XHR</li>
+</ul>
+<h3 id="页面可见性"><a href="#页面可见性" class="headerlink" title="页面可见性"></a>页面可见性</h3><ul>
+<li>通过<code>visibilityState</code>的值检测当前页面是否可见，以及打开网页的时间等。</li>
+<li>在页面被切换到后台其他进程的时候，自动暂停音乐或视频的播放。</li>
+</ul>
+<h3 id="link和-import"><a href="#link和-import" class="headerlink" title="link和@import"></a>link和@import</h3><ol>
+<li>link属于XHTML标签，除了加载CSS外，还能用于定义RSS，定义rel连接属性等作用，而@import是CSS提供的，只能用于加载CSS</li>
+<li>页面被加载时，link会同时被加载，而@import引用的CSS会等到页面被加载完再加载</li>
+<li>import是CSS2.1提出的，值在IE5以上才能被识别，而link是XHTML标签，无兼容问题</li>
+<li>link支持使用js控制DOM去改变样式，而@import不支持</li>
+</ol>
+<h3 id="浏览器内核"><a href="#浏览器内核" class="headerlink" title="浏览器内核"></a>浏览器内核</h3><p><strong>主要分为两个部分：</strong></p>
+<ol>
+<li>渲染引擎：负责取得页面的内容（HTML、XML、图像等）、整理讯息（加入CSS），以及计算网页的显示方式，然后会输出至显示器</li>
+<li>JS引擎：解析和执行js来实现网页的动态效果</li>
+<li>最开始渲染引擎和JS引擎并没有明确区分，后来JS引擎越来越独立，内核就倾向于指渲染引擎</li>
+</ol>
+<h3 id="离线存储"><a href="#离线存储" class="headerlink" title="离线存储"></a>离线存储</h3><ul>
+<li>在用户没有与因特网连接时，可以正常访问站点或应用，在用户与因特网连接时，更新用户机器上的缓存文件</li>
+<li>原理：H5的离线存储是基于一个新建的<code>.appcache</code>文件的缓存机制（不是存储技术），通过这个文件上的解析清单离线存储资源，这些资源就会像cookie一样被存储了下来。之后当网络处于离线状态时，浏览器会通过被离线存储的数据进行页面展示。</li>
+<li>判断是否离线：<code>window.navigator.onLine</code></li>
+<li>如何使用：<ul>
+<li>页面头部加入一个<code>manifast</code>属性</li>
+<li>在<code>cache.manifest</code>文件编写离线存储的资源</li>
+<li>在离线状态时，操作<code>window.applicationCache</code>进行需求实现</li>
+</ul>
+</li>
+<li>在线情况下，浏览器发现html头部有manifest属性，它会请求manifest文件，如果是第一次访问app，那么浏览器就会根据manifest文件下载相应的资源并且进行离线存储。如果已经访问过app并且已经离线存储了，那么浏览器就会使用离线资源加载页面。然后浏览器会对比新的manifest文件和旧的manifest文件，如果文件没有发生改变，就不做任何操作，如果文件改变了，那么就会重新下载文件中的资源并进行离线存储。离线的情况下，浏览器就直接使用离线存储的资源。</li>
+</ul>
+<h3 id="iframe优缺点"><a href="#iframe优缺点" class="headerlink" title="iframe优缺点"></a>iframe优缺点</h3><ol>
+<li>搜索引擎的检索程序无法解读这种页面，不利于<code>SEO</code></li>
+<li><code>iframe</code>会阻塞主页面的<code>onLoad</code>事件，<code>iframe</code>和主页面共享连接池，而浏览器对相同域的连接有限制，所以会影响页面的并行加载</li>
+<li>最好是通过js动态给iframe添加src属性，这样可以绕开以上两个问题</li>
+</ol>
+<h3 id="label"><a href="#label" class="headerlink" title="label"></a>label</h3><p><strong>label标签来定义表单控制间的关系，当用户选择该标签时，浏览器会自动将焦点转到和标签相关的表单控件上：</strong></p>
+<h3 id="form关闭自动完成"><a href="#form关闭自动完成" class="headerlink" title="form关闭自动完成"></a>form关闭自动完成</h3><p><strong>给不想要提示的form或某个input设置：autocomplete=off</strong></p>
 
   <div class="guide-links">
     
     
-      <span>← <a href="/v2/monitor/browser/1_intro.html">介绍</a></span>
+      <span>← <a href="/draft/v3/client/index.html">介绍</a></span>
     
     
     
-      <span style="float: right;"><a href="/v1/frontend/browser/3_route.html">路由</a> →</span>
+      <span style="float: right;"><a href="/draft/v3/client/2-css.html">css</a> →</span>
     
   </div>
   <div class="footer">
     发现错误？想参与编辑？
-    <a href="https://github.com/mallow-fight/blog/tree/master/source/v1/frontend/browser/2_storage.md" target="_blank">
+    <a href="https://github.com/mallow-fight/blog/tree/master/source/draft/v3/client/1-html.md" target="_blank">
       在 GitHub 上编辑此页！
     </a>
     
-    <span>更新于：2018-09-13 14:09:20</span>
+    <span>更新于：2019-06-04 14:06:11</span>
   </div>
 </div>
 

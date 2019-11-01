@@ -216,6 +216,8 @@
         <div class="guide-links">
   
   
+    <span style="float: right;"><a style="color: green;" href="/v2/frame/ts/3_basic.html">基础</a> →</span>
+  
   
   
     <span style="float: right; margin-right: 30px;">← <a style="color: goldenrod;" href="/v2/frame/ts/1_intro.html">介绍</a></span>
@@ -239,6 +241,13 @@
       <li>
         <a href="/v2/frame/ts/2_config.html" class="sidebar-link current">
           配置
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/v2/frame/ts/3_basic.html" class="sidebar-link">
+          基础
         </a>
       </li>
       
@@ -431,12 +440,19 @@
   <h2 id="tslint-json"><a href="#tslint-json" class="headerlink" title="tslint.json"></a>tslint.json</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"extends"</span>: [<span class="string">"tslint:latest"</span>],</span><br><span class="line">  <span class="string">"rules"</span>: &#123;</span><br><span class="line">    <span class="string">"no-submodule-imports"</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="string">"object-literal-sort-keys"</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="string">"no-implicit-dependencies"</span>: <span class="literal">false</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"include"</span>: [</span><br><span class="line">    <span class="string">"src/**/*.ts"</span>,</span><br><span class="line">    <span class="string">"src/**/*.tsx"</span></span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="tsconfig-json"><a href="#tsconfig-json" class="headerlink" title="tsconfig.json"></a>tsconfig.json</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"compilerOptions"</span>: &#123;</span><br><span class="line">    <span class="string">"strictNullChecks"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">"moduleResolution"</span>: <span class="string">"node"</span>,</span><br><span class="line">    <span class="string">"esModuleInterop"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">"allowJs"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">"experimentalDecorators"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">"jsx"</span>: <span class="string">"preserve"</span>,</span><br><span class="line">    <span class="string">"noUnusedParameters"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">"noUnusedLocals"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">"noImplicitAny"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">"target"</span>: <span class="string">"es6"</span>,</span><br><span class="line">    <span class="string">"lib"</span>: [<span class="string">"dom"</span>, <span class="string">"es2017"</span>],</span><br><span class="line">    <span class="string">"baseUrl"</span>: <span class="string">"src"</span>,</span><br><span class="line">    <span class="string">"outDir"</span>: <span class="string">"dist"</span>,</span><br><span class="line">    <span class="string">"paths"</span>: &#123;</span><br><span class="line">      <span class="string">"@/*"</span>: [<span class="string">"*"</span>],</span><br><span class="line">      <span class="string">"antd-mobile"</span>: [<span class="string">"node_modules/@lianjia/antd-mobile"</span>],</span><br><span class="line">      <span class="string">"services"</span>: [<span class="string">"services"</span>],</span><br><span class="line">      <span class="string">"pages"</span>: [<span class="string">"pages"</span>],</span><br><span class="line">      <span class="string">"stores"</span>: [<span class="string">"stores"</span>],</span><br><span class="line">      <span class="string">"utils"</span>: [<span class="string">"utils"</span>],</span><br><span class="line">      <span class="string">"components"</span>: [<span class="string">"components"</span>],</span><br><span class="line">      <span class="string">"assets"</span>: [<span class="string">"assets"</span>]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"exclude"</span>: [<span class="string">"node_modules"</span>, <span class="string">"dll"</span>, <span class="string">"webpack"</span>, <span class="string">"dist"</span>],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h2><ul>
+<li>tsconfig.json的allowJs要设置为true和webpack.config.js中的resolve.extensions要有.js，不然的话compile会不识别npm包里面的require，因为如果没有.js后缀的话，不会去找js文件入口。</li>
+</ul>
+
   <div class="guide-links">
     
     
       <span>← <a href="/v2/frame/ts/1_intro.html">介绍</a></span>
     
     
+    
+      <span style="float: right;"><a href="/v2/frame/ts/3_basic.html">基础</a> →</span>
     
   </div>
   <div class="footer">
@@ -445,7 +461,7 @@
       在 GitHub 上编辑此页！
     </a>
     
-    <span>更新于：2019-10-12 20:10:63</span>
+    <span>更新于：2019-10-31 11:10:26</span>
   </div>
 </div>
 

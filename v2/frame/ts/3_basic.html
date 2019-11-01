@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.9.0">
-  <title>介绍 - mallow</title>
+  <title>基础 - mallow</title>
   <meta charset="utf-8">
   <meta name="description" content="mallow's blog.">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
   <meta property="og:type" content="article">
-  <meta property="og:title" content="介绍 — mallow">
+  <meta property="og:title" content="基础 — mallow">
   <meta property="og:description" content="mallow's blog.">
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120215204-1"></script>
@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="/css/page.css">
   <!-- import vue from there so that you can use vue in markdown -->
   <script src="/js/vue.min.js"></script>
-  <script>window.PAGE_TYPE = "v3/http"</script>
+  <script>window.PAGE_TYPE = "v2/frame/ts"</script>
 </head>
 <body class="docs">
   <div id="mobile-bar">
@@ -216,29 +216,36 @@
         <div class="guide-links">
   
   
-    <span style="float: right;"><a style="color: green;" href="/v3/http/1-introduction.html">入门</a> →</span>
   
   
+    <span style="float: right; margin-right: 30px;">← <a style="color: goldenrod;" href="/v2/frame/ts/2_config.html">配置</a></span>
   
 </div>
 
   <div class="sidebar">
   <div class="sidebar-inner">
-    <h3>当前位置：v3/http</h3>
+    <h3>当前位置：v2/frame/ts</h3>
     <div class="list">
       <ul class="menu-root">
   
     
       <li>
-        <a href="/v3/http/index.html" class="sidebar-link current">
+        <a href="/v2/frame/ts/1_intro.html" class="sidebar-link">
           介绍
         </a>
       </li>
       
     
       <li>
-        <a href="/v3/http/1-introduction.html" class="sidebar-link">
-          入门
+        <a href="/v2/frame/ts/2_config.html" class="sidebar-link">
+          配置
+        </a>
+      </li>
+      
+    
+      <li>
+        <a href="/v2/frame/ts/3_basic.html" class="sidebar-link current">
+          基础
         </a>
       </li>
       
@@ -421,30 +428,36 @@
 </div>
 
 
-<div class="content v3/http with-sidebar ">
+<div class="content v2/frame/ts with-sidebar ">
   <ul class="menu-root">
   
 </ul>
   
-    <h1>介绍</h1>
+    <h1>基础</h1>
   
-  <p><em>something about http.</em></p>
+  <h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><ul>
+<li><p>如果你想通过枚举的值来访问对应的是枚举属性名，只能通过number类型的来获取，例：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> Color &#123;</span><br><span class="line">  Red = <span class="number">100</span>,</span><br><span class="line">  Green = <span class="number">200</span>,</span><br><span class="line">  Blue = <span class="number">300</span>,</span><br><span class="line">  Yellow = <span class="string">"yellowCode"</span>,</span><br><span class="line">&#125;</span><br><span class="line">Color[<span class="number">100</span>]</span><br><span class="line">Color.Yellow <span class="comment">// 不能通过Color['yellowCode']来获取属性名，数据结构中会把number类型的都给解析到对象上</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>排列顺序：如果枚举的值不是number类型的，那么从0开始排起，如果中间出现了一个number类型的，之前的从0开始排，之后的从这个number之后排，如果这个number是0，那么这个number之前的下标就没了，所以最好不要用下标取值</p>
+</li>
+</ul>
 
   <div class="guide-links">
     
     
+      <span>← <a href="/v2/frame/ts/2_config.html">配置</a></span>
     
     
-      <span style="float: right;"><a href="/v3/http/1-introduction.html">入门</a> →</span>
     
   </div>
   <div class="footer">
     发现错误？想参与编辑？
-    <a href="https://github.com/mallow-fight/blog/tree/master/source/v3/http/index.md" target="_blank">
+    <a href="https://github.com/mallow-fight/blog/tree/master/source/v2/frame/ts/3_basic.md" target="_blank">
       在 GitHub 上编辑此页！
     </a>
     
-    <span>更新于：2019-05-22 11:05:76</span>
+    <span>更新于：2019-10-31 17:10:09</span>
   </div>
 </div>
 

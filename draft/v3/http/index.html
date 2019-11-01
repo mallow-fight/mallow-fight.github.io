@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.9.0">
-  <title>npm - mallow</title>
+  <title>介绍 - mallow</title>
   <meta charset="utf-8">
   <meta name="description" content="mallow's blog.">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
   <meta property="og:type" content="article">
-  <meta property="og:title" content="npm — mallow">
+  <meta property="og:title" content="介绍 — mallow">
   <meta property="og:description" content="mallow's blog.">
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120215204-1"></script>
@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="/css/page.css">
   <!-- import vue from there so that you can use vue in markdown -->
   <script src="/js/vue.min.js"></script>
-  <script>window.PAGE_TYPE = "v3/client"</script>
+  <script>window.PAGE_TYPE = "v3/http"</script>
 </head>
 <body class="docs">
   <div id="mobile-bar">
@@ -216,85 +216,29 @@
         <div class="guide-links">
   
   
+    <span style="float: right;"><a style="color: green;" href="/draft/v3/http/1-introduction.html">入门</a> →</span>
   
   
-    <span style="float: right; margin-right: 30px;">← <a style="color: goldenrod;" href="/v3/client/8-js-grammar.html">js语法</a></span>
   
 </div>
 
   <div class="sidebar">
   <div class="sidebar-inner">
-    <h3>当前位置：v3/client</h3>
+    <h3>当前位置：v3/http</h3>
     <div class="list">
       <ul class="menu-root">
   
     
       <li>
-        <a href="/v3/client/index.html" class="sidebar-link">
+        <a href="/draft/v3/http/index.html" class="sidebar-link current">
           介绍
         </a>
       </li>
       
     
       <li>
-        <a href="/v3/client/1-html.html" class="sidebar-link">
-          html
-        </a>
-      </li>
-      
-    
-      <li>
-        <a href="/v3/client/2-css.html" class="sidebar-link">
-          css
-        </a>
-      </li>
-      
-    
-      <li>
-        <a href="/v3/client/3-js-important.html" class="sidebar-link">
-          js重点
-        </a>
-      </li>
-      
-    
-      <li>
-        <a href="/v3/client/4-browser.html" class="sidebar-link">
-          浏览器
-        </a>
-      </li>
-      
-    
-      <li>
-        <a href="/v3/client/5-webpack.html" class="sidebar-link">
-          webpack
-        </a>
-      </li>
-      
-    
-      <li>
-        <a href="/v3/client/6-framework.html" class="sidebar-link">
-          framework
-        </a>
-      </li>
-      
-    
-      <li>
-        <a href="/v3/client/7-develop.html" class="sidebar-link">
-          开发工具
-        </a>
-      </li>
-      
-    
-      <li>
-        <a href="/v3/client/8-js-grammar.html" class="sidebar-link">
-          js语法
-        </a>
-      </li>
-      
-    
-      <li>
-        <a href="/v3/client/9-npm.html" class="sidebar-link current">
-          npm
+        <a href="/draft/v3/http/1-introduction.html" class="sidebar-link">
+          入门
         </a>
       </li>
       
@@ -477,46 +421,30 @@
 </div>
 
 
-<div class="content v3/client with-sidebar ">
+<div class="content v3/http with-sidebar ">
   <ul class="menu-root">
   
 </ul>
   
-    <h1>npm</h1>
+    <h1>介绍</h1>
   
-  <h2 id="写一个全局命令"><a href="#写一个全局命令" class="headerlink" title="写一个全局命令"></a>写一个全局命令</h2><ol>
-<li>在<code>package.json</code>中加上<code>bin</code>属性：</li>
-</ol>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">"bin"</span>: &#123;</span><br><span class="line">		<span class="attr">"clone-project"</span>: <span class="string">"./index.js"</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <p><em>something about http.</em></p>
 
-<ol start="2">
-<li><code>index.js</code>中注意开头需要标注：</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env node</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>实现一个从<code>git</code>仓库拉取代码的工具，带有进度条：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env node</span></span><br><span class="line"></span><br><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"><span class="keyword">const</span> commander = <span class="built_in">require</span>(<span class="string">'commander'</span>);</span><br><span class="line"><span class="keyword">const</span> chalk = <span class="built_in">require</span>(<span class="string">'chalk'</span>);</span><br><span class="line"><span class="keyword">const</span> &#123; exec &#125; = <span class="built_in">require</span>(<span class="string">'child_process'</span>);</span><br><span class="line"><span class="keyword">const</span> logErr = <span class="function">(<span class="params">errInfo</span>) =&gt;</span> <span class="built_in">console</span>.log(chalk.red(<span class="string">`发生了错误：<span class="subst">$&#123;errInfo&#125;</span>`</span>));</span><br><span class="line"><span class="keyword">const</span> ProgressBar = <span class="built_in">require</span>(<span class="string">'progress'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> getBar = <span class="function">(<span class="params">total=<span class="number">100</span>, timeout=<span class="number">100</span></span>) =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">const</span> bar = <span class="keyword">new</span> ProgressBar(<span class="string">':bar'</span>, &#123;</span><br><span class="line">		total,</span><br><span class="line">		complete: chalk.bgGreen(<span class="string">' '</span>),</span><br><span class="line">		incomplete: chalk.bgBlue(<span class="string">' '</span>),</span><br><span class="line">	&#125;);</span><br><span class="line">	<span class="keyword">let</span> step = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">const</span> timer = setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">		bar.tick(step);</span><br><span class="line">		step += <span class="built_in">parseInt</span>(<span class="built_in">Math</span>.random() * <span class="number">10</span>)</span><br><span class="line">		<span class="keyword">if</span> (bar.complete) &#123;</span><br><span class="line">			clearInterval(timer);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;, timeout);</span><br><span class="line">	<span class="keyword">return</span> bar;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> commander.Command(<span class="string">'clone-project'</span>)</span><br><span class="line">	 .arguments(<span class="string">'&lt;project-directory&gt;'</span>)</span><br><span class="line">   .action( <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params">name</span>) </span>&#123;</span><br><span class="line">			<span class="built_in">console</span>.log(chalk.blue(<span class="string">'正在拉取远程模版仓库代码...'</span>))</span><br><span class="line">			<span class="keyword">const</span> templateBar = getBar(<span class="number">100</span>, <span class="number">300</span>);</span><br><span class="line">			<span class="keyword">await</span> exec(<span class="string">`git clone &lt;git项目地址&gt; <span class="subst">$&#123;name&#125;</span>`</span>, <span class="keyword">async</span> (err, stdout) =&gt; &#123;</span><br><span class="line">				<span class="keyword">if</span>(err) &#123;</span><br><span class="line">					<span class="keyword">return</span> logErr(err);</span><br><span class="line">				&#125;</span><br><span class="line">				templateBar.tick(<span class="number">100</span>);</span><br><span class="line">				<span class="built_in">console</span>.log(chalk.green(<span class="string">`拉取成功!`</span>));</span><br><span class="line">				<span class="built_in">console</span>.log()</span><br><span class="line">				<span class="built_in">console</span>.log(chalk.yellow(<span class="string">'安装依赖中，这可能会花费几分钟时间'</span>));</span><br><span class="line">				<span class="keyword">const</span> installBar = getBar(<span class="number">100</span>, <span class="number">600</span>);</span><br><span class="line">				<span class="keyword">await</span> exec(<span class="string">`cd <span class="subst">$&#123;name&#125;</span> &amp;&amp; rm -rf .git &amp;&amp; npm i`</span>, (err) =&gt; &#123;</span><br><span class="line">					<span class="keyword">if</span>(err) &#123;</span><br><span class="line">						<span class="keyword">return</span> logErr(err);</span><br><span class="line">					&#125;</span><br><span class="line">					installBar.tick(<span class="number">100</span>);</span><br><span class="line">					<span class="built_in">console</span>.log(chalk.green(<span class="string">'恭喜！成功安装！Bye，Bye！'</span>))</span><br><span class="line">				&#125;);</span><br><span class="line">			&#125;)</span><br><span class="line">	 &#125;)</span><br><span class="line">	 .parse(process.argv);</span><br></pre></td></tr></table></figure>
-
-<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><p>安装：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm i <span class="built_in">clone</span>-project -g</span><br></pre></td></tr></table></figure>
-
-<p>使用：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">clone</span>-project &lt;目录名称&gt;</span><br></pre></td></tr></table></figure>
   <div class="guide-links">
     
     
-      <span>← <a href="/v3/client/8-js-grammar.html">js语法</a></span>
     
     
+      <span style="float: right;"><a href="/draft/v3/http/1-introduction.html">入门</a> →</span>
     
   </div>
   <div class="footer">
     发现错误？想参与编辑？
-    <a href="https://github.com/mallow-fight/blog/tree/master/source/v3/client/9-npm.md" target="_blank">
+    <a href="https://github.com/mallow-fight/blog/tree/master/source/draft/v3/http/index.md" target="_blank">
       在 GitHub 上编辑此页！
     </a>
     
-    <span>更新于：2019-06-17 11:06:93</span>
+    <span>更新于：2019-05-22 11:05:76</span>
   </div>
 </div>
 
