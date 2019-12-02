@@ -479,20 +479,16 @@
 <h2 id="四大规则"><a href="#四大规则" class="headerlink" title="四大规则"></a>四大规则</h2><ul>
 <li><p>默认绑定（没有其它规则适用时的默认规则）</p>
 <ul>
-<li><p>独立函数调用，一般<code>this</code>指向了全局对象</p>
-</li>
-<li><p><code>strict mode</code>下指向全局对象不合法，所以<code>this</code>将被设置为<code>undefined</code></p>
-</li>
+<li>独立函数调用，一般<code>this</code>指向了全局对象</li>
+<li><code>strict mode</code>下指向全局对象不合法，所以<code>this</code>将被设置为<code>undefined</code></li>
 </ul>
 </li>
 <li><p>隐含绑定，例：</p>
-</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log( <span class="keyword">this</span>.a );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    a: <span class="number">2</span>,</span><br><span class="line">    foo: foo</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.foo(); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log( <span class="keyword">this</span>.a );</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    a: <span class="number">2</span>,</span><br><span class="line">    foo: foo</span><br><span class="line">&#125;;</span><br><span class="line">obj.foo(); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p>只有对象属性引用链的最后一层是影响调用点的，例：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log( <span class="keyword">this</span>.a );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj2 = &#123;</span><br><span class="line">    a: <span class="number">42</span>,</span><br><span class="line">    foo: foo</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">    a: <span class="number">2</span>,</span><br><span class="line">    obj2: obj2</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj1.obj2.foo(); <span class="comment">// 42</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log( <span class="keyword">this</span>.a );</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj2 = &#123;</span><br><span class="line">    a: <span class="number">42</span>,</span><br><span class="line">    foo: foo</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">    a: <span class="number">2</span>,</span><br><span class="line">    obj2: obj2</span><br><span class="line">&#125;;</span><br><span class="line">obj1.obj2.foo(); <span class="comment">// 42</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>隐含丢失，一个隐含绑定丢失了它的绑定，通常意味着它会回退到默认绑定，例：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log( <span class="keyword">this</span>.a );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    a: <span class="number">2</span>,</span><br><span class="line">    foo: foo</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> bar = obj.foo; <span class="comment">// 函数引用！</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="string">"oops, global"</span>; <span class="comment">// `a` 也是一个全局对象的属性</span></span><br><span class="line"></span><br><span class="line">bar(); <span class="comment">// "oops, global"</span></span><br></pre></td></tr></table></figure>
@@ -505,7 +501,7 @@
 </ul>
 </li>
 </ul>
-<ul>
+</li>
 <li><p>明确绑定</p>
 <ul>
 <li><p>call</p>
@@ -742,7 +738,7 @@
       在 GitHub 上编辑此页！
     </a>
     
-    <span>更新于：2018-09-13 14:09:22</span>
+    <span>更新于：2019-12-02 19:12:16</span>
   </div>
 </div>
 
